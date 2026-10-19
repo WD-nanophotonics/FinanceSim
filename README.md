@@ -43,3 +43,10 @@ The single API returns level point forecasts, positive-change probability, Gauss
 5. Evaluate after 26 and 52 weeks, always compare with naive/consensus baselines.
 
 **Current release has no external data fetching, no live financial simulation and no demonstrated financial-market accuracy.** Example uses synthetic data only.
+
+
+### One-command JSON interface
+
+`python -m financesim examples/request.json -o outputs/latest.json`
+
+Pass a JSON object with `action` = `forecast` or `backtest`, `data` containing series arrays, and `parameters` containing the forecasting/backtesting arguments documented above. See `examples/request.json`. The output is machine-readable JSON.
