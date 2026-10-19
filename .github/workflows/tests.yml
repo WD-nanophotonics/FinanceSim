@@ -21,3 +21,9 @@ jobs:
         run: PYTHONPATH=. python examples/quickstart.py > /dev/null
       - name: Run JSON entrypoint
         run: python -m financesim examples/request.json > /dev/null
+      - name: Run scenario and research record interfaces
+        run: |
+          python -m financesim examples/scenario_request.json > /dev/null
+          python -m financesim examples/research_seal_request.json > /dev/null
+      - name: Verify initial committed research record
+        run: python -c 'import json; from financesim import verify; assert verify(json.load(open("research/daily/2026-10-19.json", encoding="utf-8")))'
