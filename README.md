@@ -50,3 +50,25 @@ The single API returns level point forecasts, positive-change probability, Gauss
 `python -m financesim examples/request.json -o outputs/latest.json`
 
 Pass a JSON object with `action` = `forecast` or `backtest`, `data` containing series arrays, and `parameters` containing the forecasting/backtesting arguments documented above. See `examples/request.json`. The output is machine-readable JSON.
+
+
+## Research memory and a quantifiable world-model layer (research protocol v0.2)
+
+The research protocol is [research/PROTOCOL.md](research/PROTOCOL.md), with current hypotheses in [research/INDEX.md](research/INDEX.md). Every actual observation, dated hypothesis, simulation, revision and weekly forecast is preserved as a separate provenance-tagged artifact. Daily working information can become scenario inputs, but assumptions are not confused with observed facts.
+
+Use the **same JSON command endpoint** for every mode:
+
+```bash
+python -m financesim examples/scenario_request.json
+python -m financesim examples/research_seal_request.json
+```
+
+CLI `action` now supports `forecast`, `backtest`, `scenarios`, `seal`, `verify`, and `score`.
+
+In Python, additional APIs are `simulate_scenarios(baseline, events, ...)`, `seal(...)`, `verify(record)`, and `score_weekly(forecast_record, actual_changes)`. The `scenarios` mode takes each target's baseline mean change, baseline Gaussian noise standard deviation, an explicitly assumed event probability and impact vector; shocks share event realizations across assets while distinct events and residual noise are independent. It has no automatic news understanding, econometric calibration or feedback network yet. Example parameters are **synthetic, not live economic estimates**.
+
+### Research and outcome integrity
+
+The research sealing utility refuses evidence accessed after the stated information cutoff, requires three consistent prediction arms, blocks scoreable targets already resolved by the prediction cutoff, and hashes the record. The hash is a tamper indicator, **not proof of publication time**; the public Git commit history provides the external timestamp. Real-life dates, publication vintage and market closing conventions require further upstream verification. No user-facing daily research reports are sent; Saturday reports use the archived daily evidence and forecasts.
+
+First as-of research observation: [2026-10-19](research/daily/2026-10-19.json) (official Dallas Fed WEI and U.S. Department of Labor initial claims; not yet a forecast).
