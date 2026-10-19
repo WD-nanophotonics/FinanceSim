@@ -1,0 +1,15 @@
+{
+  "action": "seal",
+  "kind": "experiment",
+  "as_of": "2026-10-24T12:00:00+09:00",
+  "payload": {
+    "hypothesis_id": "EXAMPLE-H001",
+    "code_commit": "synthetic-fixture-only",
+    "dataset_cutoff": "2026-10-23T09:00:00+09:00",
+    "baseline": "zero-change",
+    "result": "Illustrative outcome; no real data loaded",
+    "simulation_seed": 42,
+    "synthetic_fixture": true
+  },
+  "evidence": []
+}
