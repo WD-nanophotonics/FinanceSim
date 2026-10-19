@@ -1,0 +1,21 @@
+{
+  "action": "scenarios",
+  "baseline": {
+    "synthetic_stock": {"point_change": 0.3, "std": 1.5, "unit": "pct"},
+    "synthetic_bond_yield": {"point_change": 1.0, "std": 6.0, "unit": "bp"}
+  },
+  "events": [
+    {
+      "id": "illustrative_policy_shock",
+      "probability": 0.3,
+      "impacts": {"synthetic_stock": -1.2, "synthetic_bond_yield": 8.0}
+    },
+    {
+      "id": "illustrative_growth_surprise",
+      "probability": 0.2,
+      "impacts": {"synthetic_stock": 0.8, "synthetic_bond_yield": 4.0}
+    }
+  ],
+  "parameters": {"simulations": 10000, "seed": 42, "interval": 0.8},
+  "_warning": "These probabilities, targets and impacts are purely illustrative, NOT current forecasts."
+}
