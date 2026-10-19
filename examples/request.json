@@ -1,0 +1,46 @@
+{
+  "action": "forecast",
+  "data": {
+    "synthetic_index": [
+      100,
+      101,
+      101.5,
+      100.4,
+      100.9,
+      101.9,
+      102.3,
+      102.1,
+      103.2,
+      102.8,
+      103.8,
+      104.2
+    ],
+    "synthetic_yield_pct": [
+      4,
+      4.02,
+      4.01,
+      4.04,
+      4.03,
+      4.05,
+      4.06,
+      4.03,
+      4.04,
+      4.07,
+      4.08,
+      4.06
+    ]
+  },
+  "parameters": {
+    "indicators": [
+      "synthetic_index",
+      "synthetic_yield_pct"
+    ],
+    "method": "drift",
+    "horizon": 5,
+    "lookback": 10,
+    "interval": 0.8,
+    "simulations": 500,
+    "seed": 2026,
+    "as_of": "2026-10-16"
+  }
+}
