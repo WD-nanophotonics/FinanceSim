@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.2.0",
+  "kind": "daily_review",
+  "as_of": "2026-10-19T17:39:58+09:00",
+  "payload": {
+    "date": "2026-10-19",
+    "status": "first_primary_source_observations",
+    "observations": [
+      {
+        "name": "US Weekly Economic Index",
+        "reference_week_ended": "2026-10-10",
+        "latest_value": 3.05,
+        "previous_week_value": 2.68,
+        "change_percentage_points": 0.37,
+        "units": "percentage-points-of-four-quarter-GDP-growth-scaled-WEI",
+        "source_evidence_id": "dallas-wei-20261015",
+        "caveat": "Index is revised retrospectively; preserve first-visible values and source date."
+      },
+      {
+        "name": "US initial unemployment insurance claims",
+        "reference_week_ended": "2026-10-10",
+        "initial_claims_persons": 199000,
+        "difference_from_revised_prior_persons": 1000,
+        "revised_prior_week_persons": 198000,
+        "units": "persons, seasonally adjusted",
+        "source_evidence_id": "dol-ui-20261015",
+        "caveat": "Prior week's claims are revised. Store advance release vintage."
+      }
+    ],
+    "working_hypotheses": [
+      {
+        "id": "early-observation-labor",
+        "statement": "The latest claims release alone does not identify a clear acceleration in layoffs.",
+        "confidence": "low",
+        "check": "Compare further weekly claims, revisions and the 4-week moving average; avoid single-week inference."
+      }
+    ],
+    "simulation": {
+      "performed": false,
+      "reason": "Observed releases only; data ingestion and authentic model run not yet completed."
+    },
+    "research_stage": "No weekly forecast has been frozen yet. This daily observation cannot be scored as an out-of-sample prediction."
+  },
+  "evidence": [
+    {
+      "id": "dallas-wei-20261015",
+      "url": "https://www.dallasfed.org/research/wei",
+      "claim": "WEI updated Oct 15 2026: 3.05 for week ending Oct 10 versus 2.68 for Oct 3; 13-week mean 2.91.",
+      "published_at": "2026-10-15T00:00:00-05:00",
+      "accessed_at": "2026-10-19T17:39:58+09:00",
+      "publication_time_precision": "date-only; 00:00 is a lower-bound placeholder, not actual release clock time",
+      "feature": {
+        "name": "wei_weekly_change",
+        "value": 0.37,
+        "unit": "index-points"
+      }
+    },
+    {
+      "id": "dol-ui-20261015",
+      "url": "https://www.dol.gov/index.php/newsroom/releases?agency=39&state=All&topic=All&year=all",
+      "claim": "Oct 15 2026 advance initial claims 199000 for week ending Oct 10, up 1000 from revised prior 198000.",
+      "published_at": "2026-10-15T00:00:00-04:00",
+      "accessed_at": "2026-10-19T17:39:58+09:00",
+      "publication_time_precision": "date-only; 00:00 is a lower-bound placeholder, not actual release clock time",
+      "feature": {
+        "name": "weekly_initial_claims",
+        "value": 199000,
+        "unit": "persons"
+      }
+    }
+  ],
+  "sha256": "a2bebb4f9fed185dad0a92efad14d0e6e30c52bc32af06454a75e3a805bb9a6c"
+}
