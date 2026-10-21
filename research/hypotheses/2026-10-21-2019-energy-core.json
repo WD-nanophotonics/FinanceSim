@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.2.0",
+  "kind": "hypothesis",
+  "as_of": "2026-10-21T20:19:00+09:00",
+  "payload": {
+    "id": "H20261021-energy-core-pass-through",
+    "status": "open_low_confidence",
+    "claim": "Recent energy-price rises plausibly explain much of headline inflation acceleration, but UK core/services acceleration could signal broader persistence. One monthly release insufficient for a causal claim.",
+    "evidence_ids": [
+      "ons-20261021-sep2026",
+      "bls-20261014-sepcpi"
+    ],
+    "prior_confidence": "unquantified",
+    "current_confidence": "low",
+    "falsification": "At the next two UK ONS CPI releases (2026-11-18 and December scheduled publication) check whether core and services 12-month rates keep rising. A return toward September-minus-0.2pp in core/services weakens broad pass-through account; oil reversal may separately weaken headline.",
+    "next_test": "No statistical link to financial asset returns asserted; distinguish energy base effects from underlying inflation."
+  },
+  "evidence": [
+    {
+      "id": "ons-20261021-sep2026",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026",
+      "claim": "UK September CPI 3.5% y/y versus August 3.1%; core 2.8% versus 2.6%; services 3.7% versus 3.4%.",
+      "published_at": "2026-10-21T07:00:00+01:00",
+      "accessed_at": "2026-10-21T20:14:00+09:00",
+      "feature": {
+        "name": "uk_cpi_yoy_monthly_change_pp",
+        "value": 0.4,
+        "unit": "percentage_points"
+      }
+    },
+    {
+      "id": "bls-20261014-sepcpi",
+      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "claim": "US September 2026 CPI +0.6% m/m and +3.7% y/y; gasoline +9.1% m/m.",
+      "published_at": "2026-10-14T08:30:00-04:00",
+      "accessed_at": "2026-10-21T20:14:00+09:00",
+      "feature": {
+        "name": "us_sep_cpi_yoy",
+        "value": 3.7,
+        "unit": "percent"
+      }
+    }
+  ],
+  "sha256": "6c4fe3e64ecf26833368fe7e78e236851aebfeb343d66ccd563f70535bbf5935"
+}
