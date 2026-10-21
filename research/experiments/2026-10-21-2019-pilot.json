@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.2.0",
+  "kind": "experiment",
+  "as_of": "2026-10-21T20:19:00+09:00",
+  "payload": {
+    "hypothesis_id": "Q001",
+    "code_commit": "53a2fa4ceb7a626581bce716309a53535dd4fb3f",
+    "baseline": "naive",
+    "dataset_cutoff": "2026-10-21T20:14:00+09:00",
+    "result": "Local statistical and scenario pilot executed; quantitative results summarized in research/daily/2026-10-21.json. Inputs in research/inputs. No predictive accuracy claim.",
+    "simulation_seed": 20261021
+  },
+  "evidence": []
+}
