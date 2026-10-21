@@ -1,0 +1,98 @@
+{
+  "action": "scenarios",
+  "baseline": {
+    "sp500_week_pct": {
+      "point_change": 0,
+      "std": 2,
+      "unit": "percent_change"
+    },
+    "us10y_week_bp": {
+      "point_change": 0,
+      "std": 10,
+      "unit": "basis_points"
+    },
+    "wti_week_pct": {
+      "point_change": 0,
+      "std": 5,
+      "unit": "percent_change"
+    },
+    "gold_week_pct": {
+      "point_change": 0,
+      "std": 2.5,
+      "unit": "percent_change"
+    },
+    "usdjpy_week_pct": {
+      "point_change": 0,
+      "std": 1.5,
+      "unit": "percent_change"
+    }
+  },
+  "events": [
+    {
+      "id": "oil_supply_disruption_intensifies",
+      "probability": 0.35,
+      "impacts": {
+        "sp500_week_pct": -1.5,
+        "us10y_week_bp": 8,
+        "wti_week_pct": 7,
+        "gold_week_pct": 1,
+        "usdjpy_week_pct": 0.7
+      }
+    },
+    {
+      "id": "us_hawkish_rate_repricing",
+      "probability": 0.45,
+      "impacts": {
+        "sp500_week_pct": -1,
+        "us10y_week_bp": 8,
+        "wti_week_pct": -1.5,
+        "gold_week_pct": -1.5,
+        "usdjpy_week_pct": 0.8
+      }
+    },
+    {
+      "id": "ai_capex_resilience",
+      "probability": 0.5,
+      "impacts": {
+        "sp500_week_pct": 1.2,
+        "us10y_week_bp": 3,
+        "wti_week_pct": 0.8,
+        "gold_week_pct": -0.5,
+        "usdjpy_week_pct": 0.1
+      }
+    },
+    {
+      "id": "china_domestic_demand_softens",
+      "probability": 0.35,
+      "impacts": {
+        "sp500_week_pct": -0.8,
+        "us10y_week_bp": -4,
+        "wti_week_pct": -2,
+        "gold_week_pct": 0.3,
+        "usdjpy_week_pct": -0.2
+      }
+    }
+  ],
+  "parameters": {
+    "simulations": 8000,
+    "seed": 20261021,
+    "interval": 0.8
+  },
+  "_metadata": {
+    "status": "unfitted_subjective_sensitivity_scenario_experiment_not_weekly_forecast",
+    "horizon": "illustrative one week; no specified forecast origin / settlement",
+    "source_dates": [
+      "2026-10-14",
+      "2026-10-19",
+      "2026-10-21"
+    ],
+    "not_official_forecast": true,
+    "data_warning": "Event odds, conditional impacts and baseline stds chosen by researcher as assumptions, not estimated historical parameters; events wrongly assumed mutually independent; all predictive statistics conditional on model assumptions.",
+    "context_urls": [
+      "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026",
+      "https://www.stats.gov.cn/sj/zxfb/202610/t20261020_1965658.html",
+      "https://www.reuters.com/world/asia-pacific/japans-september-exports-rise-167-helped-by-chip-demand-2026-10-21/"
+    ]
+  }
+}
