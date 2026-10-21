@@ -1,0 +1,194 @@
+{
+  "schema_version": "0.2.0",
+  "kind": "daily_review",
+  "as_of": "2026-10-21T20:19:00+09:00",
+  "payload": {
+    "date": "2026-10-21",
+    "status": "sourced_research_and_local_model_execution",
+    "macro_features": [
+      {
+        "name": "uk_sep_cpi_yoy",
+        "value": 3.5,
+        "prior": 3.1,
+        "change_pp": 0.4,
+        "consensus": 3.4,
+        "surprise_pp": 0.1,
+        "units": "percent",
+        "source_evidence_id": "ons-20261021-sep2026",
+        "consensus_source": "Reuters via Oct21 reporting; consensus method not independently audited"
+      },
+      {
+        "name": "uk_sep_core_cpi_yoy",
+        "value": 2.8,
+        "prior": 2.6,
+        "change_pp": 0.2,
+        "units": "percent",
+        "source_evidence_id": "ons-20261021-sep2026"
+      },
+      {
+        "name": "uk_sep_services_cpi_yoy",
+        "value": 3.7,
+        "prior": 3.4,
+        "change_pp": 0.3,
+        "units": "percent",
+        "source_evidence_id": "ons-20261021-sep2026"
+      },
+      {
+        "name": "japan_sep_exports_yoy",
+        "value": 16.7,
+        "consensus": 20.1,
+        "surprise_pp": -3.4,
+        "units": "percent",
+        "source_evidence_id": "reuters-20261021-japantrade"
+      },
+      {
+        "name": "japan_sep_imports_yoy",
+        "value": 18.9,
+        "consensus": 19.6,
+        "surprise_pp": -0.7,
+        "units": "percent",
+        "source_evidence_id": "reuters-20261021-japantrade"
+      },
+      {
+        "name": "japan_sep_trade_balance",
+        "value": -536.6,
+        "consensus": -181,
+        "surprise": -355.6,
+        "units": "billion_jpy",
+        "source_evidence_id": "reuters-20261021-japantrade"
+      },
+      {
+        "name": "china_q3_real_gdp_yoy",
+        "value": 4.5,
+        "prior_q2": 4.3,
+        "change_pp": 0.2,
+        "units": "percent",
+        "source_evidence_id": "nbs-20261020-q3gdp"
+      },
+      {
+        "name": "us_sep_cpi_yoy",
+        "value": 3.7,
+        "prior_aug": 3.4,
+        "change_pp": 0.3,
+        "units": "percent",
+        "source_evidence_id": "bls-20261014-sepcpi"
+      },
+      {
+        "name": "gold_spot_oct21_intraday",
+        "value": 4121.27,
+        "units": "USD_per_troy_oz",
+        "source_evidence_id": "reuters-20261021-gold",
+        "caveat": "intraday; not suitable as official weekly close"
+      }
+    ],
+    "pilot_summary": {
+      "experiment_path": "research/experiments/2026-10-21-2019-pilot.json",
+      "claims_next_week_exploratory_point_thousand": 198.42857142857142,
+      "claims_prior_thousand": 199,
+      "claims_drift_interval80_thousand": [
+        193.30890787009585,
+        203.54823498704698
+      ],
+      "claims_tiny_backtest_n": 4,
+      "scenario_sp500_assumption_only_mean_pct": -0.6643112800941391,
+      "scenario_wti_assumption_only_mean_pct": 1.4973672277595524,
+      "all_samples_reproducible": true,
+      "official_weekly_forecast": false
+    },
+    "reflection": {
+      "interpretations": [
+        "UK and US headline inflation strengthened; both have an identifiable energy component, but UK core and services rising shows some broader price pressure.",
+        "Japanese nominal export growth remained high but below median expectations; nominal values do not independently identify real export strength.",
+        "China Q3 GDP beat market consensus slightly while the industry/retail gap suggests uneven demand; cannot infer next-week equity direction."
+      ],
+      "alternatives": [
+        "Oil supply shocks could reverse rapidly; geopolitical news has nonlinear jump risk.",
+        "Exchange-rate effects can make Japanese trade growth look stronger without real volume increase.",
+        "Releases are backward-looking and part may have been priced before publication.",
+        "Claims are very low and recent eight points cannot support tail probabilities."
+      ]
+    },
+    "next_steps": [
+      "Acquire timestamped official claims release vintages and at least 52 observations.",
+      "Create Friday-close asset data snapshots for Sat three-arm forecasts; abstain if incomplete.",
+      "Check next claims release 2026-10-22; do not rewrite pilot after outcome.",
+      "Estimate volatility empirically; avoid promoting uncalibrated scenario outputs."
+    ]
+  },
+  "evidence": [
+    {
+      "id": "ons-20261021-sep2026",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026",
+      "claim": "UK September CPI 3.5% y/y versus August 3.1%; core 2.8% versus 2.6%; services 3.7% versus 3.4%.",
+      "published_at": "2026-10-21T07:00:00+01:00",
+      "accessed_at": "2026-10-21T20:14:00+09:00",
+      "feature": {
+        "name": "uk_cpi_yoy_monthly_change_pp",
+        "value": 0.4,
+        "unit": "percentage_points"
+      }
+    },
+    {
+      "id": "nbs-20261020-q3gdp",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261020_1965658.html",
+      "claim": "China Q3 2026 real GDP grew 4.5% y/y; first three quarters 4.6%.",
+      "published_at": "2026-10-20T09:30:00+08:00",
+      "accessed_at": "2026-10-21T20:14:00+09:00",
+      "feature": {
+        "name": "china_q3_2026_gdp_yoy",
+        "value": 4.5,
+        "unit": "percent"
+      }
+    },
+    {
+      "id": "bls-20261014-sepcpi",
+      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "claim": "US September 2026 CPI +0.6% m/m and +3.7% y/y; gasoline +9.1% m/m.",
+      "published_at": "2026-10-14T08:30:00-04:00",
+      "accessed_at": "2026-10-21T20:14:00+09:00",
+      "feature": {
+        "name": "us_sep_cpi_yoy",
+        "value": 3.7,
+        "unit": "percent"
+      }
+    },
+    {
+      "id": "reuters-20261021-japantrade",
+      "url": "https://uk.marketscreener.com/news/japan-september-exports-rise-16-7-y-y-slower-than-forecast-ce785cd8dc8fff24",
+      "claim": "Reuters October 21: Japan Sept exports 16.7% y/y vs 20.1% expected, imports 18.9% vs 19.6%, balance -536.6bn yen vs -181bn expected.",
+      "published_at": "2026-10-21T00:57:00+01:00",
+      "accessed_at": "2026-10-21T20:14:00+09:00",
+      "feature": {
+        "name": "japan_sep_exports_surprise_pp",
+        "value": -3.4,
+        "unit": "percentage_points"
+      }
+    },
+    {
+      "id": "investing-claims-asof-20261021",
+      "url": "https://www.investing.com/economic-calendar/initial-jobless-claims-294",
+      "claim": "As-of-Oct21 dynamic release calendar lists U.S. initial claims in thousands on Aug27, Sep3, Sep10, Sep17, Sep24, Oct1, Oct8, Oct15: 203,206,206,196,197,197,197,199.",
+      "published_at": "2026-10-21T20:14:00+09:00",
+      "accessed_at": "2026-10-21T20:14:00+09:00",
+      "publication_time_precision": "snapshot capture proxy; dynamic page, historical individual vintages not authenticated",
+      "feature": {
+        "name": "us_claims_oct15_thousand",
+        "value": 199,
+        "unit": "thousand_persons"
+      }
+    },
+    {
+      "id": "reuters-20261021-gold",
+      "url": "https://uk.marketscreener.com/news/gold-extends-losses-to-near-one-week-low-on-elevated-oil-prices-ce785cd8d088f324",
+      "claim": "Reuters spot gold $4,121.27/oz at 09:10 GMT Oct 21, -0.1% on session; quote is intraday, not close.",
+      "published_at": "2026-10-21T10:33:00+01:00",
+      "accessed_at": "2026-10-21T20:14:00+09:00",
+      "feature": {
+        "name": "gold_spot_intraday_usd_per_oz",
+        "value": 4121.27,
+        "unit": "USD_per_troy_oz"
+      }
+    }
+  ],
+  "sha256": "933ec36731888210084b08dadacf62347995de79524e19a0f4de61211ab0d33b"
+}
