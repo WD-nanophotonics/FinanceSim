@@ -35,3 +35,7 @@ jobs:
         run: |
           python research/scripts/generate_2026_10_24_1252_supplement.py > /tmp/financesim_supplement.json
           python -c 'import json; from financesim import verify; x=json.load(open("/tmp/financesim_supplement.json")); assert verify(x); p=x["payload"]; assert len(p["B_market_risk_state"]) == 5; assert len(p["A_C_original_target_interval_50_and_90"]) == 17; print("FINANCESIM_SUPPLEMENT_JSON_START"); print(json.dumps(x,ensure_ascii=False,sort_keys=True)); print("FINANCESIM_SUPPLEMENT_JSON_END")'
+      - name: Verify committed addendum exactly matches model replay
+        run: |
+          python research/scripts/generate_2026_10_24_1252_supplement.py > /tmp/financesim_supplement_replayed.json
+          python -c 'import json; from financesim import verify; a=json.load(open("research/weekly/2026-10-24-1252-risk-and-interval-supplement.json")); b=json.load(open("/tmp/financesim_supplement_replayed.json")); assert verify(a) and a==b; print("Risk/interval supplement replay is byte-equivalent after JSON parse")'
