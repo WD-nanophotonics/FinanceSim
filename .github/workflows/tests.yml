@@ -31,3 +31,7 @@ jobs:
         run: |
           python research/scripts/generate_2026_10_24.py > /tmp/financesim_weekly.json
           python -c 'import json; from financesim import verify; x=json.load(open("/tmp/financesim_weekly.json")); assert verify(x); assert len(x["payload"]["predictions"]) >= 15; print("FINANCESIM_JSON_START"); print(json.dumps(x,ensure_ascii=False,sort_keys=True)); print("FINANCESIM_JSON_END")'
+      - name: Generate post-noon risk-state/50-90 supplement
+        run: |
+          python research/scripts/generate_2026_10_24_1252_supplement.py > /tmp/financesim_supplement.json
+          python -c 'import json; from financesim import verify; x=json.load(open("/tmp/financesim_supplement.json")); assert verify(x); p=x["payload"]; assert len(p["B_market_risk_state"]) == 5; assert len(p["A_C_original_target_interval_50_and_90"]) == 17; print("FINANCESIM_SUPPLEMENT_JSON_START"); print(json.dumps(x,ensure_ascii=False,sort_keys=True)); print("FINANCESIM_SUPPLEMENT_JSON_END")'
