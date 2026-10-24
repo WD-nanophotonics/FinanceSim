@@ -33,3 +33,10 @@ Current stage: **v0.2 research memory and scenario exploration**.
 2. Link evidence IDs to weekly scenario inputs and freeze three arms before outcomes.
 3. Evaluation dashboard with week-wise skill vs zero-change, lagged-value and consensus.
 4. Extend scenario dependencies and error calibration only after empirical justification.
+
+## After-noon reporting-format supplement, 2026-10-24
+- At approximately 12:52 JST a **separate**, append-only supplement was computed from the unchanged October 23 as-of market snapshot and pre-declared scenarios. Its public commit is `c77e427118428fd543d96fad612436246caf125a`; file: `research/weekly/2026-10-24-1252-risk-and-interval-supplement.json`; record SHA-256: `83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9`. **Do not call this addendum a 12:00 pre-registration.**
+- The supplement adds five group-B risk-state forecasts, plus model-conditional 50% and 90% intervals for each original group-A and group-C target, while leaving all 17 original three-arm points, probabilities and 80% intervals unchanged. For hybrid market arms the interval sample exactly replays the original 15,000-draw mixture; other intervals are Gaussian approximations from frozen 80% widths and are uncalibrated.
+- Weekly user-facing format from next report is strictly grouped by A economic releases/planned events, B market risk state, C financial asset prices; this grouping is distinct from the three independent forecasting arms (LLM, numerical baseline, hybrid). Score A/B/C per target with frozen comparison baselines, and disclose overlaps (group-B states are derived from group-C assets).
+- Known metadata issue to audit on settlement: Tokyo cash-equity close is 15:30 JST (Oct24 archive says 15:00 for Nikkei). Keep historical forecast file untouched and record the settlement convention explicitly.
+- As of Oct24 there are **zero** validated prior weekly forecast outcomes; skill and 50/90 empirical coverage remain unavailable.
