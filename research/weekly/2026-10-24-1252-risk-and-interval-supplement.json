@@ -1,0 +1,863 @@
+{
+  "as_of": "2026-10-24T12:52:12+09:00",
+  "evidence": [],
+  "kind": "daily_review",
+  "payload": {
+    "A_C_original_target_interval_50_and_90": {
+      "boj_hold_oct30": {
+        "hybrid": {
+          "interval_50": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ],
+          "method": "exact discrete Bernoulli quantiles",
+          "point_original": 0.68,
+          "prob_positive_original": 0.68
+        },
+        "llm": {
+          "interval_50": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ],
+          "method": "exact discrete Bernoulli quantiles",
+          "point_original": 0.69,
+          "prob_positive_original": 0.69
+        },
+        "statistical": {
+          "interval_50": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ],
+          "method": "exact discrete Bernoulli quantiles",
+          "point_original": 0.5,
+          "prob_positive_original": 0.5
+        }
+      },
+      "csi300_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -1.5177,
+            2.0886
+          ],
+          "interval_90": [
+            -4.117,
+            4.749
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": 0.2839,
+          "prob_positive_original": 0.5393
+        },
+        "llm": {
+          "interval_50": [
+            -1.6821,
+            1.8821
+          ],
+          "interval_90": [
+            -4.2459,
+            4.4459
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0.1,
+          "prob_positive_original": 0.51
+        },
+        "statistical": {
+          "interval_50": [
+            -1.7821,
+            1.7821
+          ],
+          "interval_90": [
+            -4.3459,
+            4.3459
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "ecb_hold_oct29": {
+        "hybrid": {
+          "interval_50": [
+            1,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ],
+          "method": "exact discrete Bernoulli quantiles",
+          "point_original": 0.84,
+          "prob_positive_original": 0.84
+        },
+        "llm": {
+          "interval_50": [
+            1,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ],
+          "method": "exact discrete Bernoulli quantiles",
+          "point_original": 0.86,
+          "prob_positive_original": 0.86
+        },
+        "statistical": {
+          "interval_50": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ],
+          "method": "exact discrete Bernoulli quantiles",
+          "point_original": 0.5,
+          "prob_positive_original": 0.5
+        }
+      },
+      "fomc_hold_oct28": {
+        "hybrid": {
+          "interval_50": [
+            1,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ],
+          "method": "exact discrete Bernoulli quantiles",
+          "point_original": 0.88,
+          "prob_positive_original": 0.88
+        },
+        "llm": {
+          "interval_50": [
+            1,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ],
+          "method": "exact discrete Bernoulli quantiles",
+          "point_original": 0.9,
+          "prob_positive_original": 0.9
+        },
+        "statistical": {
+          "interval_50": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ],
+          "method": "exact discrete Bernoulli quantiles",
+          "point_original": 0.5,
+          "prob_positive_original": 0.5
+        }
+      },
+      "gold_spot_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -2.4096,
+            1.6327
+          ],
+          "interval_90": [
+            -5.431,
+            4.5315
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": -0.3884,
+          "prob_positive_original": 0.4531
+        },
+        "llm": {
+          "interval_50": [
+            -2.4235,
+            1.6235
+          ],
+          "interval_90": [
+            -5.3346,
+            4.5346
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -0.4,
+          "prob_positive_original": 0.45
+        },
+        "statistical": {
+          "interval_50": [
+            -1.6753,
+            1.6753
+          ],
+          "interval_90": [
+            -4.0855,
+            4.0855
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "kospi_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -4.115,
+            4.6794
+          ],
+          "interval_90": [
+            -10.5,
+            10.8661
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": 0.2822,
+          "prob_positive_original": 0.5207
+        },
+        "llm": {
+          "interval_50": [
+            -5.6486,
+            3.0486
+          ],
+          "interval_90": [
+            -11.9048,
+            9.3048
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -1.3,
+          "prob_positive_original": 0.41
+        },
+        "statistical": {
+          "interval_50": [
+            -4.3486,
+            4.3486
+          ],
+          "interval_90": [
+            -10.6048,
+            10.6048
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "nasdaq100_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -2.3294,
+            2.5334
+          ],
+          "interval_90": [
+            -5.7376,
+            5.883
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": 0.1096,
+          "prob_positive_original": 0.5113
+        },
+        "llm": {
+          "interval_50": [
+            -3.1877,
+            1.3877
+          ],
+          "interval_90": [
+            -6.4789,
+            4.6789
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -0.9,
+          "prob_positive_original": 0.4
+        },
+        "statistical": {
+          "interval_50": [
+            -2.2877,
+            2.2877
+          ],
+          "interval_90": [
+            -5.5789,
+            5.5789
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "nikkei225_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -1.8275,
+            1.9704
+          ],
+          "interval_90": [
+            -4.6612,
+            4.7046
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": 0.073,
+          "prob_positive_original": 0.5153
+        },
+        "llm": {
+          "interval_50": [
+            -2.8885,
+            0.8885
+          ],
+          "interval_90": [
+            -5.6055,
+            3.6055
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -1,
+          "prob_positive_original": 0.4
+        },
+        "statistical": {
+          "interval_50": [
+            -1.7903,
+            1.7903
+          ],
+          "interval_90": [
+            -4.3659,
+            4.3659
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "sp500_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -1.0314,
+            1.2476
+          ],
+          "interval_90": [
+            -2.6645,
+            2.8876
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": 0.0956,
+          "prob_positive_original": 0.524
+        },
+        "llm": {
+          "interval_50": [
+            -1.6301,
+            0.4301
+          ],
+          "interval_90": [
+            -3.1122,
+            1.9122
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -0.6,
+          "prob_positive_original": 0.42
+        },
+        "statistical": {
+          "interval_50": [
+            -1.0301,
+            1.0301
+          ],
+          "interval_90": [
+            -2.5122,
+            2.5122
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "stoxx600_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -1.3504,
+            0.9227
+          ],
+          "interval_90": [
+            -3.0298,
+            2.6077
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": -0.2165,
+          "prob_positive_original": 0.4479
+        },
+        "llm": {
+          "interval_50": [
+            -1.5792,
+            0.5792
+          ],
+          "interval_90": [
+            -3.1318,
+            2.1318
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -0.5,
+          "prob_positive_original": 0.44
+        },
+        "statistical": {
+          "interval_50": [
+            -1.0354,
+            1.0354
+          ],
+          "interval_90": [
+            -2.525,
+            2.525
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "us10y_par_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -9.0286,
+            16.8448
+          ],
+          "interval_90": [
+            -27.2269,
+            35.3111
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": 3.8879,
+          "prob_positive_original": 0.5783
+        },
+        "llm": {
+          "interval_50": [
+            -9.3415,
+            15.3415
+          ],
+          "interval_90": [
+            -27.0967,
+            33.0967
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 3,
+          "prob_positive_original": 0.55
+        },
+        "statistical": {
+          "interval_50": [
+            -12.3415,
+            12.3415
+          ],
+          "interval_90": [
+            -30.0967,
+            30.0967
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "us_initial_claims_first_release_20261029": {
+        "hybrid": {
+          "interval_50": [
+            -4.2761,
+            1.9427
+          ],
+          "interval_90": [
+            -8.7495,
+            6.4161
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -1.1667,
+          "prob_positive_original": 0.47
+        },
+        "llm": {
+          "interval_50": [
+            -5.9999,
+            3.9999
+          ],
+          "interval_90": [
+            -13.1931,
+            11.1931
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -1,
+          "prob_positive_original": 0.45
+        },
+        "statistical": {
+          "interval_50": [
+            -3.9164,
+            1.2498
+          ],
+          "interval_90": [
+            -7.6326,
+            4.966
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -1.3333,
+          "prob_positive_original": 0.3639
+        }
+      },
+      "us_q3_gdp_advance_20261029": {
+        "hybrid": {
+          "interval_50": [
+            0.2605,
+            1.8395
+          ],
+          "interval_90": [
+            -0.8752,
+            2.9752
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 1.05,
+          "prob_positive_original": 0.75
+        },
+        "llm": {
+          "interval_50": [
+            -0.0421,
+            1.6421
+          ],
+          "interval_90": [
+            -1.2536,
+            2.8536
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0.8,
+          "prob_positive_original": 0.72
+        },
+        "statistical": {
+          "interval_50": [
+            0.2105,
+            1.7895
+          ],
+          "interval_90": [
+            -0.9252,
+            2.9252
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 1,
+          "prob_positive_original": 0.75
+        }
+      },
+      "us_sep_core_pce_yoy_first_release_20261029": {
+        "hybrid": {
+          "interval_50": [
+            -0.0447,
+            0.2447
+          ],
+          "interval_90": [
+            -0.253,
+            0.453
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0.1,
+          "prob_positive_original": 0.61
+        },
+        "llm": {
+          "interval_50": [
+            -0.051,
+            0.291
+          ],
+          "interval_90": [
+            -0.2971,
+            0.5371
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0.12,
+          "prob_positive_original": 0.62
+        },
+        "statistical": {
+          "interval_50": [
+            -0.0579,
+            0.2579
+          ],
+          "interval_90": [
+            -0.285,
+            0.485
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0.1,
+          "prob_positive_original": 0.6
+        }
+      },
+      "us_wei_first_release_20261029": {
+        "hybrid": {
+          "interval_50": [
+            -0.2753,
+            0.4353
+          ],
+          "interval_90": [
+            -0.7864,
+            0.9464
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0.08,
+          "prob_positive_original": 0.56
+        },
+        "llm": {
+          "interval_50": [
+            -0.3447,
+            0.4447
+          ],
+          "interval_90": [
+            -0.9126,
+            1.0126
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0.05,
+          "prob_positive_original": 0.55
+        },
+        "statistical": {
+          "interval_50": [
+            -0.3158,
+            0.3158
+          ],
+          "interval_90": [
+            -0.7701,
+            0.7701
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "usdjpy_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -0.8165,
+            1.1322
+          ],
+          "interval_90": [
+            -2.182,
+            2.5025
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": 0.1572,
+          "prob_positive_original": 0.5453
+        },
+        "llm": {
+          "interval_50": [
+            -1.3443,
+            0.5443
+          ],
+          "interval_90": [
+            -2.7028,
+            1.9028
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": -0.4,
+          "prob_positive_original": 0.46
+        },
+        "statistical": {
+          "interval_50": [
+            -0.71,
+            0.71
+          ],
+          "interval_90": [
+            -1.7316,
+            1.7316
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      },
+      "wti_dec2026_wk_20261030": {
+        "hybrid": {
+          "interval_50": [
+            -4.0742,
+            5.2062
+          ],
+          "interval_90": [
+            -11.0114,
+            11.83
+          ],
+          "method": "same seeded mixture Monte Carlo as original, quantiles 25/75 and 5/95",
+          "point_original": 0.549,
+          "prob_positive_original": 0.5402
+        },
+        "llm": {
+          "interval_50": [
+            -2.5469,
+            5.5469
+          ],
+          "interval_90": [
+            -8.3691,
+            11.3691
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 1.5,
+          "prob_positive_original": 0.57
+        },
+        "statistical": {
+          "interval_50": [
+            -4.0469,
+            4.0469
+          ],
+          "interval_90": [
+            -9.8691,
+            9.8691
+          ],
+          "method": "unverified Gaussian approximation derived from frozen 80pct width",
+          "point_original": 0,
+          "prob_positive_original": 0.5
+        }
+      }
+    },
+    "B_market_risk_state": [
+      {
+        "baseline_event_probability": 0.1904,
+        "confidence": "low_unverified",
+        "definition": "Absolute simple S&P500 Oct30 / Oct23 percent return; event if greater than 2.0%",
+        "evaluation": "Use exact frozen Oct23-to-Oct30 source/maturity market closes; not before Oct30",
+        "event_probability": 0.2311,
+        "event_threshold": "abs(return)>2.0%",
+        "interval_50": [
+          0.5412,
+          1.9259
+        ],
+        "interval_90": [
+          0.1029,
+          3.33
+        ],
+        "models": "predeclared six-event Gaussian Monte Carlo, 15000 draws",
+        "point": 1.3461,
+        "settle_on": "2026-10-30",
+        "target_id": "risk_sp500_abs_weekly_move",
+        "unit": "percent"
+      },
+      {
+        "baseline_event_probability": 0.4047,
+        "confidence": "low_unverified",
+        "definition": "Absolute Dec26 WTI percent return from Oct23 to Oct30 same contract settlements",
+        "evaluation": "Use exact frozen Oct23-to-Oct30 source/maturity market closes; not before Oct30",
+        "event_probability": 0.4708,
+        "event_threshold": "abs(return)>5.0%",
+        "interval_50": [
+          2.2028,
+          7.9844
+        ],
+        "interval_90": [
+          0.432,
+          13.5187
+        ],
+        "models": "predeclared six-event Gaussian Monte Carlo, 15000 draws",
+        "point": 5.5409,
+        "settle_on": "2026-10-30",
+        "target_id": "risk_wti_abs_weekly_move",
+        "unit": "percent"
+      },
+      {
+        "baseline_event_probability": 0.4123,
+        "confidence": "low_unverified",
+        "definition": "Absolute US Treasury 10Y par-yield Oct30 minus Oct23 change in basis points",
+        "evaluation": "Use exact frozen Oct23-to-Oct30 source/maturity market closes; not before Oct30",
+        "event_probability": 0.4448,
+        "event_threshold": "abs(change)>15bp",
+        "interval_50": [
+          6.158,
+          22.35
+        ],
+        "interval_90": [
+          1.2044,
+          38.1013
+        ],
+        "models": "predeclared six-event Gaussian Monte Carlo, 15000 draws",
+        "point": 15.5435,
+        "settle_on": "2026-10-30",
+        "target_id": "risk_us10y_abs_weekly_move",
+        "unit": "basis_points"
+      },
+      {
+        "baseline_event_probability": 0.2085,
+        "confidence": "low_unverified",
+        "definition": "Number of S&P500, NASDAQ100, STOXX600, Nikkei225, KOSPI, CSI300 with Oct23-to-Oct30 returns <= -1.5%",
+        "evaluation": "Use exact frozen Oct23-to-Oct30 source/maturity market closes; not before Oct30",
+        "event_probability": 0.2206,
+        "event_threshold": "at least 3 of six equity indexes return below -1.5%",
+        "interval_50": [
+          1,
+          2
+        ],
+        "interval_90": [
+          0,
+          4
+        ],
+        "models": "predeclared six-event Gaussian Monte Carlo, 15000 draws",
+        "point": 1.6517,
+        "settle_on": "2026-10-30",
+        "target_id": "risk_global_equity_down_count",
+        "unit": "count_0to6"
+      },
+      {
+        "baseline_event_probability": 0.0193,
+        "confidence": "low_unverified",
+        "definition": "Binary joint stress state at Oct30 closes: S&P500 return <=-2% AND December WTI return >=+5%; shared event shocks preserve assumed correlation",
+        "evaluation": "Use exact frozen Oct23-to-Oct30 source/maturity market closes; not before Oct30",
+        "event_probability": 0.0366,
+        "event_threshold": "SP500<=-2% AND WTI>=+5%",
+        "interval_50": [
+          0,
+          0
+        ],
+        "interval_90": [
+          0,
+          0
+        ],
+        "models": "predeclared six-event Gaussian Monte Carlo, 15000 draws",
+        "point": 0.0366,
+        "settle_on": "2026-10-30",
+        "target_id": "risk_equity_oil_joint_tail",
+        "unit": "binary"
+      }
+    ],
+    "classification": {
+      "A_macroeconomic_and_planned_events": [
+        "us_initial_claims_first_release_20261029",
+        "us_wei_first_release_20261029",
+        "us_q3_gdp_advance_20261029",
+        "us_sep_core_pce_yoy_first_release_20261029",
+        "fomc_hold_oct28",
+        "ecb_hold_oct29",
+        "boj_hold_oct30"
+      ],
+      "B_market_risk_state": [
+        "risk_sp500_abs_weekly_move",
+        "risk_wti_abs_weekly_move",
+        "risk_us10y_abs_weekly_move",
+        "risk_global_equity_down_count",
+        "risk_equity_oil_joint_tail"
+      ],
+      "C_financial_asset_prices": [
+        "sp500_wk_20261030",
+        "nasdaq100_wk_20261030",
+        "stoxx600_wk_20261030",
+        "nikkei225_wk_20261030",
+        "kospi_wk_20261030",
+        "csi300_wk_20261030",
+        "gold_spot_wk_20261030",
+        "usdjpy_wk_20261030",
+        "us10y_par_wk_20261030",
+        "wti_dec2026_wk_20261030"
+      ]
+    },
+    "earlier_information_cutoff": "2026-10-24T12:00:00+09:00",
+    "information_input": "Exactly the previously frozen as-of 2026-10-23 market levels, six subjective events and model priors. No new market outcomes.",
+    "limitations": [
+      "Hybrid market 50/90 intervals exactly replay original Monte Carlo draws, while non-hybrid and macro intervals use Gaussian interpolation from earlier 80% width; the quantile approximation need not agree with independently set direction probabilities.",
+      "Event probabilities and impacts subjective, six historical close observations, Gaussian innovations and independence assumptions unvalidated.",
+      "B metrics reuse C simulated asset changes, and are not independent forecast evidence. Six equities are cross-correlated only via the six scenario events, with otherwise independent residuals.",
+      "Market close definitions in original include a stale 15:00 JST Nikkei target time; resolve using actual 15:30 TSE official close on Oct30 without changing the frozen numeric forecast.",
+      "The daily-report publication time is later than 12:00; don't confuse this with the pre-registered original forecast."
+    ],
+    "original_frozen_path": "research/weekly/2026-10-24-forecast.json",
+    "original_publication_commit": "44b1752d3e6f285a20167dc080c042cf73a30243",
+    "original_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+    "scoring_guidance": "Original 17 targets keep original frozen values and 80% intervals. The separate supplementary 50/90 and risk calculations must be credited only from the supplement's actual Git commit time and not falsely dated as 12:00. For B risk targets compare same-date market-source closes; baseline skill only computable after settlement.",
+    "seed": 20261024,
+    "simulations": 15000,
+    "status": "late_supplement_NOT_retroactive_noon_forecast",
+    "supplement_run_earliest": "2026-10-24T12:52:12+09:00",
+    "title": "Post-noon same-day additive risk and 50/90 interval analysis"
+  },
+  "schema_version": "0.2.0",
+  "sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+}
