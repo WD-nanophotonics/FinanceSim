@@ -27,3 +27,7 @@ jobs:
           python -m financesim examples/research_seal_request.json > /dev/null
       - name: Verify initial committed research record
         run: python -c 'import json; from financesim import verify; assert verify(json.load(open("research/daily/2026-10-19.json", encoding="utf-8")))'
+      - name: Generate and verify Oct24 weekly forecast record
+        run: |
+          python research/scripts/generate_2026_10_24.py > /tmp/financesim_weekly.json
+          python -c 'import json; from financesim import verify; x=json.load(open("/tmp/financesim_weekly.json")); assert verify(x); assert len(x["payload"]["predictions"]) >= 15; print("FINANCESIM_JSON_START"); print(json.dumps(x,ensure_ascii=False,sort_keys=True)); print("FINANCESIM_JSON_END")'
