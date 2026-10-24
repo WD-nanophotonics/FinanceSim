@@ -1,0 +1,215 @@
+{
+  "snapshot_id": "FS-2026-10-24-1200-JST",
+  "information_cutoff": "2026-10-24T12:00:00+09:00",
+  "source_access_window": "2026-10-24 12:00-12:10 JST; access after cutoff but all observations/references published no later than October 23, 2026",
+  "session_dates": [
+    "2026-10-16",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23"
+  ],
+  "market_levels": {
+    "sp500": {
+      "name": "S&P 500",
+      "unit": "index_points",
+      "target_unit": "pct",
+      "values": [
+        7659.44,
+        7690.73,
+        7712.57,
+        7757.17,
+        7663.43,
+        7623.68
+      ],
+      "url": "https://www.investing.com/indices/us-spx-500-historical-data"
+    },
+    "nasdaq100": {
+      "name": "NASDAQ-100 (^NDX)",
+      "unit": "index_points",
+      "target_unit": "pct",
+      "values": [
+        29187.55,
+        29529.35,
+        29490.28,
+        29822.52,
+        28958.69,
+        28967.07
+      ],
+      "url": "https://es.finance.yahoo.com/quote/%5ENDX/history/"
+    },
+    "stoxx600": {
+      "name": "STOXX Europe 600",
+      "unit": "index_points",
+      "target_unit": "pct",
+      "values": [
+        644.74,
+        639.56,
+        638.64,
+        644.49,
+        637.74,
+        635.78
+      ],
+      "url": "https://www.investing.com/indices/stoxx-600-historical-data"
+    },
+    "nikkei225": {
+      "name": "Nikkei 225",
+      "unit": "index_points",
+      "target_unit": "pct",
+      "values": [
+        65324.29,
+        64916.7,
+        64075.42,
+        64621.24,
+        62907.84,
+        62693.16
+      ],
+      "url": "https://hk.finance.yahoo.com/quote/%5EN225/history/"
+    },
+    "kospi": {
+      "name": "KOSPI",
+      "unit": "index_points",
+      "target_unit": "pct",
+      "values": [
+        5668.05,
+        5768.01,
+        5552.74,
+        5735.66,
+        5533.77,
+        5550.3
+      ],
+      "url": "https://ph.investing.com/indices/kospi-historical-data"
+    },
+    "csi300": {
+      "name": "CSI 300",
+      "unit": "index_points",
+      "target_unit": "pct",
+      "values": [
+        4170.61,
+        4174.53,
+        4152.11,
+        4111.93,
+        4036.3,
+        4105.33
+      ],
+      "url": "https://cn.investing.com/indices/csi300-historical-data"
+    },
+    "gold_spot": {
+      "name": "XAU/USD vendor EOD spot",
+      "unit": "USD_per_troy_oz",
+      "target_unit": "pct",
+      "values": [
+        4165.5,
+        4140.87,
+        4124.94,
+        4140.97,
+        4023.91,
+        3995.63
+      ],
+      "url": "https://in.investing.com/currencies/xau-usd-historical-data",
+      "caveat": "Dynamic vendor quote: 2026-10-23 listed 3995.63 at snapshot; other site reloads varied by <0.2 USD. Frozen benchmark uses listed closing price; use same vendor time convention to score."
+    },
+    "usdjpy": {
+      "name": "USD/JPY",
+      "unit": "JPY_per_USD",
+      "target_unit": "pct",
+      "values": [
+        158.01,
+        158.5,
+        158.17,
+        158.14,
+        156.54,
+        156.84
+      ],
+      "url": "https://www.investing.com/currencies/usd-jpy-historical-data"
+    },
+    "us10y_par": {
+      "name": "US Treasury 10Y constant maturity par yield",
+      "unit": "percent_per_year",
+      "target_unit": "basis_points",
+      "values": [
+        5.09,
+        5.15,
+        5.12,
+        5.13,
+        4.96,
+        5
+      ],
+      "url": "https://www.500metrics.com/treasury/yield-curve/10-year",
+      "caveat": "Official daily Treasury 10Y par yield rounded to 0.01 percentage point; not same as 10Y intraday traded yield."
+    }
+  },
+  "additional_quotes": {
+    "wti_dec2026_future": {
+      "2026-10-23": 103.27,
+      "unit": "USD_per_barrel",
+      "url": "https://www.reuters.com/business/energy/oil-little-changed-supply-concern-lingers-amid-houthi-attacks-saudi-arabia-2026-10-23/",
+      "caveat": "December 2026 NYMEX WTI settlement from Reuters; weekly October30 target same December 2026 contract; pre-October23 continuous data possibly mixed roll -> no empirical volatility estimate."
+    }
+  },
+  "macro_known": {
+    "claims_k": {
+      "dates": [
+        "2026-08-20",
+        "2026-08-27",
+        "2026-09-03",
+        "2026-09-10",
+        "2026-09-17",
+        "2026-09-24",
+        "2026-10-01",
+        "2026-10-08",
+        "2026-10-15",
+        "2026-10-22"
+      ],
+      "values": [
+        206,
+        203,
+        206,
+        206,
+        196,
+        197,
+        197,
+        197,
+        199,
+        194
+      ],
+      "source": "https://www.moneycontrol.com/economic-calendar/initial-jobless-claims/360",
+      "caveat": "Historical first-release column from financial calendar; 2026-10-15 initially 199k revised to 200k on October22. Prior readings were not independently vintage-audited."
+    },
+    "wei_latest": {
+      "reference_week": "2026-10-17",
+      "index": 3.33,
+      "revised_previous_week_index": 3.02,
+      "source": "https://www.dallasfed.org/research/wei",
+      "published_on": "2026-10-22"
+    },
+    "gdp_previous_q2_2026_qoq_saar_pct": 2.2,
+    "gdp_q3_public_nowcast_pct": 3.2,
+    "gdp_source": "https://uk.investing.com/analysis/us-economic-growth-expected-to-strengthen-in-q3-gdp-report-200628686",
+    "core_pce_aug2026_yoy_pct": 3,
+    "core_pce_sept_forecast_external_pct": 3.1,
+    "pce_source": "https://www.bea.gov/news/2026/personal-income-and-outlays-August-2026",
+    "pce_forecast_source": "https://www.tmgmsea.com/eng/analysis/market-news/article/united-states-pce-inflation-forecast-and-fed-stance-td-securities-202610151452",
+    "fomc_current_rate_range_pct": [
+      3.75,
+      4
+    ]
+  },
+  "official_schedules": {
+    "fomc_decision": "2026-10-28T14:00:00-04:00",
+    "ecb_decision": "2026-10-29T14:15:00+01:00",
+    "boj_decision_target": "2026-10-30T15:00:00+09:00",
+    "claims": "2026-10-29T08:30:00-04:00",
+    "gdp_advance": "2026-10-29T08:30:00-04:00",
+    "pce": "2026-10-29T08:30:00-04:00",
+    "wei": "2026-10-29T12:00:00-05:00"
+  },
+  "market_calendar_sources": [
+    "https://www.chicagofed.org/utilities/about-us/federal-reserve-calendars",
+    "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+    "https://www.bea.gov/news/schedule/",
+    "https://www.dallasfed.org/research/wei"
+  ],
+  "uncertainty_warning": "6 close values = only five daily changes, severely insufficient for robust probabilistic forecasts; numeric arms are initial benchmarks, not validated calibrated models. Some close feeds are indicative rather than official exchange settlements."
+}
