@@ -38,4 +38,4 @@ jobs:
       - name: Verify committed addendum exactly matches model replay
         run: |
           python research/scripts/generate_2026_10_24_1252_supplement.py > /tmp/financesim_supplement_replayed.json
-          python -c 'import json; from financesim import verify; a=json.load(open("research/weekly/2026-10-24-1252-risk-and-interval-supplement.json")); b=json.load(open("/tmp/financesim_supplement_replayed.json")); assert verify(a) and a==b; print("Risk/interval supplement replay is byte-equivalent after JSON parse")'
+          python -c 'import json; from financesim import verify; a=json.load(open("research/weekly/2026-10-24-1252-risk-and-interval-supplement-canonical.json")); b=json.load(open("/tmp/financesim_supplement_replayed.json")); assert verify(a) and a==b; print("Risk/interval supplement replay is byte-equivalent after JSON parse")'
