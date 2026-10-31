@@ -1,0 +1,247 @@
+{
+  "cutoff": "2026-10-31T12:00:00+09:00",
+  "compiled_after_cutoff": true,
+  "all_market_observations_from": "2026-10-30 or earlier",
+  "last_session": "2026-10-30",
+  "next_session": "2026-11-06",
+  "markets": {
+    "sp500": {
+      "value": 7579.86,
+      "unit": "index",
+      "source": "https://www.investing.com/indices/us-spx-500-historical-data",
+      "sigma_weekly": 2.15,
+      "prior": 0.02
+    },
+    "nasdaq100": {
+      "value": 28384.85,
+      "unit": "index",
+      "source": "https://www.investing.com/indices/nq-100-historical-data",
+      "sigma_weekly": 3.65,
+      "prior": -0.3
+    },
+    "stoxx600": {
+      "value": 646.76,
+      "unit": "index",
+      "source": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "sigma_weekly": 1.9,
+      "prior": 0.05
+    },
+    "nikkei225": {
+      "value": 63290.11,
+      "unit": "index",
+      "source": "https://www.investing.com/indices/japan-ni225-historical-data",
+      "sigma_weekly": 3.1,
+      "prior": 0.05
+    },
+    "kospi": {
+      "value": 5730.74,
+      "unit": "index",
+      "source": "https://ph.investing.com/indices/kospi-historical-data",
+      "sigma_weekly": 6.7,
+      "prior": 0
+    },
+    "csi300": {
+      "value": 3985.5,
+      "unit": "index",
+      "source": "https://cn.investing.com/indices/csi300-historical-data",
+      "sigma_weekly": 3.4,
+      "prior": -0.15
+    },
+    "gold": {
+      "value": 3875.44,
+      "unit": "USD/oz",
+      "source": "https://in.investing.com/currencies/xau-usd-historical-data",
+      "sigma_weekly": 4.9,
+      "prior": -0.8
+    },
+    "wti": {
+      "value": 102.95,
+      "unit": "USD/bbl Dec2026 assumed",
+      "source": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "sigma_weekly": 6,
+      "prior": 0,
+      "warning": "WTI continuous/nearby page not independently proven Dec26 official settlement. Target selection must remain consistent; provisional."
+    },
+    "usdjpy": {
+      "value": 157.58,
+      "unit": "JPY/USD",
+      "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "sigma_weekly": 1.45,
+      "prior": 0
+    },
+    "us10y": {
+      "value": 4.94,
+      "unit": "percent_yield",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "sigma_weekly": 19,
+      "prior": 0
+    }
+  },
+  "macro_last": {
+    "claims": {
+      "value": 194,
+      "unit": "thousands",
+      "reference": "week ending Oct24, first release Oct29",
+      "source": "https://www.dol.gov/index.php/newsroom/releases?agency=39&state=All&topic=All&year=all"
+    },
+    "wei": {
+      "value": 2.98,
+      "unit": "index",
+      "reference": "week ending Oct24, Oct29 release",
+      "source": "https://www.dallasfed.org/research/wei"
+    },
+    "ism_mfg": {
+      "value": 54.5,
+      "unit": "index",
+      "reference": "September 2026 released Oct1",
+      "source": "https://www.forexfactory.com/calendar/252-us-ism-manufacturing-pmi"
+    },
+    "ism_services": {
+      "value": 54.9,
+      "unit": "index",
+      "reference": "September 2026 released Oct5",
+      "source": "https://www.forexfactory.com/calendar/253-us-ism-services-pmi"
+    },
+    "nfp": {
+      "value": 29,
+      "unit": "thousands",
+      "reference": "September 2026 first release Oct2",
+      "source": "https://www.investing.com/economic-calendar/usa-nonfarm-payrolls-227"
+    },
+    "unemployment": {
+      "value": 4.2,
+      "unit": "percent",
+      "reference": "September 2026",
+      "source": "https://www.reuters.com/world/us/us-weekly-jobless-claims-hover-near-57-year-lows-2026-10-29/"
+    },
+    "boe_rate": {
+      "value": 3.75,
+      "unit": "pct",
+      "reference": "after Oct29 2026",
+      "source": "https://mortgage-compare.uk/bank-rate-expectations"
+    },
+    "rba_rate": {
+      "value": 4.6,
+      "unit": "pct",
+      "reference": "after Sep29 2026",
+      "source": "https://rbawatch.com/next-rba-meeting"
+    }
+  },
+  "events": [
+    {
+      "id": "ai_spending_valuation_stress",
+      "p": 0.4,
+      "impacts": {
+        "sp500": -1.2,
+        "nasdaq100": -2.2,
+        "stoxx600": -0.35,
+        "nikkei225": -1,
+        "kospi": -1.6,
+        "csi300": -0.2,
+        "gold": -0.7,
+        "wti": -0.5,
+        "usdjpy": -0.5,
+        "us10y": -7
+      },
+      "rationale": "Oct30 Intel/Amazon disappointments and tech liquidation",
+      "subjective": true
+    },
+    {
+      "id": "oil_supply_tightness",
+      "p": 0.3,
+      "impacts": {
+        "sp500": -0.55,
+        "nasdaq100": -0.8,
+        "stoxx600": -0.6,
+        "nikkei225": -0.5,
+        "kospi": -1,
+        "csi300": -0.4,
+        "gold": 0.5,
+        "wti": 4.5,
+        "usdjpy": 0.15,
+        "us10y": 8
+      },
+      "rationale": "Middle East ongoing physical crude tightness",
+      "subjective": true
+    },
+    {
+      "id": "us_midterm_policy_uncertainty",
+      "p": 0.35,
+      "impacts": {
+        "sp500": -0.6,
+        "nasdaq100": -0.7,
+        "stoxx600": -0.15,
+        "nikkei225": -0.3,
+        "kospi": -0.3,
+        "csi300": 0.1,
+        "gold": 0.25,
+        "usdjpy": -0.2,
+        "us10y": -3
+      },
+      "rationale": "Nov3 election may surprise markets; no election outcome predicted",
+      "subjective": true
+    },
+    {
+      "id": "us_labor_soft",
+      "p": 0.3,
+      "impacts": {
+        "sp500": -0.65,
+        "nasdaq100": -1,
+        "stoxx600": -0.25,
+        "nikkei225": -0.2,
+        "kospi": -0.5,
+        "csi300": 0.1,
+        "gold": 0.6,
+        "wti": -1,
+        "usdjpy": -0.8,
+        "us10y": -8
+      },
+      "rationale": "Jobs report weakness risk",
+      "subjective": true
+    },
+    {
+      "id": "us_labor_hot",
+      "p": 0.25,
+      "impacts": {
+        "sp500": -0.35,
+        "nasdaq100": -0.8,
+        "stoxx600": -0.25,
+        "kospi": -0.4,
+        "csi300": -0.15,
+        "gold": -0.9,
+        "wti": 0.6,
+        "usdjpy": 0.6,
+        "us10y": 10
+      },
+      "rationale": "Labor beat renews tightening, pushes yield USD up",
+      "subjective": true
+    },
+    {
+      "id": "oversold_tech_rebound",
+      "p": 0.35,
+      "impacts": {
+        "sp500": 1.7,
+        "nasdaq100": 2.7,
+        "stoxx600": 0.6,
+        "nikkei225": 1.1,
+        "kospi": 1.6,
+        "csi300": 0.7,
+        "gold": 1.1,
+        "wti": 0.3,
+        "usdjpy": 0.3,
+        "us10y": 1
+      },
+      "rationale": "Rebound/short covering following Oct30 selloff",
+      "subjective": true
+    }
+  ],
+  "caveats": [
+    "Volatility std values and event impacts are explicit low-confidence assumptions, not fitted econometric estimates.",
+    "Pure-LLM arm judgments are authored separately from numerical simulation output; numeric baseline uses zero expected weekly change.",
+    "Event Bernoulli switches assumed independent; event-driven dependence only through common shocks.",
+    "Japan TSE holiday Nov3 means four sessions; market target use Nov6 official local close.",
+    "US daylight saving time ends Nov1; Nov6 16:00 EST corresponds Nov7 06:00 JST.",
+    "Gold and forex spot Friday vendor day-end quotation conventions can vary; provenance issues must be retained.",
+    "No observed data dated after 2026-10-30 is included; public source pages may refresh."
+  ]
+}
