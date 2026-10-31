@@ -1,0 +1,1507 @@
+{
+  "record_type": "FinanceSim 3-arm forward forecast",
+  "forecast_cutoff": "2026-10-31T12:00:00+09:00",
+  "created_after_cutoff": true,
+  "inputs_path": "research/inputs/2026-10-31-1200-snapshot.json",
+  "generator_path": "research/scripts/generate_2026_10_31.js",
+  "seed": 20261031,
+  "n": 20000,
+  "model_version": "v0.3-weekly-scenario-1",
+  "simulation_executed": true,
+  "simulation_assumptions": "20000 seeded samples; independent event occurrence with common cross-asset impact vectors, independent normal residual noise, values in percent changes except yield basis points",
+  "measurement_info": "A first-release official/established monthly/weekly values; B derived from C outcomes; C use fixed instrument/vendor Friday closes Oct30 -> Nov6, note Nov3 JP exchange holiday, US Nov1 DST change",
+  "market_forecasts": {
+    "sp500": {
+      "group": "C",
+      "unit": "percent_return",
+      "baseline_level": 7579.86,
+      "baseline_unit": "index",
+      "target_date": "2026-11-06",
+      "target_time": "Friday vendor daily closing quote",
+      "definition": "Nov6/Oct30 daily close percentage return in local instrument currency from frozen provider",
+      "source": "https://www.investing.com/indices/us-spx-500-historical-data",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": -1,
+          "prob_positive": 0.37,
+          "interval_50": [
+            -2.7402,
+            0.7402
+          ],
+          "interval_80": [
+            -4.3064,
+            2.3064
+          ],
+          "interval_90": [
+            -5.2437,
+            3.2437
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": 0.0072,
+          "prob_positive": 0.4989,
+          "interval_50": [
+            -1.434,
+            1.4379
+          ],
+          "interval_80": [
+            -2.7167,
+            2.7328
+          ],
+          "interval_90": [
+            -3.4741,
+            3.5565
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": -0.5397,
+          "prob_positive": 0.4079,
+          "interval_50": [
+            -2.1843,
+            1.0874
+          ],
+          "interval_80": [
+            -3.6631,
+            2.5844
+          ],
+          "interval_90": [
+            -4.5159,
+            3.5114
+          ]
+        }
+      }
+    },
+    "nasdaq100": {
+      "group": "C",
+      "unit": "percent_return",
+      "baseline_level": 28384.85,
+      "baseline_unit": "index",
+      "target_date": "2026-11-06",
+      "target_time": "Friday vendor daily closing quote",
+      "definition": "Nov6/Oct30 daily close percentage return in local instrument currency from frozen provider",
+      "source": "https://www.investing.com/indices/nq-100-historical-data",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": -1.6,
+          "prob_positive": 0.34,
+          "interval_50": [
+            -4.5543,
+            1.3543
+          ],
+          "interval_80": [
+            -7.2132,
+            4.0132
+          ],
+          "interval_90": [
+            -8.8045,
+            5.6045
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": 0.0649,
+          "prob_positive": 0.5063,
+          "interval_50": [
+            -2.389,
+            2.5031
+          ],
+          "interval_80": [
+            -4.5585,
+            4.7204
+          ],
+          "interval_90": [
+            -5.9178,
+            6.0476
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": -1.2118,
+          "prob_positive": 0.3823,
+          "interval_50": [
+            -3.9059,
+            1.5257
+          ],
+          "interval_80": [
+            -6.4489,
+            3.9942
+          ],
+          "interval_90": [
+            -7.9034,
+            5.5225
+          ]
+        }
+      }
+    },
+    "stoxx600": {
+      "group": "C",
+      "unit": "percent_return",
+      "baseline_level": 646.76,
+      "baseline_unit": "index",
+      "target_date": "2026-11-06",
+      "target_time": "17:30 CET",
+      "definition": "Nov6/Oct30 daily close percentage return in local instrument currency from frozen provider",
+      "source": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": -0.45,
+          "prob_positive": 0.43,
+          "interval_50": [
+            -1.9878,
+            1.0878
+          ],
+          "interval_80": [
+            -3.3719,
+            2.4719
+          ],
+          "interval_90": [
+            -4.2003,
+            3.3003
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": -0.0103,
+          "prob_positive": 0.4994,
+          "interval_50": [
+            -1.2827,
+            1.2634
+          ],
+          "interval_80": [
+            -2.4345,
+            2.3895
+          ],
+          "interval_90": [
+            -3.1425,
+            3.0884
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": -0.2521,
+          "prob_positive": 0.4508,
+          "interval_50": [
+            -1.5725,
+            1.0741
+          ],
+          "interval_80": [
+            -2.7501,
+            2.2299
+          ],
+          "interval_90": [
+            -3.4591,
+            2.9376
+          ]
+        }
+      }
+    },
+    "nikkei225": {
+      "group": "C",
+      "unit": "percent_return",
+      "baseline_level": 63290.11,
+      "baseline_unit": "index",
+      "target_date": "2026-11-06",
+      "target_time": "15:30 JST",
+      "definition": "Nov6/Oct30 daily close percentage return in local instrument currency from frozen provider",
+      "source": "https://www.investing.com/indices/japan-ni225-historical-data",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": -0.8,
+          "prob_positive": 0.4,
+          "interval_50": [
+            -3.3091,
+            1.7091
+          ],
+          "interval_80": [
+            -5.5674,
+            3.9674
+          ],
+          "interval_90": [
+            -6.9189,
+            5.3189
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": -0.0157,
+          "prob_positive": 0.4963,
+          "interval_50": [
+            -2.1207,
+            2.075
+          ],
+          "interval_80": [
+            -3.9626,
+            3.9678
+          ],
+          "interval_90": [
+            -5.0712,
+            5.0628
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": -0.2626,
+          "prob_positive": 0.4631,
+          "interval_50": [
+            -2.4141,
+            1.8426
+          ],
+          "interval_80": [
+            -4.3047,
+            3.8848
+          ],
+          "interval_90": [
+            -5.4429,
+            5.031
+          ]
+        }
+      }
+    },
+    "kospi": {
+      "group": "C",
+      "unit": "percent_return",
+      "baseline_level": 5730.74,
+      "baseline_unit": "index",
+      "target_date": "2026-11-06",
+      "target_time": "15:30 KST",
+      "definition": "Nov6/Oct30 daily close percentage return in local instrument currency from frozen provider",
+      "source": "https://ph.investing.com/indices/kospi-historical-data",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": -1.4,
+          "prob_positive": 0.41,
+          "interval_50": [
+            -6.8229,
+            4.0229
+          ],
+          "interval_80": [
+            -11.7037,
+            8.9037
+          ],
+          "interval_90": [
+            -14.6246,
+            11.8246
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": -0.0378,
+          "prob_positive": 0.4945,
+          "interval_50": [
+            -4.6226,
+            4.5761
+          ],
+          "interval_80": [
+            -8.7018,
+            8.6709
+          ],
+          "interval_90": [
+            -11.1906,
+            11.1455
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": -0.7195,
+          "prob_positive": 0.4532,
+          "interval_50": [
+            -5.2773,
+            3.8277
+          ],
+          "interval_80": [
+            -9.3353,
+            7.983
+          ],
+          "interval_90": [
+            -11.8135,
+            10.5089
+          ]
+        }
+      }
+    },
+    "csi300": {
+      "group": "C",
+      "unit": "percent_return",
+      "baseline_level": 3985.5,
+      "baseline_unit": "index",
+      "target_date": "2026-11-06",
+      "target_time": "15:00 CST",
+      "definition": "Nov6/Oct30 daily close percentage return in local instrument currency from frozen provider",
+      "source": "https://cn.investing.com/indices/csi300-historical-data",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": -0.45,
+          "prob_positive": 0.45,
+          "interval_50": [
+            -3.2019,
+            2.3019
+          ],
+          "interval_80": [
+            -5.6787,
+            4.7787
+          ],
+          "interval_90": [
+            -7.161,
+            6.261
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": -0.0154,
+          "prob_positive": 0.4999,
+          "interval_50": [
+            -2.3063,
+            2.3139
+          ],
+          "interval_80": [
+            -4.4039,
+            4.3623
+          ],
+          "interval_90": [
+            -5.6548,
+            5.6207
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": -0.0699,
+          "prob_positive": 0.4934,
+          "interval_50": [
+            -2.36,
+            2.2572
+          ],
+          "interval_80": [
+            -4.5524,
+            4.3403
+          ],
+          "interval_90": [
+            -5.7857,
+            5.5938
+          ]
+        }
+      }
+    },
+    "gold": {
+      "group": "C",
+      "unit": "percent_return",
+      "baseline_level": 3875.44,
+      "baseline_unit": "USD/oz",
+      "target_date": "2026-11-06",
+      "target_time": "Friday vendor daily closing quote",
+      "definition": "Nov6/Oct30 daily close percentage return in local instrument currency from frozen provider",
+      "source": "https://in.investing.com/currencies/xau-usd-historical-data",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": -0.8,
+          "prob_positive": 0.44,
+          "interval_50": [
+            -4.766,
+            3.166
+          ],
+          "interval_80": [
+            -8.3355,
+            6.7355
+          ],
+          "interval_90": [
+            -10.4717,
+            8.8717
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": -0.0398,
+          "prob_positive": 0.4996,
+          "interval_50": [
+            -3.4078,
+            3.2907
+          ],
+          "interval_80": [
+            -6.3872,
+            6.3092
+          ],
+          "interval_90": [
+            -8.2546,
+            8.0858
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": -0.5295,
+          "prob_positive": 0.4611,
+          "interval_50": [
+            -3.834,
+            2.8094
+          ],
+          "interval_80": [
+            -6.9195,
+            5.7993
+          ],
+          "interval_90": [
+            -8.7568,
+            7.5587
+          ]
+        }
+      }
+    },
+    "wti": {
+      "group": "C",
+      "unit": "percent_return",
+      "baseline_level": 102.95,
+      "baseline_unit": "USD/bbl Dec2026 assumed",
+      "target_date": "2026-11-06",
+      "target_time": "NYMEX Dec26 settlement",
+      "definition": "Same NYMEX Dec26 contract settlement Nov6/Oct30 simple percent return (provisional input)",
+      "source": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": 1,
+          "prob_positive": 0.56,
+          "interval_50": [
+            -3.8563,
+            5.8563
+          ],
+          "interval_80": [
+            -8.2272,
+            10.2272
+          ],
+          "interval_90": [
+            -10.8429,
+            12.8429
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": 0.0082,
+          "prob_positive": 0.5018,
+          "interval_50": [
+            -4.0506,
+            4.0225
+          ],
+          "interval_80": [
+            -7.6847,
+            7.6332
+          ],
+          "interval_90": [
+            -9.8827,
+            9.9345
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": 1.058,
+          "prob_positive": 0.5663,
+          "interval_50": [
+            -3.2839,
+            5.386
+          ],
+          "interval_80": [
+            -7.0931,
+            9.2548
+          ],
+          "interval_90": [
+            -9.3673,
+            11.6688
+          ]
+        }
+      }
+    },
+    "usdjpy": {
+      "group": "C",
+      "unit": "percent_return",
+      "baseline_level": 157.58,
+      "baseline_unit": "JPY/USD",
+      "target_date": "2026-11-06",
+      "target_time": "Friday vendor daily closing quote",
+      "definition": "Nov6/Oct30 daily close percentage return in local instrument currency from frozen provider",
+      "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": -0.35,
+          "prob_positive": 0.43,
+          "interval_50": [
+            -1.5236,
+            0.8236
+          ],
+          "interval_80": [
+            -2.5799,
+            1.8799
+          ],
+          "interval_90": [
+            -3.212,
+            2.512
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": 0.0015,
+          "prob_positive": 0.5029,
+          "interval_50": [
+            -0.9942,
+            0.9737
+          ],
+          "interval_80": [
+            -1.8823,
+            1.8751
+          ],
+          "interval_90": [
+            -2.3783,
+            2.4038
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": -0.2089,
+          "prob_positive": 0.4495,
+          "interval_50": [
+            -1.2538,
+            0.8278
+          ],
+          "interval_80": [
+            -2.1936,
+            1.7655
+          ],
+          "interval_90": [
+            -2.7638,
+            2.3371
+          ]
+        }
+      }
+    },
+    "us10y": {
+      "group": "C",
+      "unit": "basis_points",
+      "baseline_level": 4.94,
+      "baseline_unit": "percent_yield",
+      "target_date": "2026-11-06",
+      "target_time": "US Treasury daily publication",
+      "definition": "Treasury official Nov6 minus Oct30 10Y par yield, times 100 bp",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-subjective-v20261031",
+          "point_change": 2,
+          "prob_positive": 0.54,
+          "interval_50": [
+            -13.3784,
+            17.3784
+          ],
+          "interval_80": [
+            -27.2194,
+            31.2194
+          ],
+          "interval_90": [
+            -35.5027,
+            39.5027
+          ]
+        },
+        "statistical": {
+          "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2",
+          "point_change": 0.1712,
+          "prob_positive": 0.5057,
+          "interval_50": [
+            -12.6761,
+            13.0113
+          ],
+          "interval_80": [
+            -24.063,
+            24.4718
+          ],
+          "interval_90": [
+            -30.8681,
+            31.2717
+          ]
+        },
+        "hybrid": {
+          "model_id": "six-event-common-shock-MonteCarlo-v2",
+          "point_change": -1.2618,
+          "prob_positive": 0.4755,
+          "interval_50": [
+            -15.4134,
+            12.7485
+          ],
+          "interval_80": [
+            -27.327,
+            25.2821
+          ],
+          "interval_90": [
+            -34.9962,
+            32.5259
+          ]
+        }
+      }
+    }
+  },
+  "macro_forecasts": {
+    "claims_nov05": {
+      "group": "A",
+      "label": "US initial jobless claims first release for Oct31 reference week, thousands persons",
+      "definition": "First published level compared to frozen previous first-released level; positive means higher than reference",
+      "unit": "thousands_persons",
+      "baseline_level": 194,
+      "target_at": "2026-11-05T08:30:00-05:00",
+      "source": "https://www.dol.gov/index.php/newsroom/releases?agency=39&state=All&topic=All&year=all",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-20261031",
+          "center_level": 196,
+          "point_change": 2,
+          "prob_positive": 0.55,
+          "interval_50": [
+            -4.0704,
+            8.0704
+          ],
+          "interval_80": [
+            -9.534,
+            13.534
+          ],
+          "interval_90": [
+            -12.8037,
+            16.8037
+          ]
+        },
+        "statistical": {
+          "model_id": "no-change-baseline",
+          "center_level": 194,
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "interval_50": [
+            -5.3959,
+            5.3959
+          ],
+          "interval_80": [
+            -10.2524,
+            10.2524
+          ],
+          "interval_90": [
+            -13.1588,
+            13.1588
+          ]
+        },
+        "hybrid": {
+          "model_id": "narrative-event-adjusted",
+          "center_level": 195,
+          "point_change": 1,
+          "prob_positive": 0.53,
+          "interval_50": [
+            -5.0704,
+            7.0704
+          ],
+          "interval_80": [
+            -10.534,
+            12.534
+          ],
+          "interval_90": [
+            -13.8037,
+            15.8037
+          ]
+        }
+      }
+    },
+    "wei_nov05": {
+      "group": "A",
+      "label": "Dallas Fed WEI first release for week ended Oct31, index points",
+      "definition": "First published level compared to frozen previous first-released level; positive means higher than reference",
+      "unit": "index_points",
+      "baseline_level": 2.98,
+      "target_at": "2026-11-05T10:30:00-06:00",
+      "source": "https://www.dallasfed.org/research/wei",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-20261031",
+          "center_level": 2.85,
+          "point_change": -0.13,
+          "prob_positive": 0.43,
+          "interval_50": [
+            -0.501,
+            0.241
+          ],
+          "interval_80": [
+            -0.8349,
+            0.5749
+          ],
+          "interval_90": [
+            -1.0347,
+            0.7747
+          ]
+        },
+        "statistical": {
+          "model_id": "no-change-baseline",
+          "center_level": 2.98,
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "interval_50": [
+            -0.3238,
+            0.3238
+          ],
+          "interval_80": [
+            -0.6151,
+            0.6151
+          ],
+          "interval_90": [
+            -0.7895,
+            0.7895
+          ]
+        },
+        "hybrid": {
+          "model_id": "narrative-event-adjusted",
+          "center_level": 2.87,
+          "point_change": -0.11,
+          "prob_positive": 0.45,
+          "interval_50": [
+            -0.481,
+            0.261
+          ],
+          "interval_80": [
+            -0.8149,
+            0.5949
+          ],
+          "interval_90": [
+            -1.0147,
+            0.7947
+          ]
+        }
+      }
+    },
+    "ism_mfg_nov02": {
+      "group": "A",
+      "label": "ISM October manufacturing PMI first release",
+      "definition": "First published level compared to frozen previous first-released level; positive means higher than reference",
+      "unit": "index_points",
+      "baseline_level": 54.5,
+      "target_at": "2026-11-02T10:00:00-05:00",
+      "source": "https://www.forexfactory.com/calendar/252-us-ism-manufacturing-pmi",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-20261031",
+          "center_level": 54,
+          "point_change": -0.5,
+          "prob_positive": 0.4,
+          "interval_50": [
+            -1.5792,
+            0.5792
+          ],
+          "interval_80": [
+            -2.5505,
+            1.5505
+          ],
+          "interval_90": [
+            -3.1318,
+            2.1318
+          ]
+        },
+        "statistical": {
+          "model_id": "no-change-baseline",
+          "center_level": 54.5,
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "interval_50": [
+            -1.0117,
+            1.0117
+          ],
+          "interval_80": [
+            -1.9223,
+            1.9223
+          ],
+          "interval_90": [
+            -2.4673,
+            2.4673
+          ]
+        },
+        "hybrid": {
+          "model_id": "narrative-event-adjusted",
+          "center_level": 54.1,
+          "point_change": -0.4,
+          "prob_positive": 0.43,
+          "interval_50": [
+            -1.4792,
+            0.6792
+          ],
+          "interval_80": [
+            -2.4505,
+            1.6505
+          ],
+          "interval_90": [
+            -3.0318,
+            2.2318
+          ]
+        }
+      }
+    },
+    "ism_services_nov04": {
+      "group": "A",
+      "label": "ISM October services PMI first release",
+      "definition": "First published level compared to frozen previous first-released level; positive means higher than reference",
+      "unit": "index_points",
+      "baseline_level": 54.9,
+      "target_at": "2026-11-04T10:00:00-05:00",
+      "source": "https://www.forexfactory.com/calendar/253-us-ism-services-pmi",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-20261031",
+          "center_level": 54.5,
+          "point_change": -0.4,
+          "prob_positive": 0.42,
+          "interval_50": [
+            -1.5466,
+            0.7466
+          ],
+          "interval_80": [
+            -2.5786,
+            1.7786
+          ],
+          "interval_90": [
+            -3.1963,
+            2.3963
+          ]
+        },
+        "statistical": {
+          "model_id": "no-change-baseline",
+          "center_level": 54.9,
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "interval_50": [
+            -1.0792,
+            1.0792
+          ],
+          "interval_80": [
+            -2.0505,
+            2.0505
+          ],
+          "interval_90": [
+            -2.6318,
+            2.6318
+          ]
+        },
+        "hybrid": {
+          "model_id": "narrative-event-adjusted",
+          "center_level": 54.7,
+          "point_change": -0.2,
+          "prob_positive": 0.46,
+          "interval_50": [
+            -1.3466,
+            0.9466
+          ],
+          "interval_80": [
+            -2.3786,
+            1.9786
+          ],
+          "interval_90": [
+            -2.9963,
+            2.5963
+          ]
+        }
+      }
+    },
+    "nonfarm_payroll_nov06": {
+      "group": "A",
+      "label": "BLS October nonfarm payrolls first release, thousands person change",
+      "definition": "First published level compared to frozen previous first-released level; positive means higher than reference",
+      "unit": "thousands_persons",
+      "baseline_level": 29,
+      "target_at": "2026-11-06T08:30:00-05:00",
+      "source": "https://www.investing.com/economic-calendar/usa-nonfarm-payrolls-227",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-20261031",
+          "center_level": 65,
+          "point_change": 36,
+          "prob_positive": 0.61,
+          "interval_50": [
+            -38.1939,
+            110.1939
+          ],
+          "interval_80": [
+            -104.9707,
+            176.9707
+          ],
+          "interval_90": [
+            -144.9339,
+            216.9339
+          ]
+        },
+        "statistical": {
+          "model_id": "no-change-baseline",
+          "center_level": 29,
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "interval_50": [
+            -74.1939,
+            74.1939
+          ],
+          "interval_80": [
+            -140.9707,
+            140.9707
+          ],
+          "interval_90": [
+            -180.9339,
+            180.9339
+          ]
+        },
+        "hybrid": {
+          "model_id": "narrative-event-adjusted",
+          "center_level": 72,
+          "point_change": 43,
+          "prob_positive": 0.64,
+          "interval_50": [
+            -31.1939,
+            117.1939
+          ],
+          "interval_80": [
+            -97.9707,
+            183.9707
+          ],
+          "interval_90": [
+            -137.9339,
+            223.9339
+          ]
+        }
+      }
+    },
+    "unemployment_rate_nov06": {
+      "group": "A",
+      "label": "BLS October unemployment rate first release, percentage",
+      "definition": "First published level compared to frozen previous first-released level; positive means higher than reference",
+      "unit": "percent",
+      "baseline_level": 4.2,
+      "target_at": "2026-11-06T08:30:00-05:00",
+      "source": "https://www.reuters.com/world/us/us-weekly-jobless-claims-hover-near-57-year-lows-2026-10-29/",
+      "confidence": "low, uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-20261031",
+          "center_level": 4.2,
+          "point_change": 0,
+          "prob_positive": 0.42,
+          "interval_50": [
+            -0.1349,
+            0.1349
+          ],
+          "interval_80": [
+            -0.2563,
+            0.2563
+          ],
+          "interval_90": [
+            -0.329,
+            0.329
+          ]
+        },
+        "statistical": {
+          "model_id": "no-change-baseline",
+          "center_level": 4.2,
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "interval_50": [
+            -0.1349,
+            0.1349
+          ],
+          "interval_80": [
+            -0.2563,
+            0.2563
+          ],
+          "interval_90": [
+            -0.329,
+            0.329
+          ]
+        },
+        "hybrid": {
+          "model_id": "narrative-event-adjusted",
+          "center_level": 4.2,
+          "point_change": 0,
+          "prob_positive": 0.45,
+          "interval_50": [
+            -0.1349,
+            0.1349
+          ],
+          "interval_80": [
+            -0.2563,
+            0.2563
+          ],
+          "interval_90": [
+            -0.329,
+            0.329
+          ]
+        }
+      }
+    },
+    "rba_hike_nov03": {
+      "group": "A",
+      "label": "RBA raises cash rate by at least 0.25 percentage points at Nov3 meeting",
+      "definition": "Binary 1 if specified rate hike occurs at scheduled meeting, otherwise 0",
+      "unit": "binary_0or1",
+      "baseline_level": 4.6,
+      "rate_unit": "percent",
+      "target_at": "2026-11-03T14:30:00+11:00",
+      "source": "https://rbawatch.com/next-rba-meeting",
+      "confidence": "medium but uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-20261031",
+          "point_change": 0.78,
+          "prob_positive": 0.78,
+          "interval_50": [
+            1,
+            1
+          ],
+          "interval_80": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ]
+        },
+        "statistical": {
+          "model_id": "as-of-market-implied-prob",
+          "point_change": 0.81,
+          "prob_positive": 0.81,
+          "interval_50": [
+            1,
+            1
+          ],
+          "interval_80": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ]
+        },
+        "hybrid": {
+          "model_id": "LLM-adjusted-market-implied",
+          "point_change": 0.79,
+          "prob_positive": 0.79,
+          "interval_50": [
+            1,
+            1
+          ],
+          "interval_80": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ]
+        }
+      }
+    },
+    "boe_hike_nov05": {
+      "group": "A",
+      "label": "BoE raises Bank Rate by at least 0.25 percentage points at Nov5 meeting",
+      "definition": "Binary 1 if specified rate hike occurs at scheduled meeting, otherwise 0",
+      "unit": "binary_0or1",
+      "baseline_level": 3.75,
+      "rate_unit": "percent",
+      "target_at": "2026-11-05T12:00:00+00:00",
+      "source": "https://mortgage-compare.uk/bank-rate-expectations",
+      "confidence": "medium but uncalibrated",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-20261031",
+          "point_change": 0.75,
+          "prob_positive": 0.75,
+          "interval_50": [
+            0,
+            1
+          ],
+          "interval_80": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ]
+        },
+        "statistical": {
+          "model_id": "as-of-market-implied-prob",
+          "point_change": 0.88,
+          "prob_positive": 0.88,
+          "interval_50": [
+            1,
+            1
+          ],
+          "interval_80": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ]
+        },
+        "hybrid": {
+          "model_id": "LLM-adjusted-market-implied",
+          "point_change": 0.8,
+          "prob_positive": 0.8,
+          "interval_50": [
+            1,
+            1
+          ],
+          "interval_80": [
+            0,
+            1
+          ],
+          "interval_90": [
+            0,
+            1
+          ]
+        }
+      }
+    }
+  },
+  "risk_forecasts": {
+    "sp_abs": {
+      "group": "B",
+      "label": "Absolute S&P500 weekly percent return",
+      "definition": "abs(return)>2% at Oct30 vs Nov6 matched closes",
+      "unit": "percent",
+      "threshold": 2,
+      "baseline_date": "2026-10-30",
+      "target_date": "2026-11-06",
+      "confidence": "low, uncalibrated; derived from market predictions",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-manual-20261031",
+          "point_change": 2.2,
+          "event_probability": 0.52,
+          "interval_50": [
+            0.8,
+            2.9
+          ],
+          "interval_80": [
+            0.25,
+            4.7
+          ],
+          "interval_90": [
+            0.1,
+            6.2
+          ]
+        },
+        "statistical": {
+          "model_id": "independent-zero-drift-Gaussian",
+          "point_change": 1.6919,
+          "event_probability": 0.3468,
+          "interval_50": [
+            0.6596,
+            2.4396
+          ],
+          "interval_80": [
+            0.2616,
+            3.5067
+          ],
+          "interval_90": [
+            0.1274,
+            4.1645
+          ]
+        },
+        "hybrid": {
+          "model_id": "common-event-MC",
+          "point_change": 1.9867,
+          "event_probability": 0.4225,
+          "interval_50": [
+            0.7943,
+            2.8776
+          ],
+          "interval_80": [
+            0.3133,
+            4.1264
+          ],
+          "interval_90": [
+            0.1591,
+            4.8497
+          ]
+        }
+      }
+    },
+    "wti_abs": {
+      "group": "B",
+      "label": "Absolute Dec26 WTI weekly percent return",
+      "definition": "abs(return)>5% at Oct30 vs Nov6 matched closes",
+      "unit": "percent",
+      "threshold": 5,
+      "baseline_date": "2026-10-30",
+      "target_date": "2026-11-06",
+      "confidence": "low, uncalibrated; derived from market predictions",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-manual-20261031",
+          "point_change": 5,
+          "event_probability": 0.48,
+          "interval_50": [
+            2,
+            7.1
+          ],
+          "interval_80": [
+            0.4,
+            11
+          ],
+          "interval_90": [
+            0.1,
+            14
+          ]
+        },
+        "statistical": {
+          "model_id": "independent-zero-drift-Gaussian",
+          "point_change": 4.7798,
+          "event_probability": 0.4032,
+          "interval_50": [
+            1.9054,
+            6.8678
+          ],
+          "interval_80": [
+            0.7475,
+            9.9038
+          ],
+          "interval_90": [
+            0.3686,
+            11.7535
+          ]
+        },
+        "hybrid": {
+          "model_id": "common-event-MC",
+          "point_change": 5.1655,
+          "event_probability": 0.4449,
+          "interval_50": [
+            2.0919,
+            7.3993
+          ],
+          "interval_80": [
+            0.7908,
+            10.6288
+          ],
+          "interval_90": [
+            0.4028,
+            12.6673
+          ]
+        }
+      }
+    },
+    "yield_abs": {
+      "group": "B",
+      "label": "Absolute US10Y Treasury weekly yield move",
+      "definition": "abs(change)>15bp at Oct30 vs Nov6 matched closes",
+      "unit": "basis_points",
+      "threshold": 15,
+      "baseline_date": "2026-10-30",
+      "target_date": "2026-11-06",
+      "confidence": "low, uncalibrated; derived from market predictions",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-manual-20261031",
+          "point_change": 16,
+          "event_probability": 0.46,
+          "interval_50": [
+            6,
+            23
+          ],
+          "interval_80": [
+            1,
+            33
+          ],
+          "interval_90": [
+            0,
+            45
+          ]
+        },
+        "statistical": {
+          "model_id": "independent-zero-drift-Gaussian",
+          "point_change": 15.1236,
+          "event_probability": 0.4305,
+          "interval_50": [
+            5.9692,
+            21.8666
+          ],
+          "interval_80": [
+            2.3283,
+            31.0696
+          ],
+          "interval_90": [
+            1.1624,
+            36.9059
+          ]
+        },
+        "hybrid": {
+          "model_id": "common-event-MC",
+          "point_change": 16.4808,
+          "event_probability": 0.4732,
+          "interval_50": [
+            6.6604,
+            23.8177
+          ],
+          "interval_80": [
+            2.6578,
+            33.8181
+          ],
+          "interval_90": [
+            1.3319,
+            39.8462
+          ]
+        }
+      }
+    },
+    "breadth": {
+      "group": "B",
+      "label": "Number of 6 major equity indices down at least 1.5% for the week",
+      "definition": "count>=3 at Oct30 vs Nov6 matched closes",
+      "unit": "index_count",
+      "threshold": 3,
+      "baseline_date": "2026-10-30",
+      "target_date": "2026-11-06",
+      "confidence": "low, uncalibrated; derived from market predictions",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-manual-20261031",
+          "point_change": 2,
+          "event_probability": 0.33,
+          "interval_50": [
+            1,
+            3
+          ],
+          "interval_80": [
+            0,
+            4
+          ],
+          "interval_90": [
+            0,
+            5
+          ]
+        },
+        "statistical": {
+          "model_id": "independent-zero-drift-Gaussian",
+          "point_change": 1.854,
+          "event_probability": 0.2698,
+          "interval_50": [
+            1,
+            3
+          ],
+          "interval_80": [
+            0,
+            3
+          ],
+          "interval_90": [
+            0,
+            4
+          ]
+        },
+        "hybrid": {
+          "model_id": "common-event-MC",
+          "point_change": 2.2212,
+          "event_probability": 0.4019,
+          "interval_50": [
+            1,
+            3
+          ],
+          "interval_80": [
+            1,
+            4
+          ],
+          "interval_90": [
+            0,
+            4
+          ]
+        }
+      }
+    },
+    "joint": {
+      "group": "B",
+      "label": "S&P500 return <=-2% AND WTI return >=+5%",
+      "definition": "event==1 at Oct30 vs Nov6 matched closes",
+      "unit": "binary_0or1",
+      "threshold": 1,
+      "baseline_date": "2026-10-30",
+      "target_date": "2026-11-06",
+      "confidence": "low, uncalibrated; derived from market predictions",
+      "arms": {
+        "llm": {
+          "model_id": "LLM-manual-20261031",
+          "point_change": 0.06,
+          "event_probability": 0.06,
+          "interval_50": [
+            0,
+            0
+          ],
+          "interval_80": [
+            0,
+            0
+          ],
+          "interval_90": [
+            0,
+            1
+          ]
+        },
+        "statistical": {
+          "model_id": "independent-zero-drift-Gaussian",
+          "point_change": 0.0355,
+          "event_probability": 0.0355,
+          "interval_50": [
+            0,
+            0
+          ],
+          "interval_80": [
+            0,
+            0
+          ],
+          "interval_90": [
+            0,
+            0
+          ]
+        },
+        "hybrid": {
+          "model_id": "common-event-MC",
+          "point_change": 0.0747,
+          "event_probability": 0.0747,
+          "interval_50": [
+            0,
+            0
+          ],
+          "interval_80": [
+            0,
+            0
+          ],
+          "interval_90": [
+            0,
+            1
+          ]
+        }
+      }
+    }
+  },
+  "limits": [
+    "Volatility std values and event impacts are explicit low-confidence assumptions, not fitted econometric estimates.",
+    "Pure-LLM arm judgments are authored separately from numerical simulation output; numeric baseline uses zero expected weekly change.",
+    "Event Bernoulli switches assumed independent; event-driven dependence only through common shocks.",
+    "Japan TSE holiday Nov3 means four sessions; market target use Nov6 official local close.",
+    "US daylight saving time ends Nov1; Nov6 16:00 EST corresponds Nov7 06:00 JST.",
+    "Gold and forex spot Friday vendor day-end quotation conventions can vary; provenance issues must be retained.",
+    "No observed data dated after 2026-10-30 is included; public source pages may refresh."
+  ]
+}
