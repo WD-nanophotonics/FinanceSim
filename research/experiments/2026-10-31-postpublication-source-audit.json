@@ -1,0 +1,75 @@
+{
+  "record_type": "postpublication_source_audit",
+  "observed_on": "2026-10-31",
+  "run_started_at": "2026-10-31T12:47:31+09:00",
+  "audit_scope": "Independent selective source audit of already frozen 2026-10-31 forecast and settlement; no forecast revision, new projection or score substitution.",
+  "cutoff_protection": "THIS AUDIT OCCURS AFTER THE OCT31 12:00 JST FORECAST CUTOFF; findings may validate previously published inputs, but must never be represented as pre-registration at noon.",
+  "forecast_path": "research/weekly/2026-10-31-forecast.json",
+  "settlement_path": "research/weekly/2026-10-31-verification-correction01.json",
+  "checks": [
+    {
+      "target": "2026-Q3 US GDP advance",
+      "verified_value": 3.4,
+      "unit": "percent annualized",
+      "released_at": "2026-10-29T08:30:00-04:00",
+      "source": "https://www.bea.gov/index.php/news/2026/gdp-advance-estimate-3rd-quarter-2026",
+      "status": "independently verified first estimate"
+    },
+    {
+      "target": "Sep 2026 core PCE yoy",
+      "verified_value": 3.1,
+      "unit": "percent yoy",
+      "released_at": "2026-10-29T08:30:00-04:00",
+      "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026",
+      "status": "independently verified"
+    },
+    {
+      "target": "Dallas Fed WEI Oct24 week",
+      "verified_value": 2.98,
+      "unit": "index percent",
+      "released_date": "2026-10-29",
+      "source": "https://www.dallasfed.org/research/wei",
+      "status": "independently verified; same release says revised Oct17 WEI 3.25, while frozen prediction baseline used prior first release 3.33; do not substitute revised baseline"
+    },
+    {
+      "target": "Nikkei225 Oct30 official closing value",
+      "verified_value": 63290.11,
+      "unit": "index points",
+      "closed_at": "2026-10-30T15:30:00+09:00",
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/summary?dt=10302026&idx=nk225",
+      "status": "independently verified exact official close"
+    },
+    {
+      "target": "Treasury 10Y par yield Oct30",
+      "verified_value": 4.94,
+      "unit": "percent",
+      "observation_date": "2026-10-30",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "secondary": "https://www.yieldcurve.fyi/us-treasury-yields",
+      "status": "secondary confirms frozen value; the opened official yearly page did not expose up-to-date October text in search, so direct primary-row verification remains pending"
+    },
+    {
+      "target": "BLS October employment report planned release",
+      "scheduled_at": "2026-11-06T08:30:00-05:00",
+      "source": "https://www.bls.gov/schedule/news_release/empsit.htm",
+      "status": "official calendar independently verified prior to report"
+    },
+    {
+      "target": "Nov3 RBA hike probability benchmark",
+      "frozen_value": 0.81,
+      "source": "https://rbawatch.com/next-rba-meeting",
+      "status": "public page currently repeats 81%; timestamped historical futures observation is not independently authenticated, label market-proxy provisional"
+    }
+  ],
+  "outstanding": [
+    "October 30 Dec26 WTI settlement mismatch of $104.12 Reuters vs $104.02 vendor remains flagged; the Oct31 prediction's $102.95 baseline was opening price and must not be used to score future percent return.",
+    "Most cross-vendor Oct23/Oct30 asset comparisons remain provisional; do not present group-C skill as final.",
+    "Prior daily research after Oct21 absent; no new daily research is implied by the audited archive."
+  ],
+  "automation_result": "The scheduled noon weekly settlement and forward prediction had already been committed at 12:08 JST; second audit verified select sources and latest successful CI, without generating another competing weekly forecast.",
+  "latest_ci_at_audit": {
+    "sha": "395676165c7ddda8ff5805ccbe9a5bc29e411078",
+    "result": "success",
+    "url": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/41163320646"
+  }
+}
