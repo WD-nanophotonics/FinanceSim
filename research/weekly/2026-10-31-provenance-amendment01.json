@@ -1,0 +1,19 @@
+{
+  "kind": "post-publication provenance correction; append only",
+  "as_of_actual": "after 2026-10-31T12:00:00+09:00",
+  "target_archive": "research/weekly/2026-10-31-forecast.json",
+  "target_commit": "4c3b0fe992f9a67cc5aee93aac9f0370828fc3d8",
+  "issue": "WTI Dec2026 Oct30 USD102.95 in forecast baseline_level was Oct30 session OPEN, wrongly interpreted as close.",
+  "original_baseline_unchanged": 102.95,
+  "corrected_assessment": "Reuters Oct30 reported NYMEX WTI December settlement USD104.12 vs Oct23 USD103.27. Exact-contract Investing Dec26 series lists daily price USD104.02 (10 cent vendor discrepancy). Do not mix the open and settlement.",
+  "corrected_settlement_candidate": 104.12,
+  "alternate_provider_price": 104.02,
+  "source": [
+    "https://www.reuters.com/business/energy/oil-rises-supply-concerns-houthis-attack-saudi-arabia-2026-10-30/",
+    "https://au.investing.com/commodities/crude-oil-historical-data?cid=1239375"
+  ],
+  "no_changes_to_frozen_forecast": true,
+  "score_instruction": "For Nov6 WTI target, preserve ORIGINAL 2026-10-31 forecast percentage-change distributions but compute actual Dec26 weekly contract return using correctly paired Oct30 and Nov6 official NYMEX settlements. The original erroneous baseline field must not be relied on for a derived absolute price level; no retrospective scenario re-tuning. Document the discrepancy when evaluating.",
+  "verification_correction_path": "research/weekly/2026-10-31-verification-correction01.json",
+  "protocol_implication": "Add a required field-type validation for market OHLC when ingesting historical close; time-of-day alone is insufficient."
+}
