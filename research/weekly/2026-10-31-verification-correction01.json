@@ -1,0 +1,1136 @@
+{
+  "record_type": "FinanceSim Oct31 settlement CORRECTION-01, append-only",
+  "execution_as_of_claim": "2026-10-31 12:00 JST cutoff; verification executed after cutoff",
+  "origin_date": "2026-10-24",
+  "settlement_date": "2026-10-30",
+  "original_archive_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+  "supplement_archive_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9",
+  "truth_sources_checked_at": "2026-10-31 JST",
+  "publication_status": "corrected provisional source, WTI October30 confirmed Reuters Reuters close 104.12; 104.02 exact-contract Investing site discrepancy, small; other cross-vendor caveats unchanged",
+  "market_price_unit_policy": "Return uses frozen Oct23 levels and Oct30 currently reported closes; original source mismatches annotated, not concealed; no retroactive corrections to forecast",
+  "scores": [
+    {
+      "target_id": "sp500_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "percent_return",
+      "actual_change": -0.574788,
+      "observed": {
+        "start": 7623.68,
+        "end": 7579.86,
+        "source": "https://www.investing.com/indices/us-spx-500-historical-data",
+        "published": "2026-10-30"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.0956,
+          "prob_positive": 0.524,
+          "abs_error": 0.670388,
+          "signed_error": 0.670388,
+          "brier": 0.274576,
+          "covered80": true,
+          "score80": 4.2778,
+          "covered50": true,
+          "covered90": true,
+          "score50": 2.279,
+          "score90": 5.5521
+        },
+        "llm": {
+          "point_change": -0.6,
+          "prob_positive": 0.42,
+          "abs_error": 0.025212,
+          "signed_error": -0.025212,
+          "brier": 0.1764,
+          "covered80": true,
+          "score80": 3.9146,
+          "covered50": true,
+          "covered90": true,
+          "score50": 2.0602,
+          "score90": 5.0244
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 0.574788,
+          "signed_error": 0.574788,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 3.9146,
+          "covered50": true,
+          "covered90": true,
+          "score50": 2.0602,
+          "score90": 5.0244
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "nasdaq100_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "percent_return",
+      "actual_change": -2.009937,
+      "observed": {
+        "start": 28967.07,
+        "end": 28384.85,
+        "source": "https://www.investing.com/indices/nq-100-historical-data",
+        "published": "2026-10-30",
+        "caveat": "Oct23 frozen Yahoo snapshot 28967.07; current Investing 28957.53; cross-vendor baseline introduces ~0.033 pp uncertainty; use archived baseline for audit, score is provisional."
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.1096,
+          "prob_positive": 0.5113,
+          "abs_error": 2.119537,
+          "signed_error": 2.119537,
+          "brier": 0.261428,
+          "covered80": true,
+          "score80": 9.1126,
+          "covered50": true,
+          "covered90": true,
+          "score50": 4.8628,
+          "score90": 11.6206
+        },
+        "llm": {
+          "point_change": -0.9,
+          "prob_positive": 0.4,
+          "abs_error": 1.109937,
+          "signed_error": 1.109937,
+          "brier": 0.16,
+          "covered80": true,
+          "score80": 8.6934,
+          "covered50": true,
+          "covered90": true,
+          "score50": 4.5754,
+          "score90": 11.1578
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 2.009937,
+          "signed_error": 2.009937,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 8.6934,
+          "covered50": true,
+          "covered90": true,
+          "score50": 4.5754,
+          "score90": 11.1578
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "stoxx600_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "percent_return",
+      "actual_change": 1.727012,
+      "observed": {
+        "start": 635.78,
+        "end": 646.76,
+        "source": "https://www.investing.com/indices/stoxx-600-historical-data",
+        "published": "2026-10-30",
+        "caveat": "Some regional Investing pages show inconsistent Oct30 intra-day derived values (e.g. 647.46). Current 646.76 is provisional pending official STOXX EOD."
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": -0.2165,
+          "prob_positive": 0.4479,
+          "abs_error": 1.943512,
+          "signed_error": -1.943512,
+          "brier": 0.304814,
+          "covered80": true,
+          "score80": 4.3675,
+          "covered50": false,
+          "covered90": true,
+          "score50": 5.49035,
+          "score90": 5.6375
+        },
+        "llm": {
+          "point_change": -0.5,
+          "prob_positive": 0.44,
+          "abs_error": 2.227012,
+          "signed_error": -2.227012,
+          "brier": 0.3136,
+          "covered80": false,
+          "score80": 5.866125,
+          "covered50": false,
+          "covered90": true,
+          "score50": 6.74965,
+          "score90": 5.2636
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 1.727012,
+          "signed_error": -1.727012,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 3.9346,
+          "covered50": false,
+          "covered90": true,
+          "score50": 4.83725,
+          "score90": 5.05
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "nikkei225_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "percent_return",
+      "actual_change": 0.952177,
+      "observed": {
+        "start": 62693.16,
+        "end": 63290.11,
+        "source": "https://www.investing.com/indices/japan-ni225-historical-data",
+        "published": "2026-10-30",
+        "caveat": "Japan exchange close 15:30 JST, not 15:00 as original forecast metadata."
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.073,
+          "prob_positive": 0.5153,
+          "abs_error": 0.879177,
+          "signed_error": -0.879177,
+          "brier": 0.234934,
+          "covered80": true,
+          "score80": 7.3711,
+          "covered50": true,
+          "covered90": true,
+          "score50": 3.7979,
+          "score90": 9.3658
+        },
+        "llm": {
+          "point_change": -1,
+          "prob_positive": 0.4,
+          "abs_error": 1.952177,
+          "signed_error": -1.952177,
+          "brier": 0.36,
+          "covered80": true,
+          "score80": 7.1766,
+          "covered50": false,
+          "covered90": true,
+          "score50": 4.031709,
+          "score90": 9.211
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 0.952177,
+          "signed_error": -0.952177,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 6.8032,
+          "covered50": true,
+          "covered90": true,
+          "score50": 3.5806,
+          "score90": 8.7318
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "kospi_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "percent_return",
+      "actual_change": 3.250995,
+      "observed": {
+        "start": 5550.3,
+        "end": 5730.74,
+        "source": "https://ph.investing.com/indices/kospi-historical-data",
+        "published": "2026-10-30"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.2822,
+          "prob_positive": 0.5207,
+          "abs_error": 2.968795,
+          "signed_error": -2.968795,
+          "brier": 0.229728,
+          "covered80": true,
+          "score80": 16.7675,
+          "covered50": true,
+          "covered90": true,
+          "score50": 8.7944,
+          "score90": 21.3661
+        },
+        "llm": {
+          "point_change": -1.3,
+          "prob_positive": 0.41,
+          "abs_error": 4.550995,
+          "signed_error": -4.550995,
+          "brier": 0.3481,
+          "covered80": true,
+          "score80": 16.525,
+          "covered50": false,
+          "covered90": true,
+          "score50": 9.506782,
+          "score90": 21.2096
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 3.250995,
+          "signed_error": -3.250995,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 16.525,
+          "covered50": true,
+          "covered90": true,
+          "score50": 8.6972,
+          "score90": 21.2096
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "csi300_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "percent_return",
+      "actual_change": -2.918888,
+      "observed": {
+        "start": 4105.33,
+        "end": 3985.5,
+        "source": "https://cn.investing.com/indices/csi300-historical-data",
+        "published": "2026-10-30"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.2839,
+          "prob_positive": 0.5393,
+          "abs_error": 3.202788,
+          "signed_error": 3.202788,
+          "brier": 0.290844,
+          "covered80": true,
+          "score80": 6.8833,
+          "covered50": false,
+          "covered90": true,
+          "score50": 9.211053,
+          "score90": 8.866
+        },
+        "llm": {
+          "point_change": 0.1,
+          "prob_positive": 0.51,
+          "abs_error": 3.018888,
+          "signed_error": 3.018888,
+          "brier": 0.2601,
+          "covered80": true,
+          "score80": 6.772,
+          "covered50": false,
+          "covered90": true,
+          "score50": 8.511353,
+          "score90": 8.6918
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 2.918888,
+          "signed_error": 2.918888,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 6.772,
+          "covered50": false,
+          "covered90": true,
+          "score50": 8.111353,
+          "score90": 8.6918
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "gold_spot_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "percent_return",
+      "actual_change": -3.008036,
+      "observed": {
+        "start": 3995.63,
+        "end": 3875.44,
+        "source": "https://in.investing.com/currencies/xau-usd-historical-data",
+        "published": "2026-10-30"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": -0.3884,
+          "prob_positive": 0.4531,
+          "abs_error": 2.619636,
+          "signed_error": 2.619636,
+          "brier": 0.2053,
+          "covered80": true,
+          "score80": 7.6792,
+          "covered50": false,
+          "covered90": true,
+          "score50": 6.436045,
+          "score90": 9.9625
+        },
+        "llm": {
+          "point_change": -0.4,
+          "prob_positive": 0.45,
+          "abs_error": 2.608036,
+          "signed_error": 2.608036,
+          "brier": 0.2025,
+          "covered80": true,
+          "score80": 7.6894,
+          "covered50": false,
+          "covered90": true,
+          "score50": 6.385145,
+          "score90": 9.8692
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 3.008036,
+          "signed_error": 3.008036,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 6.3662,
+          "covered50": false,
+          "covered90": true,
+          "score50": 8.681545,
+          "score90": 8.171
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "usdjpy_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "percent_return",
+      "actual_change": 0.471818,
+      "observed": {
+        "start": 156.84,
+        "end": 157.58,
+        "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+        "published": "2026-10-30",
+        "caveat": "Archived snapshot 156.84; current vendor Oct23 156.87; 0.019 pp difference in measured return."
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.1572,
+          "prob_positive": 0.5453,
+          "abs_error": 0.314618,
+          "signed_error": -0.314618,
+          "brier": 0.206752,
+          "covered80": true,
+          "score80": 3.6705,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1.9487,
+          "score90": 4.6845
+        },
+        "llm": {
+          "point_change": -0.4,
+          "prob_positive": 0.46,
+          "abs_error": 0.871818,
+          "signed_error": -0.871818,
+          "brier": 0.2916,
+          "covered80": true,
+          "score80": 3.5884,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1.8886,
+          "score90": 4.6056
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 0.471818,
+          "signed_error": -0.471818,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 2.6982,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1.42,
+          "score90": 3.4632
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "us10y_par_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "basis_points",
+      "actual_change": -6,
+      "observed": {
+        "start": 5,
+        "end": 4.94,
+        "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+        "published": "2026-10-30"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 3.8879,
+          "prob_positive": 0.5783,
+          "abs_error": 9.8879,
+          "signed_error": 9.8879,
+          "brier": 0.334431,
+          "covered80": true,
+          "score80": 48.7722,
+          "covered50": true,
+          "covered90": true,
+          "score50": 25.8734,
+          "score90": 62.538
+        },
+        "llm": {
+          "point_change": 3,
+          "prob_positive": 0.55,
+          "abs_error": 9,
+          "signed_error": 9,
+          "brier": 0.3025,
+          "covered80": true,
+          "score80": 46.8984,
+          "covered50": true,
+          "covered90": true,
+          "score50": 24.683,
+          "score90": 60.1934
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 6,
+          "signed_error": 6,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 46.8984,
+          "covered50": true,
+          "covered90": true,
+          "score50": 24.683,
+          "score90": 60.1934
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "wti_dec2026_wk_20261030",
+      "group": "C",
+      "status": "provisional_scored",
+      "unit": "percent_return",
+      "actual_change": 0.823085,
+      "observed": {
+        "start": 103.27,
+        "end": 104.12,
+        "source": "https://www.reuters.com/business/energy/oil-rises-supply-concerns-houthis-attack-saudi-arabia-2026-10-30/",
+        "published": "2026-10-30",
+        "caveat": "CORRECTED: initial settlement file mistook Oct30 102.95 opening quote as closing; Reuters reported WTI Dec26 settling at USD104.12; Investing exact Dec26 contract daily price 104.02, a 10c cross-vendor difference. Source-level provisional until CME settlement audited; NOT a down week."
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.549,
+          "prob_positive": 0.5402,
+          "abs_error": 0.274085,
+          "signed_error": -0.274085,
+          "brier": 0.211416,
+          "covered80": true,
+          "score80": 17.8711,
+          "covered50": true,
+          "covered90": true,
+          "score50": 9.2804,
+          "score90": 22.8414
+        },
+        "llm": {
+          "point_change": 1.5,
+          "prob_positive": 0.57,
+          "abs_error": 0.676915,
+          "signed_error": 0.676915,
+          "brier": 0.1849,
+          "covered80": true,
+          "score80": 15.3786,
+          "covered50": true,
+          "covered90": true,
+          "score50": 8.0938,
+          "score90": 19.7382
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 0.823085,
+          "signed_error": -0.823085,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 15.3786,
+          "covered50": true,
+          "covered90": true,
+          "score50": 8.0938,
+          "score90": 19.7382
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "us_initial_claims_first_release_20261029",
+      "group": "A",
+      "status": "provisional_scored",
+      "unit": "thousands_persons_change",
+      "actual_change": 0,
+      "observed": {
+        "actual_change": 0,
+        "level": 194,
+        "base_first_vintage": 194,
+        "source": "https://www.dol.gov/index.php/newsroom/releases?agency=39&state=All&topic=All&year=all",
+        "published": "2026-10-29T08:30:00-04:00",
+        "caveat": "Oct22 initial 194k is revised Oct29 to 195k; frozen metric compares to Oct22 FIRST 194k, therefore delta 0, not -1."
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": -1.1667,
+          "prob_positive": 0.47,
+          "abs_error": 1.1667,
+          "signed_error": -1.1667,
+          "brier": 0.2209,
+          "covered80": true,
+          "score80": 11.8159,
+          "covered50": true,
+          "covered90": true,
+          "score50": 6.2188,
+          "score90": 15.1656
+        },
+        "llm": {
+          "point_change": -1,
+          "prob_positive": 0.45,
+          "abs_error": 1,
+          "signed_error": -1,
+          "brier": 0.2025,
+          "covered80": true,
+          "score80": 19,
+          "covered50": true,
+          "covered90": true,
+          "score50": 9.9998,
+          "score90": 24.3862
+        },
+        "statistical": {
+          "point_change": -1.3333,
+          "prob_positive": 0.3639,
+          "abs_error": 1.3333,
+          "signed_error": -1.3333,
+          "brier": 0.132423,
+          "covered80": true,
+          "score80": 9.8159,
+          "covered50": true,
+          "covered90": true,
+          "score50": 5.1662,
+          "score90": 12.5986
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "us_wei_first_release_20261029",
+      "group": "A",
+      "status": "provisional_scored",
+      "unit": "index_points_change",
+      "actual_change": -0.35,
+      "observed": {
+        "actual_change": -0.35,
+        "level": 2.98,
+        "base_first_vintage": 3.33,
+        "source": "https://www.dallasfed.org/research/wei",
+        "published": "2026-10-29T10:30:00-05:00",
+        "caveat": "Oct29 page revised Oct17 to 3.25; frozen prior first-vintage base is 3.33, so delta is -0.35."
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.08,
+          "prob_positive": 0.56,
+          "abs_error": 0.43,
+          "signed_error": 0.43,
+          "brier": 0.3136,
+          "covered80": true,
+          "score80": 1.35,
+          "covered50": false,
+          "covered90": true,
+          "score50": 1.0094,
+          "score90": 1.7328
+        },
+        "llm": {
+          "point_change": 0.05,
+          "prob_positive": 0.55,
+          "abs_error": 0.4,
+          "signed_error": 0.4,
+          "brier": 0.3025,
+          "covered80": true,
+          "score80": 1.5,
+          "covered50": false,
+          "covered90": true,
+          "score50": 0.8106,
+          "score90": 1.9252
+        },
+        "statistical": {
+          "point_change": 0,
+          "prob_positive": 0.5,
+          "abs_error": 0.35,
+          "signed_error": 0.35,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 1.2,
+          "covered50": false,
+          "covered90": true,
+          "score50": 0.7684,
+          "score90": 1.5402
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "us_q3_gdp_advance_20261029",
+      "group": "A",
+      "status": "provisional_scored",
+      "unit": "percentage_points_change",
+      "actual_change": 1.2,
+      "observed": {
+        "actual_change": 1.2,
+        "level": 3.4,
+        "base_first_vintage": 2.2,
+        "source": "https://www.bea.gov/index.php/news/2026/gdp-advance-estimate-3rd-quarter-2026",
+        "published": "2026-10-29T08:30:00-04:00"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 1.05,
+          "prob_positive": 0.75,
+          "abs_error": 0.15,
+          "signed_error": -0.15,
+          "brier": 0.0625,
+          "covered80": true,
+          "score80": 3,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1.579,
+          "score90": 3.8504
+        },
+        "llm": {
+          "point_change": 0.8,
+          "prob_positive": 0.72,
+          "abs_error": 0.4,
+          "signed_error": -0.4,
+          "brier": 0.0784,
+          "covered80": true,
+          "score80": 3.2,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1.6842,
+          "score90": 4.1072
+        },
+        "statistical": {
+          "point_change": 1,
+          "prob_positive": 0.75,
+          "abs_error": 0.2,
+          "signed_error": -0.2,
+          "brier": 0.0625,
+          "covered80": true,
+          "score80": 3,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1.579,
+          "score90": 3.8504
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "us_sep_core_pce_yoy_first_release_20261029",
+      "group": "A",
+      "status": "provisional_scored",
+      "unit": "percentage_points_change",
+      "actual_change": 0.1,
+      "observed": {
+        "actual_change": 0.1,
+        "level": 3.1,
+        "base_first_vintage": 3,
+        "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026",
+        "published": "2026-10-29T08:30:00-04:00"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.1,
+          "prob_positive": 0.61,
+          "abs_error": 0,
+          "signed_error": 0,
+          "brier": 0.1521,
+          "covered80": true,
+          "score80": 0.55,
+          "covered50": true,
+          "covered90": true,
+          "score50": 0.2894,
+          "score90": 0.706
+        },
+        "llm": {
+          "point_change": 0.12,
+          "prob_positive": 0.62,
+          "abs_error": 0.02,
+          "signed_error": 0.02,
+          "brier": 0.1444,
+          "covered80": true,
+          "score80": 0.65,
+          "covered50": true,
+          "covered90": true,
+          "score50": 0.342,
+          "score90": 0.8342
+        },
+        "statistical": {
+          "point_change": 0.1,
+          "prob_positive": 0.6,
+          "abs_error": 0,
+          "signed_error": 0,
+          "brier": 0.16,
+          "covered80": true,
+          "score80": 0.6,
+          "covered50": true,
+          "covered90": true,
+          "score50": 0.3158,
+          "score90": 0.77
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "fomc_hold_oct28",
+      "group": "A",
+      "status": "provisional_scored",
+      "unit": "binary_unchanged_0or1",
+      "actual_change": 1,
+      "observed": {
+        "actual_change": 1,
+        "level": 1,
+        "source": "https://www.federalreserve.gov/newsevents/pressreleases/2026-press-fomc.htm",
+        "published": "2026-10-28T14:00:00-04:00"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.88,
+          "prob_positive": 0.88,
+          "abs_error": 0.12,
+          "signed_error": -0.12,
+          "brier": 0.0144,
+          "covered80": true,
+          "score80": 0,
+          "covered50": true,
+          "covered90": true,
+          "score50": 0,
+          "score90": 1
+        },
+        "llm": {
+          "point_change": 0.9,
+          "prob_positive": 0.9,
+          "abs_error": 0.1,
+          "signed_error": -0.1,
+          "brier": 0.01,
+          "covered80": true,
+          "score80": 0,
+          "covered50": true,
+          "covered90": true,
+          "score50": 0,
+          "score90": 1
+        },
+        "statistical": {
+          "point_change": 0.5,
+          "prob_positive": 0.5,
+          "abs_error": 0.5,
+          "signed_error": -0.5,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 1,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1,
+          "score90": 1
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "ecb_hold_oct29",
+      "group": "A",
+      "status": "provisional_scored",
+      "unit": "binary_unchanged_0or1",
+      "actual_change": 1,
+      "observed": {
+        "actual_change": 1,
+        "level": 1,
+        "source": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
+        "published": "2026-10-29"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.84,
+          "prob_positive": 0.84,
+          "abs_error": 0.16,
+          "signed_error": -0.16,
+          "brier": 0.0256,
+          "covered80": true,
+          "score80": 0,
+          "covered50": true,
+          "covered90": true,
+          "score50": 0,
+          "score90": 1
+        },
+        "llm": {
+          "point_change": 0.86,
+          "prob_positive": 0.86,
+          "abs_error": 0.14,
+          "signed_error": -0.14,
+          "brier": 0.0196,
+          "covered80": true,
+          "score80": 0,
+          "covered50": true,
+          "covered90": true,
+          "score50": 0,
+          "score90": 1
+        },
+        "statistical": {
+          "point_change": 0.5,
+          "prob_positive": 0.5,
+          "abs_error": 0.5,
+          "signed_error": -0.5,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 1,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1,
+          "score90": 1
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    },
+    {
+      "target_id": "boj_hold_oct30",
+      "group": "A",
+      "status": "provisional_scored",
+      "unit": "binary_unchanged_0or1",
+      "actual_change": 1,
+      "observed": {
+        "actual_change": 1,
+        "level": 1,
+        "source": "https://www.boj.or.jp/",
+        "published": "2026-10-30"
+      },
+      "scores": {
+        "hybrid": {
+          "point_change": 0.68,
+          "prob_positive": 0.68,
+          "abs_error": 0.32,
+          "signed_error": -0.32,
+          "brier": 0.1024,
+          "covered80": true,
+          "score80": 1,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1,
+          "score90": 1
+        },
+        "llm": {
+          "point_change": 0.69,
+          "prob_positive": 0.69,
+          "abs_error": 0.31,
+          "signed_error": -0.31,
+          "brier": 0.0961,
+          "covered80": true,
+          "score80": 1,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1,
+          "score90": 1
+        },
+        "statistical": {
+          "point_change": 0.5,
+          "prob_positive": 0.5,
+          "abs_error": 0.5,
+          "signed_error": -0.5,
+          "brier": 0.25,
+          "covered80": true,
+          "score80": 1,
+          "covered50": true,
+          "covered90": true,
+          "score50": 1,
+          "score90": 1
+        }
+      },
+      "reference_original_record_sha256": "d00be1a5231e557dbe7e90f189fa6489651ff05af5638ef1f21d96cec02adf75",
+      "reference_supplement_sha256": "83f30f4aca061c4e7b980de54d33ae49122d6258f09e1b0a4235291ae94a13c9"
+    }
+  ],
+  "risk_scores": [
+    {
+      "target_id": "risk_sp500_abs_weekly_move",
+      "group": "B",
+      "status": "provisional_scored_after_noon_supplement",
+      "actual": 0.574788,
+      "event": 0,
+      "point": 1.3461,
+      "point_abs_error": 0.7713120000000001,
+      "p": 0.2311,
+      "brier": 0.05340721,
+      "baseline_p": 0.1904,
+      "baseline_brier": 0.036252160000000005,
+      "covered50": true,
+      "covered90": true,
+      "score50": 1.3847,
+      "score90": 3.2271
+    },
+    {
+      "target_id": "risk_wti_abs_weekly_move",
+      "group": "B",
+      "status": "provisional_scored_after_noon_supplement",
+      "actual": 0.82308511668443,
+      "event": 0,
+      "point": 5.5409,
+      "point_abs_error": 4.71781488331557,
+      "p": 0.4708,
+      "brier": 0.22165263999999998,
+      "baseline_p": 0.4047,
+      "baseline_brier": 0.16378209,
+      "covered50": false,
+      "covered90": true,
+      "score50": 11.30046,
+      "score90": 13.0867
+    },
+    {
+      "target_id": "risk_us10y_abs_weekly_move",
+      "group": "B",
+      "status": "provisional_scored_after_noon_supplement",
+      "actual": 6,
+      "event": 0,
+      "point": 15.5435,
+      "point_abs_error": 9.5435,
+      "p": 0.4448,
+      "brier": 0.19784703999999997,
+      "baseline_p": 0.4123,
+      "baseline_brier": 0.16999129,
+      "covered50": false,
+      "covered90": true,
+      "score50": 16.824,
+      "score90": 36.8969
+    },
+    {
+      "target_id": "risk_global_equity_down_count",
+      "group": "B",
+      "status": "provisional_scored_after_noon_supplement",
+      "actual": 2,
+      "event": 0,
+      "point": 1.6517,
+      "point_abs_error": 0.34830000000000005,
+      "p": 0.2206,
+      "brier": 0.04866436,
+      "baseline_p": 0.2085,
+      "baseline_brier": 0.04347225,
+      "covered50": true,
+      "covered90": true,
+      "score50": 1,
+      "score90": 4
+    },
+    {
+      "target_id": "risk_equity_oil_joint_tail",
+      "group": "B",
+      "status": "provisional_scored_after_noon_supplement",
+      "actual": 0,
+      "event": 0,
+      "point": 0.0366,
+      "point_abs_error": 0.0366,
+      "p": 0.0366,
+      "brier": 0.00133956,
+      "baseline_p": 0.0193,
+      "baseline_brier": 0.00037249000000000006,
+      "covered50": true,
+      "covered90": true,
+      "score50": 0,
+      "score90": 0
+    }
+  ],
+  "group_summary": {
+    "A": {
+      "n": 7,
+      "by_arm": {
+        "llm": {
+          "mean_brier": 0.12193,
+          "coverage80": 1,
+          "coverage50": 0.85714,
+          "coverage90": 1,
+          "mean_abs_error_incomparable_units": null,
+          "brier_skill_vs_stat": 0.37007
+        },
+        "statistical": {
+          "mean_brier": 0.19356,
+          "coverage80": 1,
+          "coverage50": 0.85714,
+          "coverage90": 1,
+          "mean_abs_error_incomparable_units": null
+        },
+        "hybrid": {
+          "mean_brier": 0.12736,
+          "coverage80": 1,
+          "coverage50": 0.85714,
+          "coverage90": 1,
+          "mean_abs_error_incomparable_units": null,
+          "brier_skill_vs_stat": 0.34201
+        }
+      }
+    },
+    "C": {
+      "n": 10,
+      "by_arm": {
+        "llm": {
+          "mean_brier": 0.25997,
+          "coverage80": 0.9,
+          "coverage50": 0.5,
+          "coverage90": 1,
+          "mean_abs_error_incomparable_units": null,
+          "brier_skill_vs_stat": -0.03988
+        },
+        "statistical": {
+          "mean_brier": 0.25,
+          "coverage80": 1,
+          "coverage50": 0.7,
+          "coverage90": 1,
+          "mean_abs_error_incomparable_units": null
+        },
+        "hybrid": {
+          "mean_brier": 0.25542,
+          "coverage80": 1,
+          "coverage50": 0.7,
+          "coverage90": 1,
+          "mean_abs_error_incomparable_units": null,
+          "brier_skill_vs_stat": -0.02168
+        }
+      }
+    },
+    "B": {
+      "n": 5,
+      "mean_brier": 0.10458,
+      "baseline_mean_brier": 0.08277,
+      "coverage50": 0.6,
+      "coverage90": 1,
+      "brier_skill_vs_baseline": -0.26347
+    }
+  },
+  "note": "B supplement published after Sat noon; evaluate separately and never count as noon forecast. Market source/vintage mismatches should be re-verified before declaring final official skill. Scores across mixed units must not be pooled. Market and risk-state targets are dependent.",
+  "supersedes_provisional_path": "research/weekly/2026-10-31-verification-provisional.json",
+  "correction_reason": "Original Oct30 WTI 102.95 value was OPEN, not CLOSE. Reuters reports Dec26 WTI settlement 104.12 and archived Oct23 settlement was 103.27, corrected weekly return is positive ~0.8231%; scoring and WTI absolute move recomputed; market vendor Investing exact Dec26 lists 104.02 so 0.10 uncertainty retained. Original never modified. Forward Nov6 forecast archive has erroneously set WTI Oct30 baseline to open 102.95; future measurement must use Reuters same-contract 104.12, kept forecast percentages unchanged; external baselines should be separately fixed and labeled.",
+  "sources_for_correction": [
+    "https://www.reuters.com/business/energy/oil-rises-supply-concerns-houthis-attack-saudi-arabia-2026-10-30/",
+    "https://au.investing.com/commodities/crude-oil-historical-data?cid=1239375"
+  ]
+}
