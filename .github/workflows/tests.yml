@@ -39,3 +39,9 @@ jobs:
         run: |
           python research/scripts/generate_2026_10_24_1252_supplement.py > /tmp/financesim_supplement_replayed.json
           python -c 'import json; from financesim import verify; a=json.load(open("research/weekly/2026-10-24-1252-risk-and-interval-supplement-canonical.json")); b=json.load(open("/tmp/financesim_supplement_replayed.json")); assert verify(a) and a==b; print("Risk/interval supplement replay is byte-equivalent after JSON parse")'
+      - name: Replay October31 forecast and confirm the frozen JSON
+        run: |
+          node research/scripts/generate_2026_10_31.js research/inputs/2026-10-31-1200-snapshot.json > /tmp/financesim_oct31_replay.json
+          cmp research/weekly/2026-10-31-forecast.json /tmp/financesim_oct31_replay.json
+      - name: Independently replay October31 settlement scoring
+        run: python research/scripts/score_2026_10_31.py > /dev/null
