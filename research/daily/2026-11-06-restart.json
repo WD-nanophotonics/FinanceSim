@@ -1,0 +1,172 @@
+{
+  "record_type": "daily_research_catchup_and_preclose_settlement",
+  "recorded_at": "2026-11-06T12:55:00Z",
+  "time_zone": "Asia/Tokyo",
+  "status": "partial_real_data_verified; friday_us_close_and_october_employment_report_pending",
+  "research_window": "2026-11-01/2026-11-06",
+  "frozen_prior_forecast": "research/weekly/2026-10-31-forecast.json",
+  "research_activity": {
+    "information_retrieved": "Primary sources for ISM manufacturing and services, Dallas Fed WEI, RBA and BoE announcements; Reuters confirmation of DOL claims. Official BLS schedule verifies forthcoming payroll release.",
+    "modelling": "Actually evaluated six previously frozen group-A forecasts against their originally registered numerical levels, direction probabilities, and 50%/90% intervals. Did not estimate new macro causal model or run new financial-price forecasts.",
+    "execution": "Scorecard source and tests committed to financesim/scorecards.py and tests/test_scorecards.py. Exact re-run entrypoint: python research/scripts/score_2026_11_06_partial.py. GitHub Actions checks execution. This record does not claim a full market settlement.",
+    "market_provenance_fix": "financesim/market_data.py validates quote_type=settlement/official_close/fixing, availability cutoffs, identical vendor, futures contract and units before computing weekly percent returns; addresses the prior WTI open-versus-close mistake. Source field labels still must be independently checked against the underlying vendor."
+  },
+  "observations": [
+    {
+      "id": "US_ISM_MANUFACTURING_2026_10",
+      "value": 55.5,
+      "baseline": 54.5,
+      "delta": 1,
+      "unit": "PMI index points",
+      "reference_period": "2026-10",
+      "released_at": "2026-11-02T10:00:00-05:00",
+      "source": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/october/",
+      "primary": true
+    },
+    {
+      "id": "US_ISM_SERVICES_2026_10",
+      "value": 54.5,
+      "baseline": 54.9,
+      "delta": -0.4,
+      "unit": "PMI index points",
+      "reference_period": "2026-10",
+      "released_at": "2026-11-04T10:00:00-05:00",
+      "source": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/october/",
+      "primary": true
+    },
+    {
+      "id": "US_INITIAL_CLAIMS_2026_10_31",
+      "value": 189,
+      "baseline_first_release": 194,
+      "delta_vs_frozen_baseline": -5,
+      "previous_week_revised": 195,
+      "unit": "thousands of persons",
+      "reference_period": "week ended 2026-10-31",
+      "released_at": "2026-11-05T08:30:00-05:00",
+      "source": "https://www.reuters.com/business/world-at-work/us-weekly-jobless-claims-57-year-lows-amid-low-layoffs-2026-11-05/",
+      "primary": false,
+      "secondary_source_note": "Reuters cites DOL; verify contemporaneous first release in official DOL archive as needed."
+    },
+    {
+      "id": "DALLAS_WEI_2026_10_31",
+      "value": 3.47,
+      "baseline_first_release": 2.98,
+      "delta_vs_frozen_baseline": 0.49,
+      "now_displayed_revised_prior": 2.95,
+      "unit": "index points",
+      "reference_period": "week ended 2026-10-31",
+      "released_at": "2026-11-05T10:30:00-06:00",
+      "source": "https://www.dallasfed.org/research/wei",
+      "primary": true,
+      "revision_note": "Historical prior 2.95 displayed by latest Dallas Fed update differs from the originally frozen 2.98. Do not rewrite."
+    },
+    {
+      "id": "RBA_CASH_RATE_2026_11_03",
+      "value": 4.85,
+      "delta": 0.25,
+      "unit": "percentage points",
+      "event_value": 1,
+      "reference_period": "2026-11-03 policy meeting",
+      "released_at": "2026-11-03T14:30:00+11:00",
+      "source": "https://www.rba.gov.au/news/",
+      "primary": true
+    },
+    {
+      "id": "BOE_BANK_RATE_2026_11_05",
+      "value": 4,
+      "delta": 0.25,
+      "unit": "percentage points",
+      "event_value": 1,
+      "reference_period": "2026-11-05 policy announcement",
+      "released_at": "2026-11-05T12:00:00+00:00",
+      "source": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+      "primary": true
+    }
+  ],
+  "quantitative_features": {
+    "ism_manufacturing_minus_services_oct2026": 1,
+    "ism_manufacturing_vs_sep_change": 1,
+    "ism_services_vs_sep_change": -0.4,
+    "initial_claims_vs_previously_first_reported_week_change_thousands": -5,
+    "wei_vs_frozen_first_reported_week_change": 0.49,
+    "monetary_hikes_observed_in_two_pre_registered_events": 2
+  },
+  "partial_frozen_A_assessment": {
+    "settlement_count": 6,
+    "original_forecast_count": 8,
+    "probability_metric": "Brier on event 'positive change' for numeric targets; hike occurs for binary targets",
+    "scores": {
+      "llm": {
+        "brier": 0.21245,
+        "coverage_50": 0.5,
+        "coverage_90": 1,
+        "brier_skill_vs_statistical": -0.21342218
+      },
+      "statistical": {
+        "brier": 0.1750833333,
+        "coverage_50": 0.8333333333,
+        "coverage_90": 1,
+        "brier_skill_vs_statistical": 0
+      },
+      "hybrid": {
+        "brier": 0.2006666667,
+        "coverage_50": 0.6666666667,
+        "coverage_90": 1,
+        "brier_skill_vs_statistical": -0.14612089
+      }
+    },
+    "interpretation": "In the first six completed A targets, the simple numerical/market benchmark beats both LLM and hybrid probabilities. ISM manufacturing accelerated unexpectedly, WEI rose and claims fell, contradicting cautious LLM macro drift; services PMI decline matched the LLM center exactly. Two central-bank hike probabilities were already high in all three arms. Tiny heterogeneous sample; no statistical significance.",
+    "caveats": "Preliminary, release-time vignettes. First-vintage source audit remains incomplete for claims; WEI earlier release provenance requires archived version. 50% and 90% coverage not empirically calibrated. Brier mixes different events; report per-target values and refrain from calling them independent. No aggregate point MAE across units."
+  },
+  "pending": [
+    {
+      "target": "nonfarm_payroll_nov06",
+      "reason": "Official BLS October 2026 Employment Situation release scheduled 2026-11-06 08:30 EST (22:30 JST); not yet published at the research as-of timestamp."
+    },
+    {
+      "target": "unemployment_rate_nov06",
+      "reason": "Same BLS release remains in the future."
+    },
+    {
+      "target": "market risk and weekly assets",
+      "reason": "Friday Nov6 New York official close and market-price settlement sources are unavailable at this JST Friday evening timestamp. Hold until Saturday."
+    }
+  ],
+  "event_calendar_next_week": [
+    {
+      "event": "US October CPI",
+      "time": "2026-11-10T08:30:00-05:00",
+      "source": "https://www.bls.gov/schedule/2026/11_sched_list.htm"
+    },
+    {
+      "event": "US October PPI",
+      "time": "2026-11-13T08:30:00-05:00",
+      "source": "https://www.bls.gov/schedule/2026/11_sched_list.htm"
+    }
+  ],
+  "updated_hypotheses": [
+    {
+      "id": "Q001",
+      "status": "early_negative_provisional",
+      "claim": "Narrative event adjustment has not yet shown probability-skill benefit vs numerical/market baselines in current week's six settled A forecasts.",
+      "next_test": "Add Nov6 payroll and unemployment only after first release; recompute pre-registered eight-target A score. Revisit after 26 weeks."
+    },
+    {
+      "id": "Q004",
+      "status": "source_integrity_improved_not_complete",
+      "claim": "A WTI open-versus-close error can be prevented mechanically if proper quote_type/vendor/contract/time metadata are provided.",
+      "next_test": "Apply validator to independently retrieved market official settlement values, reject missing or conflicting sources."
+    }
+  ],
+  "code_changes": [
+    "financesim/market_data.py",
+    "tests/test_market_data.py",
+    "financesim/scorecards.py",
+    "tests/test_scorecards.py",
+    "research/scripts/score_2026_11_06_partial.py",
+    ".github/workflows/tests.yml"
+  ],
+  "source_inputs_file": "research/inputs/2026-11-06-preclose-first-releases.json",
+  "constraints": "No past forecasts overwritten; no claim that all global Friday markets are settled; no automatic news ingestion, no new statistical model fit or calibrated live performance claim.",
+  "access_time_policy": "Sources were retrieved during the research window ending at recorded_at. Real Git publication commit timestamp is the durable append-only archive receipt."
+}
