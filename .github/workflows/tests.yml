@@ -46,4 +46,4 @@ jobs:
       - name: Independently replay October31 settlement scoring
         run: python research/scripts/score_2026_10_31.py > /dev/null
       - name: Score November 6 partially published macro first releases
-        run: python research/scripts/score_2026_11_06_partial.py > /dev/null
+        run: PYTHONPATH=. python research/scripts/score_2026_11_06_partial.py > /dev/null
