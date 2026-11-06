@@ -1,0 +1,53 @@
+{
+  "record_type": "partial_macro_first_release_input",
+  "source_forecast": "research/weekly/2026-10-31-forecast.json",
+  "retrieved_at": "2026-11-06T12:55:00Z",
+  "as_of_note": "This is an interim Nov6 pre-08:30 EST jobs release capture. US October payrolls and Friday US closes are NOT yet settled. Values reflect web-observed first release, not a full archived first-release PDF vintage.",
+  "actuals": {
+    "claims_nov05": {
+      "value": 189,
+      "release_version": "first",
+      "released_at": "2026-11-05T08:30:00-05:00",
+      "source_url": "https://www.reuters.com/business/world-at-work/us-weekly-jobless-claims-57-year-lows-amid-low-layoffs-2026-11-05/"
+    },
+    "wei_nov05": {
+      "value": 3.47,
+      "release_version": "first",
+      "released_at": "2026-11-05T10:30:00-06:00",
+      "source_url": "https://www.dallasfed.org/research/wei"
+    },
+    "ism_mfg_nov02": {
+      "value": 55.5,
+      "release_version": "first",
+      "released_at": "2026-11-02T10:00:00-05:00",
+      "source_url": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/october/"
+    },
+    "ism_services_nov04": {
+      "value": 54.5,
+      "release_version": "first",
+      "released_at": "2026-11-04T10:00:00-05:00",
+      "source_url": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/october/"
+    },
+    "rba_hike_nov03": {
+      "value": 1,
+      "release_version": "first",
+      "released_at": "2026-11-03T14:30:00+11:00",
+      "source_url": "https://www.rba.gov.au/news/"
+    },
+    "boe_hike_nov05": {
+      "value": 1,
+      "release_version": "first",
+      "released_at": "2026-11-05T12:00:00+00:00",
+      "source_url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026"
+    }
+  },
+  "pending": [
+    "nonfarm_payroll_nov06",
+    "unemployment_rate_nov06"
+  ],
+  "baseline_caveats": {
+    "claims_nov05": "Forecast baseline=194 thousand from Oct29 first release. DOL revised previous week to 195 thousand in its Nov5 report; do NOT change baseline.",
+    "wei_nov05": "Forecast baseline=2.98 first published Oct29. Dallas Fed Nov5 page retrospectively gives Oct24=2.95; score relative to 2.98 unchanged."
+  },
+  "provenance_caveat": "The official Dallas Fed page displays the Nov5 current and revised prior values; first-release status should be independently archived for a high-assurance audit. BLS Nov6 08:30 ET jobs report is future relative to this archive, deliberately excluded."
+}
