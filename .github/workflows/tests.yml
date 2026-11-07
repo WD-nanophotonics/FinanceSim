@@ -53,3 +53,5 @@ jobs:
         run: |
           node research/scripts/generate_2026_11_07.js research/inputs/2026-11-07-1200-snapshot.json > /tmp/financesim_nov7_forecast.json
           cmp research/weekly/2026-11-07-forecast.json /tmp/financesim_nov7_forecast.json
+      - name: Audit weekly source sensitivity without changing archived scores
+        run: python research/scripts/audit_2026_11_07_vendor_sensitivity.py > /dev/null
