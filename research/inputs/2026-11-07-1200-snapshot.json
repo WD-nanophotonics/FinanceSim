@@ -1,0 +1,349 @@
+{
+  "record_type": "FinanceSim_forecast_input_snapshot",
+  "information_cutoff": "2026-11-07T12:00:00+09:00",
+  "snapshot_compiled_after_cutoff": true,
+  "asserted_data_vintage": "all observed target baseline levels as of market Friday 2026-11-06, releases as of Fri Nov6",
+  "historical_verification_path": "research/weekly/2026-11-07-verification.json",
+  "simulation_seed": 20261107,
+  "draws": 20000,
+  "prior_commit": "aee156da0a349cefd5cd157bbfa6a32a67a0c2d1",
+  "market_baselines": {
+    "sp500": {
+      "label": "S&P 500",
+      "reference": 7376.92,
+      "unit": "index",
+      "sigma": 2.2,
+      "llm_center": 0.4,
+      "llm_p": 0.53,
+      "llm_scale": 1.3,
+      "close": "2026-11-13T16:00:00-05:00",
+      "source": "https://www.investing.com/indices/us-spx-500-historical-data",
+      "reason": "大跌后技术性反弹概率与高估值压力并存，初步小幅偏多",
+      "quality": "Oct30/Nov6 cross-vendor S&P discrepancy; Nov6 reference must be matched to Friday official close on settlement."
+    },
+    "nasdaq100": {
+      "label": "NASDAQ 100",
+      "reference": 26989.99,
+      "unit": "index",
+      "sigma": 3.65,
+      "llm_center": 0.8,
+      "llm_p": 0.55,
+      "llm_scale": 1.3,
+      "close": "2026-11-13T16:00:00-05:00",
+      "source": "https://www.investing.com/indices/nq-100-historical-data",
+      "reason": "AI相关高估值板块超跌反弹潜力较大，脆弱性也较强"
+    },
+    "stoxx600": {
+      "label": "STOXX 600",
+      "reference": 648.34,
+      "unit": "index",
+      "sigma": 1.85,
+      "llm_center": 0.2,
+      "llm_p": 0.52,
+      "llm_scale": 1.25,
+      "close": "2026-11-13T17:30:00+01:00",
+      "source": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "reason": "欧洲对能源价格和科技资本支出冲击敏感"
+    },
+    "nikkei225": {
+      "label": "Nikkei 225",
+      "reference": 57434.77,
+      "unit": "index",
+      "sigma": 4.1,
+      "llm_center": 1.5,
+      "llm_p": 0.57,
+      "llm_scale": 1.3,
+      "close": "2026-11-13T15:30:00+09:00",
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/summary",
+      "reason": "上一周巨跌可能反弹，美元日元与半导体链共同影响"
+    },
+    "kospi": {
+      "label": "KOSPI",
+      "reference": 5059.69,
+      "unit": "index",
+      "sigma": 6,
+      "llm_center": 2,
+      "llm_p": 0.58,
+      "llm_scale": 1.35,
+      "close": "2026-11-13T15:30:00+09:00",
+      "source": "https://www.investing.com/indices/kospi-historical-data",
+      "reason": "前周暴跌导致高反弹弹性，但韩国半导体风险集中"
+    },
+    "csi300": {
+      "label": "CSI 300",
+      "reference": 4054.28,
+      "unit": "index",
+      "sigma": 2.55,
+      "llm_center": 0.15,
+      "llm_p": 0.51,
+      "llm_scale": 1.3,
+      "close": "2026-11-13T15:00:00+08:00",
+      "source": "https://ph.investing.com/indices/csi300-historical-data",
+      "reason": "中国股指较少同步下跌，国内通胀数据和全球风险双重影响"
+    },
+    "gold": {
+      "label": "XAU/USD spot",
+      "reference": 4070.31,
+      "unit": "USD/oz",
+      "sigma": 4.05,
+      "llm_center": -0.9,
+      "llm_p": 0.45,
+      "llm_scale": 1.3,
+      "close": "2026-11-13T17:00:00-05:00",
+      "source": "https://www.investing.com/currencies/xau-usd-historical-data",
+      "reason": "金价快速反弹后可能获利回吐，地缘政治与实际利率方向相反",
+      "quality": "FX-style gold spot vendor cutoff varies; paired vendor closing quote provisional"
+    },
+    "wti": {
+      "label": "WTI futures continuous provisional",
+      "reference": 90.34,
+      "unit": "USD/bbl",
+      "sigma": 6.8,
+      "llm_center": -1.8,
+      "llm_p": 0.43,
+      "llm_scale": 1.3,
+      "close": "2026-11-13T14:30:00-05:00",
+      "source": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "reason": "近期原油下挫、地缘供应风险导致双侧尾部较大",
+      "quality": "Provisional continuous quote: fixed Dec26 futures contract not proven; do not treat as an official Dec26 settlement."
+    },
+    "usdjpy": {
+      "label": "USD/JPY spot",
+      "reference": 158.48,
+      "unit": "JPY/USD",
+      "sigma": 1.45,
+      "llm_center": 0.25,
+      "llm_p": 0.54,
+      "llm_scale": 1.25,
+      "close": "2026-11-13T17:00:00-05:00",
+      "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "reason": "强就业数据偏利多美元，日元避险需求相反",
+      "quality": "Different FX vendor day-end quotes differ materially, matched provider required, provisional"
+    },
+    "us10y": {
+      "label": "US Treasury 10Y par yield",
+      "reference": 4.86,
+      "unit": "percent_yield",
+      "sigma": 16,
+      "llm_center": 3,
+      "llm_p": 0.54,
+      "llm_scale": 1.25,
+      "close": "2026-11-13T17:00:00-05:00",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "reason": "就业韧性与高通胀可推高收益率，风险规避和低油价下拉收益率"
+    }
+  },
+  "macro_baselines": {
+    "us_cpi_yoy_nov10": {
+      "label": "US October headline CPI yoy, first release",
+      "base": 3.7,
+      "unit": "percent_yoy",
+      "center": 4,
+      "sd": 0.28,
+      "llm": 3.95,
+      "llm_p": 0.76,
+      "target": "2026-11-10T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "why": "September headline 3.7% yoy; energy price volatility creates elevated uncertainty."
+    },
+    "us_core_cpi_yoy_nov10": {
+      "label": "US October core CPI yoy, first release",
+      "base": 2.6,
+      "unit": "percent_yoy",
+      "center": 2.7,
+      "sd": 0.22,
+      "llm": 2.75,
+      "llm_p": 0.64,
+      "target": "2026-11-10T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "why": "Core was 2.6% in Sept; persistent services but less energy direct pass-through."
+    },
+    "us_cpi_mom_nov10": {
+      "label": "US October headline CPI mom SA, first release",
+      "base": 0.6,
+      "unit": "percent_mom",
+      "center": 0.52,
+      "sd": 0.27,
+      "llm": 0.5,
+      "llm_p": 0.42,
+      "target": "2026-11-10T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "why": "Sept +0.6% seasonally adjusted with energy jump, momentum mean reversion likely."
+    },
+    "us_ppi_yoy_nov13": {
+      "label": "US October final-demand PPI yoy, first release",
+      "base": 6.3,
+      "unit": "percent_yoy",
+      "center": 6,
+      "sd": 0.65,
+      "llm": 5.9,
+      "llm_p": 0.36,
+      "target": "2026-11-13T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ppi_10212026.htm",
+      "why": "Sept PPI +6.3% yoy with unusually strong energy component, possible partial fade."
+    },
+    "us_ppi_mom_nov13": {
+      "label": "US October headline final-demand PPI mom SA, first release",
+      "base": 1.3,
+      "unit": "percent_mom",
+      "center": 0.58,
+      "sd": 0.62,
+      "llm": 0.5,
+      "llm_p": 0.18,
+      "target": "2026-11-13T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ppi_10212026.htm",
+      "why": "Sept +1.3% MoM unusually high; broad uncertainty in energy and margins."
+    },
+    "us_claims_nov12": {
+      "label": "US initial claims first release for week ended Nov7",
+      "base": 189,
+      "unit": "thousands_persons",
+      "center": 192,
+      "sd": 12,
+      "llm": 195,
+      "llm_p": 0.6,
+      "target": "2026-11-12T08:30:00-05:00",
+      "source": "https://www.dol.gov/ui/data.pdf",
+      "why": "Prior Oct31 week 189k; assumed modest rebound, low confidence."
+    },
+    "dallas_wei_nov12": {
+      "label": "Dallas Fed WEI for week ended Nov7 first available print",
+      "base": 3.47,
+      "unit": "index_points",
+      "center": 3.37,
+      "sd": 0.58,
+      "llm": 3.3,
+      "llm_p": 0.38,
+      "target": "2026-11-12T10:30:00-06:00",
+      "source": "https://www.dallasfed.org/research/wei",
+      "why": "Last Nov5 level 3.47; noisy near-term series, prior revisions may alter displayed baseline",
+      "quality": "Nov12 posting time estimated; vintage score only from independently captured first print."
+    }
+  },
+  "subjective_scenarios": [
+    {
+      "id": "ai_deleveraging",
+      "probability": 0.43,
+      "reason": "AI capex/semiconductor valuation deleveraging continues",
+      "impacts": {
+        "sp500": -2,
+        "nasdaq100": -3.4,
+        "stoxx600": -1,
+        "nikkei225": -2.9,
+        "kospi": -4,
+        "csi300": -0.5,
+        "gold": 0.9,
+        "wti": -1.5,
+        "usdjpy": -0.5,
+        "us10y": -10
+      }
+    },
+    {
+      "id": "oversold_bounce",
+      "probability": 0.43,
+      "reason": "global stocks rebound from last week's deep losses",
+      "impacts": {
+        "sp500": 1.9,
+        "nasdaq100": 3.2,
+        "stoxx600": 0.9,
+        "nikkei225": 3.4,
+        "kospi": 4.6,
+        "csi300": 0.65,
+        "gold": -0.3,
+        "wti": 0.6,
+        "usdjpy": 0.2,
+        "us10y": 5
+      }
+    },
+    {
+      "id": "hotter_us_cpi",
+      "probability": 0.38,
+      "reason": "Oct CPI exceeds expectations and pushes US rate hike odds higher",
+      "impacts": {
+        "sp500": -1.4,
+        "nasdaq100": -2.4,
+        "stoxx600": -0.8,
+        "nikkei225": -1.1,
+        "kospi": -1.3,
+        "csi300": -0.3,
+        "gold": -2.1,
+        "wti": -0.5,
+        "usdjpy": 0.7,
+        "us10y": 13
+      }
+    },
+    {
+      "id": "iran_diplomatic_deescalation",
+      "probability": 0.27,
+      "reason": "Middle East supply-risk premium fades",
+      "impacts": {
+        "sp500": 0.6,
+        "nasdaq100": 0.5,
+        "stoxx600": 1,
+        "nikkei225": 0.7,
+        "kospi": 0.7,
+        "csi300": 0.3,
+        "gold": -1.4,
+        "wti": -5.8,
+        "usdjpy": 0.2,
+        "us10y": -2
+      }
+    },
+    {
+      "id": "energy_supply_disruption",
+      "probability": 0.21,
+      "reason": "Oil supply disruption intensifies",
+      "impacts": {
+        "sp500": -0.9,
+        "nasdaq100": -1,
+        "stoxx600": -1.1,
+        "nikkei225": -1.4,
+        "kospi": -1.3,
+        "csi300": -0.4,
+        "gold": 1.8,
+        "wti": 8.4,
+        "usdjpy": -0.3,
+        "us10y": 5
+      }
+    }
+  ],
+  "verification_cautions": [
+    "WTI same vendor front continuous futures quote 90.34 conflicts with Reuters Dec26 settlement 90.83. Fixed-contract official settlement not confirmed, so WTI C and B provisional.",
+    "Gold Friday vendor close differs from Reuters timestamped spot quote; use paired vendor daily close.",
+    "USDJPY cross-vendor Friday session closes differ: Yahoo 157.498 vs Investing 158.48, keep pair-vendor result provisional.",
+    "S&P Oct30 frozen original 7579.86 vs current Investing history 7580.07; original forecast unchanged, matched daily comparison only.",
+    "A group's prior claims and WEI first-release vintage may differ from revised historical levels.",
+    "Risk group B and asset group C outcomes correlated; do not interpret raw sample count as independent precision."
+  ],
+  "nominal_statistical": "strict zero-change mean; volatility scales are assumed and uncalibrated, not fitted time-series volatility",
+  "coverage_probabilities": "conditional model probabilities; NOT empirical confidence",
+  "weekly_window": "2026-11-06 local Friday provider closes -> 2026-11-13 same local Friday conventions",
+  "no_forward_data": true,
+  "asof_sources": [
+    "https://www.bls.gov/schedule/2026/11_sched_list.htm",
+    "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+    "https://www.bls.gov/news.release/archives/ppi_10212026.htm",
+    "https://www.bls.gov/news.release/empsit.htm",
+    "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+  ],
+  "unscorable_omissions": [
+    {
+      "item": "China October CPI",
+      "reason": "Tentative Nov9 release, but September official first-release prior level not independently authenticated before noon."
+    },
+    {
+      "item": "scheduled central-bank rate decisions",
+      "reason": "No confirmed BoE/Fed/RBA/ECB decision during Nov9-13; provide macro release scenarios only."
+    },
+    {
+      "item": "US 30-year Treasury price",
+      "reason": "No independently verified matching issuer quotation by cutoff, 10-year yield already covered."
+    }
+  ],
+  "warnings": [
+    "Nov6 S&P close differs among providers; will need provider reconciliation.",
+    "Nov6 WTI is provisional continuous futures quote, not verified Dec26 contract; forecast conditional, do not score as verified fixed contract until matched.",
+    "Model only contains assumed normal innovations and independent Bernoulli common shocks. Monte Carlo is not an econometric fit.",
+    "No daily research files for Nov1-Nov5 exist."
+  ]
+}
