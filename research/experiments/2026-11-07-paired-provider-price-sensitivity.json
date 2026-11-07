@@ -1,0 +1,212 @@
+{
+  "record_type": "FinanceSim_independent_source_sensitivity_experiment",
+  "id": "E20261107-paired-provider-quote-robustness",
+  "observed_at": "2026-11-07T10:30:39.312Z",
+  "code_ref": "research/scripts/audit_2026_11_07_vendor_sensitivity.py",
+  "code_commit": "316f2101263dcb47ac88a0f96fd354b7de0f21ca",
+  "ci_commit": "0155468ce86921858f216347e6a360980a292614",
+  "ci_url": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42364139932",
+  "ci_result": "success, Python 3.10 and 3.12",
+  "input_snapshot": "research/inputs/2026-11-07-vendor-sensitivity.json",
+  "frozen_forecast": "research/weekly/2026-10-31-forecast.json",
+  "frozen_verification": "research/weekly/2026-11-07-verification.json",
+  "seed": null,
+  "random_simulation_executed": false,
+  "deterministic_replay_executed": true,
+  "method": "Swap entire prior-Friday and next-Friday observation pairs for alternative quoted sources, leaving all frozen forecast points, probabilities and intervals unchanged; recompute price percent returns, MAE, RMSE, Brier-sign invariance, and 50/80/90 interval coverage by arm. WTI Reuters pair is a conditional scenario because named NYMEX contract identity is not documented in the articles.",
+  "sensitivity_cases": {
+    "wti": {
+      "original_return_pct": -13.234729158663082,
+      "alternate_return_pct": -12.76411832500961,
+      "difference_percentage_points": 0.4706108336534722,
+      "sign_flip": false,
+      "arms": {
+        "llm": {
+          "original_absolute_error": 14.234729158663082,
+          "alternate_absolute_error": 13.76411832500961,
+          "brier_invariant": true,
+          "intervals": {
+            "50": {
+              "old_covered": false,
+              "alt_covered": false,
+              "alternate_interval_score": 45.343873300038446
+            },
+            "80": {
+              "old_covered": false,
+              "alt_covered": false,
+              "alternate_interval_score": 63.823583250096114
+            },
+            "90": {
+              "old_covered": false,
+              "alt_covered": false,
+              "alternate_interval_score": 62.11016650019221
+            }
+          }
+        },
+        "statistical": {
+          "original_absolute_error": 13.242929158663083,
+          "alternate_absolute_error": 12.77231832500961,
+          "brier_invariant": true,
+          "intervals": {
+            "50": {
+              "old_covered": false,
+              "alt_covered": false,
+              "alternate_interval_score": 42.92717330003843
+            },
+            "80": {
+              "old_covered": false,
+              "alt_covered": false,
+              "alternate_interval_score": 66.1120832500961
+            },
+            "90": {
+              "old_covered": false,
+              "alt_covered": false,
+              "alternate_interval_score": 77.44556650019221
+            }
+          }
+        },
+        "hybrid": {
+          "original_absolute_error": 14.292729158663082,
+          "alternate_absolute_error": 13.82211832500961,
+          "brier_invariant": true,
+          "intervals": {
+            "50": {
+              "old_covered": false,
+              "alt_covered": false,
+              "alternate_interval_score": 46.590773300038435
+            },
+            "80": {
+              "old_covered": false,
+              "alt_covered": false,
+              "alternate_interval_score": 73.05808325009612
+            },
+            "90": {
+              "old_covered": false,
+              "alt_covered": false,
+              "alternate_interval_score": 88.97246650019221
+            }
+          }
+        }
+      }
+    },
+    "usdjpy": {
+      "original_return_pct": 0.5902887972072168,
+      "alternate_return_pct": 0.5840157430330617,
+      "difference_percentage_points": -0.006273054174155135,
+      "sign_flip": false,
+      "arms": {
+        "llm": {
+          "original_absolute_error": 0.9402887972072168,
+          "alternate_absolute_error": 0.9340157430330617,
+          "brier_invariant": true,
+          "intervals": {
+            "50": {
+              "old_covered": true,
+              "alt_covered": true,
+              "alternate_interval_score": 2.3472
+            },
+            "80": {
+              "old_covered": true,
+              "alt_covered": true,
+              "alternate_interval_score": 4.4597999999999995
+            },
+            "90": {
+              "old_covered": true,
+              "alt_covered": true,
+              "alternate_interval_score": 5.724
+            }
+          }
+        },
+        "statistical": {
+          "original_absolute_error": 0.5887887972072169,
+          "alternate_absolute_error": 0.5825157430330618,
+          "brier_invariant": true,
+          "intervals": {
+            "50": {
+              "old_covered": true,
+              "alt_covered": true,
+              "alternate_interval_score": 1.9679
+            },
+            "80": {
+              "old_covered": true,
+              "alt_covered": true,
+              "alternate_interval_score": 3.7574
+            },
+            "90": {
+              "old_covered": true,
+              "alt_covered": true,
+              "alternate_interval_score": 4.7821
+            }
+          }
+        },
+        "hybrid": {
+          "original_absolute_error": 0.7991887972072168,
+          "alternate_absolute_error": 0.7929157430330617,
+          "brier_invariant": true,
+          "intervals": {
+            "50": {
+              "old_covered": true,
+              "alt_covered": true,
+              "alternate_interval_score": 2.0816
+            },
+            "80": {
+              "old_covered": true,
+              "alt_covered": true,
+              "alternate_interval_score": 3.9591000000000003
+            },
+            "90": {
+              "old_covered": true,
+              "alt_covered": true,
+              "alternate_interval_score": 5.100899999999999
+            }
+          }
+        }
+      }
+    }
+  },
+  "comparative_groupC_nine_percent_return_metrics": {
+    "llm": {
+      "n": 9,
+      "old_mae_pp": 5.292261111111111,
+      "alternative_mae_pp": 5.239274007560297,
+      "delta_mae_pp": -0.05298710355081404,
+      "old_rmse_pp": 6.946009476887159,
+      "alternative_rmse_pp": 6.839713399154747
+    },
+    "statistical": {
+      "n": 9,
+      "old_mae_pp": 5.496794444444444,
+      "alternative_mae_pp": 5.44380734089363,
+      "delta_mae_pp": -0.05298710355081404,
+      "old_rmse_pp": 7.134039571502375,
+      "alternative_rmse_pp": 7.037994383428592
+    },
+    "hybrid": {
+      "n": 9,
+      "old_mae_pp": 5.41835,
+      "alternative_mae_pp": 5.365362896449186,
+      "delta_mae_pp": -0.05298710355081404,
+      "old_rmse_pp": 7.142643676794375,
+      "alternative_rmse_pp": 7.038900587164085
+    }
+  },
+  "conclusions": [
+    "USDJPY alternative source matched Yahoo Japan 2026-10-30 157.53 -> 2026-11-06 158.45. Investing 157.55 -> 158.48. Price-return discrepancy only ~0.00627 percentage points. Older Yahoo Nov6 157.498 was not matched to same daily close. Preserve older warning for audit but no longer treat it as proven ~1-yen end-of-day disagreement.",
+    "WTI Reuters October30 104.12 -> November6 90.83 corresponds to -12.7641%, compared with original -13.2347% from end 90.34. 0.47061 percentage-point discrepancy. December fixed-contract identity still not independently authenticated, and the original 90.34 daily close cannot be promoted to exchange settlement.",
+    "Nine market percentage-return target MAE moves by -0.05299 pp under these two replacements, unchanged probability directions and unchanged 50/80/90 interval hit classification. The recorded poor price-return skill remains qualitatively poor; this is robustness only, not a retroactive improvement claim.",
+    "Prices remain highly source-sensitive for tail/interval scores even when Brier of direction does not change; do not use source-conditional alternatives to declare a model winner."
+  ],
+  "source_urls": [
+    "https://finance.yahoo.co.jp/quote/USDJPY=X/history",
+    "https://jp.investing.com/currencies/usd-jpy-historical-data",
+    "https://www.reuters.com/business/energy/oil-rises-supply-concerns-houthis-attack-saudi-arabia-2026-10-30/",
+    "https://www.reuters.com/business/energy/oil-set-sharp-weekly-drop-middle-east-supply-concerns-provide-floor-2026-11-06/"
+  ],
+  "limitations": [
+    "Reuters WTI front futures contract ID not explicit in article; fixed contract analysis is conditional and NOT a verified new settlement.",
+    "Yahoo Japan and Investing FX quote cutoffs may differ by minutes; differences small but do not imply exact source equivalence.",
+    "Only two instruments and one realized week audited; scenario is not a prospective test.",
+    "The vendor sensitivity experiment code does not sample or fit a market model. CI tests performed deterministic replay."
+  ],
+  "no_forecast_rewrites": true
+}
