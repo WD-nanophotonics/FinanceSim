@@ -1,0 +1,25 @@
+{
+  "record_type": "append_only_nov7_source_date_correction",
+  "forecast_archived_unchanged": "research/weekly/2026-11-07-forecast.json",
+  "verification_archived_unchanged": "research/weekly/2026-11-07-verification.json",
+  "follows": "research/weekly/2026-11-07-provenance-amendment01.json",
+  "focus": "S&P500 historical-source date disambiguation",
+  "correction": "An earlier source warning referred to 7,353.73 as an alternative Nov6 close. A second independent historical table gives 7,353.73 for THURSDAY Nov5 and 7,376.86 for FRIDAY Nov6, a date-mapping error. The archived Nov6 quote 7,376.92 is within 0.06 index point of Yahoo Nov6 7,376.86. Thus mark pair-vendor rounding/retrieval discrepancy of 0.06, not 23-point exchange close conflict.",
+  "independent_source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+  "verified_rows": [
+    {
+      "date": "2026-11-05",
+      "close": 7353.73
+    },
+    {
+      "date": "2026-11-06",
+      "close": 7376.86
+    },
+    {
+      "date": "2026-10-30",
+      "close": 7580.07
+    }
+  ],
+  "score_treatment": "Do not retroactively edit the frozen Oct31 or Nov7 forecasts. Preserve the already archived 7376.92 paired-vendor quote, state the minor difference and prospectively use one selected source.",
+  "inference": "The prior qualitative warning about source-version mismatch has been narrowed; this does not remove WTI and FX provenance concerns."
+}
