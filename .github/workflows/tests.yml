@@ -47,3 +47,9 @@ jobs:
         run: python research/scripts/score_2026_10_31.py > /dev/null
       - name: Score November 6 partially published macro first releases
         run: PYTHONPATH=. python research/scripts/score_2026_11_06_partial.py > /dev/null
+      - name: Replay November 7 verification (23 real targets)
+        run: PYTHONPATH=. python research/scripts/score_2026_11_07.py
+      - name: Reproduce frozen November 7 to 13 Monte Carlo forecast
+        run: |
+          node research/scripts/generate_2026_11_07.js research/inputs/2026-11-07-1200-snapshot.json > /tmp/financesim_nov7_forecast.json
+          cmp research/weekly/2026-11-07-forecast.json /tmp/financesim_nov7_forecast.json
