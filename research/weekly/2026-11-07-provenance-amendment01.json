@@ -1,0 +1,31 @@
+{
+  "record_type": "FinanceSim_nov7_append_only_provenance_note",
+  "frozen_forecast": "research/weekly/2026-11-07-forecast.json",
+  "no_forecast_revisions": true,
+  "scope": "Forward Nov13 three-arm forecast only. Clarify yield measurement and provisional source convention; freeze points/probabilities unchanged.",
+  "caveats": [
+    {
+      "key": "market_forecasts.us10y.definition",
+      "error": "The frozen machine text inadvertently describes (Nov13/Nov6-1)*100 before replacing the noun phrase; this ratio definition is invalid for Treasury yield.",
+      "correct_canonical_definition": "U.S. Treasury 10-year par yield on Nov13 minus Nov6, quoted in yield percentage points, multiplied by 100 to basis points. Example: 4.91%-4.86%=+5 bp.",
+      "frozen_forecast_arm_points_unchanged": true
+    },
+    {
+      "key": "market_forecasts.wti",
+      "error": "Nov6 historical continuous WTI $90.34 not demonstrated to be identical December 2026 futures fixed contract official settlement $90.83 published by Reuters.",
+      "treatment": "Set provisional and do not give calibrated fixed-contract performance credit. Next Nov13 settlement requires same vendor/contract and closing convention; source may be unavailable, in which case mark unresolved."
+    },
+    {
+      "key": "market_forecasts.sp500",
+      "error": "Nov6 daily matched vendor close 7376.92 differs from another Nov6 close 7353.73 in publicly retrieved source. October31 archived 7579.86 differs from current history 7580.07.",
+      "treatment": "Candidate quote reference frozen as retrieved and flagged; independently reconcile official closing timestamp before declaring scored status final. Continue to score % changes with consistent reference pair."
+    },
+    {
+      "key": "macro_forecasts.dallas_wei_nov12",
+      "error": "Scheduled posting time and first-print vintage not yet independently sourced.",
+      "treatment": "Time is tentative, do not score until after first release archived. Prior last-first-vintage 3.47 unchanged."
+    }
+  ],
+  "metadata_note": "Forecast_cutoff is observation eligibility cutoff not claim of Git commit time; the new archive is committed after 12:00 JST, and no later-market/new-release information entered the input.",
+  "source_replay": "research/scripts/generate_2026_11_07.js"
+}
