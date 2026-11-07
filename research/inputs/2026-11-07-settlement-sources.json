@@ -1,0 +1,128 @@
+{
+  "record_type": "2026-11-07-saturday-settlement-sources",
+  "compiled_at": "after 2026-11-07T12:00:00+09:00",
+  "observed_before_cutoff": true,
+  "sources": {
+    "sp500": {
+      "start": 7580.07,
+      "end": 7376.92,
+      "url": "https://www.investing.com/indices/us-spx-500-historical-data",
+      "source_type": "derived_daily_quote",
+      "caveat": "Oct30 frozen snapshot=7579.86 versus current vendor table=7580.07, matched current vendor same-day pair used, archived forecast preserved"
+    },
+    "nasdaq100": {
+      "start": 28384.85,
+      "end": 26989.99,
+      "url": "https://www.investing.com/indices/nq-100-historical-data",
+      "source_type": "vendor_index_daily"
+    },
+    "stoxx600": {
+      "start": 646.75,
+      "end": 648.34,
+      "url": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "source_type": "vendor_daily",
+      "caveat": "Reuters says 648.33; rounding/vendor discrepancy 0.01"
+    },
+    "nikkei225": {
+      "start": 63290.11,
+      "end": 57434.77,
+      "url": "https://indexes.nikkei.co.jp/nkave/statistics",
+      "source_type": "index_publisher_official",
+      "caveat": "Oct30 crosschecked against publisher 63290.11"
+    },
+    "kospi": {
+      "start": 5730.74,
+      "end": 5059.69,
+      "url": "https://www.investing.com/indices/kospi-historical-data",
+      "source_type": "vendor_daily"
+    },
+    "csi300": {
+      "start": 3985.5,
+      "end": 4054.28,
+      "url": "https://ph.investing.com/indices/csi300-historical-data",
+      "source_type": "vendor_daily"
+    },
+    "gold": {
+      "start": 3875.44,
+      "end": 4070.31,
+      "url": "https://www.investing.com/currencies/xau-usd-historical-data",
+      "source_type": "spot_vendor_daily",
+      "caveat": "Reuters Friday point-in-time quote 4074.36 differs; use same vendor day close on both ends"
+    },
+    "wti": {
+      "start": 104.12,
+      "end": 90.34,
+      "url": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "source_type": "vendor_continuous_future_derived",
+      "provisional": true,
+      "caveat": "Official Reuters Dec26 NYMEX settlement cited 90.83, while Investing derived daily close 90.34; current historic source does not explicitly establish same fixed Dec26 contract identifier; score/probability provisional. Original archived baseline incorrectly used 102.95 open."
+    },
+    "usdjpy": {
+      "start": 157.55,
+      "end": 158.48,
+      "url": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "source_type": "vendor_daily_forex",
+      "caveat": "Daily quote cutoff differs by FX vendor; Yahoo Nov6 quote ~157.50, major vendor conflict; mark provisional",
+      "provisional": true
+    },
+    "us10y": {
+      "start": 4.94,
+      "end": 4.86,
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "source_type": "official_treasury_par_10yr"
+    }
+  },
+  "macro": {
+    "claims_nov05": {
+      "value": 189,
+      "released_at": "2026-11-05T08:30:00-05:00",
+      "source": "https://www.dol.gov/ui/data.pdf",
+      "vintage": "first",
+      "caveat": "Oct30 baseline first release 194k; revised previous 195k."
+    },
+    "wei_nov05": {
+      "value": 3.47,
+      "released_at": "2026-11-05T10:30:00-06:00",
+      "source": "https://www.dallasfed.org/research/wei",
+      "vintage": "first_page_observed_provisional",
+      "caveat": "Previous-week revision: baseline 2.98 frozen but latest display 2.95."
+    },
+    "ism_mfg_nov02": {
+      "value": 55.5,
+      "released_at": "2026-11-02T10:00:00-05:00",
+      "source": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/october/",
+      "vintage": "first"
+    },
+    "ism_services_nov04": {
+      "value": 54.5,
+      "released_at": "2026-11-04T10:00:00-05:00",
+      "source": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/october/",
+      "vintage": "first"
+    },
+    "nonfarm_payroll_nov06": {
+      "value": 165,
+      "released_at": "2026-11-06T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/empsit.htm",
+      "vintage": "first",
+      "caveat": "Sept reference frozen first release 29k, subsequently revised 60k; score difference 165-29=136k."
+    },
+    "unemployment_rate_nov06": {
+      "value": 4.1,
+      "released_at": "2026-11-06T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/empsit.htm",
+      "vintage": "first"
+    },
+    "rba_hike_nov03": {
+      "value": 1,
+      "released_at": "2026-11-03T14:30:00+11:00",
+      "source": "https://www.rba.gov.au/monetary-policy/rba-board-minutes/2026/",
+      "vintage": "meeting_decision"
+    },
+    "boe_hike_nov05": {
+      "value": 1,
+      "released_at": "2026-11-05T12:00:00+00:00",
+      "source": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+      "vintage": "meeting_decision"
+    }
+  }
+}
