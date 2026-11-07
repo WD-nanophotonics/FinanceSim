@@ -1,0 +1,206 @@
+{
+  "record_type": "FinanceSim_daily_research_note",
+  "as_of": "2026-11-07T10:33:28.428Z",
+  "timezone": "Asia/Tokyo",
+  "date": "2026-11-07",
+  "base_repo_commit": "a61a3486ee57",
+  "state_read": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-06-restart.json",
+    "research/daily/2026-10-21.json",
+    "research/hypotheses/2026-10-21-2019-energy-core.json",
+    "research/experiments/2026-10-31-postpublication-source-audit.json",
+    "research/weekly/2026-11-07-verification.json",
+    "research/weekly/2026-11-07-forecast.json",
+    "research/weekly/2026-11-07-provenance-amendment01.json",
+    "research/weekly/2026-11-07-provenance-amendment02.json",
+    "research/inputs/2026-11-07-1200-snapshot.json",
+    "research/inputs/2026-11-07-settlement-sources.json",
+    "financesim/market_data.py",
+    "financesim/scorecards.py",
+    "research/scripts/score_2026_11_07.py",
+    "research/scripts/generate_2026_11_07.js",
+    ".github/workflows/tests.yml"
+  ],
+  "frozen_prior_week": "research/weekly/2026-10-31-forecast.json",
+  "evaluated_week": "research/weekly/2026-11-07-verification.json",
+  "frozen_forward": "research/weekly/2026-11-07-forecast.json",
+  "forward_cutoff": "2026-11-07T12:00:00+09:00",
+  "forward_archive_caution": "The prospective week forecast was committed after Saturday noon. This evening research does not retroactively enter its noon information set or modify its frozen values.",
+  "official_evidence": [
+    {
+      "id": "BLS_employment_oct26",
+      "observed": "2026-11-06 08:30 EST first release",
+      "value": {
+        "nonfarm_jobs_thousands": 165,
+        "unemployment_rate_pct": 4.1,
+        "earnings_mom_pct": 0.4,
+        "earnings_yoy_pct": 3.1,
+        "sept_revised_jobs_thousands": 60,
+        "sept_original_jobs_thousands": 29,
+        "aug_sep_net_revision_thousands": 84
+      },
+      "source": "https://www.bls.gov/news.release/archives/empsit_11062026.htm",
+      "finding": "Strong jobs report surprised last week's predictions but does not justify refitting them."
+    },
+    {
+      "id": "BLS_CPI_Sept26_reference",
+      "observed": "2026-10-14 08:30 EDT first release",
+      "value": {
+        "headline_yoy_pct": 3.7,
+        "core_yoy_pct": 2.6,
+        "headline_mom_SA_pct": 0.6,
+        "gasoline_mom_SA_pct": 9.1
+      },
+      "source": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "finding": "Published prior-period baselines for next Tuesday; October CPI is still unknown."
+    },
+    {
+      "id": "UST_10Y_20261106",
+      "observed": "2026-11-06 daily market date; official posting time not separately verified",
+      "value": {
+        "nov6_yield_pct": 4.86,
+        "oct30_yield_pct": 4.94,
+        "weekly_change_bp": -8
+      },
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    },
+    {
+      "id": "BLS_next_releases",
+      "observed": "BLS official calendar updated Nov3",
+      "value": [
+        {
+          "release": "Oct CPI",
+          "scheduled": "2026-11-10T08:30:00-05:00"
+        },
+        {
+          "release": "Oct PPI",
+          "scheduled": "2026-11-13T08:30:00-05:00"
+        }
+      ],
+      "source": "https://www.bls.gov/schedule/2026/11_sched_list.htm",
+      "finding": "Both next releases remain future relative to today's as-of."
+    }
+  ],
+  "market_provenance": [
+    {
+      "id": "USDJPY",
+      "dates": [
+        "2026-10-30",
+        "2026-11-06"
+      ],
+      "quotes": {
+        "investing": [
+          157.55,
+          158.48
+        ],
+        "yahoo_japan": [
+          157.53,
+          158.45
+        ]
+      },
+      "paired_return_pct": {
+        "investing": 0.590288797,
+        "yahoo_japan": 0.584015743
+      },
+      "difference_pp": -0.006273054,
+      "source_urls": [
+        "https://jp.investing.com/currencies/usd-jpy-historical-data",
+        "https://finance.yahoo.co.jp/quote/USDJPY=X/history"
+      ],
+      "source_cutoff": "Daily vendor close, actual intraday cutoff unspecified",
+      "assessment": "Nov6 Yahoo Japan close 158.45 narrows previous apparently large ~1 yen end-of-day vendor dispute; old 157.498 may represent a different intraday timestamp or mapping. Do not alter frozen reference."
+    },
+    {
+      "id": "WTI",
+      "dates": [
+        "2026-10-30",
+        "2026-11-06"
+      ],
+      "quotes": {
+        "reuters_WTI_settlement": [
+          104.12,
+          90.83
+        ],
+        "investing_continuous_daily": [
+          104.12,
+          90.34
+        ]
+      },
+      "paired_return_pct": {
+        "conditional_reuters": -12.764118325,
+        "original_continuous": -13.234729159
+      },
+      "difference_pp": 0.470610834,
+      "source_urls": [
+        "https://www.reuters.com/business/energy/oil-rises-supply-concerns-houthis-attack-saudi-arabia-2026-10-30/",
+        "https://www.reuters.com/business/energy/oil-set-sharp-weekly-drop-middle-east-supply-concerns-provide-floor-2026-11-06/"
+      ],
+      "source_cutoff": "Reuters Friday settlement values, exact publication times and futures contract code not authenticated",
+      "assessment": "Alternative fixed-contract identity not proven. WTI score still provisional; never label daily continuous quote 90.34 a verified Dec26 NYMEX settlement."
+    }
+  ],
+  "features": [
+    {
+      "name": "equity_breadth_week_nov06",
+      "value": 4,
+      "denominator": 6,
+      "definition": "Six global indices: four had Friday-to-Friday returns <= -1.5%",
+      "source": "research/weekly/2026-11-07-verification.json"
+    },
+    {
+      "name": "market_80pct_interval_misses_all_three_arms",
+      "value": [
+        "nikkei225",
+        "kospi",
+        "wti"
+      ],
+      "source": "research/weekly/2026-11-07-verification.json"
+    },
+    {
+      "name": "sensitivity_nine_asset_MAE_delta",
+      "value": -0.052987104,
+      "unit": "percent_points",
+      "source": "research/experiments/2026-11-07-paired-provider-price-sensitivity.json"
+    }
+  ],
+  "research_executed": {
+    "method": "Deterministic replay sensitivity from unchanged Oct31 frozen three-arm forecast and Nov7 verification. Not a newly fitted finance model and not a new forward Monte Carlo run.",
+    "experiment": "research/experiments/2026-11-07-paired-provider-price-sensitivity.json",
+    "source_input": "research/inputs/2026-11-07-vendor-sensitivity.json",
+    "replay_code": "research/scripts/audit_2026_11_07_vendor_sensitivity.py",
+    "code_commit": "316f2101263dcb47ac88a0f96fd354b7de0f21ca",
+    "ci_commit": "0155468ce86921858f216347e6a360980a292614",
+    "ci_url": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42364139932",
+    "ci_observed_status": "success",
+    "deterministic_replay_executed": true,
+    "monte_carlo_executed_this_run": false,
+    "simulation_seed": null,
+    "model_forecast_values_modified": false
+  },
+  "hypotheses": [
+    {
+      "id": "Q001",
+      "status": "inconclusive",
+      "comment": "Strong payroll first release +165k dwarfed last-week frozen hybrid 72k. No reweighting based on this realization."
+    },
+    {
+      "id": "Q004",
+      "status": "under_test",
+      "comment": "Joint crash and tail coverage weak; one realized week is insufficient to fit dependence parameters."
+    },
+    {
+      "new_id": "H20261107-cross-market-tail-dependence",
+      "artifact": "research/hypotheses/2026-11-07-1930-cross-market-tail-dependence.json",
+      "status": "future test defined; no prospective forecast issued from this hypothesis"
+    }
+  ],
+  "future_work": [
+    "Locate CME CLZ26 official fixed-contract settlements for Oct30 and Nov6, otherwise abstain on WTI fixed-contract score.",
+    "Freeze a consistent provider/time cutoff for USDJPY and avoid mixing intraday vendor readings with daily closes.",
+    "Preserve Nov7 22-target forward forecast unchanged; measure first-print CPI Nov10, PPI Nov13 and compare Brier/interval scores next Friday.",
+    "Collect future as-of equity marginal tail probabilities and compare common-shock Brier against a truly independent baseline over 26 weeks."
+  ],
+  "limitations": "Neither a new calibrated market model nor a new weekly forecast was generated. Quote source alternatives are historical robustness checks only. Full 26-week skill and statistical confidence remain unknown."
+}
