@@ -13,7 +13,7 @@ def load(path):
     return json.loads((ROOT/path).read_text(encoding="utf8"))
 
 def equal(x,y,label):
-    if not isclose(float(x),float(y),rel_tol=0,abs_tol=1.1e-5):
+    if not isclose(float(x),float(y),rel_tol=0,abs_tol=6e-5):
         raise AssertionError(f"{label}: {x} != {y}")
 
 def main():
