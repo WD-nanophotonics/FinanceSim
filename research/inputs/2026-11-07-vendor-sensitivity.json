@@ -1,0 +1,34 @@
+{
+  "record_type": "post_publication_quote_provenance_sensitivity_input",
+  "recorded_at": "2026-11-07T10:28:55.790Z",
+  "analyzed_forecast": "research/weekly/2026-10-31-forecast.json",
+  "analyzed_settlement": "research/weekly/2026-11-07-verification.json",
+  "scope": "Only 2026-10-30 to 2026-11-06 previously settled market observations; no 2026-11-13 future outcomes and NO alteration to ex-ante forecasts",
+  "cases": {
+    "wti": {
+      "old_reference": 104.12,
+      "old_end": 90.34,
+      "alternative_reference": 104.12,
+      "alternative_end": 90.83,
+      "quoted_unit": "USD/bbl",
+      "old_source": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "alternative_source_start": "https://www.reuters.com/business/energy/oil-rises-supply-concerns-houthis-attack-saudi-arabia-2026-10-30/",
+      "alternative_source_end": "https://www.reuters.com/business/energy/oil-set-sharp-weekly-drop-middle-east-supply-concerns-provide-floor-2026-11-06/",
+      "alternative_evidence_status": "Published Reuters WTI futures settlement at both Friday dates; exact month-by-month NYMEX contract specification not independently established in these stories. Conditional comparison only; never promote to verified fixed Dec26 series.",
+      "risk": "Old 90.34 originated from provider continuous historical quote without documented fixed Dec2026 settlement. Reuters says 90.83 WTI futures settlement; 0.49 USD/bbl or about 0.54% of the Reuters settlement difference."
+    },
+    "usdjpy": {
+      "old_reference": 157.55,
+      "old_end": 158.48,
+      "alternative_reference": 157.53,
+      "alternative_end": 158.45,
+      "quoted_unit": "JPY per USD",
+      "old_source": "https://jp.investing.com/currencies/usd-jpy-historical-data",
+      "alternative_source_start": "https://finance.yahoo.co.jp/quote/USDJPY=X/history",
+      "alternative_source_end": "https://finance.yahoo.co.jp/quote/USDJPY=X/history",
+      "alternative_evidence_status": "Two separately displayed Friday daily closing pairs, each internally matched. The Yahoo Japan display confirms 2026-11-06=158.45 and 2026-10-30=157.53, narrowing prior alleged ~1 yen vendor conflict. Differences in published FX cutoff/timing remain.",
+      "risk": "Prior archive's Yahoo Nov6 ~157.498 not demonstrated to represent the same dated Friday daily close. Do not call it disproven; source may reflect a different timestamp."
+    }
+  },
+  "interpretation": "Sensitivity audit only; not re-estimation, re-selection or rescore of frozen ex-ante predictions."
+}
