@@ -1,0 +1,52 @@
+{
+  "record_type": "FinanceSim_falsifiable_hypothesis_proposal",
+  "id": "H20261107-cross-market-tail-dependence",
+  "observed_at": "2026-11-07T10:31:24.286Z",
+  "state": "open_exploratory_low_confidence",
+  "study_window": "26 consecutive forthcoming weekly cohorts after 2026-11-07; no retroactive cohort re-estimation",
+  "hypothesis": "Simple independent scenario/event Bernoulli shocks plus Gaussian innovations may under-cover large simultaneous equity drawdowns relative to a pre-registered broad-market-tail risk benchmark. Evidence is suggestive from one co-drawdown week but too sparse to claim calibration failure.",
+  "observations_used": [
+    {
+      "week_ending": "2026-11-06",
+      "n_equity": 6,
+      "count_returns_le_minus_1p5": 4,
+      "markets": [
+        "SP500",
+        "NASDAQ100",
+        "Nikkei225",
+        "KOSPI"
+      ],
+      "reference": "research/weekly/2026-11-07-verification.json"
+    },
+    {
+      "week_ending": "2026-11-06",
+      "not_covered_by_any_arm_interval_80": [
+        "nikkei225",
+        "kospi",
+        "wti"
+      ],
+      "reference": "research/weekly/2026-11-07-verification.json"
+    },
+    {
+      "new_forecast": "research/weekly/2026-11-07-forecast.json",
+      "note": "Unchanged existing forecast, no model selection after outcomes; forecast already submitted at 12:14 JST Nov7."
+    }
+  ],
+  "baseline_comparison_plan": {
+    "outcome_definition": "On Friday close versus prior Friday close, number of SP500, NASDAQ100, STOXX600, Nikkei225, KOSPI and CSI300 dropping >=1.5%, jointly as breadth_count>=3. Define all provider and session conventions before outcome.",
+    "candidates": [
+      "Published original common-shock Monte Carlo probability as archived",
+      "Independent-sign/event benchmark constructed from each index's as-of marginal tail probabilities (must be frozen before each weekly outcome)",
+      "Naive fixed-frequency/historical empirical benchmark after enough prior weeks exist (do not estimate in-sample using future outcomes)"
+    ],
+    "scoring": "Brier and log loss with clipping predeclared for binary breadth event; standard 80/90% interval coverage for individual equity returns, reliability diagrams only when sufficient realized bins. Compare uncertainty with week-block bootstrap; dependent assets are never treated as six independent weeks.",
+    "falsification": "If out-of-sample breadth-event Brier of the independence benchmark is no worse (within uncertainty) than common-shock model after 26 weeks, the current hypothesis is not supported; if both show calibrated coverage, no joint-tail problem demonstrated.",
+    "when_to_start": "First new forecast generated on or after 2026-11-14 that explicitly includes both forecasters with frozen probabilities; historical weeks before implementation are exploratory only."
+  },
+  "prohibited_inference": "Past week outcomes and Nov7 forecast probability may be used as diagnostic examples but not for a revised retrospective out-of-sample skill claim.",
+  "code_status": "proposal only; code implementation and baselines deferred until as-of marginal-tail data and comparable vendor settlements available",
+  "related_questions": [
+    "Q002",
+    "Q004"
+  ]
+}
