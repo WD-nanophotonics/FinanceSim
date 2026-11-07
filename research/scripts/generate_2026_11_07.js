@@ -62,5 +62,5 @@ return forecast;
 if (require.main === module) {
  const input=process.argv[2] || "research/inputs/2026-11-07-1200-snapshot.json";
  const output=generate(JSON.parse(fs.readFileSync(input,"utf8")));
- process.stdout.write(JSON.stringify(output,null,2)+"\\n");
+ process.stdout.write(JSON.stringify(output,null,2)+"\n");
 }
