@@ -1,0 +1,2240 @@
+{
+  "record_type": "FinanceSim_weekly_verification_append_only",
+  "origin_forecast": "research/weekly/2026-10-31-forecast.json",
+  "forecast_cutoff": "2026-10-31T12:00:00+09:00",
+  "settlement_as_of": "2026-11-07T12:00:00+09:00",
+  "actual_archived_after_cutoff": true,
+  "model_arms": [
+    "llm",
+    "statistical",
+    "hybrid"
+  ],
+  "score_definition": {
+    "brier": "(p_positive - indicator(observed_change>0))^2; binary-policy target p(event=1)",
+    "interval": "Gneiting-Raftery interval score: width + 2/alpha * interval miss distance",
+    "zero_change_prob_skill": "1 - Brier_model/Brier_statistical; statistical not always generic market consensus",
+    "notes": "Comparative MAE/RMSE and interval scores aggregated only within units; 8 A, 5 B, 10 C; risks B deterministically derived from C and must not be counted independent. Source inconsistencies provisional. Uncalibrated probabilities and correlated outcomes."
+  },
+  "observations": {
+    "sp500": {
+      "start": 7580.07,
+      "end": 7376.92,
+      "url": "https://www.investing.com/indices/us-spx-500-historical-data",
+      "source_type": "derived_daily_quote",
+      "caveat": "Oct30 frozen snapshot=7579.86 versus current vendor table=7580.07, matched current vendor same-day pair used, archived forecast preserved"
+    },
+    "nasdaq100": {
+      "start": 28384.85,
+      "end": 26989.99,
+      "url": "https://www.investing.com/indices/nq-100-historical-data",
+      "source_type": "vendor_index_daily"
+    },
+    "stoxx600": {
+      "start": 646.75,
+      "end": 648.34,
+      "url": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "source_type": "vendor_daily",
+      "caveat": "Reuters says 648.33; rounding/vendor discrepancy 0.01"
+    },
+    "nikkei225": {
+      "start": 63290.11,
+      "end": 57434.77,
+      "url": "https://indexes.nikkei.co.jp/nkave/statistics",
+      "source_type": "index_publisher_official",
+      "caveat": "Oct30 crosschecked against publisher 63290.11"
+    },
+    "kospi": {
+      "start": 5730.74,
+      "end": 5059.69,
+      "url": "https://www.investing.com/indices/kospi-historical-data",
+      "source_type": "vendor_daily"
+    },
+    "csi300": {
+      "start": 3985.5,
+      "end": 4054.28,
+      "url": "https://ph.investing.com/indices/csi300-historical-data",
+      "source_type": "vendor_daily"
+    },
+    "gold": {
+      "start": 3875.44,
+      "end": 4070.31,
+      "url": "https://www.investing.com/currencies/xau-usd-historical-data",
+      "source_type": "spot_vendor_daily",
+      "caveat": "Reuters Friday point-in-time quote 4074.36 differs; use same vendor day close on both ends"
+    },
+    "wti": {
+      "start": 104.12,
+      "end": 90.34,
+      "url": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "source_type": "vendor_continuous_future_derived",
+      "provisional": true,
+      "caveat": "Official Reuters Dec26 NYMEX settlement cited 90.83, while Investing derived daily close 90.34; current historic source does not explicitly establish same fixed Dec26 contract identifier; score/probability provisional. Original archived baseline incorrectly used 102.95 open."
+    },
+    "usdjpy": {
+      "start": 157.55,
+      "end": 158.48,
+      "url": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "source_type": "vendor_daily_forex",
+      "caveat": "Daily quote cutoff differs by FX vendor; Yahoo Nov6 quote ~157.50, major vendor conflict; mark provisional",
+      "provisional": true
+    },
+    "us10y": {
+      "start": 4.94,
+      "end": 4.86,
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "source_type": "official_treasury_par_10yr"
+    }
+  },
+  "macro_observations": {
+    "claims_nov05": {
+      "value": 189,
+      "released_at": "2026-11-05T08:30:00-05:00",
+      "source": "https://www.dol.gov/ui/data.pdf",
+      "vintage": "first",
+      "caveat": "Oct30 baseline first release 194k; revised previous 195k."
+    },
+    "wei_nov05": {
+      "value": 3.47,
+      "released_at": "2026-11-05T10:30:00-06:00",
+      "source": "https://www.dallasfed.org/research/wei",
+      "vintage": "first_page_observed_provisional",
+      "caveat": "Previous-week revision: baseline 2.98 frozen but latest display 2.95."
+    },
+    "ism_mfg_nov02": {
+      "value": 55.5,
+      "released_at": "2026-11-02T10:00:00-05:00",
+      "source": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/october/",
+      "vintage": "first"
+    },
+    "ism_services_nov04": {
+      "value": 54.5,
+      "released_at": "2026-11-04T10:00:00-05:00",
+      "source": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/october/",
+      "vintage": "first"
+    },
+    "nonfarm_payroll_nov06": {
+      "value": 165,
+      "released_at": "2026-11-06T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/empsit.htm",
+      "vintage": "first",
+      "caveat": "Sept reference frozen first release 29k, subsequently revised 60k; score difference 165-29=136k."
+    },
+    "unemployment_rate_nov06": {
+      "value": 4.1,
+      "released_at": "2026-11-06T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/empsit.htm",
+      "vintage": "first"
+    },
+    "rba_hike_nov03": {
+      "value": 1,
+      "released_at": "2026-11-03T14:30:00+11:00",
+      "source": "https://www.rba.gov.au/monetary-policy/rba-board-minutes/2026/",
+      "vintage": "meeting_decision"
+    },
+    "boe_hike_nov05": {
+      "value": 1,
+      "released_at": "2026-11-05T12:00:00+00:00",
+      "source": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+      "vintage": "meeting_decision"
+    }
+  },
+  "rows": {
+    "A": {
+      "claims_nov05": {
+        "target": "US initial jobless claims first release for Oct31 reference week, thousands persons",
+        "unit": "thousands_persons",
+        "baseline_level": 194,
+        "observed_level": 189,
+        "observed_change": -5,
+        "released_at": "2026-11-05T08:30:00-05:00",
+        "source": "https://www.dol.gov/ui/data.pdf",
+        "vintage": "first",
+        "caveat": "Oct30 baseline first release 194k; revised previous 195k.",
+        "arms": {
+          "llm": {
+            "point_change": 2,
+            "prob_positive": 0.55,
+            "point_error_actual_minus_pred": -7,
+            "absolute_error": 7,
+            "brier": 0.3025,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 15.8592
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 23.068
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 29.6074
+              }
+            },
+            "model_id": "LLM-20261031"
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "point_error_actual_minus_pred": -5,
+            "absolute_error": 5,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 10.7918
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 20.5048
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 26.3176
+              }
+            },
+            "model_id": "no-change-baseline"
+          },
+          "hybrid": {
+            "point_change": 1,
+            "prob_positive": 0.53,
+            "point_error_actual_minus_pred": -6,
+            "absolute_error": 6,
+            "brier": 0.2809,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 12.1408
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 23.068
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 29.6074
+              }
+            },
+            "model_id": "narrative-event-adjusted"
+          }
+        }
+      },
+      "wei_nov05": {
+        "target": "Dallas Fed WEI first release for week ended Oct31, index points",
+        "unit": "index_points",
+        "baseline_level": 2.98,
+        "observed_level": 3.47,
+        "observed_change": 0.49,
+        "released_at": "2026-11-05T10:30:00-06:00",
+        "source": "https://www.dallasfed.org/research/wei",
+        "vintage": "first_page_observed_provisional",
+        "caveat": "Previous-week revision: baseline 2.98 frozen but latest display 2.95.",
+        "arms": {
+          "llm": {
+            "point_change": -0.13,
+            "prob_positive": 0.43,
+            "point_error_actual_minus_pred": 0.62,
+            "absolute_error": 0.62,
+            "brier": 0.3249,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 1.738
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 1.4098
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1.8094
+              }
+            },
+            "model_id": "LLM-20261031"
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "point_error_actual_minus_pred": 0.49,
+            "absolute_error": 0.49,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 1.3124
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 1.2302
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1.579
+              }
+            },
+            "model_id": "no-change-baseline"
+          },
+          "hybrid": {
+            "point_change": -0.11,
+            "prob_positive": 0.45,
+            "point_error_actual_minus_pred": 0.6,
+            "absolute_error": 0.6,
+            "brier": 0.3025,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 1.658
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 1.4098
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1.8094
+              }
+            },
+            "model_id": "narrative-event-adjusted"
+          }
+        }
+      },
+      "ism_mfg_nov02": {
+        "target": "ISM October manufacturing PMI first release",
+        "unit": "index_points",
+        "baseline_level": 54.5,
+        "observed_level": 55.5,
+        "observed_change": 1,
+        "released_at": "2026-11-02T10:00:00-05:00",
+        "source": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/october/",
+        "vintage": "first",
+        "caveat": null,
+        "arms": {
+          "llm": {
+            "point_change": -0.5,
+            "prob_positive": 0.4,
+            "point_error_actual_minus_pred": 1.5,
+            "absolute_error": 1.5,
+            "brier": 0.36,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 3.8416
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4.101
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 5.2636
+              }
+            },
+            "model_id": "LLM-20261031"
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "point_error_actual_minus_pred": 1,
+            "absolute_error": 1,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.0234
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 3.8446
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 4.9346
+              }
+            },
+            "model_id": "no-change-baseline"
+          },
+          "hybrid": {
+            "point_change": -0.4,
+            "prob_positive": 0.43,
+            "point_error_actual_minus_pred": 1.4,
+            "absolute_error": 1.4,
+            "brier": 0.3249,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 3.4416
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4.101
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 5.2636
+              }
+            },
+            "model_id": "narrative-event-adjusted"
+          }
+        }
+      },
+      "ism_services_nov04": {
+        "target": "ISM October services PMI first release",
+        "unit": "index_points",
+        "baseline_level": 54.9,
+        "observed_level": 54.5,
+        "observed_change": -0.4,
+        "released_at": "2026-11-04T10:00:00-05:00",
+        "source": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/october/",
+        "vintage": "first",
+        "caveat": null,
+        "arms": {
+          "llm": {
+            "point_change": -0.4,
+            "prob_positive": 0.42,
+            "point_error_actual_minus_pred": 0,
+            "absolute_error": 0,
+            "brier": 0.1764,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.2932
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4.3572
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 5.5926
+              }
+            },
+            "model_id": "LLM-20261031"
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "point_error_actual_minus_pred": -0.4,
+            "absolute_error": 0.4,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.1584
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4.101
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 5.2636
+              }
+            },
+            "model_id": "no-change-baseline"
+          },
+          "hybrid": {
+            "point_change": -0.2,
+            "prob_positive": 0.46,
+            "point_error_actual_minus_pred": -0.2,
+            "absolute_error": 0.2,
+            "brier": 0.2116,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.2932
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4.3572
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 5.5926
+              }
+            },
+            "model_id": "narrative-event-adjusted"
+          }
+        }
+      },
+      "nonfarm_payroll_nov06": {
+        "target": "BLS October nonfarm payrolls first release, thousands person change",
+        "unit": "thousands_persons",
+        "baseline_level": 29,
+        "observed_level": 165,
+        "observed_change": 136,
+        "released_at": "2026-11-06T08:30:00-05:00",
+        "source": "https://www.bls.gov/news.release/empsit.htm",
+        "vintage": "first",
+        "caveat": "Sept reference frozen first release 29k, subsequently revised 60k; score difference 165-29=136k.",
+        "arms": {
+          "llm": {
+            "point_change": 36,
+            "prob_positive": 0.61,
+            "point_error_actual_minus_pred": 100,
+            "absolute_error": 100,
+            "brier": 0.1521,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 251.6122
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 281.9414
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 361.8678
+              }
+            },
+            "model_id": "LLM-20261031"
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "point_error_actual_minus_pred": 136,
+            "absolute_error": 136,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 395.6122
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 281.9414
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 361.8678
+              }
+            },
+            "model_id": "no-change-baseline"
+          },
+          "hybrid": {
+            "point_change": 43,
+            "prob_positive": 0.64,
+            "point_error_actual_minus_pred": 93,
+            "absolute_error": 93,
+            "brier": 0.1296,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 223.6122
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 281.9414
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 361.8678
+              }
+            },
+            "model_id": "narrative-event-adjusted"
+          }
+        }
+      },
+      "unemployment_rate_nov06": {
+        "target": "BLS October unemployment rate first release, percentage",
+        "unit": "percent",
+        "baseline_level": 4.2,
+        "observed_level": 4.1,
+        "observed_change": -0.1,
+        "released_at": "2026-11-06T08:30:00-05:00",
+        "source": "https://www.bls.gov/news.release/empsit.htm",
+        "vintage": "first",
+        "caveat": null,
+        "arms": {
+          "llm": {
+            "point_change": 0,
+            "prob_positive": 0.42,
+            "point_error_actual_minus_pred": -0.1,
+            "absolute_error": 0.1,
+            "brier": 0.1764,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0.2698
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 0.5126
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 0.658
+              }
+            },
+            "model_id": "LLM-20261031"
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "point_error_actual_minus_pred": -0.1,
+            "absolute_error": 0.1,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0.2698
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 0.5126
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 0.658
+              }
+            },
+            "model_id": "no-change-baseline"
+          },
+          "hybrid": {
+            "point_change": 0,
+            "prob_positive": 0.45,
+            "point_error_actual_minus_pred": -0.1,
+            "absolute_error": 0.1,
+            "brier": 0.2025,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0.2698
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 0.5126
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 0.658
+              }
+            },
+            "model_id": "narrative-event-adjusted"
+          }
+        }
+      },
+      "rba_hike_nov03": {
+        "target": "RBA raises cash rate by at least 0.25 percentage points at Nov3 meeting",
+        "unit": "binary_0or1",
+        "baseline_level": 4.6,
+        "observed_level": 1,
+        "observed_change": 1,
+        "released_at": "2026-11-03T14:30:00+11:00",
+        "source": "https://www.rba.gov.au/monetary-policy/rba-board-minutes/2026/",
+        "vintage": "meeting_decision",
+        "caveat": null,
+        "arms": {
+          "llm": {
+            "point_change": 0.78,
+            "prob_positive": 0.78,
+            "point_error_actual_minus_pred": 0.22,
+            "absolute_error": 0.22,
+            "brier": 0.0484,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 1
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1
+              }
+            },
+            "model_id": "LLM-20261031"
+          },
+          "statistical": {
+            "point_change": 0.81,
+            "prob_positive": 0.81,
+            "point_error_actual_minus_pred": 0.19,
+            "absolute_error": 0.19,
+            "brier": 0.0361,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 1
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1
+              }
+            },
+            "model_id": "as-of-market-implied-prob"
+          },
+          "hybrid": {
+            "point_change": 0.79,
+            "prob_positive": 0.79,
+            "point_error_actual_minus_pred": 0.21,
+            "absolute_error": 0.21,
+            "brier": 0.0441,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 1
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1
+              }
+            },
+            "model_id": "LLM-adjusted-market-implied"
+          }
+        }
+      },
+      "boe_hike_nov05": {
+        "target": "BoE raises Bank Rate by at least 0.25 percentage points at Nov5 meeting",
+        "unit": "binary_0or1",
+        "baseline_level": 3.75,
+        "observed_level": 1,
+        "observed_change": 1,
+        "released_at": "2026-11-05T12:00:00+00:00",
+        "source": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+        "vintage": "meeting_decision",
+        "caveat": null,
+        "arms": {
+          "llm": {
+            "point_change": 0.75,
+            "prob_positive": 0.75,
+            "point_error_actual_minus_pred": 0.25,
+            "absolute_error": 0.25,
+            "brier": 0.0625,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 1
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 1
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1
+              }
+            },
+            "model_id": "LLM-20261031"
+          },
+          "statistical": {
+            "point_change": 0.88,
+            "prob_positive": 0.88,
+            "point_error_actual_minus_pred": 0.12,
+            "absolute_error": 0.12,
+            "brier": 0.0144,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 1
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1
+              }
+            },
+            "model_id": "as-of-market-implied-prob"
+          },
+          "hybrid": {
+            "point_change": 0.8,
+            "prob_positive": 0.8,
+            "point_error_actual_minus_pred": 0.2,
+            "absolute_error": 0.2,
+            "brier": 0.04,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 1
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1
+              }
+            },
+            "model_id": "LLM-adjusted-market-implied"
+          }
+        }
+      }
+    },
+    "B": {
+      "sp_abs": {
+        "unit": "percent",
+        "threshold": 2,
+        "observed_value": 2.680054,
+        "event_occured": true,
+        "provisional": false,
+        "label": "Absolute S&P500 weekly percent return",
+        "arms": {
+          "llm": {
+            "point_change": 2.2,
+            "prob_positive": 0.52,
+            "point_error_actual_minus_pred": 0.480054,
+            "absolute_error": 0.480054,
+            "brier": 0.2304,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.1
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4.45
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 6.1
+              }
+            },
+            "model_id": "LLM-manual-20261031"
+          },
+          "statistical": {
+            "point_change": 1.6919,
+            "prob_positive": 0.3468,
+            "point_error_actual_minus_pred": 0.988154,
+            "absolute_error": 0.988154,
+            "brier": 0.42667024,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 2.7418
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 3.2451
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 4.0371
+              }
+            },
+            "model_id": "independent-zero-drift-Gaussian"
+          },
+          "hybrid": {
+            "point_change": 1.9867,
+            "prob_positive": 0.4225,
+            "point_error_actual_minus_pred": 0.693354,
+            "absolute_error": 0.693354,
+            "brier": 0.33350625,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.0833
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 3.8131
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 4.6906
+              }
+            },
+            "model_id": "common-event-MC"
+          }
+        }
+      },
+      "wti_abs": {
+        "unit": "percent",
+        "threshold": 5,
+        "observed_value": 13.234729,
+        "event_occured": true,
+        "provisional": true,
+        "label": "Absolute Dec26 WTI weekly percent return",
+        "arms": {
+          "llm": {
+            "point_change": 5,
+            "prob_positive": 0.48,
+            "point_error_actual_minus_pred": 8.234729,
+            "absolute_error": 8.234729,
+            "brier": 0.2704,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 29.6389
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 32.9473
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 13.9
+              }
+            },
+            "model_id": "LLM-manual-20261031"
+          },
+          "statistical": {
+            "point_change": 4.7798,
+            "prob_positive": 0.4032,
+            "point_error_actual_minus_pred": 8.454929,
+            "absolute_error": 8.454929,
+            "brier": 0.35617024,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 30.4301
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 42.4656
+              },
+              "90": {
+                "covered": false,
+                "interval_score": 41.0095
+              }
+            },
+            "model_id": "independent-zero-drift-Gaussian"
+          },
+          "hybrid": {
+            "point_change": 5.1655,
+            "prob_positive": 0.4449,
+            "point_error_actual_minus_pred": 8.069229,
+            "absolute_error": 8.069229,
+            "brier": 0.30813601,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 28.6491
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 35.8973
+              },
+              "90": {
+                "covered": false,
+                "interval_score": 23.6131
+              }
+            },
+            "model_id": "common-event-MC"
+          }
+        }
+      },
+      "yield_abs": {
+        "unit": "basis_points",
+        "threshold": 15,
+        "observed_value": 8,
+        "event_occured": false,
+        "provisional": false,
+        "label": "Absolute US10Y Treasury weekly yield move",
+        "arms": {
+          "llm": {
+            "point_change": 16,
+            "prob_positive": 0.46,
+            "point_error_actual_minus_pred": -8,
+            "absolute_error": 8,
+            "brier": 0.2116,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 17
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 32
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 45
+              }
+            },
+            "model_id": "LLM-manual-20261031"
+          },
+          "statistical": {
+            "point_change": 15.1236,
+            "prob_positive": 0.4305,
+            "point_error_actual_minus_pred": -7.1236,
+            "absolute_error": 7.1236,
+            "brier": 0.18533025,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 15.8974
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 28.7413
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 35.7435
+              }
+            },
+            "model_id": "independent-zero-drift-Gaussian"
+          },
+          "hybrid": {
+            "point_change": 16.4808,
+            "prob_positive": 0.4732,
+            "point_error_actual_minus_pred": -8.4808,
+            "absolute_error": 8.4808,
+            "brier": 0.22391824,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 17.1573
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 31.1603
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 38.5143
+              }
+            },
+            "model_id": "common-event-MC"
+          }
+        }
+      },
+      "breadth": {
+        "unit": "index_count",
+        "threshold": 3,
+        "observed_value": 4,
+        "event_occured": true,
+        "provisional": false,
+        "label": "Number of 6 major equity indices down at least 1.5% for the week",
+        "arms": {
+          "llm": {
+            "point_change": 2,
+            "prob_positive": 0.33,
+            "point_error_actual_minus_pred": 2,
+            "absolute_error": 2,
+            "brier": 0.4489,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 6
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 5
+              }
+            },
+            "model_id": "LLM-manual-20261031"
+          },
+          "statistical": {
+            "point_change": 1.854,
+            "prob_positive": 0.2698,
+            "point_error_actual_minus_pred": 2.146,
+            "absolute_error": 2.146,
+            "brier": 0.53319204,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 6
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 13
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 4
+              }
+            },
+            "model_id": "independent-zero-drift-Gaussian"
+          },
+          "hybrid": {
+            "point_change": 2.2212,
+            "prob_positive": 0.4019,
+            "point_error_actual_minus_pred": 1.7788,
+            "absolute_error": 1.7788,
+            "brier": 0.35772361,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 6
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 3
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 4
+              }
+            },
+            "model_id": "common-event-MC"
+          }
+        }
+      },
+      "joint": {
+        "unit": "binary_0or1",
+        "threshold": 1,
+        "observed_value": 0,
+        "event_occured": false,
+        "provisional": true,
+        "label": "S&P500 return <=-2% AND WTI return >=+5%",
+        "arms": {
+          "llm": {
+            "point_change": 0.06,
+            "prob_positive": 0.06,
+            "point_error_actual_minus_pred": -0.06,
+            "absolute_error": 0.06,
+            "brier": 0.0036,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1
+              }
+            },
+            "model_id": "LLM-manual-20261031"
+          },
+          "statistical": {
+            "point_change": 0.0355,
+            "prob_positive": 0.0355,
+            "point_error_actual_minus_pred": -0.0355,
+            "absolute_error": 0.0355,
+            "brier": 0.00126025,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 0
+              }
+            },
+            "model_id": "independent-zero-drift-Gaussian"
+          },
+          "hybrid": {
+            "point_change": 0.0747,
+            "prob_positive": 0.0747,
+            "point_error_actual_minus_pred": -0.0747,
+            "absolute_error": 0.0747,
+            "brier": 0.00558009,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 0
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 1
+              }
+            },
+            "model_id": "common-event-MC"
+          }
+        }
+      }
+    },
+    "C": {
+      "sp500": {
+        "unit": "percent_return",
+        "source": "https://www.investing.com/indices/us-spx-500-historical-data",
+        "source_type": "derived_daily_quote",
+        "provisional": false,
+        "caveat": "Oct30 frozen snapshot=7579.86 versus current vendor table=7580.07, matched current vendor same-day pair used, archived forecast preserved",
+        "reference_close": 7580.07,
+        "settlement_close": 7376.92,
+        "observed_change": -2.680054,
+        "frozen_reference_level": 7579.86,
+        "arms": {
+          "llm": {
+            "point_change": -1,
+            "prob_positive": 0.37,
+            "point_error_actual_minus_pred": -1.680054,
+            "absolute_error": 1.680054,
+            "brier": 0.1369,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 3.4804
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 6.6128
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 8.4874
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": 0.0072,
+            "prob_positive": 0.4989,
+            "point_error_actual_minus_pred": -2.687254,
+            "absolute_error": 2.687254,
+            "brier": 0.24890121,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 7.8561
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 5.4495
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 7.0306
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": -0.5397,
+            "prob_positive": 0.4079,
+            "point_error_actual_minus_pred": -2.140354,
+            "absolute_error": 2.140354,
+            "brier": 0.16638241,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 5.2547
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 6.2475
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 8.0273
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      },
+      "nasdaq100": {
+        "unit": "percent_return",
+        "source": "https://www.investing.com/indices/nq-100-historical-data",
+        "source_type": "vendor_index_daily",
+        "provisional": false,
+        "caveat": null,
+        "reference_close": 28384.85,
+        "settlement_close": 26989.99,
+        "observed_change": -4.9141,
+        "frozen_reference_level": 28384.85,
+        "arms": {
+          "llm": {
+            "point_change": -1.6,
+            "prob_positive": 0.34,
+            "point_error_actual_minus_pred": -3.3141,
+            "absolute_error": 3.3141,
+            "brier": 0.1156,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 7.3478
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 11.2264
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 14.409
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": 0.0649,
+            "prob_positive": 0.5063,
+            "point_error_actual_minus_pred": -4.979,
+            "absolute_error": 4.979,
+            "brier": 0.25633969,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 14.9925
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 12.8349
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 11.9654
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": -1.2118,
+            "prob_positive": 0.3823,
+            "point_error_actual_minus_pred": -3.7023,
+            "absolute_error": 3.7023,
+            "brier": 0.14615329,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 9.4644
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 10.4431
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 13.4259
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      },
+      "stoxx600": {
+        "unit": "percent_return",
+        "source": "https://www.investing.com/indices/stoxx-600-historical-data",
+        "source_type": "vendor_daily",
+        "provisional": false,
+        "caveat": "Reuters says 648.33; rounding/vendor discrepancy 0.01",
+        "reference_close": 646.75,
+        "settlement_close": 648.34,
+        "observed_change": 0.245845,
+        "frozen_reference_level": 646.76,
+        "arms": {
+          "llm": {
+            "point_change": -0.45,
+            "prob_positive": 0.43,
+            "point_error_actual_minus_pred": 0.695845,
+            "absolute_error": 0.695845,
+            "brier": 0.3249,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 3.0756
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 5.8438
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 7.5006
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": -0.0103,
+            "prob_positive": 0.4994,
+            "point_error_actual_minus_pred": 0.256145,
+            "absolute_error": 0.256145,
+            "brier": 0.25060036,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.5461
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4.824
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 6.2309
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": -0.2521,
+            "prob_positive": 0.4508,
+            "point_error_actual_minus_pred": 0.497945,
+            "absolute_error": 0.497945,
+            "brier": 0.30162064,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.6466
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4.98
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 6.3967
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      },
+      "nikkei225": {
+        "unit": "percent_return",
+        "source": "https://indexes.nikkei.co.jp/nkave/statistics",
+        "source_type": "index_publisher_official",
+        "provisional": false,
+        "caveat": "Oct30 crosschecked against publisher 63290.11",
+        "reference_close": 63290.11,
+        "settlement_close": 57434.77,
+        "observed_change": -9.251588,
+        "frozen_reference_level": 63290.11,
+        "arms": {
+          "llm": {
+            "point_change": -0.8,
+            "prob_positive": 0.4,
+            "point_error_actual_minus_pred": -8.451588,
+            "absolute_error": 8.451588,
+            "brier": 0.16,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 28.7882
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 46.3767
+              },
+              "90": {
+                "covered": false,
+                "interval_score": 58.8916
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": -0.0157,
+            "prob_positive": 0.4963,
+            "point_error_actual_minus_pred": -9.235888,
+            "absolute_error": 9.235888,
+            "brier": 0.24631369,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 32.7193
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 60.8203
+              },
+              "90": {
+                "covered": false,
+                "interval_score": 93.7418
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": -0.2626,
+            "prob_positive": 0.4631,
+            "point_error_actual_minus_pred": -8.988988,
+            "absolute_error": 8.988988,
+            "brier": 0.21446161,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 31.6067
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 57.6584
+              },
+              "90": {
+                "covered": false,
+                "interval_score": 86.6477
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      },
+      "kospi": {
+        "unit": "percent_return",
+        "source": "https://www.investing.com/indices/kospi-historical-data",
+        "source_type": "vendor_daily",
+        "provisional": false,
+        "caveat": null,
+        "reference_close": 5730.74,
+        "settlement_close": 5059.69,
+        "observed_change": -11.709657,
+        "frozen_reference_level": 5730.74,
+        "arms": {
+          "llm": {
+            "point_change": -1.4,
+            "prob_positive": 0.41,
+            "point_error_actual_minus_pred": -10.309657,
+            "absolute_error": 10.309657,
+            "brier": 0.1681,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 30.3928
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 20.667
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 26.4492
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": -0.0378,
+            "prob_positive": 0.4945,
+            "point_error_actual_minus_pred": -11.671857,
+            "absolute_error": 11.671857,
+            "brier": 0.24453025,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 37.5469
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 47.4513
+              },
+              "90": {
+                "covered": false,
+                "interval_score": 32.7172
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": -0.7195,
+            "prob_positive": 0.4532,
+            "point_error_actual_minus_pred": -10.990157,
+            "absolute_error": 10.990157,
+            "brier": 0.20539024,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 34.8344
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 41.0619
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 22.3224
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      },
+      "csi300": {
+        "unit": "percent_return",
+        "source": "https://ph.investing.com/indices/csi300-historical-data",
+        "source_type": "vendor_daily",
+        "provisional": false,
+        "caveat": null,
+        "reference_close": 3985.5,
+        "settlement_close": 4054.28,
+        "observed_change": 1.725756,
+        "frozen_reference_level": 3985.5,
+        "arms": {
+          "llm": {
+            "point_change": -0.45,
+            "prob_positive": 0.45,
+            "point_error_actual_minus_pred": 2.175756,
+            "absolute_error": 2.175756,
+            "brier": 0.3025,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 5.5038
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 10.4574
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 13.422
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": -0.0154,
+            "prob_positive": 0.4999,
+            "point_error_actual_minus_pred": 1.741156,
+            "absolute_error": 1.741156,
+            "brier": 0.25010001,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 4.6202
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 8.7662
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 11.2755
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": -0.0699,
+            "prob_positive": 0.4934,
+            "point_error_actual_minus_pred": 1.795656,
+            "absolute_error": 1.795656,
+            "brier": 0.25664356,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 4.6172
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 8.8927
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 11.3795
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      },
+      "gold": {
+        "unit": "percent_return",
+        "source": "https://www.investing.com/currencies/xau-usd-historical-data",
+        "source_type": "spot_vendor_daily",
+        "provisional": false,
+        "caveat": "Reuters Friday point-in-time quote 4074.36 differs; use same vendor day close on both ends",
+        "reference_close": 3875.44,
+        "settlement_close": 4070.31,
+        "observed_change": 5.028332,
+        "frozen_reference_level": 3875.44,
+        "arms": {
+          "llm": {
+            "point_change": -0.8,
+            "prob_positive": 0.44,
+            "point_error_actual_minus_pred": 5.828332,
+            "absolute_error": 5.828332,
+            "brier": 0.3136,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 15.3813
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 15.071
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 19.3434
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": -0.0398,
+            "prob_positive": 0.4996,
+            "point_error_actual_minus_pred": 5.068132,
+            "absolute_error": 5.068132,
+            "brier": 0.25040016,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 13.649
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 12.6964
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 16.3404
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": -0.5295,
+            "prob_positive": 0.4611,
+            "point_error_actual_minus_pred": 5.557832,
+            "absolute_error": 5.557832,
+            "brier": 0.29041321,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 15.5191
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 12.7188
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 16.3155
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      },
+      "wti": {
+        "unit": "percent_return",
+        "source": "https://www.investing.com/commodities/crude-oil-historical-data",
+        "source_type": "vendor_continuous_future_derived",
+        "provisional": true,
+        "caveat": "Official Reuters Dec26 NYMEX settlement cited 90.83, while Investing derived daily close 90.34; current historic source does not explicitly establish same fixed Dec26 contract identifier; score/probability provisional. Original archived baseline incorrectly used 102.95 open.",
+        "reference_close": 104.12,
+        "settlement_close": 90.34,
+        "observed_change": -13.234729,
+        "frozen_reference_level": 102.95,
+        "arms": {
+          "llm": {
+            "point_change": 1,
+            "prob_positive": 0.56,
+            "point_error_actual_minus_pred": -14.234729,
+            "absolute_error": 14.234729,
+            "brier": 0.3136,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 47.2263
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 68.5297
+              },
+              "90": {
+                "covered": false,
+                "interval_score": 71.5224
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": 0.0082,
+            "prob_positive": 0.5018,
+            "point_error_actual_minus_pred": -13.242929,
+            "absolute_error": 13.242929,
+            "brier": 0.25180324,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 44.8096
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 70.8182
+              },
+              "90": {
+                "covered": false,
+                "interval_score": 86.8578
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": 1.058,
+            "prob_positive": 0.5663,
+            "point_error_actual_minus_pred": -14.292729,
+            "absolute_error": 14.292729,
+            "brier": 0.32069569,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "interval_score": 48.4732
+              },
+              "80": {
+                "covered": false,
+                "interval_score": 77.7642
+              },
+              "90": {
+                "covered": false,
+                "interval_score": 98.3847
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      },
+      "usdjpy": {
+        "unit": "percent_return",
+        "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+        "source_type": "vendor_daily_forex",
+        "provisional": true,
+        "caveat": "Daily quote cutoff differs by FX vendor; Yahoo Nov6 quote ~157.50, major vendor conflict; mark provisional",
+        "reference_close": 157.55,
+        "settlement_close": 158.48,
+        "observed_change": 0.590289,
+        "frozen_reference_level": 157.58,
+        "arms": {
+          "llm": {
+            "point_change": -0.35,
+            "prob_positive": 0.43,
+            "point_error_actual_minus_pred": 0.940289,
+            "absolute_error": 0.940289,
+            "brier": 0.3249,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.3472
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 4.4598
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 5.724
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": 0.0015,
+            "prob_positive": 0.5029,
+            "point_error_actual_minus_pred": 0.588789,
+            "absolute_error": 0.588789,
+            "brier": 0.24710841,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 1.9679
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 3.7574
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 4.7821
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": -0.2089,
+            "prob_positive": 0.4495,
+            "point_error_actual_minus_pred": 0.799189,
+            "absolute_error": 0.799189,
+            "brier": 0.30305025,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 2.0816
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 3.9591
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 5.1009
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      },
+      "us10y": {
+        "unit": "basis_points",
+        "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+        "source_type": "official_treasury_par_10yr",
+        "provisional": false,
+        "caveat": null,
+        "reference_close": 4.94,
+        "settlement_close": 4.86,
+        "observed_change": -8,
+        "frozen_reference_level": 4.94,
+        "arms": {
+          "llm": {
+            "point_change": 2,
+            "prob_positive": 0.54,
+            "point_error_actual_minus_pred": -10,
+            "absolute_error": 10,
+            "brier": 0.2916,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 30.7568
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 58.4388
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 75.0054
+              }
+            },
+            "model_id": "LLM-subjective-v20261031"
+          },
+          "statistical": {
+            "point_change": 0.1712,
+            "prob_positive": 0.5057,
+            "point_error_actual_minus_pred": -8.1712,
+            "absolute_error": 8.1712,
+            "brier": 0.25573249,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 25.6874
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 48.5348
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 62.1398
+              }
+            },
+            "model_id": "zero-drift-Gaussian-assumed-weekly-vol-v2"
+          },
+          "hybrid": {
+            "point_change": -1.2618,
+            "prob_positive": 0.4755,
+            "point_error_actual_minus_pred": -6.7382,
+            "absolute_error": 6.7382,
+            "brier": 0.22610025,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "interval_score": 28.1619
+              },
+              "80": {
+                "covered": true,
+                "interval_score": 52.6091
+              },
+              "90": {
+                "covered": true,
+                "interval_score": 67.5221
+              }
+            },
+            "model_id": "six-event-common-shock-MonteCarlo-v2"
+          }
+        }
+      }
+    }
+  },
+  "summary": {
+    "A": {
+      "llm": {
+        "n": 8,
+        "brier": 0.2004,
+        "brier_skill_vs_statistical": -0.033986,
+        "coverage_80": 1,
+        "coverage_50": 0.5,
+        "coverage_90": 1,
+        "per_unit": {
+          "thousands_persons": {
+            "n": 2,
+            "mae": 53.5,
+            "rmse": 70.883708,
+            "avg_interval_score_80": 152.5047
+          },
+          "index_points": {
+            "n": 3,
+            "mae": 0.706667,
+            "rmse": 0.937088,
+            "avg_interval_score_80": 3.289333
+          },
+          "percent": {
+            "n": 1,
+            "mae": 0.1,
+            "rmse": 0.1,
+            "avg_interval_score_80": 0.5126
+          },
+          "binary_0or1": {
+            "n": 2,
+            "mae": 0.235,
+            "rmse": 0.235478,
+            "avg_interval_score_80": 1
+          }
+        }
+      },
+      "statistical": {
+        "n": 8,
+        "brier": 0.193813,
+        "brier_skill_vs_statistical": 0,
+        "coverage_80": 1,
+        "coverage_50": 0.75,
+        "coverage_90": 1,
+        "per_unit": {
+          "thousands_persons": {
+            "n": 2,
+            "mae": 70.5,
+            "rmse": 96.231492,
+            "avg_interval_score_80": 151.2231
+          },
+          "index_points": {
+            "n": 3,
+            "mae": 0.63,
+            "rmse": 0.683154,
+            "avg_interval_score_80": 3.0586
+          },
+          "percent": {
+            "n": 1,
+            "mae": 0.1,
+            "rmse": 0.1,
+            "avg_interval_score_80": 0.5126
+          },
+          "binary_0or1": {
+            "n": 2,
+            "mae": 0.155,
+            "rmse": 0.158902,
+            "avg_interval_score_80": 1
+          }
+        }
+      },
+      "hybrid": {
+        "n": 8,
+        "brier": 0.192013,
+        "brier_skill_vs_statistical": 0.009287,
+        "coverage_80": 1,
+        "coverage_50": 0.625,
+        "coverage_90": 1,
+        "per_unit": {
+          "thousands_persons": {
+            "n": 2,
+            "mae": 49.5,
+            "rmse": 65.897648,
+            "avg_interval_score_80": 152.5047
+          },
+          "index_points": {
+            "n": 3,
+            "mae": 0.733333,
+            "rmse": 0.886942,
+            "avg_interval_score_80": 3.289333
+          },
+          "percent": {
+            "n": 1,
+            "mae": 0.1,
+            "rmse": 0.1,
+            "avg_interval_score_80": 0.5126
+          },
+          "binary_0or1": {
+            "n": 2,
+            "mae": 0.205,
+            "rmse": 0.205061,
+            "avg_interval_score_80": 1
+          }
+        }
+      }
+    },
+    "B": {
+      "llm": {
+        "n": 5,
+        "brier": 0.23298,
+        "brier_skill_vs_statistical": 0.224757,
+        "coverage_80": 0.8,
+        "coverage_50": 0.6,
+        "coverage_90": 1,
+        "per_unit": {
+          "percent": {
+            "n": 2,
+            "mae": 4.357392,
+            "rmse": 5.832719,
+            "avg_interval_score_80": 18.69865
+          },
+          "basis_points": {
+            "n": 1,
+            "mae": 8,
+            "rmse": 8,
+            "avg_interval_score_80": 32
+          },
+          "index_count": {
+            "n": 1,
+            "mae": 2,
+            "rmse": 2,
+            "avg_interval_score_80": 4
+          },
+          "binary_0or1": {
+            "n": 1,
+            "mae": 0.06,
+            "rmse": 0.06,
+            "avg_interval_score_80": 0
+          }
+        }
+      },
+      "statistical": {
+        "n": 5,
+        "brier": 0.300525,
+        "brier_skill_vs_statistical": 0,
+        "coverage_80": 0.6,
+        "coverage_50": 0.4,
+        "coverage_90": 0.8,
+        "per_unit": {
+          "percent": {
+            "n": 2,
+            "mae": 4.721542,
+            "rmse": 6.019231,
+            "avg_interval_score_80": 22.85535
+          },
+          "basis_points": {
+            "n": 1,
+            "mae": 7.1236,
+            "rmse": 7.1236,
+            "avg_interval_score_80": 28.7413
+          },
+          "index_count": {
+            "n": 1,
+            "mae": 2.146,
+            "rmse": 2.146,
+            "avg_interval_score_80": 13
+          },
+          "binary_0or1": {
+            "n": 1,
+            "mae": 0.0355,
+            "rmse": 0.0355,
+            "avg_interval_score_80": 0
+          }
+        }
+      },
+      "hybrid": {
+        "n": 5,
+        "brier": 0.245773,
+        "brier_skill_vs_statistical": 0.182188,
+        "coverage_80": 0.8,
+        "coverage_50": 0.6,
+        "coverage_90": 0.8,
+        "per_unit": {
+          "percent": {
+            "n": 2,
+            "mae": 4.381292,
+            "rmse": 5.726831,
+            "avg_interval_score_80": 19.8552
+          },
+          "basis_points": {
+            "n": 1,
+            "mae": 8.4808,
+            "rmse": 8.4808,
+            "avg_interval_score_80": 31.1603
+          },
+          "index_count": {
+            "n": 1,
+            "mae": 1.7788,
+            "rmse": 1.7788,
+            "avg_interval_score_80": 3
+          },
+          "binary_0or1": {
+            "n": 1,
+            "mae": 0.0747,
+            "rmse": 0.0747,
+            "avg_interval_score_80": 0
+          }
+        }
+      }
+    },
+    "C": {
+      "llm": {
+        "n": 10,
+        "brier": 0.24517,
+        "brier_skill_vs_statistical": 0.020037,
+        "coverage_80": 0.7,
+        "coverage_50": 0.5,
+        "coverage_90": 0.8,
+        "per_unit": {
+          "percent_return": {
+            "n": 9,
+            "mae": 5.292261,
+            "rmse": 6.946009,
+            "avg_interval_score_80": 21.027178
+          },
+          "basis_points": {
+            "n": 1,
+            "mae": 10,
+            "rmse": 10,
+            "avg_interval_score_80": 58.4388
+          }
+        },
+        "equity_gold_eight_market_MAE_excluding_WTI_USDJPY": 4.636476
+      },
+      "statistical": {
+        "n": 10,
+        "brier": 0.250183,
+        "brier_skill_vs_statistical": 0,
+        "coverage_80": 0.6,
+        "coverage_50": 0.4,
+        "coverage_90": 0.7,
+        "per_unit": {
+          "percent_return": {
+            "n": 9,
+            "mae": 5.496794,
+            "rmse": 7.13404,
+            "avg_interval_score_80": 25.268689
+          },
+          "basis_points": {
+            "n": 1,
+            "mae": 8.1712,
+            "rmse": 8.1712,
+            "avg_interval_score_80": 48.5348
+          }
+        },
+        "equity_gold_eight_market_MAE_excluding_WTI_USDJPY": 5.091347
+      },
+      "hybrid": {
+        "n": 10,
+        "brier": 0.243091,
+        "brier_skill_vs_statistical": 0.028347,
+        "coverage_80": 0.7,
+        "coverage_50": 0.4,
+        "coverage_90": 0.8,
+        "per_unit": {
+          "percent_return": {
+            "n": 9,
+            "mae": 5.41835,
+            "rmse": 7.142644,
+            "avg_interval_score_80": 24.858411
+          },
+          "basis_points": {
+            "n": 1,
+            "mae": 6.7382,
+            "rmse": 6.7382,
+            "avg_interval_score_80": 52.6091
+          }
+        },
+        "equity_gold_eight_market_MAE_excluding_WTI_USDJPY": 4.810462
+      }
+    }
+  },
+  "flags": [
+    "WTI same vendor front continuous futures quote 90.34 conflicts with Reuters Dec26 settlement 90.83. Fixed-contract official settlement not confirmed, so WTI C and B provisional.",
+    "Gold Friday vendor close differs from Reuters timestamped spot quote; use paired vendor daily close.",
+    "USDJPY cross-vendor Friday session closes differ: Yahoo 157.498 vs Investing 158.48, keep pair-vendor result provisional.",
+    "S&P Oct30 frozen original 7579.86 vs current Investing history 7580.07; original forecast unchanged, matched daily comparison only.",
+    "A group's prior claims and WEI first-release vintage may differ from revised historical levels.",
+    "Risk group B and asset group C outcomes correlated; do not interpret raw sample count as independent precision."
+  ]
+}
