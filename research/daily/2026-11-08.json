@@ -1,0 +1,259 @@
+{
+  "record_type": "FinanceSim_daily_research_note",
+  "date": "2026-11-08",
+  "information_access_as_of": "2026-11-08T18:47:27+09:00",
+  "timezone": "Asia/Tokyo",
+  "sunday_no_new_market_close": "Market weekly close remains Friday 2026-11-06; as of this Sunday JST there are no new exchange Friday-to-Friday outcomes for 2026-11-13. No Sunday asset prices invented.",
+  "repository_prior_state": {
+    "read_before_research": [
+      "research/PROTOCOL.md",
+      "research/INDEX.md",
+      "research/daily/2026-11-06-restart.json",
+      "research/daily/2026-11-07.json",
+      "research/hypotheses/2026-11-07-1930-cross-market-tail-dependence.json",
+      "research/experiments/2026-11-07-paired-provider-price-sensitivity.json",
+      "research/weekly/2026-11-07-verification.json",
+      "research/weekly/2026-11-07-forecast.json",
+      "research/inputs/2026-11-07-1200-snapshot.json",
+      "research/scripts/generate_2026_11_07.js",
+      ".github/workflows/tests.yml",
+      "financesim/engine.py",
+      "financesim/scenarios.py",
+      "financesim/market_data.py",
+      "financesim/scorecards.py"
+    ],
+    "before_work_main_commit": "26c529c3d5e81481dd0e761057552e30956b1e42",
+    "before_work_ci": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42364493843",
+    "before_work_ci_result": "completed success, Nov7",
+    "latest_frozen_weekly_forecast": "research/weekly/2026-11-07-forecast.json",
+    "prior_realized_scores": "research/weekly/2026-11-07-verification.json",
+    "no_frozen_records_modified": true
+  },
+  "official_observations": [
+    {
+      "id": "CN_2026_09_HEADLINE_CPI_FIRST_RELEASE",
+      "reference_period": "2026-09",
+      "released_at": "2026-10-14T09:30:00+08:00",
+      "headline_yoy_pct": 0.9,
+      "headline_mom_pct": 0.2,
+      "first_release_source": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965477.html",
+      "source_class": "National Bureau of Statistics China, October 14 first-publication bulletin",
+      "accessed_at": "2026-11-08T18:47:27+09:00"
+    },
+    {
+      "id": "CN_2026_09_FACTORY_GATE_PPI_FIRST_RELEASE",
+      "reference_period": "2026-09",
+      "released_at": "2026-10-14T09:30:00+08:00",
+      "factory_gate_yoy_pct": 5,
+      "factory_gate_mom_pct": 1.2,
+      "purchased_goods_yoy_pct": 6.9,
+      "purchased_goods_mom_pct": 1.2,
+      "first_release_source": "https://www.stats.gov.cn/sj/zxfb/202610/t20261014_1965476.html",
+      "source_class": "National Bureau of Statistics China, October 14 first-publication bulletin",
+      "accessed_at": "2026-11-08T18:47:27+09:00"
+    },
+    {
+      "id": "BOJ_2026_11_07_IMF_SPEECH_METADATA",
+      "speech_event_date": "2026-11-06 (Washington local), published as November 7 on BOJ site",
+      "title": "Japan's Current Account Surplus and Corporate Adjustment",
+      "official_source": "https://www.boj.or.jp/en/about/press/koen_2026/ko261107a.htm",
+      "finding": "Structural external accounts and corporate adjustment topic; do not infer new rate path or direct yen response from metadata alone. Speech PDF was NOT numerically extracted in this run.",
+      "accessed_at": "2026-11-08T18:47:27+09:00"
+    }
+  ],
+  "verified_upcoming_first_release_calendar": [
+    {
+      "id": "CN_2026_10_CPI_PPI",
+      "reference_period": "2026-10",
+      "release_local": "2026-11-09T09:30:00+08:00",
+      "release_jst": "2026-11-09T10:30:00+09:00",
+      "source": "https://www.stats.gov.cn/xw/tjxw/tzgg/202512/t20251224_1962137.html",
+      "source_publication": "2025-12-25T09:30:00+08:00",
+      "status": "scheduled; future as of Nov8 research time"
+    },
+    {
+      "id": "JP_2026_09_LEADING_INDEX_PRELIM",
+      "reference_period": "2026-09",
+      "release_local": "2026-11-09T14:00:00+09:00",
+      "source": "https://www.esri.cao.go.jp/jp/stat/stat-schedule.html",
+      "status": "scheduled; preliminary version"
+    },
+    {
+      "id": "US_2026_10_CPI",
+      "reference_period": "2026-10",
+      "release_local": "2026-11-10T08:30:00-05:00",
+      "release_jst": "2026-11-10T22:30:00+09:00",
+      "source": "https://www.bls.gov/schedule/2026/11_sched_list.htm",
+      "calendar_last_modified": "2026-11-03",
+      "status": "scheduled; in Nov7 frozen macro targets"
+    },
+    {
+      "id": "JP_2026_09_HOUSEHOLD_SPENDING",
+      "reference_period": "2026-09",
+      "release_local_date": "2026-11-10",
+      "source": "https://www.stat.go.jp/data/kakei/family/06.html",
+      "status": "scheduled; exact time not claimed from primary calendar"
+    },
+    {
+      "id": "UK_2026_Q3_GDP_FIRST_ESTIMATE",
+      "reference_period": "2026-07/2026-09",
+      "release_local": "2026-11-12T07:00:00+00:00",
+      "release_jst": "2026-11-12T16:00:00+09:00",
+      "source": "https://www.ons.gov.uk/releases/gdpfirstquarterlyestimateukjulytoseptember2026",
+      "status": "scheduled; ONS explicitly says not yet published"
+    },
+    {
+      "id": "JP_2026_10_CORPORATE_GOODS_PRICE_INDEX",
+      "reference_period": "2026-10",
+      "release_local": "2026-11-12T08:50:00+09:00",
+      "source": "https://www.boj.or.jp/about/calendar/",
+      "source_last_updated": "2026-11-06",
+      "status": "scheduled"
+    },
+    {
+      "id": "US_2026_10_PPI",
+      "reference_period": "2026-10",
+      "release_local": "2026-11-13T08:30:00-05:00",
+      "release_jst": "2026-11-13T22:30:00+09:00",
+      "source": "https://www.bls.gov/schedule/2026/11_sched_list.htm",
+      "calendar_last_modified": "2026-11-03",
+      "status": "scheduled; in Nov7 frozen macro targets"
+    }
+  ],
+  "market_session_and_calendar_facts": [
+    {
+      "id": "US_TREASURY_MARKET_VETERANS_DAY",
+      "date": "2026-11-11",
+      "status": "SIFMA recommendation full trading close for USD-denominated fixed income in US, UK, Japan; member adoption not guaranteed",
+      "source_published": "2026-10-28",
+      "source": "https://www.sifma.org/news/press-releases/sifma-fixed-income-market-close-recommendation-in-the-u-s-the-u-k-and-japan-for-the-u-s-veterans-day-holiday-2026",
+      "scoring_implication": "Nov11 Treasury daily par yield may be absent; skip rather than create zero change or falsely treat previous close as a new observed close."
+    },
+    {
+      "id": "US_PPI_FRIDAY_CROSS_MARKET_EVENT_ASYNCHRONY",
+      "release_at_jst": "2026-11-13T22:30:00+09:00",
+      "cash_market_closes_jst": {
+        "nikkei225": "2026-11-13T15:30:00+09:00",
+        "kospi": "2026-11-13T15:30:00+09:00",
+        "csi300": "2026-11-13T16:00:00+09:00",
+        "stoxx600": "2026-11-14T01:30:00+09:00",
+        "sp500": "2026-11-14T06:00:00+09:00",
+        "nasdaq100": "2026-11-14T06:00:00+09:00"
+      },
+      "relative_offsets_hours_to_PPI": {
+        "nikkei225": -7,
+        "kospi": -7,
+        "csi300": -6.5,
+        "stoxx600": 3,
+        "sp500": 7.5,
+        "nasdaq100": 7.5
+      },
+      "interpretation": "PPI enters Friday US/European trading before their close but after Friday Asia cash close. Group B shared breadth event must not attribute same-Friday Asian prices to immediate PPI surprise; define appropriate event lead-lag in future hypotheses."
+    }
+  ],
+  "numerical_features": [
+    {
+      "name": "CN_2026_09_PPI_minus_CPI_yoy",
+      "value": 4.1,
+      "unit": "percentage_points",
+      "operation": "5.0-0.9",
+      "caution": "different goods baskets, weights and producer/consumer stages; neither direct pass-through nor a comparable price-index level"
+    },
+    {
+      "name": "CN_2026_09_PPI_minus_CPI_mom",
+      "value": 1,
+      "unit": "percentage_points",
+      "operation": "1.2-0.2",
+      "caution": "one monthly print only"
+    },
+    {
+      "name": "next_US_PPI_event_risk_asymmetry_lag",
+      "values_hours": {
+        "Japan_equities": -7,
+        "China_equities": -6.5,
+        "Europe_STOXX600": 3,
+        "US_equities": 7.5
+      },
+      "unit": "hours relative to 2026-11-13 US PPI 08:30 EST"
+    },
+    {
+      "name": "frozen_hybrid_equity_breadth_Pge3",
+      "value": 0.4182,
+      "unit": "model_assumed_probability",
+      "source": "research/weekly/2026-11-07-forecast.json"
+    },
+    {
+      "name": "same_hybrid_marginals_independent_copula_Pge3",
+      "value": 0.40019481146887714,
+      "unit": "model_assumed_probability",
+      "source": "research/experiments/2026-11-08-breadth-dependence-decomposition.json"
+    },
+    {
+      "name": "shared_shock_dependence_only_increment",
+      "value": 0.018005188531122873,
+      "unit": "probability",
+      "source": "research/experiments/2026-11-08-breadth-dependence-decomposition.json"
+    },
+    {
+      "name": "ex_ante_statistical_independent_Pge3",
+      "value": 0.26510223980519226,
+      "unit": "model_assumed_probability",
+      "source": "research/experiments/2026-11-08-breadth-dependence-decomposition.json"
+    }
+  ],
+  "study_execution": {
+    "experiment_path": "research/experiments/2026-11-08-breadth-dependence-decomposition.json",
+    "source_replay_path": "research/scripts/audit_2026_11_08_breadth_dependence.js",
+    "rerun_command": "node research/scripts/audit_2026_11_08_breadth_dependence.js",
+    "source_simulation_seed": 20261107,
+    "draws_per_seed": 20000,
+    "supplemental_robustness_seeds": [
+      20261108,
+      20261109,
+      20261110,
+      20261111,
+      20261112
+    ],
+    "actual_rerun_method": "Original JS RNG, Gaussian sampler and all ten asset event shock draws replicated in the same order as the frozen Saturday generator; probability exact matched original frozen breadth event for both statistical and hybrid arms. Exact independent-tail probability via Poisson-binomial DP.",
+    "deterministic_replay_executed": true,
+    "forecast_parameters_changed": false,
+    "previous_weekly_forecast_rewritten": false,
+    "formal_26_week_comparison_started": false,
+    "code_commits": [
+      "ad4204f2486d999e4492a4326e61dce19cea2959",
+      "fc36cc0db846171bd7b1f4b7fd0aa950005a5327"
+    ],
+    "observed_ci_status": "success",
+    "ci_url": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42468486585"
+  },
+  "hypothesis_checks": [
+    {
+      "id": "H20261107-cross-market-tail-dependence",
+      "status": "open",
+      "today": "Mechanism decomposition is evidence AGAINST attributing the model's large +15.22pp hybrid-versus-statistical breadth probability difference primarily to shared dependence. Same-marginal dependence accounts for only ~+1.80pp; most comes from changed individual marginal downside probabilities. Real market excess dependence remains unmeasured; start fair prospective cohort only after both probabilities frozen from Nov14."
+    },
+    {
+      "id": "Q001",
+      "status": "open",
+      "today": "Now verified China's first-release September CPI/PPI (frozen Nov7 exclusions were honest); date Nov9 first release is still unknown. No fabricated prediction for omitted China CPI and no retroactive score."
+    },
+    {
+      "id": "Q004",
+      "status": "open",
+      "today": "We have an explicit independent-marginal counterfactual for the current scenario. It is not a statistically validated real-world calibration test, and six Monte Carlo seeds are not independent market outcomes."
+    }
+  ],
+  "next_actions": [
+    "On/after 2026-11-09T09:30+08:00 retrieve Chinese October CPI/PPI initial NBS release values, log exact bulletin timestamp and quantify surprises relative to this archived September first release; do not pretend Nov7 weekly prediction existed for China.",
+    "Check ONS UK's Q3 GDP and BOJ Japan CGPI first releases on Nov12; both are event data for macro features rather than extra retrospectively scoreable Nov7 targets.",
+    "On Nov13/14 first-publication CPI/PPI and proper matched Friday closes settle the archived Nov7 22-target three-arm forecasts. Account for US PPI timing after Asian closing and Nov11 Treasury holiday. Preserve all frozen targets unchanged.",
+    "For prospective tail-dependence study after Nov14, pre-register both same-marginal independence benchmark and shared-shock probability before outcomes; compare across actual weeks rather than substituting simulation draws as observations.",
+    "Resolve CME fixed-contract WTI settlement provenance or maintain provisional status, and continue matched vendor FX quotes."
+  ],
+  "limitations": [
+    "Sunday has no new weekly market outcomes, and all next-week calendar items remain future releases.",
+    "Quantitative model counterfactual assumes independently modelled Gaussian idiosyncratic shocks and subjective common events; it has no fitted covariance/correlation or empirically calibrated market skill.",
+    "US CPI/PPI October measurement period ended before November WTI drawdown; do not use the Nov6 crude move as if it had directly caused October CPI data.",
+    "No new official weekly user report, no retroactive forecast repairs, no independent claim of future economic surprises."
+  ]
+}
