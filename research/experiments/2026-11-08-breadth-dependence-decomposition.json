@@ -1,0 +1,97 @@
+{
+  "record_type": "FinanceSim_postcutoff_mechanism_diagnostic",
+  "id": "E20261108-independent-marginal-breadth-decomposition",
+  "date": "2026-11-08",
+  "observed_as_of": "2026-11-08T18:46:11+09:00",
+  "forecast_vintage": "research/weekly/2026-11-07-forecast.json",
+  "forecast_original_information_cutoff": "2026-11-07T12:00:00+09:00",
+  "scenario_inputs": "research/inputs/2026-11-07-1200-snapshot.json",
+  "base_code_commit": "26c529c3d5e81481dd0e761057552e30956b1e42",
+  "new_audit_script": "research/scripts/audit_2026_11_08_breadth_dependence.js",
+  "script_commit": "ad4204f2486d999e4492a4326e61dce19cea2959",
+  "ci_commit": "fc36cc0db846171bd7b1f4b7fd0aa950005a5327",
+  "ci_run": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42468486585",
+  "ci_status_observed": "success; replay matched exact original frozen risk probabilities",
+  "executed": true,
+  "seed_used_for_frozen_replay": 20261107,
+  "simulations_per_seed": 20000,
+  "extra_robustness_seeds": [
+    20261108,
+    20261109,
+    20261110,
+    20261111,
+    20261112
+  ],
+  "type": "postpublication experiment, not a prospective weekly forecast, not new future evidence",
+  "inputs_type": "previously frozen subjective event probabilities, assumed normal volatility, common event shocks; NOT fitted economic distribution",
+  "measurement": "Six equity Friday-to-Friday simple percent returns below or equal -1.5%; event count>=3 of S&P500, Nasdaq100, STOXX600, Nikkei225, KOSPI, CSI300.",
+  "method": "Replicate original seeded 20,000-path generator byte-for-byte RNG ordering across all ten assets and all shared events, counting six equity marginals. Remove cross-market dependence mathematically by exact Poisson-binomial dynamic programming with the SAME empirically simulated six marginal tail probabilities. Retain each arm's marginal distributions; separate baseline stat->hybrid marginal shift from residual dependence.",
+  "original_seed_results": {
+    "frozen_statistical_MC_event_probability": 0.266,
+    "frozen_hybrid_MC_event_probability": 0.4182,
+    "independence_given_statistical_MC_marginals": 0.26510223980519226,
+    "independence_given_hybrid_MC_marginals": 0.40019481146887714,
+    "actual_hybrid_minus_statistical_pp": 15.22,
+    "same_marginal_hybrid_dependence_residual_pp": 1.8005188531122873,
+    "statistical_simulation_discrepancy_vs_independent_exact_pp": 0.089776019480775,
+    "hybrid_minus_statistical_independent_marginal_component_pp": 13.50925716636849,
+    "six_equity_hybrid_marginal_p_down_below_minus1p5": {
+      "sp500": 0.37585,
+      "nasdaq100": 0.46045,
+      "stoxx600": 0.28405,
+      "nikkei225": 0.40295,
+      "kospi": 0.43085,
+      "csi300": 0.28625
+    },
+    "six_equity_statistical_marginal_p_down_below_minus1p5": {
+      "sp500": 0.2477,
+      "nasdaq100": 0.3463,
+      "stoxx600": 0.20535,
+      "nikkei225": 0.3567,
+      "kospi": 0.4041,
+      "csi300": 0.2764
+    }
+  },
+  "robustness_same_scenarios": [
+    {
+      "seed": 20261108,
+      "p_hybrid_shared": 0.41065,
+      "p_hybrid_independent": 0.39605203222966695,
+      "dependence_effect_pp": 1.4597967770333065
+    },
+    {
+      "seed": 20261109,
+      "p_hybrid_shared": 0.4157,
+      "p_hybrid_independent": 0.40265719455535715,
+      "dependence_effect_pp": 1.3042805444642869
+    },
+    {
+      "seed": 20261110,
+      "p_hybrid_shared": 0.41645,
+      "p_hybrid_independent": 0.39912412616455945,
+      "dependence_effect_pp": 1.7325873835440542
+    },
+    {
+      "seed": 20261111,
+      "p_hybrid_shared": 0.4158,
+      "p_hybrid_independent": 0.40052835974023043,
+      "dependence_effect_pp": 1.527164025976957
+    },
+    {
+      "seed": 20261112,
+      "p_hybrid_shared": 0.41085,
+      "p_hybrid_independent": 0.3993340170159017,
+      "dependence_effect_pp": 1.1515982984098283
+    }
+  ],
+  "inference": "The hybrid event's 41.82% estimate exceeds statistical 26.60% largely because the hybrid model assigns higher individual downside probabilities to each equity; eliminating correlations leaves hybrid 40.02%, while common-shock dependence adds only ~1.80 pp under this scenario model. Neither relative number is a demonstrated market calibration improvement.",
+  "negative_evidence": "Weakens the earlier informal story that the higher hybrid joint-event probability is mainly driven by explicit cross-market dependence. Does NOT falsify the prospective claim that *real-world* market co-crashes may be more correlated than an independent baseline.",
+  "prospective_test_boundary": "Nov13 outcome must be compared against the ORIGINAL Nov7 frozen risk forecasts; this Sunday counterfactual can be examined only as a separate post-cutoff exploratory diagnostic. Start formal 26-week dual-model pre-registration from November14 or later as specified in existing 2026-11-07 hypothesis.",
+  "limitations": [
+    "The model's same-marginals Poisson-binomial probability is computed from sampled subjective hybrid returns, not empirical return data.",
+    "Original 20,000 draws and five alternate seeds are Monte Carlo diagnostics, not six market observations or six prospective weeks.",
+    "Differences across original statistical and hybrid arms combine different marginal vol/means and event shocks; decomposition is conditional on chosen statistical reference and empirical draw marginals.",
+    "One Nov6 co-drawdown week cannot identify real market dependence or justify refitting shocks.",
+    "WTI and USDJPY provenance issues are irrelevant to the six-equity event definition but may influence broader model inputs."
+  ]
+}
