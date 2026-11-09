@@ -1,0 +1,121 @@
+{
+  "record_type": "FinanceSim_official_first_release_and_intraworkweek_market_input",
+  "date": "2026-11-09",
+  "collection_session": "2026-11-09 evening Asia/Tokyo",
+  "research_start_local": "2026-11-09T19:09:00+09:00",
+  "source_access_timestamp_caveat": "Individual HTTP request completion timestamps not available; official source publication dates are verified on pages, Git commits provide durable record time. Never backdate publication or use data published after this record.",
+  "original_frozen_weekly_forecast": "research/weekly/2026-11-07-forecast.json",
+  "original_forecast_cutoff": "2026-11-07T12:00:00+09:00",
+  "original_weekly_snapshot": "research/inputs/2026-11-07-1200-snapshot.json",
+  "official_first_releases": [
+    {
+      "id": "CN_OCT_2026_CPI",
+      "reference_period": "2026-10",
+      "release_version": "first",
+      "released_at": "2026-11-09T09:30:00+08:00",
+      "source_url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261109_1965795.html",
+      "publisher": "China National Bureau of Statistics",
+      "measurement": {
+        "headline_yoy_pct": 0.7,
+        "headline_mom_pct": 0,
+        "core_ex_food_energy_yoy_pct": 0.8,
+        "food_yoy_pct": -2.9,
+        "nonfood_yoy_pct": 1.5
+      },
+      "previous_initial_release": {
+        "reference_period": "2026-09",
+        "released_at": "2026-10-14T09:30:00+08:00",
+        "source_url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965477.html",
+        "headline_yoy_pct": 0.9,
+        "headline_mom_pct": 0.2,
+        "core_ex_food_energy_yoy_pct": 1
+      }
+    },
+    {
+      "id": "CN_OCT_2026_PPI",
+      "reference_period": "2026-10",
+      "release_version": "first",
+      "released_at": "2026-11-09T09:30:00+08:00",
+      "source_url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261109_1965794.html",
+      "publisher": "China National Bureau of Statistics",
+      "measurement": {
+        "factory_gate_yoy_pct": 5.7,
+        "factory_gate_mom_pct": 0.7,
+        "production_goods_yoy_pct": 7.4,
+        "living_goods_yoy_pct": -0.1,
+        "purchase_price_yoy_pct": 7.9
+      },
+      "previous_initial_release": {
+        "reference_period": "2026-09",
+        "released_at": "2026-10-14T09:30:00+08:00",
+        "source_url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261014_1965476.html",
+        "factory_gate_yoy_pct": 5,
+        "factory_gate_mom_pct": 1.2,
+        "production_goods_yoy_pct": 6.5,
+        "living_goods_yoy_pct": -0.1,
+        "purchase_price_yoy_pct": 6.9
+      }
+    },
+    {
+      "id": "JP_SEP_2026_CI_PRELIM",
+      "reference_period": "2026-09",
+      "release_version": "September preliminary / 9月速報",
+      "release_date": "2026-11-09",
+      "scheduled_release_local": "2026-11-09T14:00:00+09:00",
+      "exact_actual_web_release_time": "unverified",
+      "source_url": "https://www.esri.cao.go.jp/jp/stat/di/202609psummary.pdf",
+      "source_index": "https://www.esri.cao.go.jp/jp/stat/di/di.html",
+      "publisher": "Cabinet Office ESRI Japan",
+      "measurement": {
+        "leading": 116.4,
+        "coincident": 119.5,
+        "lagging": 116
+      },
+      "month_on_month_deltas_in_current_release": {
+        "leading": -1.6,
+        "coincident": 0.7,
+        "lagging": 3.6
+      },
+      "methodology_note": "Japanese CI 'month-on-month' uses retrospectively updated reference values in same 2026-11-09 bulletin, not frozen prior August first-print. The preliminary PDF explicitly warns of revisions to leading-series history."
+    }
+  ],
+  "interim_market_quotes": [
+    {
+      "id": "nikkei225",
+      "day": "2026-11-09",
+      "market": "Tokyo Nikkei 225",
+      "session_closing_time": "2026-11-09T15:30:00+09:00",
+      "source_url": "https://diamond.jp/list/market/nikkei-average",
+      "second_source": "https://finance.matsui.co.jp/stock/.N225/daily-bar/index",
+      "source_class": "licensed index-vendor close through secondary platforms",
+      "close": 58775.5,
+      "previous_friday_date": "2026-11-06",
+      "previous_friday_close": 57434.77,
+      "weekly_target_date": "2026-11-13",
+      "validation": "Secondary vendor quotes, NOT Friday weekly terminal realization; check exact official vendor quote at formal settlement."
+    }
+  ],
+  "upcoming_official_calendar": [
+    {
+      "id": "US_OCT_CPI",
+      "scheduled_at": "2026-11-10T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/schedule/2026/11_sched_list.htm",
+      "published_as_of_research": false
+    },
+    {
+      "id": "US_OCT_PPI",
+      "scheduled_at": "2026-11-13T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/schedule/2026/11_sched_list.htm",
+      "published_as_of_research": false
+    }
+  ],
+  "end_of_week_closing_times_JST": {
+    "nikkei225": "2026-11-13T15:30:00+09:00",
+    "kospi": "2026-11-13T15:30:00+09:00",
+    "csi300": "2026-11-13T16:00:00+09:00",
+    "stoxx600": "2026-11-14T01:30:00+09:00",
+    "sp500": "2026-11-14T06:00:00+09:00",
+    "nasdaq100": "2026-11-14T06:00:00+09:00"
+  },
+  "no_retroactive_scoring": "CN CPI, PPI and JP CI were not Nov7 frozen seven group-A targets. They remain explanatory features only; Nikkei Monday close is not the Nov13 weekly endpoint."
+}
