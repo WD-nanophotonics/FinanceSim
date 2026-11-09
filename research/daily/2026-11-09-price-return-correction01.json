@@ -1,0 +1,16 @@
+{
+  "record_type": "append_only_arithmetic_correction",
+  "date": "2026-11-09",
+  "supersedes_field_in": "research/daily/2026-11-09.json",
+  "field": "daily_market_context[0].session_return_pct",
+  "original_incorrect_approximation": 2.334666,
+  "correct_computation": {
+    "reference_2026_11_06": 57434.77,
+    "interim_close_2026_11_09": 58775.5,
+    "delta_index_points": 1340.73,
+    "pct_return": 2.334352518517968,
+    "expression": "100*(58775.50/57434.77-1)"
+  },
+  "reason": "Transcription/rounding error in daily market context. The quantitative_features section's rounded ~2.3347 also should be read as 2.33435, or 2.33% to two decimals.",
+  "scope": "Monday interim market observation only. No original frozen 2026-11-07 market forecast, Nov13 target, macro release record, or experimental Monte Carlo result modified."
+}
