@@ -1,0 +1,194 @@
+{
+  "record_type": "FinanceSim_daily_research_note",
+  "date": "2026-11-09",
+  "timezone": "Asia/Tokyo",
+  "research_session_started": "2026-11-09T19:09:00+09:00",
+  "timestamps_policy": "Individual HTTP retrieval completion times are unavailable; source-publication date/time taken from first-publication page if explicitly displayed. Git commits anchor the actual durable record time and are not backdated.",
+  "state_read_before_research": {
+    "protocol": "research/PROTOCOL.md",
+    "index": "research/INDEX.md",
+    "daily": [
+      "research/daily/2026-11-06-restart.json",
+      "research/daily/2026-11-07.json",
+      "research/daily/2026-11-08.json"
+    ],
+    "active_hypothesis": "research/hypotheses/2026-11-07-1930-cross-market-tail-dependence.json",
+    "recent_experiments": [
+      "research/experiments/2026-11-07-paired-provider-price-sensitivity.json",
+      "research/experiments/2026-11-08-breadth-dependence-decomposition.json"
+    ],
+    "latest_frozen_weekly": "research/weekly/2026-11-07-forecast.json",
+    "latest_scored_week": "research/weekly/2026-11-07-verification.json",
+    "code": [
+      "research/scripts/generate_2026_11_07.js",
+      "research/scripts/audit_2026_11_08_breadth_dependence.js",
+      "financesim/engine.py",
+      "financesim/scenarios.py",
+      "financesim/market_data.py",
+      "financesim/scorecards.py",
+      ".github/workflows/tests.yml"
+    ],
+    "main_commit_at_start": "77d5a1a2be2b66eebce4c1d80222e3bb8ae0cf79",
+    "previous_latest_ci": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42468792982",
+    "previous_ci_failure_root_cause": "Python 3.10 setup download returned HTTP 504 three times on Nov8; Python 3.12 matrix passed. External environment failure before unit tests, no claim that application code failed."
+  },
+  "released_official_facts": [
+    {
+      "id": "CN_2026_10_CPI_FIRST_PRINT",
+      "reference_period": "2026-10",
+      "release_version": "first",
+      "source_date": "2026-11-09T09:30:00+08:00",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261109_1965795.html",
+      "cpi_yoy_pct": 0.7,
+      "cpi_mom_pct": 0,
+      "core_yoy_pct": 0.8,
+      "previous_first_print_sep": {
+        "cpi_yoy_pct": 0.9,
+        "cpi_mom_pct": 0.2,
+        "core_yoy_pct": 1,
+        "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965477.html",
+        "released_at": "2026-10-14T09:30:00+08:00"
+      }
+    },
+    {
+      "id": "CN_2026_10_PPI_FIRST_PRINT",
+      "reference_period": "2026-10",
+      "release_version": "first",
+      "source_date": "2026-11-09T09:30:00+08:00",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261109_1965794.html",
+      "ppi_factory_yoy_pct": 5.7,
+      "ppi_factory_mom_pct": 0.7,
+      "production_goods_yoy_pct": 7.4,
+      "living_goods_yoy_pct": -0.1,
+      "ppi_purchase_yoy_pct": 7.9,
+      "previous_first_print_sep": {
+        "factory_yoy_pct": 5,
+        "factory_mom_pct": 1.2,
+        "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261014_1965476.html",
+        "released_at": "2026-10-14T09:30:00+08:00"
+      }
+    },
+    {
+      "id": "JP_2026_09_CI_PRELIM",
+      "reference_period": "2026-09",
+      "source_date": "2026-11-09",
+      "scheduled_release": "2026-11-09T14:00:00+09:00",
+      "exact_real_release_time": "not independently authenticated",
+      "url": "https://www.esri.cao.go.jp/jp/stat/di/202609psummary.pdf",
+      "leading": 116.4,
+      "coincident": 119.5,
+      "lagging": 116,
+      "leading_mom_change_points": -1.6,
+      "coincident_mom_change_points": 0.7,
+      "lagging_mom_change_points": 3.6,
+      "baseline_revision": "Latest bulletin uses August CI as revised; its month-to-month movement cannot be interpreted as a comparison of independently first-published August and September vintage values.",
+      "official_assessment": "improvement for coincident economic conditions"
+    }
+  ],
+  "daily_market_context": [
+    {
+      "id": "JP_NIKKEI_2026_11_09_MONDAY_CLOSE",
+      "date": "2026-11-09",
+      "close_jpy": 58775.5,
+      "previous_friday_2026_11_06": 57434.77,
+      "session_return_pct": 2.334666,
+      "source": "https://diamond.jp/list/market/nikkei-average",
+      "secondary_verification": "https://finance.matsui.co.jp/stock/.N225/daily-bar/index",
+      "source_quality": "vendor-licensed media quote, not independently authenticated official primary close",
+      "settlement_status": "intraweek interim observation, NOT Nov13 weekly result"
+    }
+  ],
+  "quantitative_features": {
+    "CN_CPI_yoy_first_print_month_change_pp": -0.2,
+    "CN_PPI_yoy_first_print_month_change_pp": 0.7,
+    "CN_PPI_minus_CPI_yoy_Oct_pp": 5,
+    "CN_PPI_minus_CPI_yoy_Sep_first_print_pp": 4.1,
+    "CN_PPI_CPI_yoy_spread_widening_pp": 0.9,
+    "CN_CPI_mom_change_pp": -0.2,
+    "CN_PPI_mom_change_pp": -0.5,
+    "CN_production_living_goods_PPI_yoy_gap_pp": 7.5,
+    "JP_leading_minus_coincident_CI_month_delta_points": -2.3,
+    "JP_Nikkei_one_market_day_rebound_pct_approx": 2.3347
+  },
+  "research_interpretation": [
+    "October Chinese upstream manufacturing inflation accelerated by 0.7 percentage points YoY from September's original NBS bulletin while consumer headline inflation slowed by 0.2pp. The widened 0.9pp PPI-CPI annual spread is a measurement observation, not a causal producer-profit or pass-through estimate.",
+    "Producer goods PPI +7.4% YoY versus living goods -0.1% suggests concentration of producer price pressure in upstream/production categories; category weights and baskets differ from household CPI.",
+    "Japan's September leading CI fell 1.6 while coincident CI rose 0.7, a -2.3pt change gap; official government assessment for coincident conditions remains improvement. A single leading print cannot identify a recession probability.",
+    "Nikkei Monday +2.33% versus Nov6 Friday close is compatible with previously described rebound scenario; no score or directional win because the frozen weekly target is Nov13 Friday."
+  ],
+  "experimental_execution": {
+    "model_source": "research/inputs/2026-11-07-1200-snapshot.json",
+    "new_input": "research/inputs/2026-11-09-asia-first-releases.json",
+    "script": "research/scripts/audit_2026_11_09_asia_stress.js",
+    "result": "research/experiments/2026-11-09-asian-closure-shock-sensitivity.json",
+    "original_forecast": "research/weekly/2026-11-07-forecast.json",
+    "fixed_seed": 20261107,
+    "runs": 20000,
+    "actual_operation": "Replayed original ten-asset RNG sampling, keeping archived subjective shocks and Gaussian parameters; added purely hypothetical +/-0.5 and +/-1.0 percentage-point return shifts to equity scenarios. Same original frozen breadth 0.4182 reproduced exactly in calculations. Script and archived experiment output are checked bytewise in CI.",
+    "original_breadth_P_at_least_three_equities_below_minus1p5": 0.4182,
+    "all_six_minus0p5_sensitivity_P": 0.50725,
+    "all_six_minus0p5_increment_pp": 8.905,
+    "US_Europe_only_minus0p5_sensitivity_P": 0.472,
+    "US_Europe_only_minus0p5_increment_pp": 5.38,
+    "gap_of_sensitivity_between_global_and_after_Asia_pp": 3.525,
+    "interpretation": "This quantifies how treating a Friday US PPI release as if it could immediately affect the already-closed Asian Friday markets exaggerates an illustrative common-shift sensitivity. All shocks are fictitious and not inferred from today's realized NBS news or observed returns.",
+    "future_data_used": false,
+    "original_archive_modified": false,
+    "model_refit": false,
+    "new_forward_forecast_submitted": false,
+    "source_script_commit": "090aa1a5f5dc52e055e40ad7e4b3716a25e5085d",
+    "output_commit": "6d9401981a7b45abc6a42927e4ecbbd4675389e4",
+    "replay_ci_commit": "98a4aca4fb2a47675287c819f32bf15dfb3c5129",
+    "replay_ci_run": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42599554296",
+    "replay_ci_status_when_started": "queued; recheck after"
+  },
+  "hypotheses": [
+    {
+      "id": "Q001",
+      "status": "new_explanatory_features_not_prospective_predictive_evidence",
+      "assessment": "China release provenance now gives two-period macro features, but no ex-ante Nov7 China CPI/PPI prediction existed; the features cannot be scored retrospectively."
+    },
+    {
+      "id": "H20261107-cross-market-tail-dependence",
+      "status": "still_unproven",
+      "assessment": "Current fixed-marginal dependence decomposition remains only a scenario-model mechanism; today's exogenous-shift test demonstrates exposure-time and magnitude sensitivity, with no new market close or empirical fit."
+    }
+  ],
+  "upcoming_and_unsettled": [
+    {
+      "event": "US October CPI, headline/core",
+      "published": false,
+      "scheduled_at": "2026-11-10T08:30:00-05:00",
+      "url": "https://www.bls.gov/schedule/2026/11_sched_list.htm"
+    },
+    {
+      "event": "US October PPI",
+      "published": false,
+      "scheduled_at": "2026-11-13T08:30:00-05:00",
+      "url": "https://www.bls.gov/schedule/2026/11_sched_list.htm"
+    },
+    {
+      "event": "UK Q3 GDP first print",
+      "published": false,
+      "scheduled_at": "2026-11-12T07:00:00+00:00",
+      "url": "https://www.ons.gov.uk/releases/gdpfirstquarterlyestimateukjulytoseptember2026"
+    },
+    {
+      "event": "JP October corporate goods price index",
+      "published": false,
+      "scheduled_at": "2026-11-12T08:50:00+09:00",
+      "url": "https://www.boj.or.jp/about/calendar/"
+    },
+    {
+      "target": "2026-11-13 weekly assets and group B risk",
+      "status": "all pending until actual Friday regional closes; Wednesday Veterans Day UST market closure is not a zero return"
+    }
+  ],
+  "limitations": [
+    "Official October China print is an explanatory observation and cannot be treated as a win on an omitted Nov7 target.",
+    "Japanese CI preliminary index can be revised and the exact publication time was not verified by the primary PDF.",
+    "WTI fixed-contract settlement, FX vendor consistent time cutoffs and some equity close-source issues identified in prior Nov7 records remain unresolved.",
+    "The present synthetic return-shift experiment is not a fitted model or an empirically calibrated causal estimate.",
+    "One Monday Nikkei close does not settle a full week; Europe/US November9 closes still not available at the Asia evening research session."
+  ]
+}
