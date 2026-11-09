@@ -57,3 +57,7 @@ jobs:
         run: python research/scripts/audit_2026_11_07_vendor_sensitivity.py > /dev/null
       - name: Audit November 8 conditional equity-breadth dependence decomposition
         run: node research/scripts/audit_2026_11_08_breadth_dependence.js > /dev/null
+      - name: Reproduce November 9 after-Asia market-breadth sensitivity
+        run: |
+          node research/scripts/audit_2026_11_09_asia_stress.js > /tmp/financesim_nov9_breadth.json
+          cmp research/experiments/2026-11-09-asian-closure-shock-sensitivity.json /tmp/financesim_nov9_breadth.json
