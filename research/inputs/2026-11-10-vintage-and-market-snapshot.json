@@ -1,0 +1,131 @@
+{
+  "record_type": "asof_official_first_print_macro_and_market_observations",
+  "observation_date": "2026-11-10",
+  "timezone": "Asia/Tokyo",
+  "observed_prior_to": "2026-11-10T22:30:00+09:00",
+  "capture_policy": "Collected in Nov10 Japan evening. Exact HTTP fetch time is not exposed; publication time known only when source states it. The resulting Git commit is an external archive timestamp. Do not use results after US October CPI release.",
+  "official_macro": {
+    "jp_household_spending_sep2026": {
+      "source": "https://www.stat.go.jp/data/kakei/sokuhou/tsuki/index.html",
+      "publisher": "Statistics Bureau of Japan",
+      "first_publication_date": "2026-11-10",
+      "exact_release_time": "not confirmed by source",
+      "reference_period": "2026-09",
+      "population": "two-or-more-person households",
+      "total_spending_yen": 289536,
+      "real_yoy_pct": -6.8,
+      "nominal_yoy_pct": -4.5,
+      "real_mom_sa_pct": -2.8,
+      "august_real_yoy_pct_current_page": -3.1,
+      "august_real_mom_sa_pct_current_page": 0.1,
+      "july_real_yoy_pct_current_page": -3.6,
+      "worker_household_income_yen": 528074,
+      "worker_household_nominal_income_yoy_pct": 3.4,
+      "worker_household_real_income_yoy_ex_owner_equivalent_rent_pct": 0.9,
+      "worker_household_real_income_yoy_all_items_pct": 1.3,
+      "vintage_note": "September 2026 is first published Nov10; August entries shown are latest current-page figures, NOT independently archived August first-vintage. Nominal and real income apply to worker households, not all households."
+    },
+    "jp_cti_sep2026": {
+      "source": "https://www.stat.go.jp/data/cti/index2.html",
+      "publisher": "Statistics Bureau of Japan",
+      "reference_period": "2026-09",
+      "first_publication_date": "2026-11-10",
+      "numerical_first_print": "not extracted from the official primary table",
+      "secondary_estimate_real_mom_sa_pct": -1.6,
+      "secondary_source": "https://www.dir.co.jp/report/research/economics/japan/20261110_026185.html",
+      "use_for_scoring": false,
+      "warning": "The Da​iwa commentary reports CTI micro -1.6% MoM while official landing page verifies the data release but is not itself a table of the numerical figure. Treat as secondary/provisional."
+    }
+  },
+  "index_quotes": {
+    "nikkei225": {
+      "vendor": "Nikkei Inc index publisher (official)",
+      "quote_type": "official_close",
+      "reference_close_date": "2026-11-06",
+      "reference_close": 57434.77,
+      "intermediate_monday_close_date": "2026-11-09",
+      "intermediate_monday_close": 58775.5,
+      "intermediate_tuesday_close_date": "2026-11-10",
+      "intermediate_tuesday_close": 60459.58,
+      "target_close_date": "2026-11-13",
+      "currency": "index points",
+      "source": "https://indexes.nikkei.co.jp/nkave/statistics",
+      "observed_session_close_jst": "15:30",
+      "status": "intermediate; Nov13 target has not settled"
+    },
+    "sp500": {
+      "vendor": "Reuters citing index closing result",
+      "reference_close_date": "2026-11-06",
+      "reference_frozen_provisional": 7376.92,
+      "intermediate_monday_close_date": "2026-11-09",
+      "intermediate_monday_close": 7549.94,
+      "source": "https://www.reuters.com/business/wall-st-futures-rise-after-rough-week-nvidia-unsettles-investors-2026-11-09/",
+      "source_quality": "frozen Nov6 reference 7376.92 differs from earlier vendor 7376.86; Monday is news-reported primary market quote. Provisional return, not official matched-vendor data."
+    },
+    "csi300": {
+      "vendor": "multi-locale Investing.com only",
+      "intermediate_tuesday_close_date": "2026-11-10",
+      "status": "abstain_source_conflict",
+      "observed_variants": [
+        4059.11,
+        4062.37,
+        4066.99
+      ],
+      "sources": [
+        "https://hk.investing.com/indices/csi300-historical-data",
+        "https://cn.investing.com/indices/csi300-historical-data",
+        "https://ph.investing.com/indices/csi300-historical-data"
+      ],
+      "note": "Some live locale pages apparently had stale 10 Nov prices while session was active; even with post-close access, historical rows mismatch. Do not treat any as independent official settlement."
+    }
+  },
+  "us_cpi_first_vintage_target_audit": {
+    "official_bls_faq_url": "https://www.bls.gov/cpi/additional-resources/2025-federal-government-shutdown-impact-cpi-faq.htm?view=full",
+    "faq_last_modified_date": "2026-09-16",
+    "official_bls_2025_archive_url": "https://www.bls.gov/bls/2025-lapse-revised-release-dates.htm",
+    "original_missing_reference_period": "2025-10",
+    "note": "BLS says 2025 October CPI survey observations missing, no all-items and all-items-less-food-and-energy October 2025 index; no official 2026 October 12-month percent changes for such categories. This was knowable BEFORE Nov7 forecast freeze.",
+    "archived_2026_11_07_forecast_path": "research/weekly/2026-11-07-forecast.json",
+    "unsupported_first_release_target_ids": [
+      "us_cpi_yoy_nov10",
+      "us_core_cpi_yoy_nov10"
+    ],
+    "first_release_mom_target_id": "us_cpi_mom_nov10",
+    "treatment": "Preserve both original predictions unchanged. Until an actual official first-release 12-month figure is published, mark these as unscoreable/missing; no Reuters estimates, no Cleveland Fed model estimate, no backfill and no denominator cherry-picking. Score the scheduled month-on-month release only once it occurs.",
+    "scheduled_monthly_release_at": "2026-11-10T08:30:00-05:00",
+    "scheduled_monthly_release_jst": "2026-11-10T22:30:00+09:00",
+    "official_calendar_url": "https://www.bls.gov/schedule/2026/11_sched_list.htm",
+    "ppi_oct2025_baseline_note": "2025 Oct PPI was later obtained and reported with Nov25 report on Jan14 2026; do not automatically apply CPI missing-vintage caveat to 2026 October PPI yoy.",
+    "ppi_2025_reference_source": "https://www.bls.gov/news.release/archives/ppi_01142026.htm"
+  },
+  "pre_release_consensus": {
+    "source": "https://www.reuters.com/business/us-consumer-prices-expected-have-risen-slower-pace-october-2026-11-10/",
+    "publication_date": "2026-11-10",
+    "pre_release_oct2026_headline_cpi_mom_pct": 0.3,
+    "pre_release_oct2026_core_cpi_mom_pct": 0.2,
+    "status": "post-Nov7-frozen-pre-Nov10-release market expectation; not a fair original Nov7 market baseline without source-as-of-Nov7 proof",
+    "caution": "Do NOT treat estimated headline YoY 3.9 or core YoY 2.7 as actual BLS first release; official YoY absent."
+  },
+  "other_policy_or_calendar": {
+    "us_ppi_oct2026": {
+      "scheduled": "2026-11-13T08:30:00-05:00",
+      "source": "https://www.bls.gov/ppi/",
+      "status": "future"
+    },
+    "uk_q3_gdp_first": {
+      "scheduled": "2026-11-12T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/releases/gdpfirstquarterlyestimateukjulytoseptember2026",
+      "status": "future"
+    },
+    "jp_cgpi_oct2026": {
+      "scheduled": "2026-11-12T08:50:00+09:00",
+      "source": "https://www.boj.or.jp/about/calendar/",
+      "status": "future"
+    },
+    "us_veterans_day": {
+      "date": "2026-11-11",
+      "note": "SIFMA-recommended US fixed-income holiday; do not add missing yield as zero observed return",
+      "source": "https://www.sifma.org/news/press-releases/sifma-fixed-income-market-close-recommendation-in-the-u-s-the-u-k-and-japan-for-the-u-s-veterans-day-holiday-2026"
+    }
+  }
+}
