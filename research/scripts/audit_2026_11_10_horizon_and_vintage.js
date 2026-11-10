@@ -1,6 +1,6 @@
 // Exploratory Nov10 data-quality and Tuesday-close diagnostic (NOT a replacement forecast).
 // Node 18+, no external modules, no new hidden market data or simulated outcomes.
-// The German? no: 2025-10 BLS CPI index is missing, so 2026-10 official YoY CPI is unscoreable.
+// BLS October 2025 headline/core CPI levels are missing; 2026 October official YoY is unscoreable.
 const fs = require('fs');
 
 function cdf(x) {
