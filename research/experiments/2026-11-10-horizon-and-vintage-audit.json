@@ -1,0 +1,94 @@
+{
+  "record_type": "asof_target_validity_and_conditional_market_sensitivity",
+  "observation_date": "2026-11-10",
+  "experiment_type": "deterministic_arithmetic_plus_assumed_iid_Gaussian_remaining_sessions",
+  "input_path": "research/inputs/2026-11-10-vintage-and-market-snapshot.json",
+  "frozen_forecast_path": "research/weekly/2026-11-07-forecast.json",
+  "frozen_model_input_path": "research/inputs/2026-11-07-1200-snapshot.json",
+  "forecast_modified": false,
+  "simulation_seed": null,
+  "simulation_draws": 0,
+  "no_forward_releases": true,
+  "macro_features": {
+    "japan_household_spending_first_release_2026_09_real_yoy_pct": -6.8,
+    "august_latest_vintage_real_yoy_pct": -3.1,
+    "change_in_yoy_rate_vs_aug_latest_vintage_percentage_points": -3.7,
+    "september_real_mom_SA_pct": -2.8,
+    "august_latest_vintage_real_mom_SA_pct": 0.1,
+    "change_in_sa_mom_rate_pp": -2.9,
+    "households_two_person_plus_spending_yen": 289536,
+    "relevant_first_publication_day": "2026-11-10"
+  },
+  "nikkei_midweek": {
+    "official_2026_11_06_close": 57434.77,
+    "official_2026_11_09_close": 58775.5,
+    "official_2026_11_10_close": 60459.58,
+    "nov09_pct_vs_nov06": 2.33435252,
+    "nov10_pct_vs_nov09": 2.8652755,
+    "nov10_pct_vs_nov06": 5.26651365,
+    "threshold_close_for_frozen_breadth_down_1p5_pct": 56573.24845,
+    "required_nov10_to_nov13_return_to_reach_threshold_pct": -6.42798304,
+    "model_assumption": "Independent Gaussian increments; mean zero remaining period; frozen statistical weekly sigma, three sessions left of five; no fitted intraday dynamics, jumps, autocorrelation or volatility clustering. Conditional risk is not a frozen forecast and is not empirically calibrated.",
+    "frozen_statistical_weekly_sigma_percentage_points": 4.1,
+    "conditionally_assumed_risks": {
+      "1": {
+        "weekly_vol_multiplier": 1,
+        "assumed_remaining_3_session_std_percentage_points": 3.17584634,
+        "conditional_probability_of_weekly_nikkei_drop_at_least_1p5_pct": 0.02148387
+      },
+      "2": {
+        "weekly_vol_multiplier": 2,
+        "assumed_remaining_3_session_std_percentage_points": 6.35169269,
+        "conditional_probability_of_weekly_nikkei_drop_at_least_1p5_pct": 0.1557664
+      },
+      "1.5": {
+        "weekly_vol_multiplier": 1.5,
+        "assumed_remaining_3_session_std_percentage_points": 4.76376952,
+        "conditional_probability_of_weekly_nikkei_drop_at_least_1p5_pct": 0.08861266
+      }
+    },
+    "note": "A large midweek rebound does not settle the Friday market target. This arithmetic is a threshold diagnostic, not a trading recommendation."
+  },
+  "validity_audit": {
+    "frozen_group_A_target_count": 7,
+    "anticipated_no_official_first_release_value": [
+      "us_cpi_yoy_nov10",
+      "us_core_cpi_yoy_nov10"
+    ],
+    "anticipated_no_official_first_release_count": 2,
+    "potentially_scoreable_once_actual_release_observed": [
+      "us_cpi_mom_nov10",
+      "us_ppi_yoy_nov13",
+      "us_ppi_mom_nov13",
+      "us_claims_nov12",
+      "dallas_wei_nov12"
+    ],
+    "potentially_scoreable_count": 5,
+    "original_targets_retained": true,
+    "mandatory_weekly_treatment": "Report missing/structural-unscoreable with denominator 7 intact; no point error, Brier, interval coverage or private YoY nowcast as replacement. If BLS actually prints an official exact series contrary to prior notice, audit the original release and update status in a NEW append-only record.",
+    "basis": "BLS shutdown FAQ last modified 2026-09-16, before the Nov7 forecast freeze."
+  },
+  "october_CPI_prerelease_consensus_audit": {
+    "later_consensus_asof_2026_11_10_headline_mom_pct": 0.3,
+    "frozen_forecast_center_mom_pct": {
+      "llm": 0.5,
+      "statistical": 0.6,
+      "hybrid": 0.52
+    },
+    "frozen_forecast_minus_later_consensus_pp": {
+      "llm": 0.2,
+      "statistical": 0.3,
+      "hybrid": 0.22
+    },
+    "scoring_allowed": false,
+    "note": "Consensus published after forecast freeze and before official Nov10 release; no ex-ante Nov7 consensus established. No skill computed."
+  },
+  "quote_source_warning": "Investing.com CSI300 Nov10 several locale snapshots disagree; no numerical CSI300 feature or score entered.",
+  "publication_state": "US Nov10 08:30 EST October CPI report still FUTURE at source collection; UK Nov12 GDP, BOJ Nov12 CGPI and US Nov13 PPI also remain pending.",
+  "model_limitations": [
+    "Conditioning on a future Friday outcome after observing Tuesday requires an actual time-series model; here zero drift and iid sessions are assumed rather than learned.",
+    "Weekly sigma is scenario assumption, not a fitted empirical daily time-series volatility.",
+    "Household consumption is September reference period, reported November 10, and cannot establish causal response of Tuesday Nikkei.",
+    "October 2026 headline YoY 3.9% and core YoY 2.7% are analyst estimates only; not scoreable official data."
+  ]
+}
