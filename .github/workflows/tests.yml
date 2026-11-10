@@ -61,3 +61,7 @@ jobs:
         run: |
           node research/scripts/audit_2026_11_09_asia_stress.js > /tmp/financesim_nov9_breadth.json
           cmp research/experiments/2026-11-09-asian-closure-shock-sensitivity.json /tmp/financesim_nov9_breadth.json
+      - name: Replay November 10 target vintage and midweek horizon audit
+        run: |
+          node research/scripts/audit_2026_11_10_horizon_and_vintage.js > /tmp/financesim_nov10_audit.json
+          cmp research/experiments/2026-11-10-horizon-and-vintage-audit.json /tmp/financesim_nov10_audit.json
