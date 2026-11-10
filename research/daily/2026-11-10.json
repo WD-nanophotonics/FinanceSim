@@ -1,0 +1,207 @@
+{
+  "record_type": "FinanceSim_daily_research_note",
+  "date": "2026-11-10",
+  "timezone": "Asia/Tokyo",
+  "information_cutoff_policy": "Japan evening November 10, before scheduled US CPI 2026-11-10T08:30:00-05:00 (22:30 JST); individual web fetch completion timestamps unavailable in tools. GitHub commits record durable publication time; this file does not claim exact page-access timestamps.",
+  "source_publication_vintage_policy": "Distinguish Nov10 Japan first releases, later-vintage August figures on same Nov10 bulletin, source-unverified secondary research, future US release, and missing CPI annual series. Never turn estimates or reconstructed first vintages into official data.",
+  "prior_repo_state": {
+    "protocol_read": "research/PROTOCOL.md",
+    "index_read": "research/INDEX.md",
+    "recent_daily_read": [
+      "research/daily/2026-11-08.json",
+      "research/daily/2026-11-09.json",
+      "research/daily/2026-11-09-price-return-correction01.json"
+    ],
+    "recent_experiments_read": [
+      "research/experiments/2026-11-08-breadth-dependence-decomposition.json",
+      "research/experiments/2026-11-09-asian-closure-shock-sensitivity.json"
+    ],
+    "active_hypothesis_read": "research/hypotheses/2026-11-07-1930-cross-market-tail-dependence.json",
+    "last_sealed_forecast_read": "research/weekly/2026-11-07-forecast.json",
+    "last_verification_read": "research/weekly/2026-11-07-verification.json",
+    "model_code_read": [
+      "research/scripts/generate_2026_11_07.js",
+      "research/scripts/audit_2026_11_09_asia_stress.js",
+      "research/inputs/2026-11-07-1200-snapshot.json",
+      "financesim/engine.py",
+      "financesim/scenarios.py",
+      "financesim/market_data.py",
+      "financesim/scorecards.py",
+      ".github/workflows/tests.yml"
+    ],
+    "prior_main_commit": "5f3042b421b45557",
+    "latest_prior_ci": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42599852614",
+    "prior_ci_result": "success, Python 3.10/3.12"
+  },
+  "official_source_observations": [
+    {
+      "id": "JP_2026_09_TWO_PLUS_HOUSEHOLD_SPENDING_FIRST_PRINT",
+      "source": "https://www.stat.go.jp/data/kakei/sokuhou/tsuki/index.html",
+      "institution": "Japan Statistics Bureau",
+      "published_date": "2026-11-10",
+      "precise_release_clock": "not independently established",
+      "reference_period": "2026-09",
+      "data_version": "first Sept print shown on Nov10, Aug comparisons are values currently shown in Nov10 bulletin",
+      "spending_yen": 289536,
+      "real_yoy_pct": -6.8,
+      "nominal_yoy_pct": -4.5,
+      "real_mom_seasonally_adjusted_pct": -2.8,
+      "comparison_aug_current_report_real_yoy_pct": -3.1,
+      "comparison_aug_current_report_real_mom_sa_pct": 0.1,
+      "worker_households_nominal_income_yoy_pct": 3.4,
+      "worker_households_real_income_yoy_pct_all_items": 1.3,
+      "caution": "Worker-household income is a different population subset. August figures as currently presented are not independently first-vintage archived."
+    },
+    {
+      "id": "JP_2026_09_CTI_MICRO",
+      "source": "https://www.stat.go.jp/data/cti/index2.html",
+      "secondary_source": "https://www.dir.co.jp/report/research/economics/japan/20261110_026185.html",
+      "published_date": "2026-11-10",
+      "reference_period": "2026-09",
+      "secondary_real_mom_sa_pct": -1.6,
+      "official_numeric_value_verified": false,
+      "use_as_scored_first_release": false,
+      "caution": "Official landing page confirms release, but -1.6 figure currently extracted only from secondary analyst report. No fabricated official data."
+    },
+    {
+      "id": "JP_NIKKEI225_2026_11_10_CLOSE",
+      "source": "https://indexes.nikkei.co.jp/nkave/statistics",
+      "issuer": "Nikkei Inc",
+      "date": "2026-11-10",
+      "local_session_close": "2026-11-10T15:30:00+09:00",
+      "close": 60459.58,
+      "frozen_reference_friday_2026_11_06_close": 57434.77,
+      "monday_2026_11_09_close": 58775.5,
+      "status": "intermediate observed official close; weekly Nov13 forecast not yet settled"
+    }
+  ],
+  "market_source_issues": [
+    {
+      "target": "CSI300_2026_11_10",
+      "status": "unverified_missing",
+      "observed_conflicting_values": [
+        4059.11,
+        4062.37,
+        4066.99
+      ],
+      "source_variants": [
+        "https://hk.investing.com/indices/csi300-historical-data",
+        "https://cn.investing.com/indices/csi300-historical-data",
+        "https://ph.investing.com/indices/csi300-historical-data"
+      ],
+      "caution": "Locale caching / partially stale quote ambiguity. No official exchange close established; excluded from numerical scoring."
+    },
+    {
+      "target": "SP500_2026_11_09",
+      "status": "secondary_news_quote_provisional",
+      "reported_close": 7549.94,
+      "source": "https://www.reuters.com/business/wall-st-futures-rise-after-rough-week-nvidia-unsettles-investors-2026-11-09/",
+      "frozen_nov06_reference_provisional": 7376.92,
+      "source_discrepancy": "Some provider says Nov06 7376.86; same-provider pairing not established, no official score."
+    },
+    {
+      "target": "WTI_FIXED_CONTRACT_AND_USDJPY",
+      "status": "not reverified today",
+      "previous_findings": "Nov7 paired provider WTI December contract discrepancy and FX session-cutoff uncertainties remain open.",
+      "note": "Do not silently promote prior provisional quotes to official."
+    }
+  ],
+  "bls_missing_vintage_discovery": {
+    "official_source": "https://www.bls.gov/cpi/additional-resources/2025-federal-government-shutdown-impact-cpi-faq.htm?view=full",
+    "primary_source_last_modified": "2026-09-16",
+    "first_unavailable_base_month": "2025-10",
+    "target_month": "2026-10",
+    "problem": "BLS missing October 2025 headline and core CPI index makes 2026-10 first-published 12-month official headline/core CPI rates unavailable under stated BLS policy.",
+    "known_before_original_frozen_forecast": "2026-11-07T12:00:00+09:00",
+    "frozen_target_ids_structurally_unscoreable_if_BLS_does_not_issue_first_print": [
+      "us_cpi_yoy_nov10",
+      "us_core_cpi_yoy_nov10"
+    ],
+    "total_frozen_A_target_count": 7,
+    "scoreable_conditionally_if_first_published": 5,
+    "protocol_response": "Keep 7 initial A targets in denominator and original values immutable. Report both as structural missing if no actual BLS initial annual rate is issued. No fabricated annual-rate reconstruction and no substitution of pre-release estimates.",
+    "exception": "If independently authenticated actual official first-release annual figures contrary to BLS FAQ become available, write a new append-only provenance amendment before scoring.",
+    "do_not_transfer_assumption_to_PPI": "BLS separately released 2025 Oct PPI data in 2026-01-14 bulletin, so PPI YoY forecasts do not automatically share this CPI-specific missing denominator issue.",
+    "source_ppi": "https://www.bls.gov/news.release/archives/ppi_01142026.htm"
+  },
+  "macro_consensus_and_release_timing": {
+    "us_oct2026_cpi_release_scheduled": "2026-11-10T08:30:00-05:00",
+    "jst": "2026-11-10T22:30:00+09:00",
+    "official_calendar": "https://www.bls.gov/schedule/2026/11_sched_list.htm",
+    "released_by_this_asof": false,
+    "reuters_consensus_published_date": "2026-11-10",
+    "headline_cpi_mom_consensus_pct": 0.3,
+    "core_cpi_mom_consensus_pct": 0.2,
+    "source": "https://www.reuters.com/business/us-consumer-prices-expected-have-risen-slower-pace-october-2026-11-10/",
+    "frozen_Nov7_MoM_forecasts": {
+      "llm": 0.5,
+      "statistical": 0.6,
+      "hybrid": 0.52
+    },
+    "center_minus_Nov10_consensus_percentage_points": {
+      "llm": 0.2,
+      "statistical": 0.3,
+      "hybrid": 0.22
+    },
+    "caveat": "New consensus postdates original Nov7 freeze and predates official CPI print, so it is not a fair original Nov7 comparative baseline or a scored surprise."
+  },
+  "quantified_features": {
+    "jp_household_real_yoy_delta_vs_aug_current_bulletin_pp": -3.7,
+    "jp_household_real_mom_sa_delta_vs_aug_current_bulletin_pp": -2.9,
+    "nikkei_Nov09_vs_Nov06_pct": 2.33435252,
+    "nikkei_Nov10_vs_Nov09_pct": 2.8652755,
+    "nikkei_Nov10_vs_Nov06_pct": 5.26651365,
+    "nikkei_reference_frozen_Nov06_close": 57434.77,
+    "nikkei_weekly_minus1p5_threshold_index": 56573.24845,
+    "required_Nov10_to_Nov13_pct_to_trigger_index_weekly_breadth_decline": -6.42798304
+  },
+  "study_execution": {
+    "input": "research/inputs/2026-11-10-vintage-and-market-snapshot.json",
+    "source_script": "research/scripts/audit_2026_11_10_horizon_and_vintage.js",
+    "experiment_result": "research/experiments/2026-11-10-horizon-and-vintage-audit.json",
+    "input_commit": "ec7693fdc4b926caf3f96b626696af48cb7a706b",
+    "script_commit": "e3fcf17145f2946f072c949a23ed541f33976161",
+    "experiment_commit": "534165f44339fda67db377fb12c942f892869602",
+    "actual_execution": "Deterministic JavaScript analysis function was evaluated in the JS tool runtime using exactly the three current repository JSON input files, output serialized and appended. GitHub CI runner checks full Node CLI byte comparison with archived result.",
+    "ci_replay_commit": "8bf3870f8748d898a7ea2acd261f191d54c2bfda",
+    "ci_result_at_record_creation": "pending final verification of new CI workflow",
+    "original_seed": 20261107,
+    "seed_used_this_experiment": null,
+    "num_monte_carlo_draws_this_experiment": 0,
+    "stochastic_simulation_executed_today": false,
+    "original_forecast_modified": false,
+    "numerical_diagnostic": "Conditional zero-drift iid Gaussian increments approximated from the PRE-EXISTING assumed weekly Nikkei sigma 4.1 percentage points and three sessions remaining of five. Subjective scale sensitivity: p(Nikkei Friday weekly <=-1.5% | Nov10 close) = 2.1484% at 1x volatility, 8.8613% at 1.5x, 15.5766% at 2x. Not a prospective Nov7 frozen forecast or empirically fitted/calibrated probability.",
+    "reliability": "As-of official Nikkei close is real, future Friday finish unknown. Gaussian conditional assumptions entirely illustrative and not causal evidence."
+  },
+  "hypothesis_check": [
+    {
+      "id": "Q001",
+      "status": "consumer_demand_feature_only",
+      "assessment": "Japan two-person household expenditure September -6.8% real YoY confirms consumption weakness; despite Tuesday Nikkei rebound +5.27% since Fri, economic release cannot be interpreted as same-day causal stock-market driver, no fitted predictive causal relation."
+    },
+    {
+      "id": "Q003",
+      "status": "vintage_integrity_failure_identified",
+      "assessment": "2/7 A macro targets as frozen on Nov7 are likely structurally unscoreable due pre-existing missing CPI October 2025 denominator; documenting source-vintage rules changes neither archived models nor past scores. Missing data reduces scoreable n, must be explicit."
+    },
+    {
+      "id": "Q004",
+      "status": "assumed_tail_risk_extremely_sensitive",
+      "assessment": "Conditional Nikkei threshold-risk ranges 2.15%-15.58% just by altering assumed residual vol scale; no evidence Gaussian or stationary model is calibrated. The prospective 26-week cross-market tail-dependence test remains open with prior probabilities unchanged."
+    }
+  ],
+  "next_steps": [
+    "After actual 2026-11-10T08:30 EST BLS CPI publication, record October official SA MoM first release and verify missing annual targets. No forward release values used in this evening note.",
+    "Check Nov11 Treasury Veterans Day market holiday; no missing bond session is scored as zero.",
+    "On Nov12 obtain UK 2026Q3 GDP initial, Japanese Oct CGPI, US claims and Dallas Fed WEI with dated primary releases; only claims/WEI in frozen Group A targets.",
+    "On Nov13 get PPI first publication, and Nov13 exchange-specific Friday market closes; maintain matched WTI futures contract and vendor source cautions and event exposure asynchrony. Freeze next Saturday's forecast only with actual then-available information."
+  ],
+  "limitations": [
+    "HTTP tool exact access timestamps unavailable; actual Git commits provide verifiable recorded times.",
+    "No release of official US October CPI occurred before this note's information window, no post-release figures admitted.",
+    "Japan Aug household comparison is a currently shown release vintage, not independently authenticated initial Aug publication.",
+    "CTI -1.6% MoM analyst quote is secondary and excluded from scored release.",
+    "Nikkei Tuesday midweek level does not settle Nov13 C/B forecasts.",
+    "No numerical CPI YoY replacement or hindsight recalibration; no live trading guidance."
+  ]
+}
