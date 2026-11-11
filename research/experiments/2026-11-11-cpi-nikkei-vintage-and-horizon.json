@@ -1,0 +1,170 @@
+{
+  "record_type": "deterministic_interim_first_vintage_score_and_horizon_stress",
+  "date": "2026-11-11",
+  "information_accessed_at": "2026-11-11T09:39:15Z",
+  "frozen_forecast_file": "research/weekly/2026-11-07-forecast.json",
+  "frozen_forecast_blob_sha": "a38f76fb8f91b3219ddac29cd03d8e448d3b7a99",
+  "fixed_model_input_file": "research/inputs/2026-11-07-1200-snapshot.json",
+  "fixed_model_input_blob_sha": "6d3c8a18bcdcafbe6e45a128e54899724921c1ed",
+  "executable_model": "research/scripts/audit_2026_11_11_cpi_nikkei.js",
+  "experiment_type": "exact published outcome scoring + deterministic normal-CDF hypothetical conditional sensitivity",
+  "seed": null,
+  "simulations": 0,
+  "frozen_forecasts_unchanged": true,
+  "cpi_first_release": {
+    "official_release_at": "2026-11-10T08:30:00-05:00",
+    "official_release_source": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+    "sep_first_print_mom_pct": 0.6,
+    "oct_first_print_mom_pct": 0.4,
+    "actual_change_vs_frozen_baseline_pp": -0.2,
+    "first_print_core_mom_pct": 0.3,
+    "food_mom_pct": 0.5,
+    "energy_mom_pct": 0.7,
+    "shelter_mom_pct": 0.3,
+    "model_scores": {
+      "llm": {
+        "model_id": "pure-llm-Nov7",
+        "point_level": 0.5,
+        "point_change": -0.1,
+        "observed_change": -0.2,
+        "absolute_point_error_pp": 0.1,
+        "direction_actual_negative": true,
+        "frozen_p_increase": 0.42,
+        "direction_brier": 0.1764,
+        "interval_50": {
+          "lower": -0.3185,
+          "upper": 0.1185,
+          "covered": true,
+          "interval_score_pp": 0.437
+        },
+        "interval_90": {
+          "lower": -0.6329,
+          "upper": 0.4329,
+          "covered": true,
+          "interval_score_pp": 1.0658
+        }
+      },
+      "statistical": {
+        "model_id": "last-first-print-nochange-gaussian-Nov7",
+        "point_level": 0.6,
+        "point_change": 0,
+        "observed_change": -0.2,
+        "absolute_point_error_pp": 0.2,
+        "direction_actual_negative": true,
+        "frozen_p_increase": 0.5,
+        "direction_brier": 0.25,
+        "interval_50": {
+          "lower": -0.1821,
+          "upper": 0.1821,
+          "covered": false,
+          "interval_score_pp": 0.4358
+        },
+        "interval_90": {
+          "lower": -0.4441,
+          "upper": 0.4441,
+          "covered": true,
+          "interval_score_pp": 0.8882
+        }
+      },
+      "hybrid": {
+        "model_id": "scenario-informed-normal-assumed-Nov7",
+        "point_level": 0.52,
+        "point_change": -0.08,
+        "observed_change": -0.2,
+        "absolute_point_error_pp": 0.12,
+        "direction_actual_negative": true,
+        "frozen_p_increase": 0.3835,
+        "direction_brier": 0.14707225,
+        "interval_50": {
+          "lower": -0.2621,
+          "upper": 0.1021,
+          "covered": true,
+          "interval_score_pp": 0.3642
+        },
+        "interval_90": {
+          "lower": -0.5241,
+          "upper": 0.3641,
+          "covered": true,
+          "interval_score_pp": 0.8882
+        }
+      }
+    },
+    "brier_skill_vs_statistical": {
+      "llm": 0.2944,
+      "hybrid": 0.411711
+    },
+    "score_interpretation": "One CPI target only. Baseline is original September first print, not a revised later September series. No inference about calibrated skill.",
+    "unscoreable_yoy_target_ids": [
+      "us_cpi_yoy_nov10",
+      "us_core_cpi_yoy_nov10"
+    ],
+    "unscoreable_yoy_cause": "BLS October 2026 Table A has dash for all-items and all-items-less-food-and-energy YoY because 2025 October CPI series were not observed during appropriations lapse. No official 12-month YoY value to score.",
+    "october_real_earnings_mom_sa_pct": 0
+  },
+  "macro_target_accounting": {
+    "total_frozen_macro": 7,
+    "officially_settled_this_research": [
+      "us_cpi_mom_nov10"
+    ],
+    "structural_no_official_release": [
+      "us_cpi_yoy_nov10",
+      "us_core_cpi_yoy_nov10"
+    ],
+    "awaiting_published_first_print": [
+      "us_ppi_yoy_nov13",
+      "us_ppi_mom_nov13",
+      "us_claims_nov12",
+      "dallas_wei_nov12"
+    ],
+    "note": "None of the market/market-risk Nov13 targets are settled as of Nov11."
+  },
+  "nikkei_interim_market": {
+    "source": "https://indexes.nikkei.co.jp/en/nkave/statistics",
+    "first_frozen_week_reference_date": "2026-11-06",
+    "first_frozen_week_reference_close": 57434.77,
+    "asof_session_date": "2026-11-11",
+    "asof_session_official_close": 61248.59,
+    "nov10_to_nov11_return_pct": 1.30502064,
+    "nov06_to_nov11_return_pct": 6.64026338,
+    "fridays_target": "2026-11-13T15:30:00+09:00",
+    "remaining_cash_sessions": 2,
+    "assumed_zero_drift_independent_gaussian_sigma_week_pp": 4.1,
+    "sigma_for_two_remaining_sessions_pp": 2.59306768,
+    "frozen_90_interval_upper_diagnostics": {
+      "llm": {
+        "frozen_upper_90_weekly_return_pct": 10.2671,
+        "close_level_at_frozen_upper_90": 63331.65527067,
+        "required_nov11_to_nov13_pct": 3.40100118,
+        "assumed_conditional_probability_above_original_90_upper": 0.09483195
+      },
+      "statistical": {
+        "frozen_upper_90_weekly_return_pct": 6.7439,
+        "close_level_at_frozen_upper_90": 61308.11345403,
+        "required_nov11_to_nov13_pct": 0.09718339,
+        "assumed_conditional_probability_above_original_90_upper": 0.48505182
+      },
+      "hybrid": {
+        "frozen_upper_90_weekly_return_pct": 7.4056,
+        "close_level_at_frozen_upper_90": 61688.15932712,
+        "required_nov11_to_nov13_pct": 0.71768073,
+        "assumed_conditional_probability_above_original_90_upper": 0.39097881
+      }
+    },
+    "week_down_1p5pct_end_price_threshold": 56573.24845,
+    "required_nov11_to_nov13_return_to_week_down_1p5pct": -7.63338642,
+    "assumed_conditional_probability_week_down_1p5pct": 0.00162129,
+    "diagnostic_warning": "Not a refreshed forecast; relies on zero-drift iid Gaussian remaining returns and 2/5 trading-time scaling. Frozen hybrid/LLM interval distributions are not themselves Gaussian, so the interval-cross probabilities are a Gaussian sensitivity benchmark only. Markets can jump and volatility can cluster."
+  },
+  "interpretation": {
+    "cpi": "October all-items +0.4% vs September +0.6% means a -0.2 percentage-point change. LLM and hybrid assign less than 50% probability to an increase; simple zero-change gives 50%. All monthly scores are retrospective checks against unchanged Nov7 forecasts.",
+    "market": "Nikkei already positive from Nov6 to Nov11 but Friday target unresolved. Conditionally estimated tail probabilities describe a hypothetical uncalibrated model, not a live forecast or scored test.",
+    "hypotheses": "A single positive relative score for hybrid CPI provides no evidence of durable Q001/Q003 gain; both nonreported YoY fields expose avoidable target-eligibility failure, as identified before release on Nov10."
+  },
+  "pending": "BLS Oct PPI Nov13 08:30 EST; DOL claims Nov12 08:30 EST; Dallas WEI posting scheduled Nov12; Nikkei Nov13 close and other markets remain future.",
+  "limitations": [
+    "U.S. fixed-income yield is not scored on 2026-11-11 holiday; do not fill a fake quote.",
+    "Official October 2026 CPI YoY releases are structurally missing, not zero inflation and not a forecast miss with numeric error.",
+    "Nov13 Friday cash-index close is future and no group C or B final settlement is authorized by this research.",
+    "The CPI consensus quoted on Nov10 postdates the frozen Nov7 baseline and cannot retroactively replace the statistical forecast."
+  ]
+}
