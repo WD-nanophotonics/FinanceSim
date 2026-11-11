@@ -65,3 +65,7 @@ jobs:
         run: |
           node research/scripts/audit_2026_11_10_horizon_and_vintage.js > /tmp/financesim_nov10_audit.json
           cmp research/experiments/2026-11-10-horizon-and-vintage-audit.json /tmp/financesim_nov10_audit.json
+      - name: Reproduce November 11 official CPI first-vintage score and Nikkei horizon sensitivity
+        run: |
+          node research/scripts/audit_2026_11_11_cpi_nikkei.js > /tmp/financesim_nov11_audit.json
+          cmp research/experiments/2026-11-11-cpi-nikkei-vintage-and-horizon.json /tmp/financesim_nov11_audit.json
