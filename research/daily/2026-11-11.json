@@ -1,0 +1,188 @@
+{
+  "record_type": "daily_review",
+  "date": "2026-11-11",
+  "timezone": "Asia/Tokyo",
+  "research_completed_at": "2026-11-11T09:42:28Z",
+  "local_time": "2026-11-11T18:42:28+09:00",
+  "information_policy": "Only releases published before collection; no post-Nov11 market observation. Original sealed 2026-11-07 predictions and their independent model assumptions remain unchanged.",
+  "repo_state_read": {
+    "protocol": "research/PROTOCOL.md",
+    "index": "research/INDEX.md",
+    "daily": [
+      "research/daily/2026-11-07.json",
+      "research/daily/2026-11-08.json",
+      "research/daily/2026-11-09.json",
+      "research/daily/2026-11-10.json"
+    ],
+    "hypotheses": [
+      "research/hypotheses/2026-11-07-1930-cross-market-tail-dependence.json"
+    ],
+    "experiments": [
+      "research/experiments/2026-11-08-breadth-dependence-decomposition.json",
+      "research/experiments/2026-11-09-asian-closure-shock-sensitivity.json",
+      "research/experiments/2026-11-10-horizon-and-vintage-audit.json"
+    ],
+    "latest_weekly": "research/weekly/2026-11-07-forecast.json",
+    "generator": "research/scripts/generate_2026_11_07.js",
+    "model_base": "financesim/engine.py and financesim/scenarios.py",
+    "base_before_new_commits": "905a1cc4906a28e9b1",
+    "ci_prior": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42798422974; success, Python 3.10 and 3.12",
+    "repo_source": "https://github.com/WD-nanophotonics/FinanceSim"
+  },
+  "observed_releases": [
+    {
+      "metric": "US October headline CPI SA m/m",
+      "reference_month": "2026-10",
+      "value": 0.4,
+      "unit": "percent",
+      "initial_source_version": "BLS original archive CPI_11102026, report USDL-26-1685",
+      "released_at": "2026-11-10T08:30:00-05:00",
+      "first_release": true,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+      "previous_first_print": 0.6,
+      "previous_reference_month": "2026-09",
+      "previous_first_print_url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "feature_delta_vs_previous_first_print_pp": -0.2
+    },
+    {
+      "metric": "US October core CPI SA m/m",
+      "reference_month": "2026-10",
+      "value": 0.3,
+      "unit": "percent",
+      "released_at": "2026-11-10T08:30:00-05:00",
+      "first_release": true,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+      "forecast_target": "no corresponding Nov7 core MoM forecast; do not score"
+    },
+    {
+      "metric": "US October food, energy and shelter CPI SA m/m",
+      "reference_month": "2026-10",
+      "food": 0.5,
+      "energy": 0.7,
+      "shelter": 0.3,
+      "unit": "percent",
+      "released_at": "2026-11-10T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+      "forecast_target": "not in frozen Nov7 targets"
+    },
+    {
+      "metric": "US October headline/core CPI year-on-year",
+      "reference_month": "2026-10",
+      "values": null,
+      "unit": "percent year-on-year",
+      "released_at": "2026-11-10T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+      "first_release": "not available",
+      "explanation": "BLS explicitly reports 2025-10 comparison indices absent due to lapse in appropriations; November10 official Table A prints a dash. Both corresponding frozen targets marked structurally missing; not zero and cannot be scored."
+    },
+    {
+      "metric": "Nikkei 225 official cash index close",
+      "reference_date": "2026-11-11",
+      "value": 61248.59,
+      "unit": "index points",
+      "publication": "Published in publisher's historical table updated Nov11 after 15:30 JST market close",
+      "observed_at": "2026-11-11T15:30:00+09:00",
+      "source_url": "https://indexes.nikkei.co.jp/en/nkave/statistics",
+      "comparison": "Nov6 57434.77, Nov9 58775.50, Nov10 60459.58, from same official publisher. Today's close is intermediate, not the frozen Fri Nov13 target."
+    },
+    {
+      "metric": "US October real average hourly earnings SA m/m",
+      "value": 0,
+      "unit": "percent",
+      "release_at": "2026-11-10T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/bls/newsrels.htm",
+      "forecast_target": "context only"
+    }
+  ],
+  "scheduled_unreleased_at_access": [
+    {
+      "event": "US first-release initial unemployment claims for week ended 2026-11-07",
+      "expected_release_at": "2026-11-12T08:30:00-05:00",
+      "status": "future"
+    },
+    {
+      "event": "Dallas Fed WEI for week ended 2026-11-07",
+      "expected_release_at": "2026-11-12 (estimated posting hour in original frozen forecast)",
+      "status": "future"
+    },
+    {
+      "event": "US October final demand PPI MoM and YoY",
+      "expected_release_at": "2026-11-13T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/schedule/news_release/ppi.htm",
+      "status": "future"
+    },
+    {
+      "event": "UK GDP preliminary Q3 and September monthly",
+      "expected_release_date": "2026-11-12",
+      "source_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpmonthlyestimateuk/latest",
+      "status": "future and not frozen as score target"
+    }
+  ],
+  "executed_analysis": {
+    "model_kind": "deterministic arithmetic first-print verification and model-conditional Gaussian CDF, no Monte Carlo draws",
+    "seed": null,
+    "draws": 0,
+    "script": "research/scripts/audit_2026_11_11_cpi_nikkei.js",
+    "source_snapshot": "research/inputs/2026-11-11-cpi-nikkei-first-release.json",
+    "output": "research/experiments/2026-11-11-cpi-nikkei-vintage-and-horizon.json",
+    "frozen_version": "forecast cutoff 2026-11-07T12:00:00+09:00, seed 20261107, 20,000 draws in the ORIGINAL (unchanged) weekly forecast",
+    "archive_code_commits": {
+      "input": "469fa803f5ab4501ec2ac55661c9ceb6235ef755",
+      "replay_code": "8bf90f7ad725e8cb3bf7f0fbaefdff98b02c7a90",
+      "experiment": "0b67bc0b60d7e2d0052aff5beb975b950decfe2a",
+      "new_ci_step": "0027cbb8258258d651342110b7f21bea214b219a"
+    },
+    "ci_reference": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42997340835",
+    "ci_state_at_draft": "in_progress; check again after this research log is added",
+    "metrics": {
+      "october_headline_mom_first_release_pct": 0.4,
+      "first_release_delta_vs_original_september_pp": -0.2,
+      "models": {
+        "llm": {
+          "original_center": 0.5,
+          "absolute_error_pp": 0.1,
+          "direction_brier": 0.1764,
+          "covered_50": true,
+          "covered_90": true
+        },
+        "statistical": {
+          "original_center": 0.6,
+          "absolute_error_pp": 0.2,
+          "direction_brier": 0.25,
+          "covered_50": false,
+          "covered_90": true
+        },
+        "hybrid": {
+          "original_center": 0.52,
+          "absolute_error_pp": 0.12,
+          "direction_brier": 0.14707225,
+          "covered_50": true,
+          "covered_90": true
+        }
+      },
+      "brier_skill_vs_frozen_statistical": {
+        "llm": 0.2944,
+        "hybrid": 0.411711
+      },
+      "observed_nikkei_nov11_return_vs_frozen_nov6_pct": 6.64026338,
+      "nikkei_remaining_cash_sessions_until_nov13": 2,
+      "conditional_remaining_std_assumed_pp": 2.59306768,
+      "nikkei_hybrid_frozen_upper_90_weekly_pct": 7.4056,
+      "return_from_nov11_needed_to_exceed_hybrid_upper_90_pct": 0.71768073,
+      "gaussian_conditional_probability_exceeding_frozen_hybrid_90_upper": 0.39097881,
+      "assumption_note": "Same frozen weekly assumed sigma 4.1%, independent zero-drift Gaussian 2-of-5 trading sessions only. Conditional exercise applies generic Gaussian scaling even to non-Gaussian hybrid intervals; not a calibrated or archived prospective probability.",
+      "scoreable_macro_targets_now": 1,
+      "structurally_unscoreable_cpi_yoy_targets": 2,
+      "pending_macro_targets": 4,
+      "frozen_macro_denominator": 7
+    }
+  },
+  "hypothesis_tests": {
+    "Q001": "A single CPI MoM target favors hybrid direction Brier over the simple no-change arm, but this is one observed release, cannot alter prior negative signal from other targets, and gives no new econometric fit.",
+    "Q002": "Intermediate Nikkei gain emphasizes realized-path conditioning of final tail event; current 90% interval can be crossed in two sessions under a simple iid Gaussian sensitivity model, no evidence of forecast miscalibration until Friday.",
+    "Q004": "The original Nov7 model predicted two CPI YoY values the BLS cannot publish, an avoidable specification mistake detected on Nov10 before publication. Confirmed directly in official Nov10 release. Add an eligibility gate for next prospective forecast; archived old targets stay untouched.",
+    "cross_market_event_timing": "The US Nov13 PPI release at 08:30 EST is 22:30 JST, 7 hours after Tokyo Nov13 15:30 close. Causal impact of the ACTUAL post-close PPI data cannot explain the already-fixed Friday Tokyo Nikkei closing return. Event anticipations before Tokyo close remain possible. Do not align all assets under a uniform same-time news impact."
+  },
+  "next_work": "Observe official Nov12 DOL claims, Dallas WEI initial print, Japan CGPI and UK GDP after publication. Do not score Friday PPI, US yields, group B risk or group C prices until valid source time and market close. Saturday verify full 22 frozen Nov7 targets, with two CPI YoY exclusions visibly retained and separate per-unit scores.",
+  "constraints": "No past prediction, posterior replacement, or post-release probability editing; no fabricated official 2026-10 CPI YoY, no made-up market prices, no claim of empirically calibrated market risk."
+}
