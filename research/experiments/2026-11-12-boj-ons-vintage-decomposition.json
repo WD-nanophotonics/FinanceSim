@@ -1,0 +1,109 @@
+{
+  "record_type": "deterministic_asof_vintage_revision_and_contribution_audit",
+  "date": "2026-11-12",
+  "underlying_fact_cutoff": "2026-11-12T19:00:58+09:00",
+  "input_path": "research/inputs/2026-11-12-boj-ons-nikkei-first-releases.json",
+  "frozen_weekly_forecast": "research/weekly/2026-11-07-forecast.json",
+  "method": "read dated issuer first releases and explicitly documented revised comparators; direct arithmetic, no fitting, no forward outcome, no stochastic simulations",
+  "execution": {
+    "type": "deterministic_javascript",
+    "seed": null,
+    "draws": 0,
+    "model_id": "2026-11-12-vintage-decomposition-v1",
+    "code_base_commit_before_research": "1f4b75b36b34"
+  },
+  "boj_cgpi": {
+    "release_at": "2026-11-12T08:50:00+09:00",
+    "source": "https://www.boj.or.jp/en/statistics/pi/cgpi_release/cgpi2610.pdf",
+    "prior_first_source": "https://www.boj.or.jp/en/statistics/pi/cgpi_release/cgpi2609.pdf",
+    "oct2026_domestic_ppi_mom_pct": 0.7,
+    "oct2026_domestic_ppi_yoy_pct": 7.1,
+    "sep2026_prior_first_mom_pct": -0.3,
+    "sep2026_prior_revised_mom_pct": -0.2,
+    "oct_vs_sep_mom_momentum_using_prior_first_pp": 1,
+    "oct_vs_sep_mom_momentum_using_prior_revised_pp": 0.9,
+    "revision_choice_effect_on_momentum_pp": 0.1,
+    "oct_minus_sep_yoy_first_pp": 0.3,
+    "imported_prices": {
+      "current_contract_currency_mom_pct": 2.3,
+      "current_yen_mom_pct": 3.3,
+      "current_fx_index_mom_pct": 1,
+      "monthly_yen_minus_contract_mom_pp": 1,
+      "approximate_multiplicative_identity_pct": 3.323,
+      "approx_identity_vs_reported_yen_residual_pp": -0.023,
+      "import_mom_acceleration_prior_first_pp": 1.3,
+      "import_mom_acceleration_prior_revised_pp": 1.8,
+      "vintage_choice_wedge_import_mom_pp": -0.5,
+      "import_yoy_acceleration_prior_first_pp": 1.3,
+      "import_yoy_acceleration_prior_revised_pp": 1.9,
+      "energy_purchased_import_contribution_pp": 1.62,
+      "energy_contribution_fraction_of_net_pct": 70.43478261,
+      "electronics_import_contribution_fraction_of_net_pct": 20.86956522,
+      "all_selected_import_categories_net_contribution_pp": 2.27,
+      "residual_other_import_categories_pp": 0.03
+    },
+    "domestic_contribution_pp": {
+      "fossil_products_plus_utilities": 0.35,
+      "fossil_and_utilities_share_of_net_pct": 50,
+      "food_producer_agriculture_negative_pp": -0.28,
+      "selected_categories_net_pp": 0.41,
+      "residual_categories_net_pp": 0.29,
+      "caution": "Group contributions are percentage-point decompositions of net month-on-month change; shares can sum above 100% when other categories offset one another and must not be treated as weights or causes."
+    }
+  },
+  "ons_uk_gdp": {
+    "release_at": "2026-11-12T07:00:00+00:00",
+    "source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/julytoseptember2026",
+    "q3_2026_first_real_growth_qoq_pct": 0.7,
+    "q3_2026_first_real_growth_yoy_pct": 1.9,
+    "q2_growth_as_shown_in_q3_publication_pct": 0.5,
+    "acceleration_vs_current_q2_pp": 0.2,
+    "sector_qoq_pct": {
+      "services": 0.9,
+      "production": 0.1,
+      "construction": -0.7
+    },
+    "services_minus_construction_growth_pp": 1.6,
+    "sep2026_monthly_growth_pct": 0.2,
+    "august_growth_prior_publication_pct": 0.1,
+    "august_growth_as_revised_now_pct": 0,
+    "sep_minus_aug_prior_publication_pp": 0.1,
+    "sep_minus_aug_revised_pp": 0.2,
+    "revision_choice_wedge_for_monthly_acceleration_pp": 0.1,
+    "caution": "Q2 comparator is a later-vintage figure, not independently established as original Q2 first release; sector growth rates have different weights and are never summed."
+  },
+  "nikkei_interim": {
+    "source": "https://indexes.nikkei.co.jp/nkave/",
+    "observed_at": "2026-11-12T15:30:00+09:00",
+    "reference_close": 57434.77,
+    "previous_close": 61248.59,
+    "current_close": 60819.36,
+    "thursday_session_return_pct": -0.70079981,
+    "monday_to_thursday_week_so_far_pct": 5.89292862,
+    "frozen_weekly_hybrid_upper_90_pct": 7.4056,
+    "future_friday_close_at": "2026-11-13T15:30:00+09:00",
+    "future_close_required_to_exceed_frozen_upper": 61688.15932712,
+    "required_friday_session_gain_pct": 1.4284914,
+    "score_status": "not eligible for Friday-to-Friday score until Nov13 issuer closing figure exists"
+  },
+  "cross_market_timing": {
+    "japan_friday_1130_close_at": "2026-11-13T15:30:00+09:00",
+    "us_october_ppi_at": "2026-11-13T22:30:00+09:00",
+    "ppi_release_after_japan_close_hours": 7,
+    "interpretation": "US PPI result occurs after Japanese Friday cash settlement; it cannot directly cause Japan's already completed same-Friday cash closing return"
+  },
+  "target_accounting": {
+    "new_data_not_nov7_frozen_targets": [
+      "JP_2026_10_CGPI",
+      "UK_2026_Q3_GDP_FIRST"
+    ],
+    "nikkei_2026_11_13_still_pending": true,
+    "other_nov7_frozen_us_claims_wei_ppi_not_settled_in_this_run": true
+  },
+  "caveats": [
+    "No empirical causal pass-through from imports to CPI or stocks is inferred from these decompositions.",
+    "The issuer/index homepage is mutable and the 2026-11-12 value is archived in the new data snapshot.",
+    "Comparison between first and revised vintages is a measurement audit, not a forecast model skill result.",
+    "No synthetic data is presented as observed forecasting success."
+  ]
+}
