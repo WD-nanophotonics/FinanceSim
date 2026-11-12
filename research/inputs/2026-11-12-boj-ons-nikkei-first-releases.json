@@ -1,0 +1,120 @@
+{
+  "record_type": "dated_official_first_release_and_index_observations",
+  "reference_date": "2026-11-12",
+  "underlying_fact_cutoff": "2026-11-12T19:00:58+09:00",
+  "actual_page_access_clocks": "not exposed by search tooling; sources had published or closed before underlying_fact_cutoff, archive commit timestamp is genuine publication evidence",
+  "collected_from": "Official BOJ first-release PDFs, ONS quarterly initial GDP release and Nikkei issuer close; previous vintage snapshots not overwritten",
+  "frozen_forecast_path": "research/weekly/2026-11-07-forecast.json",
+  "frozen_forecast_blob_sha": "a38f76fb8f91b3219ddac29cd03d8e448d3b7a99",
+  "inputs_and_vintages": {
+    "japan_cgpi": {
+      "reference_period": "2026-10",
+      "issuer": "Bank of Japan",
+      "first_release_at": "2026-11-12T08:50:00+09:00",
+      "first_release_url": "https://www.boj.or.jp/en/statistics/pi/cgpi_release/cgpi2610.pdf",
+      "previous_first_release_at": "2026-10-13T08:50:00+09:00",
+      "previous_first_release_url": "https://www.boj.or.jp/en/statistics/pi/cgpi_release/cgpi2609.pdf",
+      "current": {
+        "domestic_ppi_mom_pct": 0.7,
+        "domestic_ppi_yoy_pct": 7.1,
+        "domestic_ppi_index_2020_100": 136.8,
+        "import_contract_currency_mom_pct": 2.3,
+        "import_contract_currency_yoy_pct": 19.2,
+        "import_yen_mom_pct": 3.3,
+        "import_yen_yoy_pct": 24.8,
+        "exchange_rate_usd_per_yen_mom_change_pct": 1,
+        "contributions_pp_to_domestic_ppi_mom": {
+          "petroleum_coal": 0.2,
+          "chemicals": 0.15,
+          "electric_gas_water": 0.15,
+          "iron_steel": 0.11,
+          "food_beverages": 0.08,
+          "agriculture_forestry_fishery": -0.28
+        },
+        "contributions_pp_to_import_contract_currency_mom": {
+          "petroleum_coal_natural_gas": 1.62,
+          "electronics": 0.48,
+          "food_agriculture": 0.15,
+          "chemicals": 0.1,
+          "metals": -0.08
+        }
+      },
+      "previous_sep_first": {
+        "domestic_ppi_mom_pct": -0.3,
+        "domestic_ppi_yoy_pct": 6.8,
+        "domestic_ppi_index_2020_100": 135.7,
+        "import_contract_currency_mom_pct": 1,
+        "import_contract_currency_yoy_pct": 17.9
+      },
+      "previous_sep_as_revised_nov12": {
+        "domestic_ppi_mom_pct": -0.2,
+        "domestic_ppi_yoy_pct": 6.8,
+        "domestic_ppi_index_2020_100": 135.8,
+        "import_contract_currency_mom_pct": 0.5,
+        "import_contract_currency_yoy_pct": 17.3
+      },
+      "vintage_note": "Nov12 first October release revises historical September values; previous-first-release values are taken from BOJ Oct13 PDF and must not be silently replaced. Import components are percentage-point contributions, not standalone share returns."
+    },
+    "uk_gdp": {
+      "reference_period": "2026-Q3",
+      "issuer": "Office for National Statistics",
+      "first_release_at": "2026-11-12T07:00:00+00:00",
+      "first_release_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/julytoseptember2026",
+      "release_page": "https://www.ons.gov.uk/releases/gdpfirstquarterlyestimateukjulytoseptember2026",
+      "q3_real_gdp_qoq_pct": 0.7,
+      "q3_real_gdp_yoy_pct": 1.9,
+      "q2_growth_as_shown_current_release_pct": 0.5,
+      "q3_sector_qoq_pct": {
+        "services": 0.9,
+        "production": 0.1,
+        "construction": -0.7
+      },
+      "sep_monthly_real_gdp_mom_pct": 0.2,
+      "aug_monthly_real_gdp_revised_mom_pct": 0,
+      "aug_monthly_real_gdp_previous_publication_mom_pct": 0.1,
+      "july_monthly_real_gdp_as_shown_mom_pct": 0.4,
+      "vintage_note": "Q2 0.5% is the value carried into the Nov12 bulletin, not demonstrated to be Q2's first print; August 0.0% is explicitly revised from an earlier +0.1%."
+    },
+    "nikkei225": {
+      "issuer": "Nikkei Inc.",
+      "close_nov06": 57434.77,
+      "close_nov11": 61248.59,
+      "close_nov12": 60819.36,
+      "close_nov12_at": "2026-11-12T15:30:00+09:00",
+      "close_nov12_url": "https://indexes.nikkei.co.jp/nkave/",
+      "previous_official_snapshot": "research/inputs/2026-11-11-cpi-nikkei-first-release.json",
+      "target_future_close_at": "2026-11-13T15:30:00+09:00",
+      "frozen_hybrid_weekly_interval_90_upper_pct": 7.4056,
+      "note": "Nov12 interim cash equity close, not an observed Nov13 weekly settlement. Publisher's mutable homepage was seen after close; archive this numeric value now."
+    }
+  },
+  "calendar_pending_as_of_cutoff": [
+    {
+      "target": "US initial jobless claims for week ended Nov7",
+      "scheduled": "2026-11-12T08:30:00-05:00",
+      "scheduled_jst": "2026-11-12T22:30:00+09:00",
+      "status": "not yet released as of underlying_fact_cutoff",
+      "source": "https://www.dol.gov/ui/data.pdf"
+    },
+    {
+      "target": "Dallas Fed WEI Nov12 update",
+      "scheduled": "2026-11-12",
+      "exact_posting_time": "not reverified on today's official page",
+      "status": "not yet checked and NOT settled",
+      "source": "https://www.dallasfed.org/research/wei"
+    },
+    {
+      "target": "US October producer price index",
+      "scheduled": "2026-11-13T08:30:00-05:00",
+      "scheduled_jst": "2026-11-13T22:30:00+09:00",
+      "status": "future",
+      "source": "https://www.bls.gov/schedule/news_release/ppi.htm"
+    },
+    {
+      "target": "Nikkei close Nov13",
+      "scheduled": "2026-11-13T15:30:00+09:00",
+      "status": "future; occurs before US Oct PPI release"
+    }
+  ],
+  "no_future_settlement_data": true
+}
