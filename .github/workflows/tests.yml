@@ -69,3 +69,7 @@ jobs:
         run: |
           node research/scripts/audit_2026_11_11_cpi_nikkei.js > /tmp/financesim_nov11_audit.json
           cmp research/experiments/2026-11-11-cpi-nikkei-vintage-and-horizon.json /tmp/financesim_nov11_audit.json
+      - name: Replay November 12 BOJ/ONS first-vintage and market issuer snapshot audit
+        run: |
+          node research/scripts/audit_2026_11_12_vintage_decomposition.js > /tmp/financesim_nov12_vintage.json
+          cmp research/experiments/2026-11-12-boj-ons-vintage-decomposition.json /tmp/financesim_nov12_vintage.json
