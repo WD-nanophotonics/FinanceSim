@@ -1,0 +1,188 @@
+{
+  "record_type": "FinanceSim_daily_research_note",
+  "date": "2026-11-12",
+  "timezone": "Asia/Tokyo",
+  "information_cutoff_for_observed_facts": "2026-11-12T19:00:58+09:00",
+  "access_time_limit": "Exact web page retrieval clocks unavailable. BOJ, ONS and Nikkei source releases predate this cutoff. Git commit timestamps are the actual archival record, never backdated.",
+  "repository_state_before_research": {
+    "protocol": "research/PROTOCOL.md",
+    "index": "research/INDEX.md",
+    "recent_daily": [
+      "research/daily/2026-11-08.json",
+      "research/daily/2026-11-09.json",
+      "research/daily/2026-11-10.json",
+      "research/daily/2026-11-11.json"
+    ],
+    "weekly_forecast": "research/weekly/2026-11-07-forecast.json",
+    "weekly_verification": "research/weekly/2026-11-07-verification.json",
+    "recent_experiments": [
+      "research/experiments/2026-11-08-breadth-dependence-decomposition.json",
+      "research/experiments/2026-11-09-asian-closure-shock-sensitivity.json",
+      "research/experiments/2026-11-10-horizon-and-vintage-audit.json",
+      "research/experiments/2026-11-11-cpi-nikkei-vintage-and-horizon.json"
+    ],
+    "active_hypothesis": "research/hypotheses/2026-11-07-1930-cross-market-tail-dependence.json",
+    "code_files_read": [
+      "research/scripts/generate_2026_11_07.js",
+      "research/scripts/audit_2026_11_11_cpi_nikkei.js",
+      ".github/workflows/tests.yml"
+    ],
+    "starting_main_commit": "1f4b75b36b34",
+    "starting_ci": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/42997746018",
+    "starting_ci_result": "success"
+  },
+  "new_official_observations": [
+    {
+      "id": "JP_2026_10_CGPI_INITIAL",
+      "issuer": "Bank of Japan",
+      "reference_period": "October 2026",
+      "release_vintage": "October preliminary FIRST release",
+      "released_at": "2026-11-12T08:50:00+09:00",
+      "source": "https://www.boj.or.jp/en/statistics/pi/cgpi_release/cgpi2610.pdf",
+      "domestic_producer_price_mom_pct": 0.7,
+      "domestic_producer_price_yoy_pct": 7.1,
+      "import_prices_contract_currency_mom_pct": 2.3,
+      "import_prices_yen_mom_pct": 3.3,
+      "domestic_energy_product_contribution_pp": 0.2,
+      "utility_contribution_pp": 0.15,
+      "agriculture_contribution_pp": -0.28,
+      "import_fuels_contribution_pp": 1.62,
+      "import_electronics_contribution_pp": 0.48
+    },
+    {
+      "id": "JP_2026_09_CGPI_ORIGINAL_REFERENCE",
+      "issuer": "Bank of Japan",
+      "release_vintage": "September preliminary FIRST release",
+      "released_at": "2026-10-13T08:50:00+09:00",
+      "source": "https://www.boj.or.jp/en/statistics/pi/cgpi_release/cgpi2609.pdf",
+      "domestic_ppi_mom_pct": -0.3,
+      "domestic_ppi_yoy_pct": 6.8,
+      "import_contract_currency_mom_pct": 1,
+      "import_contract_currency_yoy_pct": 17.9
+    },
+    {
+      "id": "JP_2026_09_CGPI_REVISED_IN_NOV12",
+      "issuer": "Bank of Japan",
+      "release_vintage": "September historical revised level displayed Nov12, NOT original September print",
+      "source": "https://www.boj.or.jp/en/statistics/pi/cgpi_release/cgpi2610.pdf",
+      "domestic_ppi_mom_pct": -0.2,
+      "import_contract_currency_mom_pct": 0.5,
+      "import_contract_currency_yoy_pct": 17.3
+    },
+    {
+      "id": "UK_2026_Q3_GDP_FIRST",
+      "issuer": "Office for National Statistics",
+      "reference_period": "July–September 2026",
+      "released_at": "2026-11-12T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/julytoseptember2026",
+      "real_gdp_qoq_pct": 0.7,
+      "real_gdp_yoy_pct": 1.9,
+      "q2_comparator_reported_this_bulletin_pct": 0.5,
+      "q3_service_growth_pct": 0.9,
+      "q3_production_growth_pct": 0.1,
+      "q3_construction_growth_pct": -0.7,
+      "september_gdp_mom_pct": 0.2,
+      "august_gdp_mom_revised_pct": 0,
+      "august_gdp_mom_prior_publication_pct": 0.1,
+      "release_status": "first Q3 GDP estimate; Q2 and August comparators are revisions/current-vintage values"
+    },
+    {
+      "id": "JP_NIKKEI_2026_11_12_1530_CLOSE",
+      "issuer": "Nikkei Inc.",
+      "market_session": "2026-11-12",
+      "observed_at": "2026-11-12T15:30:00+09:00",
+      "source": "https://indexes.nikkei.co.jp/nkave/",
+      "close": 60819.36,
+      "prior_day_official_close": 61248.59,
+      "prior_friday_2026_11_06_official_close": 57434.77,
+      "score_status": "INTERIM - not Friday Nov13 close"
+    }
+  ],
+  "features_executed": {
+    "script": "research/scripts/audit_2026_11_12_vintage_decomposition.js",
+    "input": "research/inputs/2026-11-12-boj-ons-nikkei-first-releases.json",
+    "output": "research/experiments/2026-11-12-boj-ons-vintage-decomposition.json",
+    "seed": null,
+    "monte_carlo_draws": 0,
+    "numerical_results": {
+      "jp_domestic_ppi_mom_momentum_using_sep_original_pp": 1,
+      "jp_domestic_ppi_mom_momentum_using_sep_latest_pp": 0.9,
+      "jp_domestic_revision_choice_wedge_pp": 0.1,
+      "jp_import_contract_currency_mom_acceleration_original_pp": 1.3,
+      "jp_import_contract_currency_mom_acceleration_latest_pp": 1.8,
+      "jp_import_revision_choice_wedge_pp": -0.5,
+      "jp_import_fuels_contribution_share_of_net_pct": 70.43478261,
+      "jp_domestic_petroleum_plus_utilities_contribution_pp": 0.35,
+      "uk_q3_gdp_acceleration_vs_current_q2_pp": 0.2,
+      "uk_september_minus_august_mom_growth_revised_pp": 0.2,
+      "uk_september_minus_august_mom_growth_using_previous_publication_pp": 0.1,
+      "uk_monthly_growth_comparator_revision_wedge_pp": 0.1,
+      "nikkei_thursday_session_return_pct": -0.70079981,
+      "nikkei_nov06_to_nov12_interim_return_pct": 5.89292862,
+      "nikkei_one_day_return_required_nov13_to_exceed_frozen_hybrid_90_upper_pct": 1.4284914,
+      "time_from_japan_friday_close_to_us_ppi_release_hours": 7
+    },
+    "simulation_type": "deterministic as-of source arithmetic, NOT newly fitted economic model, NOT market scenario simulation",
+    "execution_proof": "GitHub CI replay uses Node to generate JSON from checked-in source input and byte-compares with archived output",
+    "ci_url": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/43197547273",
+    "ci_result_at_research_logging": "success; Python 3.10/3.12 matrix with exact Node replay",
+    "input_commit": "940e288b1b907dc00af819cd100b774e21a7be88",
+    "executable_code_commit": "f53bfd6a6a97324fd4da296cfb649001cc675860",
+    "experiment_commit": "ffdbc4cd31b2f8dea8bee1534dfe68c1af23e507",
+    "workflow_commit": "72b4f54b7a5b8de145fd7a35d88a8c80de0e058e"
+  },
+  "interpretations": [
+    "Japanese domestic CGPI accelerated month-on-month by 1.0pp using original Sep first print, but by 0.9pp using Nov12 revised Sep value; mixing vintages affects model features.",
+    "October contract-currency import price growth +2.3% was dominated in net-contribution terms by fuel/coal/natural gas (+1.62pp, 70.4% of total). Imported input inflation may merit monitoring for subsequent prices, but no identified pass-through model or forecast probability is justified.",
+    "The UK Q3 +0.7% initial GDP is +0.2pp faster than Q2 value currently carried in ONS November bulletin. Services and construction show large sectoral divergence. Q2 first-vintage growth not audited and cannot be described as first-to-first acceleration.",
+    "Nikkei issuer November12 close 60819.36 implies an interim +5.89% since November6. November13 is a future market settlement, no outcome Brier or interval coverage claim.",
+    "U.S. October PPI scheduled Nov13 22:30 JST occurs seven hours AFTER Japanese cash equity close, so country-specific exposure windows differ and no same-Friday causal shock should be assigned to Nikkei after its close."
+  ],
+  "hypothesis_evaluation": [
+    {
+      "id": "Q001/Q003",
+      "status": "insufficient_new_outcomes",
+      "finding": "Japan and UK releases are new observed explanatory variables, neither was a frozen November7 A-group target. No post-hoc model winner selected and no retroactive Brier added."
+    },
+    {
+      "id": "H20261107-cross-market-tail-dependence",
+      "status": "no_new_completed_week",
+      "finding": "No Nov13 six-equity Friday breadth outcome exists at this cutoff; no empirical validation of common-shock hypothesis. Today's company issuer close only narrows uncertainty about next day's potential result."
+    }
+  ],
+  "still_pending": [
+    {
+      "target": "US Nov12 first-published jobless claims",
+      "not_before": "2026-11-12T22:30:00+09:00",
+      "reason": "Release future at run time; do not substitute estimates"
+    },
+    {
+      "target": "Dallas Fed WEI Nov12",
+      "not_before": "not independently verified",
+      "reason": "No authenticated first-release numerical observation at cutoff"
+    },
+    {
+      "target": "US Oct PPI first release Nov13",
+      "not_before": "2026-11-13T22:30:00+09:00",
+      "reason": "Release future at cutoff; must score only official first print if released"
+    },
+    {
+      "target": "2026-11-13 A/B/C weekly settlement",
+      "not_before": "each designated Friday market closing",
+      "reason": "All future Friday market outcomes remain unscored"
+    },
+    {
+      "target": "CPI October headline/core YoY",
+      "reason": "Pre-existing structural missing 2025 October baseline; keep frozen missing flags instead of reconstructed figures"
+    }
+  ],
+  "research_limitation": [
+    "No direct code fit or Monte Carlo simulation today; calculations and CI replay were executed.",
+    "Nikkei homepage is mutable; today's value is captured in immutable research file and source needs issuer historical-day confirmation during Friday verification.",
+    "BOJ first/revised historical vintages are distinct records and must never be substituted silently.",
+    "China October CPI/PPI, US BLS CPI data already recorded on earlier days are not re-scored or counted as novel forecasts.",
+    "WTI fixed-contract source agreement and FX same-provider close remain unresolved; Saturday verification must mark them provisional if so.",
+    "No weekly user report or trading advice. Original archived weekly forecasts untouched."
+  ],
+  "next_action": "After Nov12 22:30 JST U.S. claims publication, retrieve original first release and updated WEI if available in later research window. On Nov14 settle all 22 frozen Nov7 targets with published source/vintage or missing flags; archive next-week forecast with real Git timestamp and pre-registered marginal/joint breadth benchmark."
+}
