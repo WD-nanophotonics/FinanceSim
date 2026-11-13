@@ -1,0 +1,215 @@
+{
+  "record_type": "FinanceSim_real_outcome_pre_US_close_frozen_model_audit",
+  "based_on_forecast": "research/weekly/2026-11-07-forecast.json",
+  "forecast_cutoff": "2026-11-07T12:00:00+09:00",
+  "information_cutoff": "2026-11-13T18:41:34+09:00",
+  "methods": "Exact arithmetic from issuer/official source snapshots and immutable original arm probabilities; no Monte Carlo, no new model fit, no future close.",
+  "actuals": {
+    "group_A_claims": {
+      "target_id": "us_claims_nov12",
+      "as_of_release": "2026-11-12T08:30:00-05:00",
+      "unit": "thousands_persons",
+      "actual_first_level": 200,
+      "frozen_first_previous": 189,
+      "first_to_first_change": 11,
+      "revised_prior": 191,
+      "change_using_revised_prior": 9,
+      "revision_vintage_wedge": 2,
+      "scores": {
+        "llm": {
+          "frozen_model_id": "pure-llm-Nov7",
+          "original_center": 6,
+          "actual_change": 11,
+          "actual_minus_forecast": 5,
+          "absolute_error": 5,
+          "original_prob_positive": 0.6,
+          "direction_outcome": 1,
+          "brier": 0.16,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "proper_interval_score": 19.4254
+            },
+            "80": {
+              "covered": true,
+              "proper_interval_score": 36.9086
+            },
+            "90": {
+              "covered": true,
+              "proper_interval_score": 47.3718
+            }
+          }
+        },
+        "statistical": {
+          "frozen_model_id": "last-first-print-nochange-gaussian-Nov7",
+          "original_center": 0,
+          "actual_change": 11,
+          "actual_minus_forecast": 11,
+          "absolute_error": 11,
+          "original_prob_positive": 0.5,
+          "direction_outcome": 1,
+          "brier": 0.25,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "proper_interval_score": 27.8122
+            },
+            "80": {
+              "covered": true,
+              "proper_interval_score": 30.7572
+            },
+            "90": {
+              "covered": true,
+              "proper_interval_score": 39.4764
+            }
+          }
+        },
+        "hybrid": {
+          "frozen_model_id": "scenario-informed-normal-assumed-Nov7",
+          "original_center": 3,
+          "actual_change": 11,
+          "actual_minus_forecast": 8,
+          "absolute_error": 8,
+          "original_prob_positive": 0.5987,
+          "direction_outcome": 1,
+          "brier": 0.16104169,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "proper_interval_score": 16.1878
+            },
+            "80": {
+              "covered": true,
+              "proper_interval_score": 30.7572
+            },
+            "90": {
+              "covered": true,
+              "proper_interval_score": 39.4764
+            }
+          }
+        }
+      },
+      "source": "https://www.dol.gov/index.php/newsroom/releases"
+    },
+    "group_C_nikkei": {
+      "target_id": "nikkei225",
+      "at": "2026-11-13T15:30:00+09:00",
+      "unit": "percent_return",
+      "prior_friday": 57434.77,
+      "settlement_friday": 61142.35,
+      "week_return_percent": 6.45528832,
+      "scores": {
+        "llm": {
+          "frozen_model_id": "pure-llm-Nov7-v1",
+          "original_center": 1.5,
+          "actual_change": 6.45528832,
+          "actual_minus_forecast": 4.95528832,
+          "absolute_error": 4.95528832,
+          "original_prob_positive": 0.57,
+          "direction_outcome": 1,
+          "brier": 0.1849,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "proper_interval_score": 12.63115328
+            },
+            "80": {
+              "covered": true,
+              "proper_interval_score": 13.6614
+            },
+            "90": {
+              "covered": true,
+              "proper_interval_score": 17.5342
+            }
+          }
+        },
+        "statistical": {
+          "frozen_model_id": "zero-drift-normal-assumed-vol-Nov7-v1",
+          "original_center": 0,
+          "actual_change": 6.45528832,
+          "actual_minus_forecast": 6.45528832,
+          "absolute_error": 6.45528832,
+          "original_prob_positive": 0.5,
+          "direction_outcome": 1,
+          "brier": 0.25,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "proper_interval_score": 20.29035328
+            },
+            "80": {
+              "covered": false,
+              "proper_interval_score": 22.51768321
+            },
+            "90": {
+              "covered": true,
+              "proper_interval_score": 13.4878
+            }
+          }
+        },
+        "hybrid": {
+          "frozen_model_id": "shared-shock-20000draw-MC-Nov7-v1",
+          "original_center": -0.3251,
+          "actual_change": 6.45528832,
+          "actual_minus_forecast": 6.78038832,
+          "absolute_error": 6.78038832,
+          "original_prob_positive": 0.4753,
+          "direction_outcome": 1,
+          "brier": 0.27531009,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "proper_interval_score": 20.71195328
+            },
+            "80": {
+              "covered": false,
+              "proper_interval_score": 19.75608321
+            },
+            "90": {
+              "covered": true,
+              "proper_interval_score": 15.5399
+            }
+          }
+        }
+      },
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "yahoo_alternate_unverified": {
+        "displayed_friday_close": 61194.1,
+        "alternate_week_return_percent": 6.54539054,
+        "issuer_minus_alternate_close_points": -51.75,
+        "magnitude_week_return_discrepancy_pp": 0.09010222,
+        "source": "https://finance.yahoo.com/quote/%5EN225/history/",
+        "status": "QUARANTINED_PROVIDER_SENSITIVITY_ONLY"
+      }
+    }
+  },
+  "not_yet_scoreable": {
+    "csi300": {
+      "reason": "Frozen ph.investing locale has only Nov11, not final Friday; other locale 11/13 quote is not a frozen-vendor match",
+      "alternate_locale_close": 4016.29,
+      "alternate_locale_week_return_pct": -0.93703444,
+      "cross_source_date_discordance": true,
+      "formal_score": null
+    },
+    "dallas_wei_nov12": {
+      "reason": "The issuer webpage was still showing Nov5 update when checked Nov13. No authenticated first Nov12 value. Keep missing rather than assume no change.",
+      "formal_score": null
+    },
+    "us_ppi_nov13": {
+      "reason": "US October PPI scheduled 2026-11-13T22:30:00+09:00 after this research cutoff",
+      "formal_score": null
+    },
+    "rest_of_friday_markets_and_B_breadth": {
+      "reason": "The US Friday closing bell has not happened; group B joint event not resolved.",
+      "formal_score": null
+    }
+  },
+  "important_cautions": [
+    "One original weekly macro target and one cash-equity market have become scoreable. This is NOT the Nov14 complete A/B/C weekly score.",
+    "Use frozen 189k first-published claims baseline, never silently substitute revised 191k.",
+    "Nikkei issuer final close is preferred over a conflicting alternate vendor, whose quote is kept as an unverified sensitivity.",
+    "CSI300 from another locale remains a provisional indication and is excluded from formal score.",
+    "Claims Brier and Nikkei Brier describe different unit/target groups; do not mix their point errors.",
+    "No new model probabilities or post-outcome forecast changes; original 22 target archive remains immutable."
+  ]
+}
