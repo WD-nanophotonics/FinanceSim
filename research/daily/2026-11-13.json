@@ -1,0 +1,214 @@
+{
+  "record_type": "FinanceSim_daily_research_note",
+  "date": "2026-11-13",
+  "timezone": "Asia/Tokyo",
+  "observed_information_cutoff": "2026-11-13T18:41:34+09:00",
+  "archive_policy": "Source pages searched and read before cutoff; precise page fetch-second unavailable from web tool. The GitHub commit times are the public append-only record. The US Nov13 08:30 EST PPI release and US Friday 16:00 EST equity close had not yet occurred.",
+  "starting_repo_state": {
+    "read": [
+      "research/PROTOCOL.md",
+      "research/INDEX.md",
+      "research/daily/2026-11-10.json",
+      "research/daily/2026-11-11.json",
+      "research/daily/2026-11-12.json",
+      "research/weekly/2026-11-07-forecast.json",
+      "research/weekly/2026-11-07-verification.json",
+      "research/experiments/2026-11-12-boj-ons-vintage-decomposition.json",
+      "research/hypotheses/2026-11-07-1930-cross-market-tail-dependence.json",
+      "financesim/engine.py",
+      "financesim/scenarios.py",
+      "research/scripts/generate_2026_11_07.js",
+      "research/scripts/audit_2026_11_12_vintage_decomposition.js",
+      ".github/workflows/tests.yml"
+    ],
+    "previous_head_commit": "bda685fb709eaf7",
+    "previous_ci_url": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/43197899966",
+    "previous_ci_status": "success"
+  },
+  "retrieved_observations": [
+    {
+      "id": "US_WEEKLY_FIRST_CLAIMS_NOV7",
+      "issuer": "US Department of Labor/ETA",
+      "reference_week": "2026-11-07",
+      "released_at": "2026-11-12T08:30:00-05:00",
+      "release_version": "first advance estimate for this reference week",
+      "first_claims_thousands": 200,
+      "prior_week_first_vintage_thousands": 189,
+      "prior_week_revised_in_this_release_thousands": 191,
+      "prior_week_revision_thousands": 2,
+      "four_week_average_thousands": 195.25,
+      "source_url": "https://www.dol.gov/index.php/newsroom/releases",
+      "cross_check_url": "https://www.reuters.com/world/us/us-weekly-jobless-claims-increase-labor-market-firming-2026-11-12/",
+      "source_access": "DOL official index search content readable; direct open blocked 403; exact individual original PDF not inspected",
+      "confidence": "high on aggregate 200k and stated revision due to official index and independent Reuters confirmation"
+    },
+    {
+      "id": "NIKKEI225_2026_11_13_OFFICIAL_CLOSE",
+      "issuer": "Nikkei Inc.",
+      "reference_start": "2026-11-06T15:30:00+09:00",
+      "reference_end": "2026-11-13T15:30:00+09:00",
+      "reference_close": 57434.77,
+      "friday_close": 61142.35,
+      "prior_thursday_close": 60819.36,
+      "quote_type": "index publisher's daily close",
+      "source_url": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "publication_status": "source historical OHLC updated Nov13 2026 by issuer; both Friday values on same page"
+    },
+    {
+      "id": "NIKKEI_2026_11_13_YAHOO_CONFLICT",
+      "issuer": "Yahoo Finance",
+      "displayed_close": 61194.1,
+      "date": "2026-11-13",
+      "source_url": "https://finance.yahoo.com/quote/%5EN225/history/",
+      "status": "unverified alternative, NOT official Nikkei cash benchmark; observed discrepancy may reflect caching or field mismatch; never replace issuer close"
+    },
+    {
+      "id": "CSI300_2026_11_13_VENDOR_CONFLICT",
+      "frozen_vendor_url": "https://ph.investing.com/indices/csi300-historical-data",
+      "latest_date_displayed_by_frozen_vendor": "2026-11-11",
+      "alternate_source": "https://cn.investing.com/indices/csi300-historical-data",
+      "alternate_date": "2026-11-13",
+      "alternate_close": 4016.29,
+      "prior_frozen_friday_reference": 4054.28,
+      "formal_settlement": false,
+      "reason": "Original forecast's Philippines-locale Investing historical page still showed Nov11 on retrieval; matched-vendor Nov13 close not available. Alternate locale used only in provisional sensitivity."
+    },
+    {
+      "id": "US_PPI_2026_10_RELEASE_CALENDAR",
+      "issuer": "US BLS",
+      "scheduled_at": "2026-11-13T08:30:00-05:00",
+      "scheduled_at_jst": "2026-11-13T22:30:00+09:00",
+      "source_url": "https://www.bls.gov/schedule/news_release/ppi.htm?year=2026",
+      "result_at_cutoff": "future, not released; preserve both original YoY and MoM forecasts"
+    },
+    {
+      "id": "DALLAS_WEI_2026_11_07_MISSING",
+      "issuer": "Dallas Federal Reserve",
+      "source_url": "https://www.dallasfed.org/research/wei",
+      "issuer_page_as_observed": "Nov 5 2026 last update, 3.47 for week Oct31",
+      "new_target_reference_week": "2026-11-07",
+      "first_release_value": null,
+      "status": "source still stale; do not fill or score until Nov12 vintage confirmed"
+    },
+    {
+      "id": "EUROSTAT_2026_Q3_T45",
+      "issuer": "Eurostat",
+      "source_url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-30102026-ap",
+      "preliminary_t30_qoq_percent": 0.4,
+      "schedule_for_next_release": "2026-11-13",
+      "new_t45_actual": null,
+      "status": "official new estimate not authenticated by this cutoff; not a Nov7 frozen A target anyway"
+    }
+  ],
+  "derived_features": {
+    "US_claims_change_vs_frozen_first_print_thousands": 11,
+    "US_claims_change_vs_revised_prior_thousands": 9,
+    "US_claims_prior_revision_wedge_thousands": 2,
+    "US_claims_four_week_avg_unchanged_current_vintage_thousands": 195.25,
+    "Nikkei_friday_weekly_pct": 6.45528832,
+    "Nikkei_thu_to_fri_pct": 0.53106445,
+    "Nikkei_Yahoo_vs_issuer_close_points": 51.75,
+    "Nikkei_Yahoo_vs_issuer_week_return_gap_percentage_points": 0.09010222,
+    "CSI300_alternate_locale_week_pct": -0.93703444
+  },
+  "executed_computation": {
+    "snapshot": "research/inputs/2026-11-13-asia-claims-snapshot.json",
+    "script": "research/scripts/audit_2026_11_13_claims_asia_close.js",
+    "output": "research/experiments/2026-11-13-claims-nikkei-asof-audit.json",
+    "method": "Exact deterministic replay of frozen original first-release claims and official Nikkei Friday close with 50/80/90 proper interval scores, direction Brier and vendor sensitivity. Local Node syntax + minimal-frozen-fixture test executed, followed by GitHub CI production replay on full original forecast. No newly fitted economic model and no new Monte Carlo simulation.",
+    "current_research_seed": null,
+    "prior_forecast_original_seed": 20261107,
+    "prior_forecast_original_monte_carlo_draws": 20000,
+    "prior_forecast_unchanged": true,
+    "script_commit": "06f19ea73893fe29c61d29441ca572696088fb2e",
+    "snapshot_commit": "0990e7cf5e90fd1fe1987ba756875bd62a802976",
+    "experiment_commit": "acc0270ee072db11e1741998abc503002f8ecc6f",
+    "replay_workflow_commit": "750201fa56a2d38d508e20806327fa88ffc5c259",
+    "ci_url": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/43403994790",
+    "ci_status": "success on Python 3.10 and 3.12, exact Node audit output compared byte-for-byte with archived experiment JSON"
+  },
+  "frozen_target_scores": {
+    "us_claims_nov12": {
+      "observed_level_thousands": 200,
+      "frozen_reference_thousands": 189,
+      "change_thousands": 11,
+      "arms": {
+        "llm": {
+          "predicted_change": 6,
+          "absolute_error_thousands": 5,
+          "brier": 0.16,
+          "covered_50": true,
+          "covered_90": true
+        },
+        "statistical": {
+          "predicted_change": 0,
+          "absolute_error_thousands": 11,
+          "brier": 0.25,
+          "covered_50": false,
+          "covered_90": true
+        },
+        "hybrid": {
+          "predicted_change": 3,
+          "absolute_error_thousands": 8,
+          "brier": 0.16104169,
+          "covered_50": true,
+          "covered_90": true
+        }
+      }
+    },
+    "nikkei225": {
+      "reference": 57434.77,
+      "observed": 61142.35,
+      "return_pct": 6.45528832,
+      "arms": {
+        "llm": {
+          "predicted_return_pct": 1.5,
+          "abs_error_percentage_points": 4.95528832,
+          "brier": 0.1849,
+          "covered_50": false,
+          "covered_80": true,
+          "covered_90": true
+        },
+        "statistical": {
+          "predicted_return_pct": 0,
+          "abs_error_percentage_points": 6.45528832,
+          "brier": 0.25,
+          "covered_50": false,
+          "covered_80": false,
+          "covered_90": true
+        },
+        "hybrid": {
+          "predicted_return_pct": -0.3251,
+          "abs_error_percentage_points": 6.78038832,
+          "brier": 0.27531009,
+          "covered_50": false,
+          "covered_80": false,
+          "covered_90": true
+        }
+      }
+    },
+    "aggregation_policy": "Claims error units are thousands of persons; Nikkei percentage-return errors are percentage points, so they are not averaged. Group A other targets (CPI MoM, 2 CPI YoY missing, PPI future, WEI not verified) remain separately tracked."
+  },
+  "hypothesis_reflection": [
+    {
+      "id": "Q001/Q003",
+      "evaluation": "Claims and Nikkei frozen LLM predictions beat statistical benchmark in Brier for these isolated targets, but Nikkei hybrid was less directional and all three model 50% intervals missed unusually strong 6.46% rebound. This does not establish systematic skill."
+    },
+    {
+      "id": "H20261107-cross-market-tail-dependence",
+      "evaluation": "Two Asian markets settle before U.S. PPI, while Europe and US remain open; no completed 6-stock breadth event yet. With Nikkei +6.46% the weekly >=-1.5% drawdown contribution for Nikkei is already zero; do not infer joint risk result until all six settle."
+    },
+    {
+      "id": "Q004",
+      "evaluation": "Provider drift and source lag are live data-quality threats: an early Yahoo Nikkei quote differs from index issuer by 51.75 points; frozen CSI vendor PH page is two sessions stale. Formal scoring must quarantine unverifiable cross-provider substitutes."
+    }
+  ],
+  "limitations_and_next_actions": [
+    "At cutoff 18:41 JST US October PPI (Nov13 22:30 JST) had not been released; no future outcome used.",
+    "Europe and New York Friday closes occur after cutoff, so group-B co-drawdown and remaining group-C assets cannot be scored yet.",
+    "Dallas Fed Nov12 WEI first vintage not authenticated from issuer page; keep unresolved.",
+    "Claims DOL official index text was available via web search but individual article fetch returned 403; maintain this provenance limitation.",
+    "Possible alternate Yahoo Nikkei quote may be stale and must not supersede the official issuer close.",
+    "Do not adjust Nov7 22-target sealed forecasts, archived prior scores, or models based on Nov13 outcomes. Full Nov14 verification will use updated direct sources and before-noon timestamp."
+  ]
+}
