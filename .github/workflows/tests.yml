@@ -73,3 +73,7 @@ jobs:
         run: |
           node research/scripts/audit_2026_11_12_vintage_decomposition.js > /tmp/financesim_nov12_vintage.json
           cmp research/experiments/2026-11-12-boj-ons-vintage-decomposition.json /tmp/financesim_nov12_vintage.json
+      - name: Replay Nov13 DOL claims first-vintage and official Nikkei close audit
+        run: |
+          node research/scripts/audit_2026_11_13_claims_asia_close.js > /tmp/financesim_nov13_asof_audit.json
+          cmp research/experiments/2026-11-13-claims-nikkei-asof-audit.json /tmp/financesim_nov13_asof_audit.json
