@@ -1,0 +1,84 @@
+{
+  "record_type": "FinanceSim_as_of_facts_for_deterministic_pre_US_close_audit",
+  "information_cutoff": "2026-11-13T18:41:34+09:00",
+  "snapshot_prepared_on": "2026-11-13",
+  "timezone": "Asia/Tokyo",
+  "forecast_path": "research/weekly/2026-11-07-forecast.json",
+  "frozen_forecast_cutoff": "2026-11-07T12:00:00+09:00",
+  "releases": {
+    "us_claims_nov12": {
+      "value_thousands_persons": 200,
+      "reference_week_ended": "2026-11-07",
+      "published_at": "2026-11-12T08:30:00-05:00",
+      "first_release": true,
+      "source_issuer": "US Department of Labor, Employment and Training Administration",
+      "source_url": "https://www.dol.gov/index.php/newsroom/releases",
+      "observed_original_prior_week_first_level_thousands": 189,
+      "prior_week_revised_in_current_release_thousands": 191,
+      "prior_week_revision_thousands": 2,
+      "four_week_average_thousands": 195.25,
+      "provenance_note": "DOL official news releases index carries Nov12 first-release text and explicitly states 200000, previous 189000 revised to 191000; individual release page/PDF not directly fetched due to access restrictions. Reuters Nov12 independent confirmation https://www.reuters.com/world/us/us-weekly-jobless-claims-increase-labor-market-firming-2026-11-12/"
+    }
+  },
+  "settled_asian_market": {
+    "nikkei225": {
+      "reference_date": "2026-11-06",
+      "reference_close": 57434.77,
+      "settlement_date": "2026-11-13",
+      "settlement_close": 61142.35,
+      "settlement_at": "2026-11-13T15:30:00+09:00",
+      "issuer": "Nikkei Inc.",
+      "same_issuer_url": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "same_issuer_confirmed": true,
+      "note": "Nikkei index issuer's Nov13 updated historical OHLC page provides both closes. End-of-day close, not intraday or futures."
+    }
+  },
+  "cross_vendor_data_quality": {
+    "nikkei_yahoo_alternate": {
+      "source_url": "https://finance.yahoo.com/quote/%5EN225/history/",
+      "settlement_date": "2026-11-13",
+      "displayed_close": 61194.1,
+      "matched_to_issuer": false,
+      "note": "Yahoo display mismatched Nikkei issuer's 61142.35 at first retrieval. An alternate-provider sensitivity only, not an eligible official settlement."
+    },
+    "csi300_frozen_vendor": {
+      "frozen_vendor": "https://ph.investing.com/indices/csi300-historical-data",
+      "current_page_last_displayed_date": "2026-11-11",
+      "stale_for_friday_2026_11_13": true,
+      "source_url": "https://ph.investing.com/indices/csi300-historical-data",
+      "same_vendor_friday_close_verified": false,
+      "alternate_locale_source": "https://cn.investing.com/indices/csi300-historical-data",
+      "alternate_locale_last_displayed_date": "2026-11-13",
+      "alternate_locale_friday_close": 4016.29,
+      "frozen_reference_close": 4054.28,
+      "use_for_formal_score": false,
+      "note": "11/13 current cn/hk locale agrees on 4016.29 but ph locale still shows 11/11; keep formal target unverified pending matched-vendor or issuer check."
+    }
+  },
+  "still_future_at_cutoff": {
+    "us_october_ppi": {
+      "scheduled_release_at": "2026-11-13T08:30:00-05:00",
+      "scheduled_release_at_jst": "2026-11-13T22:30:00+09:00",
+      "source_url": "https://www.bls.gov/schedule/news_release/ppi.htm?year=2026",
+      "status": "not yet released at information cutoff; no score"
+    },
+    "us_friday_cash_market_close": {
+      "scheduled_at_jst": "2026-11-14T06:00:00+09:00",
+      "status": "future; no whole-week asset/breadth scoring"
+    }
+  },
+  "unverified": {
+    "dallas_wei_nov12": {
+      "source_url": "https://www.dallasfed.org/research/wei",
+      "source_as_displayed": "Nov. 5, 2026 update, WEI 3.47 for week ended Oct.31",
+      "target_week": "2026-11-07",
+      "reason": "The issuer webpage was still showing Nov5 update when checked Nov13. No authenticated first Nov12 value. Keep missing rather than assume no change."
+    },
+    "eurostat_nov13_t45_gdp": {
+      "source_url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-30102026-ap",
+      "status": "scheduled estimate, no authenticated t+45 second release value retrieved",
+      "last_first_flash_qoq_euro_area_pct": 0.4,
+      "do_not_score_as_new_outcome": true
+    }
+  }
+}
