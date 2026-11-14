@@ -77,3 +77,23 @@ jobs:
         run: |
           node research/scripts/audit_2026_11_13_claims_asia_close.js > /tmp/financesim_nov13_asof_audit.json
           cmp research/experiments/2026-11-13-claims-nikkei-asof-audit.json /tmp/financesim_nov13_asof_audit.json
+      - name: Reproduce Nov14 original three-arm 23-target forecast and append-only corrected risk
+        run: |
+          node research/scripts/generate_2026_11_14.js research/inputs/2026-11-14-1200-snapshot.json > /tmp/nov14_base.json
+          cmp research/weekly/2026-11-14-forecast.json /tmp/nov14_base.json
+          node research/scripts/replay_2026_11_14_corrected_b01.js research/inputs/2026-11-14-1200-snapshot.json research/weekly/2026-11-14-forecast.json > /tmp/nov14_corrected.json
+          cmp research/weekly/2026-11-14-forecast-corrected-b01.json /tmp/nov14_corrected.json
+      - name: Independently replay Nov14 last-week outcome scores, missingness and coverage
+        run: |
+          node research/scripts/score_2026_11_14_corrected01.js research/weekly/2026-11-07-forecast.json research/inputs/2026-11-14-settlement-sources.json > /tmp/nov14_score.json
+          python - <<'PY'
+          import json
+          got=json.load(open('/tmp/nov14_score.json'))
+          expected=json.load(open('research/weekly/2026-11-14-verification-correction01.json'))
+          assert got['observed_actuals']==expected['observed_actuals']
+          assert got['group_summary']==expected['group_summary']
+          assert len(got['missing'])==2
+          assert expected['group_summary']['A']['all_conditional']['hybrid']['coverage_50']==0.8
+          assert expected['group_summary']['C']['strict_count']==9
+          print('Nov14 first-release and market score replay matches append-only artifact')
+          PY
