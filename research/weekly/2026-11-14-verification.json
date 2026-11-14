@@ -1,0 +1,2038 @@
+{
+  "record_type": "FinanceSim_weekly_verification_APPEND_ONLY",
+  "score_cutoff": "2026-11-14T12:00:00+09:00",
+  "forecast_file": "research/weekly/2026-11-07-forecast.json",
+  "truth_input": "research/inputs/2026-11-14-settlement-sources.json",
+  "origin_forecast_archived_after_noon": true,
+  "observed_actuals": {
+    "A": {
+      "us_cpi_mom_nov10": {
+        "target_id": "us_cpi_mom_nov10",
+        "group": "A",
+        "unit": "percent_mom",
+        "observed_change": -0.2,
+        "arms": {
+          "llm": {
+            "point": -0.1,
+            "prob": 0.42,
+            "actual_event": 0,
+            "point_error": -0.1,
+            "abs_error": 0.1,
+            "brier": 0.1764,
+            "interval_50": {
+              "covered": true,
+              "score": 0.437
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 0.8304
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 1.0658
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 0,
+            "point_error": -0.2,
+            "abs_error": 0.2,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 0.4358
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 0.692
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 0.8882
+            }
+          },
+          "hybrid": {
+            "point": -0.08,
+            "prob": 0.3835,
+            "actual_event": 0,
+            "point_error": -0.12,
+            "abs_error": 0.12,
+            "brier": 0.147072,
+            "interval_50": {
+              "covered": true,
+              "score": 0.3642
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 0.692
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 0.8882
+            }
+          }
+        },
+        "observed_level": 0.4,
+        "prior_first": 0.6,
+        "release_at": "2026-11-10T08:30:00-05:00",
+        "source": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+      },
+      "us_ppi_yoy_nov13": {
+        "target_id": "us_ppi_yoy_nov13",
+        "group": "A",
+        "unit": "percent_yoy",
+        "observed_change": 0.2,
+        "arms": {
+          "llm": {
+            "point": -0.4,
+            "prob": 0.36,
+            "actual_event": 1,
+            "point_error": 0.6,
+            "abs_error": 0.6,
+            "brier": 0.4096,
+            "interval_50": {
+              "covered": false,
+              "score": 1.3478
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 1.9992
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 2.566
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 1,
+            "point_error": 0.2,
+            "abs_error": 0.2,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": true,
+              "score": 0.8768
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 1.666
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 2.1384
+            }
+          },
+          "hybrid": {
+            "point": -0.3,
+            "prob": 0.3222,
+            "actual_event": 1,
+            "point_error": 0.5,
+            "abs_error": 0.5,
+            "brier": 0.459413,
+            "interval_50": {
+              "covered": false,
+              "score": 1.1232
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 1.666
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 2.1384
+            }
+          }
+        },
+        "observed_level": 6.5,
+        "prior_first": 6.3,
+        "release_at": "2026-11-13T08:30:00-05:00",
+        "source": "https://www.bls.gov/news.release/archives/ppi_11132026.htm"
+      },
+      "us_ppi_mom_nov13": {
+        "target_id": "us_ppi_mom_nov13",
+        "group": "A",
+        "unit": "percent_mom",
+        "observed_change": -1,
+        "arms": {
+          "llm": {
+            "point": -0.8,
+            "prob": 0.18,
+            "actual_event": 0,
+            "point_error": -0.2,
+            "abs_error": 0.2,
+            "brier": 0.0324,
+            "interval_50": {
+              "covered": true,
+              "score": 1.0036
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 1.907
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 2.4476
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 0,
+            "point_error": -1,
+            "abs_error": 1,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 3.1636
+            },
+            "interval_80": {
+              "covered": false,
+              "score": 3.6432
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 2.0396
+            }
+          },
+          "hybrid": {
+            "point": -0.72,
+            "prob": 0.1228,
+            "actual_event": 0,
+            "point_error": -0.28,
+            "abs_error": 0.28,
+            "brier": 0.01508,
+            "interval_50": {
+              "covered": true,
+              "score": 0.8364
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 1.5892
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 2.0396
+            }
+          }
+        },
+        "observed_level": 0.3,
+        "prior_first": 1.3,
+        "release_at": "2026-11-13T08:30:00-05:00",
+        "source": "https://www.bls.gov/news.release/archives/ppi_11132026.htm"
+      },
+      "us_claims_nov12": {
+        "target_id": "us_claims_nov12",
+        "group": "A",
+        "unit": "thousands_persons",
+        "observed_change": 11,
+        "arms": {
+          "llm": {
+            "point": 6,
+            "prob": 0.6,
+            "actual_event": 1,
+            "point_error": 5,
+            "abs_error": 5,
+            "brier": 0.16,
+            "interval_50": {
+              "covered": true,
+              "score": 19.4254
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 36.9086
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 47.3718
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 1,
+            "point_error": 11,
+            "abs_error": 11,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 27.8122
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 30.7572
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 39.4764
+            }
+          },
+          "hybrid": {
+            "point": 3,
+            "prob": 0.5987,
+            "actual_event": 1,
+            "point_error": 8,
+            "abs_error": 8,
+            "brier": 0.161042,
+            "interval_50": {
+              "covered": true,
+              "score": 16.1878
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 30.7572
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 39.4764
+            }
+          }
+        },
+        "observed_level": 200,
+        "prior_first": 189,
+        "release_at": "2026-11-12T08:30:00-05:00",
+        "source": "https://www.dol.gov/newsroom/releases/eta/eta20261112"
+      },
+      "dallas_wei_nov12": {
+        "target_id": "dallas_wei_nov12",
+        "group": "A",
+        "unit": "index_points",
+        "observed_change": -0.18,
+        "arms": {
+          "llm": {
+            "point": -0.17,
+            "prob": 0.38,
+            "actual_event": 0,
+            "point_error": -0.01,
+            "abs_error": 0.01,
+            "brier": 0.1444,
+            "interval_50": {
+              "covered": true,
+              "score": 0.9388
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 1.784
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 2.2896
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 0,
+            "point_error": -0.18,
+            "abs_error": 0.18,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": true,
+              "score": 0.7824
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 1.4866
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 1.908
+            }
+          },
+          "hybrid": {
+            "point": -0.1,
+            "prob": 0.4316,
+            "actual_event": 0,
+            "point_error": -0.08,
+            "abs_error": 0.08,
+            "brier": 0.186279,
+            "interval_50": {
+              "covered": true,
+              "score": 0.7824
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 1.4866
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 1.908
+            }
+          }
+        },
+        "observed_level": 3.29,
+        "prior_first": 3.47,
+        "release_at": "2026-11-12T10:30:00-06:00",
+        "source": "https://www.dallasfed.org/research/wei"
+      }
+    },
+    "B": {
+      "sp_abs": {
+        "target_id": "sp_abs",
+        "group": "B",
+        "unit": "percent",
+        "observed_change": 2.505266,
+        "arms": {
+          "llm": {
+            "point": 2,
+            "prob": 0.48,
+            "actual_event": 1,
+            "point_error": 0.505266,
+            "abs_error": 0.505266,
+            "brier": 0.2704,
+            "interval_50": {
+              "covered": true,
+              "score": 2.3
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 4.6
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 6.4
+            }
+          },
+          "statistical": {
+            "point": 1.7609,
+            "prob": 0.3656,
+            "actual_event": 1,
+            "point_error": 0.744366,
+            "abs_error": 0.744366,
+            "brier": 0.402463,
+            "interval_50": {
+              "covered": true,
+              "score": 1.8498
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 3.362
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 4.1697
+            }
+          },
+          "hybrid": {
+            "point": 2.2231,
+            "prob": 0.4773,
+            "actual_event": 1,
+            "point_error": 0.282166,
+            "abs_error": 0.282166,
+            "brier": 0.273215,
+            "interval_50": {
+              "covered": true,
+              "score": 2.2926
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 4.1966
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 5.2335
+            }
+          }
+        },
+        "event_outcome": 1,
+        "strict": true,
+        "dependency": "derived from same equity/WTI/10Y Group C prices; not independent",
+        "quality": null
+      },
+      "wti_abs": {
+        "target_id": "wti_abs",
+        "group": "B",
+        "unit": "percent",
+        "observed_change": 2.289992,
+        "arms": {
+          "llm": {
+            "point": 6.2,
+            "prob": 0.56,
+            "actual_event": 0,
+            "point_error": -3.910008,
+            "abs_error": 3.910008,
+            "brier": 0.3136,
+            "interval_50": {
+              "covered": false,
+              "score": 5.940032
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 13.2
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 16.8
+            }
+          },
+          "statistical": {
+            "point": 5.4629,
+            "prob": 0.4635,
+            "actual_event": 0,
+            "point_error": -3.172908,
+            "abs_error": 3.172908,
+            "brier": 0.214832,
+            "interval_50": {
+              "covered": true,
+              "score": 5.6898
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 10.4944
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 13.0319
+            }
+          },
+          "hybrid": {
+            "point": 6.4697,
+            "prob": 0.5363,
+            "actual_event": 0,
+            "point_error": -4.179708,
+            "abs_error": 4.179708,
+            "brier": 0.287618,
+            "interval_50": {
+              "covered": false,
+              "score": 7.889032
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 12.3645
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 15.4073
+            }
+          }
+        },
+        "event_outcome": 0,
+        "strict": false,
+        "dependency": "derived from same equity/WTI/10Y Group C prices; not independent",
+        "quality": "WTI provisional"
+      },
+      "yield_abs": {
+        "target_id": "yield_abs",
+        "group": "B",
+        "unit": "basis_points",
+        "observed_change": 29,
+        "arms": {
+          "llm": {
+            "point": 13,
+            "prob": 0.39,
+            "actual_event": 1,
+            "point_error": 16,
+            "abs_error": 16,
+            "brier": 0.3721,
+            "interval_50": {
+              "covered": false,
+              "score": 52
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 30
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 39
+            }
+          },
+          "statistical": {
+            "point": 12.7755,
+            "prob": 0.3489,
+            "actual_event": 1,
+            "point_error": 16.2245,
+            "abs_error": 16.2245,
+            "brier": 0.423931,
+            "interval_50": {
+              "covered": false,
+              "score": 55.5139
+            },
+            "interval_80": {
+              "covered": false,
+              "score": 51.1201
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 30.6514
+            }
+          },
+          "hybrid": {
+            "point": 14.7096,
+            "prob": 0.4196,
+            "actual_event": 1,
+            "point_error": 14.2904,
+            "abs_error": 14.2904,
+            "brier": 0.336864,
+            "interval_50": {
+              "covered": false,
+              "score": 46.5241
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 27.6957
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 34.8238
+            }
+          }
+        },
+        "event_outcome": 1,
+        "strict": true,
+        "dependency": "derived from same equity/WTI/10Y Group C prices; not independent",
+        "quality": null
+      },
+      "breadth": {
+        "target_id": "breadth",
+        "group": "B",
+        "unit": "index_count",
+        "observed_change": 0,
+        "arms": {
+          "llm": {
+            "point": 2.4,
+            "prob": 0.43,
+            "actual_event": 0,
+            "point_error": -2.4,
+            "abs_error": 2.4,
+            "brier": 0.1849,
+            "interval_50": {
+              "covered": false,
+              "score": 7
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 5
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 6
+            }
+          },
+          "statistical": {
+            "point": 1.8366,
+            "prob": 0.266,
+            "actual_event": 0,
+            "point_error": -1.8366,
+            "abs_error": 1.8366,
+            "brier": 0.070756,
+            "interval_50": {
+              "covered": false,
+              "score": 6
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 3
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 4
+            }
+          },
+          "hybrid": {
+            "point": 2.2404,
+            "prob": 0.4182,
+            "actual_event": 0,
+            "point_error": -2.2404,
+            "abs_error": 2.2404,
+            "brier": 0.174891,
+            "interval_50": {
+              "covered": false,
+              "score": 6
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 4
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 5
+            }
+          }
+        },
+        "event_outcome": 0,
+        "strict": true,
+        "dependency": "derived from same equity/WTI/10Y Group C prices; not independent",
+        "quality": null
+      },
+      "joint": {
+        "target_id": "joint",
+        "group": "B",
+        "unit": "binary_0or1",
+        "observed_change": 0,
+        "arms": {
+          "llm": {
+            "point": 0.04,
+            "prob": 0.04,
+            "actual_event": 0,
+            "point_error": -0.04,
+            "abs_error": 0.04,
+            "brier": 0.0016,
+            "interval_50": {
+              "covered": true,
+              "score": 0
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 0
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 1
+            }
+          },
+          "statistical": {
+            "point": 0.0403,
+            "prob": 0.0403,
+            "actual_event": 0,
+            "point_error": -0.0403,
+            "abs_error": 0.0403,
+            "brier": 0.001624,
+            "interval_50": {
+              "covered": true,
+              "score": 0
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 0
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 0
+            }
+          },
+          "hybrid": {
+            "point": 0.0829,
+            "prob": 0.0829,
+            "actual_event": 0,
+            "point_error": -0.0829,
+            "abs_error": 0.0829,
+            "brier": 0.006872,
+            "interval_50": {
+              "covered": true,
+              "score": 0
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 0
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 1
+            }
+          }
+        },
+        "event_outcome": 0,
+        "strict": false,
+        "dependency": "derived from same equity/WTI/10Y Group C prices; not independent",
+        "quality": "WTI provisional"
+      }
+    },
+    "C": {
+      "sp500": {
+        "target_id": "sp500",
+        "group": "C",
+        "unit": "percent_return",
+        "observed_change": 2.505266,
+        "arms": {
+          "llm": {
+            "point": 0.4,
+            "prob": 0.53,
+            "actual_event": 1,
+            "point_error": 2.105266,
+            "abs_error": 2.105266,
+            "brier": 0.2209,
+            "interval_50": {
+              "covered": false,
+              "score": 4.563066
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 7.3304
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 9.4086
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 1,
+            "point_error": 2.505266,
+            "abs_error": 2.505266,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 7.053266
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 5.6388
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 7.2374
+            }
+          },
+          "hybrid": {
+            "point": -0.6236,
+            "prob": 0.415,
+            "actual_event": 1,
+            "point_error": 3.128866,
+            "abs_error": 3.128866,
+            "brier": 0.342225,
+            "interval_50": {
+              "covered": false,
+              "score": 8.755866
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 6.8933
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 8.8131
+            }
+          }
+        },
+        "previous": 7376.86,
+        "current": 7561.67,
+        "quality": "Matched Yahoo Friday Nov6 and Nov13; Investing locale reports conflicting Nov13 snapshot and earlier archive reference 7376.92 differs by 0.06",
+        "strict": true,
+        "source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+        "frozen_baseline": 7376.92
+      },
+      "nasdaq100": {
+        "target_id": "nasdaq100",
+        "group": "C",
+        "unit": "percent_return",
+        "observed_change": 3.533718,
+        "arms": {
+          "llm": {
+            "point": 0.8,
+            "prob": 0.55,
+            "actual_event": 1,
+            "point_error": 2.733718,
+            "abs_error": 2.733718,
+            "brier": 0.2025,
+            "interval_50": {
+              "covered": true,
+              "score": 6.401
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 12.162
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 15.6096
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 1,
+            "point_error": 3.533718,
+            "abs_error": 3.533718,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 9.21107
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 9.3554
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 12.0074
+            }
+          },
+          "hybrid": {
+            "point": -1.0487,
+            "prob": 0.4111,
+            "actual_event": 1,
+            "point_error": 4.582418,
+            "abs_error": 4.582418,
+            "brier": 0.346803,
+            "interval_50": {
+              "covered": false,
+              "score": 12.06317
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 11.5154
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 14.8273
+            }
+          }
+        },
+        "previous": 26989.99,
+        "current": 27943.74,
+        "quality": "Paired same locale closes",
+        "strict": true,
+        "source": "https://ph.investing.com/indices/nq-100-historical-data",
+        "frozen_baseline": 26989.99
+      },
+      "stoxx600": {
+        "target_id": "stoxx600",
+        "group": "C",
+        "unit": "percent_return",
+        "observed_change": 2.438573,
+        "arms": {
+          "llm": {
+            "point": 0.2,
+            "prob": 0.52,
+            "actual_event": 1,
+            "point_error": 2.238573,
+            "abs_error": 2.238573,
+            "brier": 0.2304,
+            "interval_50": {
+              "covered": false,
+              "score": 5.834692
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 5.9272
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 7.6074
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 1,
+            "point_error": 2.438573,
+            "abs_error": 2.438573,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 7.258692
+            },
+            "interval_80": {
+              "covered": false,
+              "score": 5.418529
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 6.086
+            }
+          },
+          "hybrid": {
+            "point": -0.3046,
+            "prob": 0.4469,
+            "actual_event": 1,
+            "point_error": 2.743173,
+            "abs_error": 2.743173,
+            "brier": 0.30592,
+            "interval_50": {
+              "covered": false,
+              "score": 8.117492
+            },
+            "interval_80": {
+              "covered": false,
+              "score": 5.855329
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 6.9092
+            }
+          }
+        },
+        "previous": 648.33,
+        "current": 664.14,
+        "quality": "Paired vendor; prior frozen reference 648.34 0.01 point discrepancy",
+        "strict": true,
+        "source": "https://www.investing.com/indices/stoxx-600-historical-data",
+        "frozen_baseline": 648.34
+      },
+      "nikkei225": {
+        "target_id": "nikkei225",
+        "group": "C",
+        "unit": "percent_return",
+        "observed_change": 6.455288,
+        "arms": {
+          "llm": {
+            "point": 1.5,
+            "prob": 0.57,
+            "actual_event": 1,
+            "point_error": 4.955288,
+            "abs_error": 4.955288,
+            "brier": 0.1849,
+            "interval_50": {
+              "covered": false,
+              "score": 12.631153
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 13.6614
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 17.5342
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 1,
+            "point_error": 6.455288,
+            "abs_error": 6.455288,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 20.290353
+            },
+            "interval_80": {
+              "covered": false,
+              "score": 22.517683
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 13.4878
+            }
+          },
+          "hybrid": {
+            "point": -0.3251,
+            "prob": 0.4753,
+            "actual_event": 1,
+            "point_error": 6.780388,
+            "abs_error": 6.780388,
+            "brier": 0.27531,
+            "interval_50": {
+              "covered": false,
+              "score": 20.711953
+            },
+            "interval_80": {
+              "covered": false,
+              "score": 19.756083
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 15.5399
+            }
+          }
+        },
+        "previous": 57434.77,
+        "current": 61142.35,
+        "quality": "Issuer same Friday 15:30 JST",
+        "strict": true,
+        "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+        "frozen_baseline": 57434.77
+      },
+      "kospi": {
+        "target_id": "kospi",
+        "group": "C",
+        "unit": "percent_return",
+        "observed_change": 4.562335,
+        "arms": {
+          "llm": {
+            "point": 2,
+            "prob": 0.58,
+            "actual_event": 1,
+            "point_error": 2.562335,
+            "abs_error": 2.562335,
+            "brier": 0.1764,
+            "interval_50": {
+              "covered": true,
+              "score": 10.9268
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 20.7612
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 26.6466
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 1,
+            "point_error": 4.562335,
+            "abs_error": 4.562335,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 10.155539
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 15.3786
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 19.7382
+            }
+          },
+          "hybrid": {
+            "point": -0.3508,
+            "prob": 0.4786,
+            "actual_event": 1,
+            "point_error": 4.913135,
+            "abs_error": 4.913135,
+            "brier": 0.271858,
+            "interval_50": {
+              "covered": false,
+              "score": 10.602839
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 17.2801
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 22.0252
+            }
+          }
+        },
+        "previous": 5059.69,
+        "current": 5290.53,
+        "quality": "Other locale quotes differ; paired locale specific",
+        "strict": true,
+        "source": "https://ph.investing.com/indices/kospi-historical-data",
+        "frozen_baseline": 5059.69
+      },
+      "csi300": {
+        "target_id": "csi300",
+        "group": "C",
+        "unit": "percent_return",
+        "observed_change": -0.937034,
+        "arms": {
+          "llm": {
+            "point": 0.15,
+            "prob": 0.51,
+            "actual_event": 0,
+            "point_error": -1.087034,
+            "abs_error": 1.087034,
+            "brier": 0.2601,
+            "interval_50": {
+              "covered": true,
+              "score": 4.4718
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 8.4966
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 10.9054
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 0,
+            "point_error": -0.937034,
+            "abs_error": 0.937034,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": true,
+              "score": 3.4398
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 6.536
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 8.3888
+            }
+          },
+          "hybrid": {
+            "point": -0.054,
+            "prob": 0.4914,
+            "actual_event": 0,
+            "point_error": -0.883034,
+            "abs_error": 0.883034,
+            "brier": 0.241474,
+            "interval_50": {
+              "covered": true,
+              "score": 3.4636
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 6.635
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 8.5054
+            }
+          }
+        },
+        "previous": 4054.28,
+        "current": 4016.29,
+        "quality": "Paired same locale Friday cash close",
+        "strict": true,
+        "source": "https://ph.investing.com/indices/csi300-historical-data",
+        "frozen_baseline": 4054.28
+      },
+      "gold": {
+        "target_id": "gold",
+        "group": "C",
+        "unit": "percent_return",
+        "observed_change": -4.533483,
+        "arms": {
+          "llm": {
+            "point": -0.9,
+            "prob": 0.45,
+            "actual_event": 0,
+            "point_error": -3.633483,
+            "abs_error": 3.633483,
+            "brier": 0.2025,
+            "interval_50": {
+              "covered": false,
+              "score": 7.431534
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 13.4948
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 17.3204
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 0,
+            "point_error": -4.533483,
+            "abs_error": 4.533483,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 12.670534
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 10.3806
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 13.3234
+            }
+          },
+          "hybrid": {
+            "point": -0.4577,
+            "prob": 0.4586,
+            "actual_event": 0,
+            "point_error": -4.075783,
+            "abs_error": 4.075783,
+            "brier": 0.210314,
+            "interval_50": {
+              "covered": false,
+              "score": 10.512934
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 10.9735
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 14.0542
+            }
+          }
+        },
+        "previous": 4066.63,
+        "current": 3882.27,
+        "quality": "Spot daily vendor closing timestamp, frozen prior used 4070.31; provisional source consistency",
+        "strict": true,
+        "source": "https://www.investing.com/currencies/xau-usd-historical-data",
+        "frozen_baseline": 4070.31
+      },
+      "wti": {
+        "target_id": "wti",
+        "group": "C",
+        "unit": "percent_return",
+        "observed_change": -2.289992,
+        "arms": {
+          "llm": {
+            "point": -1.8,
+            "prob": 0.43,
+            "actual_event": 0,
+            "point_error": -0.489992,
+            "abs_error": 0.489992,
+            "brier": 0.1849,
+            "interval_50": {
+              "covered": true,
+              "score": 11.925
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 22.6578
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 29.081
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 0,
+            "point_error": -2.289992,
+            "abs_error": 2.289992,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": true,
+              "score": 9.173
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 17.4292
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 22.37
+            }
+          },
+          "hybrid": {
+            "point": -0.4073,
+            "prob": 0.4746,
+            "actual_event": 0,
+            "point_error": -1.882692,
+            "abs_error": 1.882692,
+            "brier": 0.225245,
+            "interval_50": {
+              "covered": true,
+              "score": 10.8991
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 20.725
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 26.7062
+            }
+          }
+        },
+        "previous": 90.83,
+        "current": 88.75,
+        "quality": "CONTINUOUS futures provisional, Dec26 fixed contract not proved, frozen baseline 90.34 differs; conditional scoring only",
+        "strict": false,
+        "source": "https://www.investing.com/commodities/crude-oil-historical-data",
+        "frozen_baseline": 90.34
+      },
+      "usdjpy": {
+        "target_id": "usdjpy",
+        "group": "C",
+        "unit": "percent_return",
+        "observed_change": 0.902322,
+        "arms": {
+          "llm": {
+            "point": 0.25,
+            "prob": 0.54,
+            "actual_event": 1,
+            "point_error": 0.652322,
+            "abs_error": 0.652322,
+            "brier": 0.2116,
+            "interval_50": {
+              "covered": true,
+              "score": 2.445
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 4.6456
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 5.9626
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 1,
+            "point_error": 0.902322,
+            "abs_error": 0.902322,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": true,
+              "score": 1.956
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 3.7164
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 4.77
+            }
+          },
+          "hybrid": {
+            "point": 0.1183,
+            "prob": 0.5308,
+            "actual_event": 1,
+            "point_error": 0.784022,
+            "abs_error": 0.784022,
+            "brier": 0.220149,
+            "interval_50": {
+              "covered": true,
+              "score": 2.0432
+            },
+            "interval_80": {
+              "covered": true,
+              "score": 3.8875
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 4.9906
+            }
+          }
+        },
+        "previous": 158.48,
+        "current": 159.91,
+        "quality": "FX same provider Friday cutoff, alternative provider differs",
+        "strict": true,
+        "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+        "frozen_baseline": 158.48
+      },
+      "us10y": {
+        "target_id": "us10y",
+        "group": "C",
+        "unit": "basis_points",
+        "observed_change": 29,
+        "arms": {
+          "llm": {
+            "point": 3,
+            "prob": 0.54,
+            "actual_event": 1,
+            "point_error": 26,
+            "abs_error": 26,
+            "brier": 0.2116,
+            "interval_50": {
+              "covered": false,
+              "score": 77.0204
+            },
+            "interval_80": {
+              "covered": false,
+              "score": 54.952
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 65.7942
+            }
+          },
+          "statistical": {
+            "point": 0,
+            "prob": 0.5,
+            "actual_event": 1,
+            "point_error": 29,
+            "abs_error": 29,
+            "brier": 0.25,
+            "interval_50": {
+              "covered": false,
+              "score": 94.4164
+            },
+            "interval_80": {
+              "covered": false,
+              "score": 125.9616
+            },
+            "interval_90": {
+              "covered": false,
+              "score": 106.2814
+            }
+          },
+          "hybrid": {
+            "point": 3.1263,
+            "prob": 0.5692,
+            "actual_event": 1,
+            "point_error": 25.8737,
+            "abs_error": 25.8737,
+            "brier": 0.185589,
+            "interval_50": {
+              "covered": false,
+              "score": 78.9778
+            },
+            "interval_80": {
+              "covered": false,
+              "score": 75.4368
+            },
+            "interval_90": {
+              "covered": true,
+              "score": 59.0232
+            }
+          }
+        },
+        "previous": 4.86,
+        "current": 5.15,
+        "quality": "Official US Treasury par yield Nov6 Nov13, Wednesday Veterans Day bond holiday handled",
+        "strict": true,
+        "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+        "frozen_baseline": 4.86
+      }
+    }
+  },
+  "group_summary": {
+    "A": {
+      "all_conditional": {
+        "llm": {
+          "n": 5,
+          "mean_brier": 0.18456,
+          "coverage_50": null,
+          "coverage_80": 1,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_mom": {
+              "n": 2,
+              "mae": 0.15,
+              "rmse": 0.158114,
+              "mean_interval80_score": 1.3687
+            },
+            "percent_yoy": {
+              "n": 1,
+              "mae": 0.6,
+              "rmse": 0.6,
+              "mean_interval80_score": 1.9992
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 5,
+              "rmse": 5,
+              "mean_interval80_score": 36.9086
+            },
+            "index_points": {
+              "n": 1,
+              "mae": 0.01,
+              "rmse": 0.01,
+              "mean_interval80_score": 1.784
+            }
+          },
+          "brier_skill_vs_statistical": 0.26176
+        },
+        "statistical": {
+          "n": 5,
+          "mean_brier": 0.25,
+          "coverage_50": null,
+          "coverage_80": 0.8,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_mom": {
+              "n": 2,
+              "mae": 0.6,
+              "rmse": 0.72111,
+              "mean_interval80_score": 2.1676
+            },
+            "percent_yoy": {
+              "n": 1,
+              "mae": 0.2,
+              "rmse": 0.2,
+              "mean_interval80_score": 1.666
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 11,
+              "rmse": 11,
+              "mean_interval80_score": 30.7572
+            },
+            "index_points": {
+              "n": 1,
+              "mae": 0.18,
+              "rmse": 0.18,
+              "mean_interval80_score": 1.4866
+            }
+          },
+          "brier_skill_vs_statistical": 0
+        },
+        "hybrid": {
+          "n": 5,
+          "mean_brier": 0.193777,
+          "coverage_50": null,
+          "coverage_80": 1,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_mom": {
+              "n": 2,
+              "mae": 0.2,
+              "rmse": 0.215407,
+              "mean_interval80_score": 1.1406
+            },
+            "percent_yoy": {
+              "n": 1,
+              "mae": 0.5,
+              "rmse": 0.5,
+              "mean_interval80_score": 1.666
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 8,
+              "rmse": 8,
+              "mean_interval80_score": 30.7572
+            },
+            "index_points": {
+              "n": 1,
+              "mae": 0.08,
+              "rmse": 0.08,
+              "mean_interval80_score": 1.4866
+            }
+          },
+          "brier_skill_vs_statistical": 0.224892
+        }
+      },
+      "strict_only": {
+        "llm": {
+          "n": 5,
+          "mean_brier": 0.18456,
+          "coverage_50": null,
+          "coverage_80": 1,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_mom": {
+              "n": 2,
+              "mae": 0.15,
+              "rmse": 0.158114,
+              "mean_interval80_score": 1.3687
+            },
+            "percent_yoy": {
+              "n": 1,
+              "mae": 0.6,
+              "rmse": 0.6,
+              "mean_interval80_score": 1.9992
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 5,
+              "rmse": 5,
+              "mean_interval80_score": 36.9086
+            },
+            "index_points": {
+              "n": 1,
+              "mae": 0.01,
+              "rmse": 0.01,
+              "mean_interval80_score": 1.784
+            }
+          },
+          "brier_skill_vs_statistical": 0.26176
+        },
+        "statistical": {
+          "n": 5,
+          "mean_brier": 0.25,
+          "coverage_50": null,
+          "coverage_80": 0.8,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_mom": {
+              "n": 2,
+              "mae": 0.6,
+              "rmse": 0.72111,
+              "mean_interval80_score": 2.1676
+            },
+            "percent_yoy": {
+              "n": 1,
+              "mae": 0.2,
+              "rmse": 0.2,
+              "mean_interval80_score": 1.666
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 11,
+              "rmse": 11,
+              "mean_interval80_score": 30.7572
+            },
+            "index_points": {
+              "n": 1,
+              "mae": 0.18,
+              "rmse": 0.18,
+              "mean_interval80_score": 1.4866
+            }
+          },
+          "brier_skill_vs_statistical": 0
+        },
+        "hybrid": {
+          "n": 5,
+          "mean_brier": 0.193777,
+          "coverage_50": null,
+          "coverage_80": 1,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_mom": {
+              "n": 2,
+              "mae": 0.2,
+              "rmse": 0.215407,
+              "mean_interval80_score": 1.1406
+            },
+            "percent_yoy": {
+              "n": 1,
+              "mae": 0.5,
+              "rmse": 0.5,
+              "mean_interval80_score": 1.666
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 8,
+              "rmse": 8,
+              "mean_interval80_score": 30.7572
+            },
+            "index_points": {
+              "n": 1,
+              "mae": 0.08,
+              "rmse": 0.08,
+              "mean_interval80_score": 1.4866
+            }
+          },
+          "brier_skill_vs_statistical": 0.224892
+        }
+      },
+      "count": 5,
+      "strict_count": 5
+    },
+    "B": {
+      "all_conditional": {
+        "llm": {
+          "n": 5,
+          "mean_brier": 0.22852,
+          "coverage_50": null,
+          "coverage_80": 1,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent": {
+              "n": 2,
+              "mae": 2.207637,
+              "rmse": 2.787782,
+              "mean_interval80_score": 8.9
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 16,
+              "rmse": 16,
+              "mean_interval80_score": 30
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.4,
+              "rmse": 2.4,
+              "mean_interval80_score": 5
+            },
+            "binary_0or1": {
+              "n": 1,
+              "mae": 0.04,
+              "rmse": 0.04,
+              "mean_interval80_score": 0
+            }
+          },
+          "brier_skill_vs_statistical": -0.026037
+        },
+        "statistical": {
+          "n": 5,
+          "mean_brier": 0.222721,
+          "coverage_50": null,
+          "coverage_80": 0.8,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent": {
+              "n": 2,
+              "mae": 1.958637,
+              "rmse": 2.304498,
+              "mean_interval80_score": 6.9282
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 16.2245,
+              "rmse": 16.2245,
+              "mean_interval80_score": 51.1201
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 1.8366,
+              "rmse": 1.8366,
+              "mean_interval80_score": 3
+            },
+            "binary_0or1": {
+              "n": 1,
+              "mae": 0.0403,
+              "rmse": 0.0403,
+              "mean_interval80_score": 0
+            }
+          },
+          "brier_skill_vs_statistical": 0
+        },
+        "hybrid": {
+          "n": 5,
+          "mean_brier": 0.215892,
+          "coverage_50": null,
+          "coverage_80": 1,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent": {
+              "n": 2,
+              "mae": 2.230937,
+              "rmse": 2.962227,
+              "mean_interval80_score": 8.28055
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 14.2904,
+              "rmse": 14.2904,
+              "mean_interval80_score": 27.6957
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.2404,
+              "rmse": 2.2404,
+              "mean_interval80_score": 4
+            },
+            "binary_0or1": {
+              "n": 1,
+              "mae": 0.0829,
+              "rmse": 0.0829,
+              "mean_interval80_score": 0
+            }
+          },
+          "brier_skill_vs_statistical": 0.030662
+        }
+      },
+      "strict_only": {
+        "llm": {
+          "n": 3,
+          "mean_brier": 0.2758,
+          "coverage_50": null,
+          "coverage_80": 1,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent": {
+              "n": 1,
+              "mae": 0.505266,
+              "rmse": 0.505266,
+              "mean_interval80_score": 4.6
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 16,
+              "rmse": 16,
+              "mean_interval80_score": 30
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.4,
+              "rmse": 2.4,
+              "mean_interval80_score": 5
+            }
+          },
+          "brier_skill_vs_statistical": 0.077746
+        },
+        "statistical": {
+          "n": 3,
+          "mean_brier": 0.29905,
+          "coverage_50": null,
+          "coverage_80": 0.666667,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent": {
+              "n": 1,
+              "mae": 0.744366,
+              "rmse": 0.744366,
+              "mean_interval80_score": 3.362
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 16.2245,
+              "rmse": 16.2245,
+              "mean_interval80_score": 51.1201
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 1.8366,
+              "rmse": 1.8366,
+              "mean_interval80_score": 3
+            }
+          },
+          "brier_skill_vs_statistical": 0
+        },
+        "hybrid": {
+          "n": 3,
+          "mean_brier": 0.261657,
+          "coverage_50": null,
+          "coverage_80": 1,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent": {
+              "n": 1,
+              "mae": 0.282166,
+              "rmse": 0.282166,
+              "mean_interval80_score": 4.1966
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 14.2904,
+              "rmse": 14.2904,
+              "mean_interval80_score": 27.6957
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.2404,
+              "rmse": 2.2404,
+              "mean_interval80_score": 4
+            }
+          },
+          "brier_skill_vs_statistical": 0.125039
+        }
+      },
+      "count": 5,
+      "strict_count": 3
+    },
+    "C": {
+      "all_conditional": {
+        "llm": {
+          "n": 10,
+          "mean_brier": 0.20858,
+          "coverage_50": null,
+          "coverage_80": 0.9,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_return": {
+              "n": 9,
+              "mae": 2.273112,
+              "rmse": 2.647566,
+              "mean_interval80_score": 12.126333
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 26,
+              "rmse": 26,
+              "mean_interval80_score": 54.952
+            }
+          },
+          "brier_skill_vs_statistical": 0.16568
+        },
+        "statistical": {
+          "n": 10,
+          "mean_brier": 0.25,
+          "coverage_50": null,
+          "coverage_80": 0.7,
+          "coverage_90": 0.9,
+          "per_unit": {
+            "percent_return": {
+              "n": 9,
+              "mae": 3.128668,
+              "rmse": 3.569696,
+              "mean_interval80_score": 10.707912
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 29,
+              "rmse": 29,
+              "mean_interval80_score": 125.9616
+            }
+          },
+          "brier_skill_vs_statistical": 0
+        },
+        "hybrid": {
+          "n": 10,
+          "mean_brier": 0.262489,
+          "coverage_50": null,
+          "coverage_80": 0.7,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_return": {
+              "n": 9,
+              "mae": 3.308168,
+              "rmse": 3.800247,
+              "mean_interval80_score": 11.502357
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 25.8737,
+              "rmse": 25.8737,
+              "mean_interval80_score": 75.4368
+            }
+          },
+          "brier_skill_vs_statistical": -0.049956
+        }
+      },
+      "strict_only": {
+        "llm": {
+          "n": 9,
+          "mean_brier": 0.211211,
+          "coverage_50": null,
+          "coverage_80": 0.888889,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_return": {
+              "n": 8,
+              "mae": 2.496002,
+              "rmse": 2.802819,
+              "mean_interval80_score": 10.8099
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 26,
+              "rmse": 26,
+              "mean_interval80_score": 54.952
+            }
+          },
+          "brier_skill_vs_statistical": 0.155156
+        },
+        "statistical": {
+          "n": 9,
+          "mean_brier": 0.25,
+          "coverage_50": null,
+          "coverage_80": 0.666667,
+          "coverage_90": 0.888889,
+          "per_unit": {
+            "percent_return": {
+              "n": 8,
+              "mae": 3.233502,
+              "rmse": 3.698657,
+              "mean_interval80_score": 9.867752
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 29,
+              "rmse": 29,
+              "mean_interval80_score": 125.9616
+            }
+          },
+          "brier_skill_vs_statistical": 0
+        },
+        "hybrid": {
+          "n": 9,
+          "mean_brier": 0.266627,
+          "coverage_50": null,
+          "coverage_80": 0.666667,
+          "coverage_90": 1,
+          "per_unit": {
+            "percent_return": {
+              "n": 8,
+              "mae": 3.486352,
+              "rmse": 3.97543,
+              "mean_interval80_score": 10.349527
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 25.8737,
+              "rmse": 25.8737,
+              "mean_interval80_score": 75.4368
+            }
+          },
+          "brier_skill_vs_statistical": -0.066508
+        }
+      },
+      "count": 10,
+      "strict_count": 9
+    }
+  },
+  "missing": [
+    {
+      "group": "A",
+      "id": "us_cpi_yoy_nov10",
+      "reason": "BLS explicitly could not publish October 2026 year-on-year CPI because October 2025 was unobserved during appropriations lapse"
+    },
+    {
+      "group": "A",
+      "id": "us_core_cpi_yoy_nov10",
+      "reason": "BLS explicitly could not publish October 2026 core year-on-year CPI because October 2025 data unavailable"
+    }
+  ],
+  "quality": "WTI and the derived B events are provisional; group-B outcomes overlap with group C; statistical baseline is zero-drift/assumed width; no statistical significance or post-hoc refit",
+  "measurement": "C returns (new/old-1)*100; Treasury 10Y (new-old)*100 basis points; A value minus original first-release baseline; B magnitude, count, binary event",
+  "interval_score_definition": "Winkler score: (upper-lower)+(2/alpha)*max(0,lower-observed)+(2/alpha)*max(0,observed-upper), alpha=0.2 for 80% central interval"
+}
