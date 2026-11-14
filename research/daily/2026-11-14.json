@@ -1,0 +1,176 @@
+{
+  "record_type": "FinanceSim_daily_research",
+  "date": "2026-11-14",
+  "timezone": "Asia/Tokyo",
+  "session_start_from_run_context": "2026-11-14T18:47:59+09:00",
+  "access_time_policy": "Primary-source pages accessed on 2026-11-14 after the 12:00 JST formal report; source-fetch tool does not return reliable second-level access timestamps. Commit timestamps on GitHub establish public availability of new archives. No Nov15–20 outcomes used.",
+  "post_weekly": true,
+  "frozen_weekly_forecast": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "frozen_weekly_original": "research/weekly/2026-11-14-forecast.json",
+  "baseline_commit_before_research": "08e0b731d693cfe72807d8d958c65504a2ab8546",
+  "inputs_and_code_read": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-07.json",
+    "research/daily/2026-11-08.json",
+    "research/daily/2026-11-09.json",
+    "research/daily/2026-11-10.json",
+    "research/daily/2026-11-11.json",
+    "research/daily/2026-11-12.json",
+    "research/daily/2026-11-13.json",
+    "research/weekly/2026-11-07-forecast.json",
+    "research/weekly/2026-11-14-verification-correction01.json",
+    "research/weekly/2026-11-14-forecast.json",
+    "research/weekly/2026-11-14-forecast-corrected-b01.json",
+    "research/inputs/2026-11-14-1200-snapshot.json",
+    "research/inputs/2026-11-14-settlement-sources.json",
+    "research/experiments/2026-11-14-cumulative-26wk-ledger.json",
+    "research/experiments/2026-11-08-breadth-dependence-decomposition.json",
+    "research/hypotheses/2026-11-07-1930-cross-market-tail-dependence.json",
+    "research/scripts/generate_2026_11_14.js",
+    "research/scripts/replay_2026_11_14_corrected_b01.js",
+    "research/scripts/cumulative_2026_11_14.js",
+    "financesim/scenarios.py",
+    "financesim/engine.py",
+    ".github/workflows/tests.yml"
+  ],
+  "latest_weekly_state": {
+    "forecast_cutoff": "2026-11-14T12:00:00+09:00",
+    "next_target_week": "2026-11-16 through 2026-11-20",
+    "arms": [
+      "llm",
+      "statistical",
+      "hybrid"
+    ],
+    "target_counts": {
+      "A": 6,
+      "B": 5,
+      "C": 12
+    },
+    "original_archive_error": "Original Nov14 Group B joint Monte Carlo risk was contaminated by in-place sorting of per-asset draws; corrected risk-only append-only archive must be used. All A and C remain from original. The earlier broken file is preserved.",
+    "ci_at_start": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/43550028523",
+    "cumulative_sample_counts_through_Nov13": {
+      "A": 20,
+      "B": 8,
+      "C": 29
+    },
+    "original_C_forecast_quality_warning": "WTI continuous futures lacks authenticated fixed-contract NYMEX reference; not a definitive strict performance score."
+  },
+  "source_observations": [
+    {
+      "id": "JP_Q3_GDP_FIRST_PRELIMINARY_RELEASE_SCHEDULE",
+      "producer": "Economic and Social Research Institute / Cabinet Office of Japan",
+      "expected_reference_period": "2026 Q3 July–September",
+      "scheduled_at": "2026-11-16T08:50:00+09:00",
+      "data_status_at_research": "future release, no Q3 actual",
+      "source_url": "https://www.esri.cao.go.jp/jp/sna/kouhyou/kouhyou_top.html",
+      "archive_at_noon": "Nov14 weekly forward A omitted Japan GDP with explicitly stated insufficient authenticated first-vintage baseline; do not add it to frozen predictions retrospectively."
+    },
+    {
+      "id": "US_SEP_IMPORT_EXPORT_PRICE_FIRST_PRINT_BASELINES",
+      "producer": "US Bureau of Labor Statistics",
+      "reference_period": "2026-09",
+      "released_at": "2026-10-16T08:30:00-04:00",
+      "import_price_mom_percent": 1.1,
+      "export_price_mom_percent": 2.2,
+      "first_release_original_url": "https://www.bls.gov/news.release/archives/ximpim_10162026.htm",
+      "next_reference_period": "2026-10",
+      "next_scheduled_at": "2026-11-17T08:30:00-05:00",
+      "schedule_url": "https://www.bls.gov/schedule/news_release/ximpim.htm",
+      "baseline_validation": "Both values match pre-registered Nov14 source input and are from the explicit original October16 archive. The future Nov17 October first-print is still absent."
+    },
+    {
+      "id": "UK_SEP_CPI_FIRST_PRINT_BASELINES",
+      "producer": "UK Office for National Statistics",
+      "reference_period": "2026-09",
+      "released_on": "2026-10-21",
+      "release_time_status": "Clock time not authenticated in the archived previous release; date confirmed",
+      "cpi_yoy_percent": 3.5,
+      "cpi_mom_percent": 0.4,
+      "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026",
+      "next_reference_period": "2026-10",
+      "next_scheduled_at": "2026-11-18T07:00:00+00:00",
+      "schedule_url": "https://www.ons.gov.uk/releasecalendar?highlight=true&keywords=inflation&limit=10&page=1&release-type=type-upcoming&sort=date-newest",
+      "baseline_validation": "Both prior first-print baselines match frozen Nov14 source input; future October outcome not yet published."
+    },
+    {
+      "id": "CN_NBS_NOV16_CALENDAR_SLOTS",
+      "producer": "National Bureau of Statistics China",
+      "scheduled_local_times": [
+        "2026-11-16T09:30:00+08:00",
+        "2026-11-16T10:00:00+08:00"
+      ],
+      "source_url": "https://www.stats.gov.cn/sj/",
+      "release_name_status": "Landing-page text did not identify both event names unambiguously; future macro updates to be monitored but not assigned an unverified numerical forecast."
+    }
+  ],
+  "quantified_features": {
+    "nov14_main_seed": 20261114,
+    "monte_carlo_draws_per_seed": 20000,
+    "number_of_seeds": 6,
+    "total_simulated_paths_all_seeds": 120000,
+    "frozen_corrected_hybrid_six_index_breadth_probability": 0.3295,
+    "frozen_corrected_statistical_breadth_probability": 0.2631,
+    "shadow_independent_same_hybrid_marginals_breadth_probability": 0.3130893908385299,
+    "shadow_independent_same_statistical_marginals_breadth_probability": 0.264784436166879,
+    "common_event_hybrid_residual_percentage_points": 1.636060916147014,
+    "statistical_mc_residual_percentage_points": -0.1684436166879022,
+    "hybrid_minus_statistical_total_percentage_points": 6.635000000000002,
+    "contribution_from_shifted_marginals_percentage_points": 4.830495467165086,
+    "contribution_from_residual_crossmarket_dependence_difference_percentage_points": 1.804504532834915,
+    "robustness_range_dependence_residual_percentage_points": [
+      1.5820683528139978,
+      2.0114871153305347
+    ],
+    "previous_Nov7_exploratory_dependence_residual_percentage_points": 1.8005188531122873
+  },
+  "executed_experiment": {
+    "path": "research/experiments/2026-11-14-breadth-shadow-preoutcome.json",
+    "code": "research/scripts/audit_2026_11_14_breadth_shadow.js",
+    "snapshot": "research/inputs/2026-11-14-1200-snapshot.json",
+    "algorithm": "Exact seeded replay of the 12-market 5-common-event simulation with correct path-level cross-asset alignment, then exact Poisson-binomial P(>=3 of six indices below -1.5%) calculated using the identical simulated marginal tail rates. Five alternate seeds assess model sampling fluctuations.",
+    "seed": 20261114,
+    "draws_per_seed": 20000,
+    "robustness_seeds": [
+      20261115,
+      20261116,
+      20261117,
+      20261118,
+      20261119
+    ],
+    "script_commit": "9530694277021d532bd71424071c7425952375f5",
+    "result_commit": "27c8ffcce73705c9d4618afd648860771cb00353",
+    "test_commit": "fd5e931167bcdc707d1218f3752d6147c4573747",
+    "ci_url": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/43582558558",
+    "ci_status": "success both Python 3.10 and 3.12. Exact archived JSON byte comparison in workflow passed.",
+    "actual_execution": true,
+    "model_fitted_today": false,
+    "market_outcomes_for_future_week": false
+  },
+  "interpretation_and_counter_evidence": [
+    {
+      "question": "H20261107 cross-market tail dependence",
+      "finding": "The Nov14 hybrid six-index >=3-downside event P≈32.95% drops to 31.31% when preserving modeled marginals but removing dependence; common-shock dependence contributes about +1.64 percentage points. Similar to Nov7's +1.80pp model diagnostic, even after the Group B sorting bug was fixed. Differences between hybrid and zero-drift models are mainly per-index marginal downside rates rather than correlation. This is evidence about mechanism of assumed simulation, NOT real-market correlations or forecast skill.",
+      "confidence": "conditional computational result only; statistical calibration unknown"
+    },
+    {
+      "question": "Q001/Q003 probability skill",
+      "finding": "Cumulative three-week live samples through Nov13: A 20, B 8, C 29; conditional Brier score differences are still too small and observations too dependent to promote the hybrid model. Do not count the six markets in one week as six independent co-crash events.",
+      "confidence": "early and exploratory"
+    },
+    {
+      "question": "Release-vintage discipline",
+      "finding": "Both frozen US September import/export MoM baselines and UK September CPI MoM/YoY bases now independently matched to archived original primary first releases. Future CPI/import/export first prints remain outside the as-of information set.",
+      "confidence": "high for first-release baseline numbers, lower for exact UK first-release clock"
+    }
+  ],
+  "next_actions": [
+    "Before Fri Nov20 market sessions end, do not alter Nov14 original and corrected-B archives. Retain shadow independent-marginal event probability 0.3130893908385299 as separately timestamped post-noon baseline, never present it as the noon three-arm official forecast.",
+    "On Japan Monday Nov16 08:50 JST, fetch 2026Q3 first preliminary GDP, label it new observed evidence, not a scored target omitted from original A.",
+    "On Nov17 08:30 EST check BLS October import/export price MoM first release and revisions to September but compare to frozen September first prints.",
+    "On Nov18 07:00 GMT check October UK CPI first print and corresponding pre-registered baselines; Nov19 check DOL claims and Dallas Fed WEI.",
+    "Compare original corrected common-shock breadth event Brier against the independently timestamped pre-outcome Poisson-binomial shadow benchmark after all six Nov20 local Friday closes. Treat WTI-dependent events and continuous futures as provisional until the contract/settlement source issue is resolved.",
+    "Continue the same paired-design study for 26 forward weeks without post-selection of winning model or changing existing forecasts."
+  ],
+  "restrictions": "No original forecast, old settlement, or old hypothesis overwritten; no future Nov15–Nov20 observations; no synthetic-data market skill claims; no mixed-unit MAE; no trade recommendation."
+}
