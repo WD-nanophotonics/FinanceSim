@@ -1,0 +1,98 @@
+{
+  "record_type": "conditional_breadth_shadow_baseline_post_noon_pre_outcome",
+  "executed": true,
+  "forecast_reference": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "snapshot_reference": "research/inputs/2026-11-14-1200-snapshot.json",
+  "as_of_market_inputs": "2026-11-13 local Friday closes and official rate observations",
+  "model_seed": 20261114,
+  "draws_each_seed": 20000,
+  "definition": "At least 3 of 6 equity Friday Nov20 returns vs Friday Nov13 <= -1.5%; identical local closing convention",
+  "method": "Replay seeded centered-Bernoulli common shock 12-market Monte Carlo in original generator order, preserve draw correlation, compute six per-market P(return<=-1.5). Exact Poisson-binomial P(count>=3) is SAME-MARGINAL INDEPENDENCE shadow benchmark. Compare to common-shock event P from archived corrected Nov14 forecast.",
+  "main_seed": {
+    "seed": 20261114,
+    "n": 20000,
+    "shared_hybrid": 0.32945,
+    "shared_statistical": 0.2631,
+    "independent_hybrid": 0.3130893908385299,
+    "independent_statistical": 0.264784436166879,
+    "hybrid_dependence_residual_pp": 1.636060916147014,
+    "statistical_residual_pp": -0.1684436166879022,
+    "between_model_total_gap_pp": 6.635000000000002,
+    "marginal_shift_component_pp": 4.830495467165086,
+    "conditional_marginal_p_hybrid": {
+      "sp500": 0.28415,
+      "nasdaq100": 0.3979,
+      "stoxx600": 0.2249,
+      "nikkei225": 0.3773,
+      "kospi": 0.4348,
+      "csi300": 0.26655
+    },
+    "conditional_marginal_p_statistical": {
+      "sp500": 0.2484,
+      "nasdaq100": 0.3423,
+      "stoxx600": 0.20935,
+      "nikkei225": 0.35725,
+      "kospi": 0.4006,
+      "csi300": 0.27725
+    },
+    "joint_sp_down2_wti_up5_hybrid": 0.06195,
+    "joint_sp_down2_wti_up5_statistical": 0.04375,
+    "independent_sp_wti_hybrid": 0.057246875
+  },
+  "alternate_seeds": [
+    {
+      "seed": 20261115,
+      "n": 20000,
+      "shared_hybrid": 0.32805,
+      "independent_hybrid": 0.30930604046912563,
+      "hybrid_dependence_residual_pp": 1.8743959530874377,
+      "shared_statistical": 0.26125,
+      "independent_statistical": 0.2628397038205159
+    },
+    {
+      "seed": 20261116,
+      "n": 20000,
+      "shared_hybrid": 0.3317,
+      "independent_hybrid": 0.31587931647186,
+      "hybrid_dependence_residual_pp": 1.5820683528139978,
+      "shared_statistical": 0.27005,
+      "independent_statistical": 0.2690914629242381
+    },
+    {
+      "seed": 20261117,
+      "n": 20000,
+      "shared_hybrid": 0.33255,
+      "independent_hybrid": 0.31323399373057914,
+      "hybrid_dependence_residual_pp": 1.9316006269420871,
+      "shared_statistical": 0.2656,
+      "independent_statistical": 0.26566790342317237
+    },
+    {
+      "seed": 20261118,
+      "n": 20000,
+      "shared_hybrid": 0.32355,
+      "independent_hybrid": 0.3053232867221259,
+      "hybrid_dependence_residual_pp": 1.8226713277874118,
+      "shared_statistical": 0.2682,
+      "independent_statistical": 0.26794910077605655
+    },
+    {
+      "seed": 20261119,
+      "n": 20000,
+      "shared_hybrid": 0.3363,
+      "independent_hybrid": 0.31618512884669464,
+      "hybrid_dependence_residual_pp": 2.0114871153305347,
+      "shared_statistical": 0.264,
+      "independent_statistical": 0.26400578412602976
+    }
+  ],
+  "registration": "This is a Saturday post-12:00 shadow benchmark written before Nov16-Nov20 future outcomes. It is NOT the original Saturday noon frozen forecast. Append-only, no retrospective redefinition.",
+  "risk_quality": "WTI joint risk conditional only; futures contract matching not authenticated. The six-index breadth excludes WTI.",
+  "limitations": [
+    "No estimated historical covariance or calibrated return process; all probabilities conditional on assumed shocks and volatilities.",
+    "Independent shadow probability shares simulated marginals but is not an independently fitted statistical model.",
+    "20k draws x 6 seeds measure Monte Carlo seed sensitivity only, not sampling uncertainty from weekly markets.",
+    "Asian/European/U.S. session closures staggered, common-shock model lacks event-time exposure mapping.",
+    "This experiment must remain separate from the original 12:00 three-arm archive and may not be used to claim historic weekly skill."
+  ]
+}
