@@ -1,0 +1,142 @@
+{
+  "record_type": "FinanceSim_weekly_observations_first_vintage_and_matched_vendor",
+  "week": "2026-11-06/2026-11-13",
+  "access_date": "2026-11-14",
+  "information_cutoff": "2026-11-14T12:00:00+09:00",
+  "source_policy": "Official primary first release for A and Treasury; Friday matched publisher/vendor history for C; WTI and matching-vendor/source differences explicitly provisional.",
+  "forecast_file": "research/weekly/2026-11-07-forecast.json",
+  "macro": {
+    "us_cpi_yoy_nov10": {
+      "status": "not_released",
+      "reason": "BLS explicitly could not publish October 2026 year-on-year CPI because October 2025 was unobserved during appropriations lapse",
+      "release_at": "2026-11-10T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+    },
+    "us_core_cpi_yoy_nov10": {
+      "status": "not_released",
+      "reason": "BLS explicitly could not publish October 2026 core year-on-year CPI because October 2025 data unavailable",
+      "release_at": "2026-11-10T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+    },
+    "us_cpi_mom_nov10": {
+      "status": "first_release",
+      "value": 0.4,
+      "release_at": "2026-11-10T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+    },
+    "us_ppi_yoy_nov13": {
+      "status": "first_release",
+      "value": 6.5,
+      "release_at": "2026-11-13T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ppi_11132026.htm"
+    },
+    "us_ppi_mom_nov13": {
+      "status": "first_release",
+      "value": 0.3,
+      "release_at": "2026-11-13T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ppi_11132026.htm",
+      "prior_vintage_note": "Sep revised +1.4% in Nov13 report; use originally frozen +1.3%"
+    },
+    "us_claims_nov12": {
+      "status": "first_release",
+      "value": 200,
+      "release_at": "2026-11-12T08:30:00-05:00",
+      "source": "https://www.dol.gov/newsroom/releases/eta/eta20261112",
+      "prior_vintage_note": "Previous week first 189k; Nov12 publication revised previous to 191k. First-to-first change +11k"
+    },
+    "dallas_wei_nov12": {
+      "status": "first_release",
+      "value": 3.29,
+      "release_at": "2026-11-12T10:30:00-06:00",
+      "source": "https://www.dallasfed.org/research/wei",
+      "prior_vintage_note": "Nov12 web page currently shows revised previous 3.48, frozen original previous 3.47"
+    }
+  },
+  "market": {
+    "sp500": {
+      "old": 7376.86,
+      "new": 7561.67,
+      "unit": "index",
+      "source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+      "quality": "Matched Yahoo Friday Nov6 and Nov13; Investing locale reports conflicting Nov13 snapshot and earlier archive reference 7376.92 differs by 0.06",
+      "strict": true
+    },
+    "nasdaq100": {
+      "old": 26989.99,
+      "new": 27943.74,
+      "unit": "index",
+      "source": "https://ph.investing.com/indices/nq-100-historical-data",
+      "quality": "Paired same locale closes",
+      "strict": true
+    },
+    "stoxx600": {
+      "old": 648.33,
+      "new": 664.14,
+      "unit": "index",
+      "source": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "quality": "Paired vendor; prior frozen reference 648.34 0.01 point discrepancy",
+      "strict": true
+    },
+    "nikkei225": {
+      "old": 57434.77,
+      "new": 61142.35,
+      "unit": "index",
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "quality": "Issuer same Friday 15:30 JST",
+      "strict": true
+    },
+    "kospi": {
+      "old": 5059.69,
+      "new": 5290.53,
+      "unit": "index",
+      "source": "https://ph.investing.com/indices/kospi-historical-data",
+      "quality": "Other locale quotes differ; paired locale specific",
+      "strict": true
+    },
+    "csi300": {
+      "old": 4054.28,
+      "new": 4016.29,
+      "unit": "index",
+      "source": "https://ph.investing.com/indices/csi300-historical-data",
+      "quality": "Paired same locale Friday cash close",
+      "strict": true
+    },
+    "gold": {
+      "old": 4066.63,
+      "new": 3882.27,
+      "unit": "USD/oz",
+      "source": "https://www.investing.com/currencies/xau-usd-historical-data",
+      "quality": "Spot daily vendor closing timestamp, frozen prior used 4070.31; provisional source consistency",
+      "strict": true
+    },
+    "wti": {
+      "old": 90.83,
+      "new": 88.75,
+      "unit": "USD/bbl",
+      "source": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "quality": "CONTINUOUS futures provisional, Dec26 fixed contract not proved, frozen baseline 90.34 differs; conditional scoring only",
+      "strict": false
+    },
+    "usdjpy": {
+      "old": 158.48,
+      "new": 159.91,
+      "unit": "JPY/USD",
+      "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "quality": "FX same provider Friday cutoff, alternative provider differs",
+      "strict": true
+    },
+    "us10y": {
+      "old": 4.86,
+      "new": 5.15,
+      "unit": "percent_yield",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "quality": "Official US Treasury par yield Nov6 Nov13, Wednesday Veterans Day bond holiday handled",
+      "strict": true
+    }
+  },
+  "extra_market_sources": [
+    "https://apnews.com/article/12c1e8155fb85c3c7b09e058ed6d3c74",
+    "https://www.reuters.com/business/nasdaq-futures-dip-nvidia-tumult-keeps-investors-edge-2026-11-13/"
+  ],
+  "limitation": "No claim that vendor quotes are official exchange settle when not verified; deterministic conditional scores disclosed separately."
+}
