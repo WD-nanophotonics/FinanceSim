@@ -97,3 +97,7 @@ jobs:
           assert expected['group_summary']['C']['strict_count']==9
           print('Nov14 first-release and market score replay matches append-only artifact')
           PY
+      - name: Reproduce cumulative 26-week ledger through Nov14
+        run: |
+          node research/scripts/cumulative_2026_11_14.js > /tmp/nov14_cumulative.json
+          cmp research/experiments/2026-11-14-cumulative-26wk-ledger.json /tmp/nov14_cumulative.json
