@@ -101,3 +101,7 @@ jobs:
         run: |
           node research/scripts/cumulative_2026_11_14.js > /tmp/nov14_cumulative.json
           cmp research/experiments/2026-11-14-cumulative-26wk-ledger.json /tmp/nov14_cumulative.json
+      - name: Reproduce Nov14 post-noon same-marginals six-equity shadow benchmark
+        run: |
+          node research/scripts/audit_2026_11_14_breadth_shadow.js > /tmp/nov14_shadow.json
+          cmp research/experiments/2026-11-14-breadth-shadow-preoutcome.json /tmp/nov14_shadow.json
