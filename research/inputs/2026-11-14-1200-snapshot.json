@@ -1,0 +1,326 @@
+{
+  "record_type": "FinanceSim_frozen_input_snapshot",
+  "scheduled_cutoff": "2026-11-14T12:00:00+09:00",
+  "last_observation_date": "2026-11-13",
+  "compilation_policy": "Only source observations from Nov13 or earlier. Actual Git commit timestamp proves publication, not scheduled cutoff. All model probabilities subjective and uncalibrated.",
+  "prior_frozen": "research/weekly/2026-11-07-forecast.json",
+  "model_source_commit": "34e1ef694",
+  "seed": 20261114,
+  "draws": 20000,
+  "market": {
+    "sp500": {
+      "name": "S&P 500",
+      "base": 7561.67,
+      "unit": "index",
+      "sigma": 2.2,
+      "llm": 0.15,
+      "llmp": 0.52,
+      "hybrid": -0.12,
+      "source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+      "quality": "matched Yahoo Nov6/Nov13; different Investing snapshot conflicts"
+    },
+    "nasdaq100": {
+      "name": "NASDAQ 100",
+      "base": 27943.74,
+      "unit": "index",
+      "sigma": 3.8,
+      "llm": 0.35,
+      "llmp": 0.53,
+      "hybrid": -0.35,
+      "source": "https://ph.investing.com/indices/nq-100-historical-data"
+    },
+    "stoxx600": {
+      "name": "STOXX 600",
+      "base": 664.14,
+      "unit": "index",
+      "sigma": 1.85,
+      "llm": 0.25,
+      "llmp": 0.53,
+      "hybrid": 0.02,
+      "source": "https://www.investing.com/indices/stoxx-600-historical-data"
+    },
+    "nikkei225": {
+      "name": "Nikkei 225",
+      "base": 61142.35,
+      "unit": "index",
+      "sigma": 4.1,
+      "llm": -0.3,
+      "llmp": 0.47,
+      "hybrid": -0.22,
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data"
+    },
+    "kospi": {
+      "name": "KOSPI",
+      "base": 5290.53,
+      "unit": "index",
+      "sigma": 6,
+      "llm": -0.3,
+      "llmp": 0.47,
+      "hybrid": -0.4,
+      "source": "https://ph.investing.com/indices/kospi-historical-data",
+      "quality": "paired ph.investing Nov13 5290.53; other locale snapshot differs"
+    },
+    "csi300": {
+      "name": "CSI 300",
+      "base": 4016.29,
+      "unit": "index",
+      "sigma": 2.55,
+      "llm": 0.2,
+      "llmp": 0.52,
+      "hybrid": 0.1,
+      "source": "https://ph.investing.com/indices/csi300-historical-data"
+    },
+    "gold": {
+      "name": "XAU/USD spot",
+      "base": 3882.27,
+      "unit": "USD/oz",
+      "sigma": 4.05,
+      "llm": 0.7,
+      "llmp": 0.56,
+      "hybrid": 0.5,
+      "source": "https://www.investing.com/currencies/xau-usd-historical-data",
+      "quality": "vendor-specific Friday close, not universal official fixing"
+    },
+    "wti": {
+      "name": "WTI continuous futures provisional",
+      "base": 88.75,
+      "unit": "USD/bbl",
+      "sigma": 6.8,
+      "llm": 0.9,
+      "llmp": 0.54,
+      "hybrid": 0.2,
+      "source": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "quality": "contract identity unverified; must not score as official fixed-contract NYMEX settlement"
+    },
+    "usdjpy": {
+      "name": "USD/JPY",
+      "base": 159.91,
+      "unit": "JPY/USD",
+      "sigma": 1.45,
+      "llm": -0.25,
+      "llmp": 0.47,
+      "hybrid": -0.18,
+      "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "quality": "vendor daily end-of-day timestamp can differ"
+    },
+    "us10y": {
+      "name": "US Treasury 10Y par yield",
+      "base": 5.15,
+      "unit": "percent_yield",
+      "sigma": 16,
+      "llm": 0,
+      "llmp": 0.5,
+      "hybrid": -2,
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    },
+    "us2y": {
+      "name": "US Treasury 2Y par yield",
+      "base": 4.88,
+      "unit": "percent_yield",
+      "sigma": 18,
+      "llm": 1,
+      "llmp": 0.52,
+      "hybrid": -1,
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    },
+    "us30y": {
+      "name": "US Treasury 30Y par yield",
+      "base": 5.47,
+      "unit": "percent_yield",
+      "sigma": 13,
+      "llm": 0,
+      "llmp": 0.5,
+      "hybrid": -2,
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    }
+  },
+  "macro": {
+    "uk_cpi_yoy_nov18": {
+      "name": "UK October CPI 12-month change",
+      "base": 3.5,
+      "unit": "percentage_points_yoy",
+      "point": 3.45,
+      "llm": 3.5,
+      "llmp": 0.48,
+      "sigma": 0.23,
+      "release": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices"
+    },
+    "uk_cpi_mom_nov18": {
+      "name": "UK October CPI month-on-month",
+      "base": 0.4,
+      "unit": "percentage_points_mom",
+      "point": 0.3,
+      "llm": 0.35,
+      "llmp": 0.43,
+      "sigma": 0.26,
+      "release": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices"
+    },
+    "us_import_mom_nov17": {
+      "name": "US October import prices MoM",
+      "base": 1.1,
+      "unit": "percentage_points_mom",
+      "point": 0.35,
+      "llm": 0.4,
+      "llmp": 0.22,
+      "sigma": 0.75,
+      "release": "2026-11-17T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ximpim_10162026.htm"
+    },
+    "us_export_mom_nov17": {
+      "name": "US October export prices MoM",
+      "base": 2.2,
+      "unit": "percentage_points_mom",
+      "point": 0.45,
+      "llm": 0.7,
+      "llmp": 0.12,
+      "sigma": 0.85,
+      "release": "2026-11-17T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ximpim_10162026.htm"
+    },
+    "us_claims_nov19": {
+      "name": "US initial jobless claims for week ended Nov14",
+      "base": 200,
+      "unit": "thousands_persons",
+      "point": 202,
+      "llm": 205,
+      "llmp": 0.57,
+      "sigma": 15,
+      "release": "2026-11-19T08:30:00-05:00",
+      "source": "https://www.dol.gov/ui/data.pdf"
+    },
+    "dallas_wei_nov19": {
+      "name": "Dallas Fed WEI week ended Nov14",
+      "base": 3.29,
+      "unit": "index_points",
+      "point": 3.28,
+      "llm": 3.25,
+      "llmp": 0.48,
+      "sigma": 0.52,
+      "release": "2026-11-19T10:30:00-06:00",
+      "source": "https://www.dallasfed.org/research/wei",
+      "quality": "expected publication time provisional; use contemporaneous first value only"
+    }
+  },
+  "events": [
+    {
+      "id": "rates_higher_longer",
+      "p": 0.47,
+      "note": "Higher Treasury yields and inflation persistence / AI-duration pressure",
+      "effects": {
+        "sp500": -1.2,
+        "nasdaq100": -2.1,
+        "stoxx600": -0.7,
+        "nikkei225": -1.4,
+        "kospi": -1.8,
+        "csi300": -0.35,
+        "gold": -1.3,
+        "wti": -0.4,
+        "usdjpy": 0.65,
+        "us10y": 11,
+        "us2y": 13,
+        "us30y": 8
+      }
+    },
+    {
+      "id": "tech_rebound",
+      "p": 0.4,
+      "note": "Large technology/capex names rebound after volatility",
+      "effects": {
+        "sp500": 1.35,
+        "nasdaq100": 2.8,
+        "stoxx600": 0.7,
+        "nikkei225": 1.6,
+        "kospi": 2.4,
+        "csi300": 0.35,
+        "gold": -0.5,
+        "wti": 0.4,
+        "usdjpy": 0.1,
+        "us10y": 4,
+        "us2y": 3,
+        "us30y": 3
+      }
+    },
+    {
+      "id": "oil_supply_disruption",
+      "p": 0.2,
+      "note": "Geopolitical oil supply interruption",
+      "effects": {
+        "sp500": -0.75,
+        "nasdaq100": -0.65,
+        "stoxx600": -1.1,
+        "nikkei225": -0.8,
+        "kospi": -0.8,
+        "csi300": -0.35,
+        "gold": 1.6,
+        "wti": 7.2,
+        "usdjpy": -0.3,
+        "us10y": 2,
+        "us2y": 3,
+        "us30y": 3
+      }
+    },
+    {
+      "id": "oil_normalization",
+      "p": 0.37,
+      "note": "Supply risk premium eases; commodity prices soften",
+      "effects": {
+        "sp500": 0.3,
+        "nasdaq100": 0.3,
+        "stoxx600": 0.65,
+        "nikkei225": 0.35,
+        "kospi": 0.3,
+        "csi300": 0.15,
+        "gold": -0.4,
+        "wti": -3.8,
+        "usdjpy": 0.1,
+        "us10y": -3,
+        "us2y": -2,
+        "us30y": -3
+      }
+    },
+    {
+      "id": "growth_downside",
+      "p": 0.33,
+      "note": "Weakening US/UK real growth data and risk aversion",
+      "effects": {
+        "sp500": -1.1,
+        "nasdaq100": -1.2,
+        "stoxx600": -0.9,
+        "nikkei225": -1.3,
+        "kospi": -1.6,
+        "csi300": -0.5,
+        "gold": 1.1,
+        "wti": -2.1,
+        "usdjpy": -0.65,
+        "us10y": -10,
+        "us2y": -12,
+        "us30y": -7
+      }
+    }
+  ],
+  "data_omissions": [
+    {
+      "target": "Japan preliminary 2026Q3 GDP November16",
+      "reason": "Release is scheduled but compatible 2026Q2 first-published basis has not been authenticated in a primary numeric snapshot. Event monitored, numerical change unscorable."
+    },
+    {
+      "target": "UK core CPI 12-month",
+      "reason": "Prior first-vintage comparator not authenticated against ONS by cutoff, omitted rather than guess."
+    },
+    {
+      "target": "other major central-bank policy decisions",
+      "reason": "No Fed/ECB/BoE/BOJ/RBA policy rate meeting positively verified for Nov16–20; do not invent."
+    }
+  ],
+  "weekly_window": "2026-11-13 provider Friday closes to 2026-11-20 same market/vendor Friday closes, regional calendar as documented",
+  "confidence": "low; subjective/model-conditional and not empirically calibrated",
+  "restrictions": [
+    "Prior 2026-11-07 forecasts unchanged",
+    "United States 2026-11-13 Friday close already in known information; do not accidentally use future Nov20 prices",
+    "WTI reference conditional continuous-futures, not authenticated fixed contract",
+    "Macro level predictions score change vs prior first release",
+    "Equity and interest rate are different units; do not pool point errors"
+  ]
+}
