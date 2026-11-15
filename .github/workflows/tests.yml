@@ -105,3 +105,5 @@ jobs:
         run: |
           node research/scripts/audit_2026_11_14_breadth_shadow.js > /tmp/nov14_shadow.json
           cmp research/experiments/2026-11-14-breadth-shadow-preoutcome.json /tmp/nov14_shadow.json
+      - name: Execute November 15 exact event-time Gaussian mixture audit
+        run: node research/scripts/audit_2026_11_15_release_exposure.js
