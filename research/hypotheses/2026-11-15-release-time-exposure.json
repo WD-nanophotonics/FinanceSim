@@ -1,0 +1,27 @@
+{
+  "record_type": "falsifiable_forward_research_hypothesis",
+  "id": "H20261115-release-time-exposure",
+  "registered_date": "2026-11-15",
+  "status": "method_only_not_tested",
+  "title": "Asynchronous cash closes constrain which scheduled releases can affect a given weekly Friday endpoint",
+  "motivation": "Nov20 10:00 EST BLS state labor release occurs after Friday Nikkei/KOSPI/CSI300 cash closes but before Friday STOXX600/S&P500/Nasdaq100 cash closes. Nov19 nominal Dallas WEI 10:30 CST coincides with European cash-close proxy. Existing common-shock model uses undated weeklong shocks.",
+  "prediction_hypothesis": "Holding information cutoff, scenario probabilities, volatility assumptions, interval definitions and target cohorts fixed, a pre-registered instrument-specific event-exposure mask might improve held-out risk Brier/interval calibration versus uniformly applied release shocks over at least 26 scored weekly cohorts.",
+  "test_protocol": [
+    "Require exact release time, observed publication time when recorded, each venue last cash close and its actual calendar; mark coincident clocks as unavailable or sensitivity bands.",
+    "Before each week's future outcomes, freeze paired uniform-shock vs time-gated-shock forecasts for the exact same market and risk targets, all event effect sizes, and versioned code.",
+    "Keep 26 weekly paired cohorts without post-hoc exclusions; explicitly track inaccessible or revised releases, source-vintage differences and share of omitted events.",
+    "Compare Brier per target, 50/90 interval scores per unit and coverage, block bootstrap by week; allow null result, do not adjust past forecasts.",
+    "If event effects cannot be estimated ex-ante, retain a named synthetic stress only and do not score it as a prediction."
+  ],
+  "initial_evidence": {
+    "event_calendar": "research/inputs/2026-11-15-release-clock.json",
+    "exact_conditional_mixture": "research/experiments/2026-11-15-release-exposure-mixture.json",
+    "baseline_exact_breadth": 0.3310075575422612,
+    "independent_shadow": 0.3140542765125729,
+    "synthetic_minus1_all6": 0.5437367068867835,
+    "synthetic_minus1_release_gated": 0.4585018315302889
+  },
+  "falsification": "With frozen paired valid cohorts, masked variant shows no skill benefit or reduced coverage/skill after accounting for missingness and publication-time uncertainty.",
+  "warning": "These baseline probabilities and hypothetical stress outcomes are model-calculated; no observed Nov16-Nov20 market outcomes and no causal effect estimate.",
+  "date_policy": "This is registered after Saturday Nov14 noon and cannot be credited as a Nov14 12:00 frozen A/B/C forecast."
+}
