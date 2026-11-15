@@ -126,6 +126,4 @@ const result={
   'A deterministic integral has zero Monte Carlo variance, but sampling uncertainty from real markets remains unknown.'
  ]
 };
-console.log('FINANCESIM_NOV15_START');
-console.log(JSON.stringify(result,null,2));
-console.log('FINANCESIM_NOV15_END');
+process.stdout.write(JSON.stringify(result,null,2)+String.fromCharCode(10));
