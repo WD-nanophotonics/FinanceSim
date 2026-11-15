@@ -1,0 +1,327 @@
+{
+  "record_type": "ex_ante_exact_gaussian_mixture_release_clock_stress",
+  "date": "2026-11-15",
+  "executed": true,
+  "snapshot_path": "research/inputs/2026-11-14-1200-snapshot.json",
+  "schedule_path": "research/inputs/2026-11-15-release-clock.json",
+  "frozen_forecast_path": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "frozen_seed": 20261114,
+  "seed_used_for_exact_method": null,
+  "new_monte_carlo_draws": 0,
+  "event_tree_states": 32,
+  "event_clock_count": 7,
+  "equity_index_count": 6,
+  "release_market_cells": 42,
+  "information_cutoff": "2026-11-14T12:00:00+09:00",
+  "market_observations_through": "2026-11-13 Friday closes only",
+  "exposure_rule": "Scheduled public release time must be strictly BEFORE the instrument Friday cash close; equality postpones eligibility, and publisher delays can reduce exposure.",
+  "event_exposure": [
+    {
+      "id": "jp_gdp",
+      "scheduled_at": "2026-11-16T08:50:00+09:00",
+      "utc": "2026-11-15T23:50:00.000Z",
+      "by_market": {
+        "sp500": {
+          "first_close_after_publication": "2026-11-16T16:00:00-05:00",
+          "eligible_closing_sessions": 5,
+          "exact_close_collision": false
+        },
+        "nasdaq100": {
+          "first_close_after_publication": "2026-11-16T16:00:00-05:00",
+          "eligible_closing_sessions": 5,
+          "exact_close_collision": false
+        },
+        "stoxx600": {
+          "first_close_after_publication": "2026-11-16T17:30:00+01:00",
+          "eligible_closing_sessions": 5,
+          "exact_close_collision": false
+        },
+        "nikkei225": {
+          "first_close_after_publication": "2026-11-16T15:30:00+09:00",
+          "eligible_closing_sessions": 5,
+          "exact_close_collision": false
+        },
+        "kospi": {
+          "first_close_after_publication": "2026-11-16T15:30:00+09:00",
+          "eligible_closing_sessions": 5,
+          "exact_close_collision": false
+        },
+        "csi300": {
+          "first_close_after_publication": "2026-11-16T15:00:00+08:00",
+          "eligible_closing_sessions": 5,
+          "exact_close_collision": false
+        }
+      }
+    },
+    {
+      "id": "us_import_export",
+      "scheduled_at": "2026-11-17T08:30:00-05:00",
+      "utc": "2026-11-17T13:30:00.000Z",
+      "by_market": {
+        "sp500": {
+          "first_close_after_publication": "2026-11-17T16:00:00-05:00",
+          "eligible_closing_sessions": 4,
+          "exact_close_collision": false
+        },
+        "nasdaq100": {
+          "first_close_after_publication": "2026-11-17T16:00:00-05:00",
+          "eligible_closing_sessions": 4,
+          "exact_close_collision": false
+        },
+        "stoxx600": {
+          "first_close_after_publication": "2026-11-17T17:30:00+01:00",
+          "eligible_closing_sessions": 4,
+          "exact_close_collision": false
+        },
+        "nikkei225": {
+          "first_close_after_publication": "2026-11-18T15:30:00+09:00",
+          "eligible_closing_sessions": 3,
+          "exact_close_collision": false
+        },
+        "kospi": {
+          "first_close_after_publication": "2026-11-18T15:30:00+09:00",
+          "eligible_closing_sessions": 3,
+          "exact_close_collision": false
+        },
+        "csi300": {
+          "first_close_after_publication": "2026-11-18T15:00:00+08:00",
+          "eligible_closing_sessions": 3,
+          "exact_close_collision": false
+        }
+      }
+    },
+    {
+      "id": "uk_cpi",
+      "scheduled_at": "2026-11-18T07:00:00+00:00",
+      "utc": "2026-11-18T07:00:00.000Z",
+      "by_market": {
+        "sp500": {
+          "first_close_after_publication": "2026-11-18T16:00:00-05:00",
+          "eligible_closing_sessions": 3,
+          "exact_close_collision": false
+        },
+        "nasdaq100": {
+          "first_close_after_publication": "2026-11-18T16:00:00-05:00",
+          "eligible_closing_sessions": 3,
+          "exact_close_collision": false
+        },
+        "stoxx600": {
+          "first_close_after_publication": "2026-11-18T17:30:00+01:00",
+          "eligible_closing_sessions": 3,
+          "exact_close_collision": false
+        },
+        "nikkei225": {
+          "first_close_after_publication": "2026-11-19T15:30:00+09:00",
+          "eligible_closing_sessions": 2,
+          "exact_close_collision": false
+        },
+        "kospi": {
+          "first_close_after_publication": "2026-11-19T15:30:00+09:00",
+          "eligible_closing_sessions": 2,
+          "exact_close_collision": false
+        },
+        "csi300": {
+          "first_close_after_publication": "2026-11-19T15:00:00+08:00",
+          "eligible_closing_sessions": 2,
+          "exact_close_collision": true
+        }
+      }
+    },
+    {
+      "id": "us_claims",
+      "scheduled_at": "2026-11-19T08:30:00-05:00",
+      "utc": "2026-11-19T13:30:00.000Z",
+      "by_market": {
+        "sp500": {
+          "first_close_after_publication": "2026-11-19T16:00:00-05:00",
+          "eligible_closing_sessions": 2,
+          "exact_close_collision": false
+        },
+        "nasdaq100": {
+          "first_close_after_publication": "2026-11-19T16:00:00-05:00",
+          "eligible_closing_sessions": 2,
+          "exact_close_collision": false
+        },
+        "stoxx600": {
+          "first_close_after_publication": "2026-11-19T17:30:00+01:00",
+          "eligible_closing_sessions": 2,
+          "exact_close_collision": false
+        },
+        "nikkei225": {
+          "first_close_after_publication": "2026-11-20T15:30:00+09:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "kospi": {
+          "first_close_after_publication": "2026-11-20T15:30:00+09:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "csi300": {
+          "first_close_after_publication": "2026-11-20T15:00:00+08:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        }
+      }
+    },
+    {
+      "id": "dallas_wei",
+      "scheduled_at": "2026-11-19T10:30:00-06:00",
+      "utc": "2026-11-19T16:30:00.000Z",
+      "by_market": {
+        "sp500": {
+          "first_close_after_publication": "2026-11-19T16:00:00-05:00",
+          "eligible_closing_sessions": 2,
+          "exact_close_collision": false
+        },
+        "nasdaq100": {
+          "first_close_after_publication": "2026-11-19T16:00:00-05:00",
+          "eligible_closing_sessions": 2,
+          "exact_close_collision": false
+        },
+        "stoxx600": {
+          "first_close_after_publication": "2026-11-20T17:30:00+01:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": true
+        },
+        "nikkei225": {
+          "first_close_after_publication": "2026-11-20T15:30:00+09:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "kospi": {
+          "first_close_after_publication": "2026-11-20T15:30:00+09:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "csi300": {
+          "first_close_after_publication": "2026-11-20T15:00:00+08:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        }
+      }
+    },
+    {
+      "id": "jp_cpi",
+      "scheduled_at": "2026-11-20T08:30:00+09:00",
+      "utc": "2026-11-19T23:30:00.000Z",
+      "by_market": {
+        "sp500": {
+          "first_close_after_publication": "2026-11-20T16:00:00-05:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "nasdaq100": {
+          "first_close_after_publication": "2026-11-20T16:00:00-05:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "stoxx600": {
+          "first_close_after_publication": "2026-11-20T17:30:00+01:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "nikkei225": {
+          "first_close_after_publication": "2026-11-20T15:30:00+09:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "kospi": {
+          "first_close_after_publication": "2026-11-20T15:30:00+09:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "csi300": {
+          "first_close_after_publication": "2026-11-20T15:00:00+08:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        }
+      }
+    },
+    {
+      "id": "us_state_jobs",
+      "scheduled_at": "2026-11-20T10:00:00-05:00",
+      "utc": "2026-11-20T15:00:00.000Z",
+      "by_market": {
+        "sp500": {
+          "first_close_after_publication": "2026-11-20T16:00:00-05:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "nasdaq100": {
+          "first_close_after_publication": "2026-11-20T16:00:00-05:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "stoxx600": {
+          "first_close_after_publication": "2026-11-20T17:30:00+01:00",
+          "eligible_closing_sessions": 1,
+          "exact_close_collision": false
+        },
+        "nikkei225": {
+          "first_close_after_publication": null,
+          "eligible_closing_sessions": 0,
+          "exact_close_collision": false
+        },
+        "kospi": {
+          "first_close_after_publication": null,
+          "eligible_closing_sessions": 0,
+          "exact_close_collision": false
+        },
+        "csi300": {
+          "first_close_after_publication": null,
+          "eligible_closing_sessions": 0,
+          "exact_close_collision": false
+        }
+      }
+    }
+  ],
+  "us_state_jobs_nov20_eligible": [
+    "sp500",
+    "nasdaq100",
+    "stoxx600"
+  ],
+  "us_state_jobs_nov20_not_eligible": [
+    "nikkei225",
+    "kospi",
+    "csi300"
+  ],
+  "wei_stoxx_close_collision": true,
+  "evaluation_definition": "P(at least 3 of 6 equity indices return <= -1.5% over Nov13-Nov20)",
+  "numerical_method": "Enumerate all 2^5 independent centered-Bernoulli scenario combinations; conditional independent Gaussian asset innovations integrated using normal CDF approximation, with exact Poisson-binomial tail per scenario; weighted summation removes Monte Carlo sampling error but not model uncertainty.",
+  "archived_MC_breadth_probability": 0.3295,
+  "exact_breadth_probabilities": {
+    "unshocked": 0.3310075575422612,
+    "all_six_minus1_pp": 0.5437367068867835,
+    "eligible_only_minus1_pp": 0.4585018315302889,
+    "all_six_minus2_pp": 0.7483418522338997,
+    "eligible_only_minus2_pp": 0.5974219839235128
+  },
+  "same_marginal_independent_shadow": 0.3140542765125729,
+  "unconditional_market_tail_marginals": {
+    "sp500": 0.2871474019353166,
+    "nasdaq100": 0.39376378878664486,
+    "stoxx600": 0.22708219096771923,
+    "nikkei225": 0.38276987371709015,
+    "kospi": 0.43007807526993375,
+    "csi300": 0.2673454538974003
+  },
+  "effects_percentage_points": {
+    "event_dependence_residual": 1.6953281029688294,
+    "overestimate_if_all_six_minus1": 8.523487535649465,
+    "overestimate_if_all_six_minus2": 15.091986831038696,
+    "eligible_only_effect_minus1": 12.749427398802771,
+    "eligible_only_effect_minus2": 26.641442638125156
+  },
+  "scenario_weight_sum": 1,
+  "hypothetical_stress": "Apply a synthetic -1 or -2 percentage-point add-on to weekly index returns after Friday Nov20 10am EST state-employment publication, for cash markets whose Friday closes occur later. This is NOT an estimated actual response, causal effect, or real trade recommendation.",
+  "caveats": [
+    "No Nov16-Nov20 outcomes used; all result probabilities are model-conditional.",
+    "State-employment macro news is not an original frozen shock; synthetic stress does not amend the original forecast.",
+    "Five broad frozen shocks are not themselves dated event releases; event-time alignment requires a new model.",
+    "Normal CDF approximation and conditional Gaussian independence are not empirically calibrated.",
+    "Regular equity trading hours are assumed; venue holidays and exceptional halts not separately authenticated.",
+    "Dallas Fed nominal Thursday 10:30am CT update is at or shortly after that time, so same-instant European close is ambiguous and conservatively excluded.",
+    "A deterministic integral has zero Monte Carlo variance, but sampling uncertainty from real markets remains unknown."
+  ]
+}
