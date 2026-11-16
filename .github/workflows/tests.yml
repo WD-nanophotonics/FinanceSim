@@ -109,3 +109,8 @@ jobs:
         run: |
           node research/scripts/audit_2026_11_15_release_exposure.js > /tmp/nov15_event_exposure.json
           cmp research/experiments/2026-11-15-release-exposure-mixture.json /tmp/nov15_event_exposure.json
+
+      - name: Exact replay Nov16 official Asian close and 32-state conditional diagnostic
+        run: |
+          node research/scripts/audit_2026_11_16_asia_conditional.js > /tmp/financesim_nov16_conditional.json
+          cmp research/experiments/2026-11-16-asia-monday-conditional.json /tmp/financesim_nov16_conditional.json
