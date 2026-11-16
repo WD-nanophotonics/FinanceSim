@@ -1,0 +1,175 @@
+{
+  "record_type": "FinanceSim_daily_research",
+  "date": "2026-11-16",
+  "timezone": "Asia/Tokyo",
+  "run_information_cutoff": "2026-11-16T19:07:13+09:00",
+  "actual_access_note": "Official websites checked on Nov16 JST; access second not surfaced reliably by sources. Original publisher release times below and GitHub commit dates establish sequence. Run context clock is used as conservative declared cutoff.",
+  "starting_repo_commit": "eeeb819774ed",
+  "source_snapshot": "research/inputs/2026-11-16-asia-first-release.json",
+  "frozen_prospective_forecast": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "repo_materials_consulted": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-14.json",
+    "research/daily/2026-11-15.json",
+    "research/weekly/2026-11-14-forecast.json",
+    "research/weekly/2026-11-14-forecast-corrected-b01.json",
+    "research/experiments/2026-11-15-release-exposure-mixture.json",
+    "research/inputs/2026-11-14-1200-snapshot.json",
+    "research/inputs/2026-11-15-release-clock.json",
+    "research/scripts/audit_2026_11_15_release_exposure.js",
+    ".github/workflows/tests.yml"
+  ],
+  "prior_state": "Nov14 frozen A6/B5/C12 forward targets; corrected B01 append-only six-index breadth 32.95% from correctly aligned 20k Monte Carlo, original 33.10% from Nov15 exact 32-event-state approximation. Previous official GitHub Actions success Nov15 run 43701706395. WTI continuous-futures fixed contract identity unresolved.",
+  "primary_sources": [
+    {
+      "agency": "Japan Cabinet Office ESRI",
+      "released_at": "2026-11-16T08:50:00+09:00",
+      "period": "2026Q3",
+      "release_kind": "first_preliminary",
+      "values": {
+        "real_gdp_qoq_display": "-0.0%",
+        "nominal_gdp_qoq_percent": 0.4,
+        "real_gdp_level_trillion_2020_chained_yen_annualized": 599.5
+      },
+      "url": "https://www.esri.cao.go.jp/jp/sna/menu.html",
+      "vintage_caveat": "The official HTML gives real -0.0% rounded and nominal +0.4%; do not assign a precise unrounded negative change. A separate linked PDF preview showed stale/mismatched first-page imagery in one rendering pathway; do not infer GDP subcomponent attribution from that preview until consistent primary table verification."
+    },
+    {
+      "agency": "China National Bureau of Statistics",
+      "released_at": "2026-11-16T10:00:00+08:00",
+      "period": "2026-10",
+      "release_kind": "new_month_release",
+      "values": {
+        "industrial_yoy_real_pct": 4.8,
+        "hightech_manufacturing_yoy_real_pct": 17.6,
+        "retail_sales_yoy_nominal_pct": 0.4,
+        "ytd_property_investment_yoy_comparable_pct": -21.6
+      },
+      "urls": [
+        "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965842.html",
+        "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965839.html",
+        "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965840.html"
+      ]
+    },
+    {
+      "agency": "China National Bureau of Statistics",
+      "released_at": "2026-10-19T10:00:00+08:00",
+      "period": "2026-09",
+      "release_kind": "historical_first_publication_baseline",
+      "values": {
+        "industrial_yoy_real_pct": 5.5,
+        "hightech_manufacturing_yoy_real_pct": 15.3,
+        "retail_sales_yoy_nominal_pct": 1.1,
+        "ytd_property_investment_yoy_comparable_pct": -20.6
+      },
+      "urls": [
+        "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965617.html",
+        "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965614.html",
+        "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965615.html"
+      ]
+    },
+    {
+      "agency": "Nikkei Indexes, official index compiler",
+      "reference_close": "2026-11-16T15:30:00+09:00",
+      "release_kind": "regular_cash_close",
+      "values": {
+        "nikkei225_nov16_points": 59662.02,
+        "nikkei225_prior_fri_nov13_points": 61142.35
+      },
+      "url": "https://indexes.nikkei.co.jp/nkave/archives/data/"
+    }
+  ],
+  "model_features": {
+    "china_industrial_yoy_growth_deceleration_pp": -0.7,
+    "china_retail_yoy_growth_deceleration_pp": -0.7,
+    "china_hightech_manufacturing_yoy_growth_acceleration_pp": 2.3,
+    "china_property_ytd_growth_rate_change_pp": -1,
+    "japan_nikkei_monday_return_pct": -2.4211205490139,
+    "japan_real_q3_gdp_qoq_display": "-0.0%",
+    "japan_nominal_q3_gdp_qoq_percent": 0.4,
+    "caveat": "China property YTD comparison is Jan-Oct versus Jan-Sep cumulative rate; -1pp difference is not an October standalone growth rate."
+  },
+  "timing_exposure": {
+    "japan_esri_gdp": "Released 08:50 JST, before normal TSE 09:00 cash open on Nov16.",
+    "china_nbs_october": "Released 10:00 CST = 11:00 JST, during Tokyo cash session and before 15:30 close.",
+    "causal_status": "No event-study return decomposition or causal coefficient estimated. Monday -2.42% Nikkei move cannot be assigned to either release without higher-frequency pricing and confounder adjustment."
+  },
+  "executed_deterministic_study": {
+    "experiment": "research/experiments/2026-11-16-asia-monday-conditional.json",
+    "reproduction_code": "research/scripts/audit_2026_11_16_asia_conditional.js",
+    "sample_paths": 0,
+    "exact_bernoulli_states": 32,
+    "information_cutoff": "2026-11-16T19:07:13+09:00",
+    "frozen_snapshot_seed": 20261114,
+    "new_random_seed": null,
+    "observed_monday_nikkei_pct": -2.4211205490139,
+    "frozen_model_unconditional_minus1_5_tail": 0.38276987371709015,
+    "conditional_minus1_5_tail_no_scenario_reweight_sigma1": 0.6156907971068085,
+    "conditional_minus1_5_tail_bayesian_sigma1": 0.6337067400406247,
+    "bayesian_sigma_sensitivity": {
+      "sigma_x0_75": 0.6881171679505598,
+      "sigma_x1": 0.6337067400406247,
+      "sigma_x1_5": 0.5849582033983772,
+      "sigma_x2": 0.5625253927515215
+    },
+    "interpretation": "The assumed Gaussian mixture shifts the conditional probability of Nov20 week return at or below -1.5% from model-unconditional 38.28% to post-Monday 63.37% at original sigma; scenario posterior weighting accounts for about +1.80 percentage points over the 61.57% same-scenario-weight condition. This is an AFTER-observation model diagnostic, not a prior forecasting win or a replacement for the frozen November14 probability.",
+    "assumptions": "State-dependent weekly risk effects are spread uniformly through 5 independent Gaussian daily increments. Monday likelihood updates prior weights. Original weekly σ 4.1%, four sessions remain. This intrawEEK assumption was not in frozen model and is uncalibrated; compounding a Gaussian remaining simple return is an approximation."
+  },
+  "hypotheses_compared": [
+    {
+      "id": "Q001",
+      "finding": "China October growth indicators are now available as quantitative features but were omitted from Nov14 A scoring; cannot infer probability skill improvements from these observed macro changes.",
+      "test": "Pre-register macro feature coefficients in a future experiment and evaluate forward over ≥26 calendar weeks."
+    },
+    {
+      "id": "Q003",
+      "finding": "Posterior event weight adjustments account for only 1.80 percentage points at sigma=1.0 of total conditioned risk vs unweighted scenario mixture; result is model-conditional, provides no observed-market model advantage.",
+      "test": "Compare post-event diagnostic reliability to a baseline with no mixture reweighting using fixed additional prospective weeks."
+    },
+    {
+      "id": "2026-11-15-release-time-exposure",
+      "finding": "Both Japan GDP and China NBS releases occur before Tokyo close, yet observational co-occurrence does not establish causality. Last week's experiment already showed time-gating matters under synthetic stress.",
+      "test": "Add actual source release clock and intraday close barriers to next version, pre-register release-window effects using only previous evidence."
+    }
+  ],
+  "next_events": [
+    {
+      "publisher": "US BLS",
+      "description": "October import/export price indexes",
+      "scheduled": "2026-11-17T08:30:00-05:00",
+      "source": "https://www.bls.gov/schedule/news_release/ximpim.htm",
+      "observed": false
+    },
+    {
+      "publisher": "UK ONS",
+      "description": "October CPI first release",
+      "scheduled": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/releases/consumerpriceinflationukoctober2026",
+      "observed": false
+    },
+    {
+      "publisher": "DOL ETA and Dallas Fed",
+      "description": "Weekly initial claims and WEI respectively",
+      "scheduled_local_day": "2026-11-19",
+      "observed": false
+    },
+    {
+      "publisher": "Japanese Statistics Bureau; global exchanges",
+      "description": "October Japan CPI and week-ending Friday closes",
+      "scheduled_local_day": "2026-11-20",
+      "observed": false
+    }
+  ],
+  "limitations": [
+    "No revision or hindsight replacement of Nov14 frozen A/B/C target predictions.",
+    "Japan GDP was explicitly omitted from Nov14 forecast; record as evidence only, no fake score.",
+    "Official price publisher close is available for Nikkei; do not claim other Asian or American Monday markets have verified settlement.",
+    "Day-by-day Gaussian assumption is a synthetic extension not validated by observed market return distribution.",
+    "Market-wide Monday decline does not identify macro announcement causal effect.",
+    "WTI frozen reference contract and close vendor provenance still unresolved.",
+    "No empirical calibration, fitted causal shock coefficients, or real-market edge claim."
+  ],
+  "run_action": "New source input and deterministic script plus executed experiment appended to repository. Tests added to CI. Index updated separately.",
+  "notification": "No daily message"
+}
