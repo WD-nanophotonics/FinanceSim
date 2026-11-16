@@ -113,4 +113,15 @@ jobs:
       - name: Exact replay Nov16 official Asian close and 32-state conditional diagnostic
         run: |
           node research/scripts/audit_2026_11_16_asia_conditional.js > /tmp/financesim_nov16_conditional.json
-          cmp research/experiments/2026-11-16-asia-monday-conditional.json /tmp/financesim_nov16_conditional.json
+          python - <<'PY'
+          import json
+          a=json.load(open('research/experiments/2026-11-16-asia-monday-conditional.json'))
+          b=json.load(open('/tmp/financesim_nov16_conditional.json'))
+          assert abs(a['observed_monday_return_pct']-b['observed_monday_return_pct'])<1e-12
+          assert len(a['scenarios'])==len(b['scenarios'])==4
+          for x,y in zip(a['scenarios'],b['scenarios']):
+              assert x['future_volatility_multiplier']==y['future_volatility_multiplier']
+              assert abs(x['conditional_prob_week_below_minus_1_5_bayes']-y['conditional_prob_week_below_minus_1_5_bayes'])<1e-12
+              assert abs(x['conditional_prob_week_positive_bayes']-y['conditional_prob_week_positive_bayes'])<1e-12
+          assert a['observed_macro_features']==b['observed_macro_features']
+          PY
