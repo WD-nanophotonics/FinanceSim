@@ -1,0 +1,111 @@
+{
+  "record_type": "after_monday_frozen_model_conditional_diagnostic",
+  "date": "2026-11-16",
+  "as_of": "2026-11-16T19:07:13+09:00",
+  "execution": "32-state deterministic Gaussian-mixture integration; no MC and no model refit",
+  "source_snapshot": "research/inputs/2026-11-14-1200-snapshot.json",
+  "frozen_original": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "actual_inputs": "research/inputs/2026-11-16-asia-first-release.json",
+  "original_seed": 20261114,
+  "simulation_seed": null,
+  "new_monte_carlo_draws": 0,
+  "original_reference_nikkei": 61142.35,
+  "official_nikkei_monday": 59662.02,
+  "observed_monday_return_pct": -2.4211205490139,
+  "frozen_hybrid_weekly_point_pct": -0.1735,
+  "frozen_hybrid_90_interval": [
+    -7.3012,
+    6.9341
+  ],
+  "original_sigma_week_pct": 4.1,
+  "original_scenario_unconditional_prob_week_below_minus_1_5": 0.38276987371709015,
+  "scenarios": [
+    {
+      "future_volatility_multiplier": 0.75,
+      "gaussian_sigma_remaining_4_sessions_pct": 2.750363612324741,
+      "remaining_return_needed_for_week_minus_1_5_pct": 0.943975329698854,
+      "conditional_prob_week_below_minus_1_5_no_reweight": 0.6486021524552139,
+      "conditional_prob_week_below_minus_1_5_bayes": 0.6881171679505598,
+      "conditional_prob_week_positive_bayes": 0.15497569088784968,
+      "conditional_prob_below_frozen_hybrid_90_lower_bayes": 0.06131393905904864,
+      "posterior_mean_weekly_return_pct": -2.8987814749634984,
+      "posterior_shock_probabilities": {
+        "rates_higher_longer": 0.5553844917509623,
+        "tech_rebound": 0.3090519238513777,
+        "oil_supply_disruption": 0.23230856454090104,
+        "oil_normalization": 0.3503092400579832,
+        "growth_downside": 0.40238226363113766
+      }
+    },
+    {
+      "future_volatility_multiplier": 1,
+      "gaussian_sigma_remaining_4_sessions_pct": 3.6671514830996546,
+      "remaining_return_needed_for_week_minus_1_5_pct": 0.943975329698854,
+      "conditional_prob_week_below_minus_1_5_no_reweight": 0.6156907971068085,
+      "conditional_prob_week_below_minus_1_5_bayes": 0.6337067400406247,
+      "conditional_prob_week_positive_bayes": 0.22790101291077347,
+      "conditional_prob_below_frozen_hybrid_90_lower_bayes": 0.11088923567937216,
+      "posterior_mean_weekly_return_pct": -2.7674950978857185,
+      "posterior_shock_probabilities": {
+        "rates_higher_longer": 0.518624755433343,
+        "tech_rebound": 0.34704201278517705,
+        "oil_supply_disruption": 0.2179923610376446,
+        "oil_normalization": 0.35870683939998416,
+        "growth_downside": 0.37042848554802293
+      }
+    },
+    {
+      "future_volatility_multiplier": 1.5,
+      "gaussian_sigma_remaining_4_sessions_pct": 5.500727224649482,
+      "remaining_return_needed_for_week_minus_1_5_pct": 0.943975329698854,
+      "conditional_prob_week_below_minus_1_5_no_reweight": 0.5793339083925839,
+      "conditional_prob_week_below_minus_1_5_bayes": 0.5849582033983772,
+      "conditional_prob_week_positive_bayes": 0.3122702208872754,
+      "conditional_prob_below_frozen_hybrid_90_lower_bayes": 0.19812613017244798,
+      "posterior_mean_weekly_return_pct": -2.6711511923243068,
+      "posterior_shock_probabilities": {
+        "rates_higher_longer": 0.49175509656396227,
+        "tech_rebound": 0.375933151829071,
+        "oil_supply_disruption": 0.20793470265759062,
+        "oil_normalization": 0.3649101657864118,
+        "growth_downside": 0.34784591308592544
+      }
+    },
+    {
+      "future_volatility_multiplier": 2,
+      "gaussian_sigma_remaining_4_sessions_pct": 7.334302966199309,
+      "remaining_return_needed_for_week_minus_1_5_pct": 0.943975329698854,
+      "conditional_prob_week_below_minus_1_5_no_reweight": 0.5601104796750891,
+      "conditional_prob_week_below_minus_1_5_bayes": 0.5625253927515215,
+      "conditional_prob_week_positive_bayes": 0.35755812223947503,
+      "conditional_prob_below_frozen_hybrid_90_lower_bayes": 0.2592750019699039,
+      "posterior_mean_weekly_return_pct": -2.6370147045007273,
+      "posterior_shock_probabilities": {
+        "rates_higher_longer": 0.4822601876197287,
+        "tech_rebound": 0.38636374320367844,
+        "oil_supply_disruption": 0.20445055442902985,
+        "oil_normalization": 0.36712289779372587,
+        "growth_downside": 0.3400107157374528
+      }
+    }
+  ],
+  "observed_macro_features": {
+    "china_industrial_yoy_slowdown_pp": -0.7000000000000002,
+    "china_retail_yoy_slowdown_pp": -0.7000000000000001,
+    "china_hightech_yoy_acceleration_pp": 2.3000000000000007,
+    "china_property_cumulative_growth_rate_change_pp": -1,
+    "japan_real_gdp_qoq_display": "-0.0%",
+    "japan_nominal_gdp_qoq_pct": 0.4
+  },
+  "assumptions": "Scenario weekly effect spread uniformly across five independent normal daily shocks. Bayes update uses only official Monday Nikkei return and normal likelihood with daily sigma=weekly sigma/sqrt(5). Remaining four-session Gaussian variance scales 4/5. Compound realized Monday and remaining simple return. Subjective assumptions, not a calibrated real posterior.",
+  "limitations": [
+    "Monday is after forecast cutoff; DO NOT alter archived Saturday point forecast or score it early.",
+    "The five original shocks have no intrawEEK occurrence time; equal splitting is purely hypothetical.",
+    "Volatility multipliers illustrate sensitivity; no parameters are estimated from Monday information.",
+    "Do not treat China October macro events or Japan Q3 GDP omitted from frozen A as preregistered outcomes.",
+    "Official Japan real GDP -0.0% is a rounded signed value; exact qoq not known.",
+    "Cumulative China property investment rate is not a monthly October growth rate.",
+    "End-of-week prices and upcoming official macro outcomes are pending.",
+    "WTI matched fixed contract and other market close provenance still unresolved."
+  ]
+}
