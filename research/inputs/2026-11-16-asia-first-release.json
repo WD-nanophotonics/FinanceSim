@@ -1,0 +1,113 @@
+{
+  "record_type": "as_of_first_release_and_official_close",
+  "as_of": "2026-11-16T19:07:13+09:00",
+  "timezone": "Asia/Tokyo",
+  "access_note": "Pages inspected 2026-11-16 JST; second-precise source fetch times unavailable. Source publish times below are publisher schedules; Git commit records archive time. Official HTML verifies Japanese GDP rounded -0.0 real, +0.4 nominal; no unrounded level inferred.",
+  "sources": {
+    "jp_gdp": "https://www.esri.cao.go.jp/jp/sna/menu.html",
+    "cn_oct_ind": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965842.html",
+    "cn_sep_ind": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965617.html",
+    "cn_oct_retail": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965839.html",
+    "cn_sep_retail": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965614.html",
+    "cn_oct_property": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965840.html",
+    "cn_sep_property": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965615.html",
+    "nikkei": "https://indexes.nikkei.co.jp/nkave/archives/data/"
+  },
+  "publisher_release_times": {
+    "jp_q3_gdp": "2026-11-16T08:50:00+09:00",
+    "cn_october_data": "2026-11-16T10:00:00+08:00",
+    "cn_september_data": "2026-10-19T10:00:00+08:00",
+    "nikkei_close_after": "2026-11-16T15:30:00+09:00"
+  },
+  "observations": {
+    "jp_q3_real_gdp_qoq": {
+      "value": 0,
+      "displayed": "-0.0%",
+      "sign": "negative_rounded_zero",
+      "unit": "percent_qoq_real_sa",
+      "vintage": "2026-11-16_first_preliminary",
+      "source_key": "jp_gdp"
+    },
+    "jp_q3_nominal_gdp_qoq": {
+      "value": 0.4,
+      "unit": "percent_qoq_nominal_sa",
+      "vintage": "2026-11-16_first_preliminary",
+      "source_key": "jp_gdp"
+    },
+    "cn_oct_industrial": {
+      "value": 4.8,
+      "unit": "percent_yoy_real",
+      "reference": "2026-10",
+      "vintage": "2026-11-16",
+      "source_key": "cn_oct_ind"
+    },
+    "cn_sep_industrial": {
+      "value": 5.5,
+      "unit": "percent_yoy_real",
+      "reference": "2026-09",
+      "vintage": "2026-10-19_first",
+      "source_key": "cn_sep_ind"
+    },
+    "cn_oct_retail": {
+      "value": 0.4,
+      "unit": "percent_yoy_nominal",
+      "reference": "2026-10",
+      "vintage": "2026-11-16",
+      "source_key": "cn_oct_retail"
+    },
+    "cn_sep_retail": {
+      "value": 1.1,
+      "unit": "percent_yoy_nominal",
+      "reference": "2026-09",
+      "vintage": "2026-10-19_first",
+      "source_key": "cn_sep_retail"
+    },
+    "cn_oct_hightech": {
+      "value": 17.6,
+      "unit": "percent_yoy_real",
+      "reference": "2026-10",
+      "vintage": "2026-11-16",
+      "source_key": "cn_oct_ind"
+    },
+    "cn_sep_hightech": {
+      "value": 15.3,
+      "unit": "percent_yoy_real",
+      "reference": "2026-09",
+      "vintage": "2026-10-19_first",
+      "source_key": "cn_sep_ind"
+    },
+    "cn_ytd_oct_property": {
+      "value": -21.6,
+      "unit": "percent_yoy_cumulative_comparable_basis",
+      "reference": "2026-01_to_10",
+      "vintage": "2026-11-16",
+      "source_key": "cn_oct_property"
+    },
+    "cn_ytd_sep_property": {
+      "value": -20.6,
+      "unit": "percent_yoy_cumulative_comparable_basis",
+      "reference": "2026-01_to_09",
+      "vintage": "2026-10-19_first",
+      "source_key": "cn_sep_property"
+    },
+    "nikkei_2026_11_16": {
+      "value": 59662.02,
+      "unit": "index_official_daily_close",
+      "reference": "2026-11-16_close",
+      "published_after": "2026-11-16T15:30:00+09:00",
+      "source_key": "nikkei"
+    }
+  },
+  "not_yet_observed": [
+    "2026-11-17 US October import-export price first release",
+    "2026-11-18 UK October CPI first release",
+    "2026-11-19 US claims / Dallas Fed WEI first release",
+    "2026-11-20 relevant Friday market closes"
+  ],
+  "warnings": [
+    "Cumulative Jan-Oct property investment rate minus Jan-Sep cumulative rate is not October standalone growth.",
+    "Nov16 GDP omitted from original frozen 2026-11-14 A-group, so do not score it.",
+    "Japanese real GDP -0.0 is a rounded negative signed zero, not an exact zero.",
+    "No direct verified China statistical revisions; September values retained from October19 first vintage."
+  ]
+}
