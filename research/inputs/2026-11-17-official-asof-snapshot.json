@@ -1,0 +1,136 @@
+{
+  "record_type": "official_source_first_release_and_cash_close_snapshot",
+  "date": "2026-11-17",
+  "as_of": "2026-11-17T19:16:21+09:00",
+  "as_of_policy": "Conservative automation-start information boundary in JST. All observed releases/cash closes below precede this; Git commit creation time is actual repository receipt, and individual web access timestamps are not exposed by retrieval system.",
+  "starting_repo_commit": "1474ff7bba1d16139ce3ae332516d892601c4a05",
+  "frozen_forecast": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "frozen_model_snapshot": "research/inputs/2026-11-14-1200-snapshot.json",
+  "observations": {
+    "nikkei225": {
+      "unit": "Nikkei 225 index points",
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "classification": "index_publisher_official_close",
+      "closes": {
+        "2026-11-13": {
+          "value": 61142.35,
+          "at": "2026-11-13T15:30:00+09:00"
+        },
+        "2026-11-16": {
+          "value": 59662.02,
+          "at": "2026-11-16T15:30:00+09:00"
+        },
+        "2026-11-17": {
+          "value": 58860.43,
+          "at": "2026-11-17T15:30:00+09:00"
+        }
+      },
+      "ohlc_2026_11_17": {
+        "open": 59295.8,
+        "high": 59369.14,
+        "low": 58691.11,
+        "close": 58860.43
+      }
+    },
+    "uk_labor_2026_11_17": {
+      "publisher": "UK ONS",
+      "first_published_date": "2026-11-17",
+      "release_time": "2026-11-17T07:00:00+00:00",
+      "release_time_status": "07:00 GMT regular ONS publication clock; exact individual bulletin timestamp not exposed in retrieved HTML",
+      "sources": [
+        "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/november2026",
+        "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/november2026",
+        "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/jobsandvacanciesintheuk/november2026"
+      ],
+      "period_earnings": "July–September 2026 three-month moving window",
+      "earnings_regular_yoy_pct": 3.5,
+      "earnings_total_yoy_pct": 3.6,
+      "prior_first_2026_10_20_earnings_regular_yoy_pct": 3.7,
+      "prior_first_2026_10_20_earnings_total_yoy_pct": 3.7,
+      "prior_first_source": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/october2026",
+      "revised_prior_total_yoy_as_displayed_nov17_pct": 3.8,
+      "prior_first_vs_current_comparison_warning": "2026-10-20 first bulletin described June–August 2026 total AWE 3.7%; 2026-11-17 comparison states prior rolling three-month 3.8%. Save both: change from first -0.1pp; revised-prior current-vintage -0.2pp. Rolling quarters overlap.",
+      "unemployment_rate_latest_pct": 4.6,
+      "unemployment_measurement_window": "July–September 2026 LFS 16+",
+      "unemployment_change_quarter_pp_current_vintage": -0.3,
+      "unemployment_previous_first_release_pct": 4.7,
+      "unemployment_previous_first_release_window": "June–August 2026",
+      "unemployment_previous_first_source": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/october2026",
+      "payroll_early_october_month_change_thousands": -34,
+      "payroll_early_october_status": "provisional flash, subject to revision",
+      "payroll_september_change_current_revision_thousands": 20,
+      "payroll_september_change_previous_first_thousands": 13,
+      "payroll_previous_first_source": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/october2026",
+      "vacancies_aug_oct_thousands": 690,
+      "vacancy_change_from_may_july_thousands": -22,
+      "vacancy_change_comparison_note": "Rolling three-month survey comparison August–October versus May–July, not a one-month change.",
+      "lfs_quality_warning": "ONS warns employment/unemployment movements are affected by LFS sample rotation; use payroll, vacancies and LFS jointly."
+    },
+    "rba_minutes_2026_11_17": {
+      "publisher": "Reserve Bank of Australia",
+      "policy_meeting": "2026-11-02/2026-11-03",
+      "released_at": "2026-11-17T11:30:00+11:00",
+      "release_type": "minutes_after_meeting_not_new_rate_decision",
+      "source": "https://www.rba.gov.au/monetary-policy/rba-board-minutes/2026/2026-11-03.html",
+      "schedule_source": "https://www.rba.gov.au/coming-up/",
+      "vote_raise": 6,
+      "vote_hold": 3,
+      "prior_cash_rate_pct": 4.6,
+      "adopted_cash_rate_pct": 4.85,
+      "note": "RBA minutes report 85% pre-meeting overnight-indexed-swap probability. This historical number first accessible in this minutes source AFTER the meeting; NOT treated as as-of Oct31 available first-release or used to improve old forecast scores."
+    }
+  },
+  "pending": {
+    "us_oct_import_export_price_indices": {
+      "scheduled_at": "2026-11-17T08:30:00-05:00",
+      "tokyo_time": "2026-11-17T22:30:00+09:00",
+      "status_at_as_of": "not_yet_released",
+      "official_schedule": "https://www.bls.gov/schedule/news_release/ximpim.htm",
+      "previous_first_published_at": "2026-10-16T08:30:00-04:00",
+      "previous_first_source": "https://www.bls.gov/news.release/archives/ximpim_10162026.htm",
+      "september_import_mom_first_pct": 1.1,
+      "september_export_mom_first_pct": 2.2,
+      "no_october_values_filled": true
+    },
+    "uk_oct_cpi": {
+      "scheduled": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/releases/consumerpriceinflationukoctober2026",
+      "status_at_as_of": "future"
+    },
+    "us_initial_claims": {
+      "scheduled": "2026-11-19T08:30:00-05:00",
+      "source": "https://oui.doleta.gov/unemploy/archive.asp",
+      "status_at_as_of": "future"
+    },
+    "japan_cpi_october": {
+      "scheduled_day": "2026-11-20",
+      "source": "https://www.stat.go.jp/english/data/cpi/1582.html",
+      "status_at_as_of": "future"
+    },
+    "global_friday_settlements": {
+      "scheduled_day": "2026-11-20",
+      "status_at_as_of": "future"
+    }
+  },
+  "publication_exposure_today": [
+    {
+      "event": "rba_minutes",
+      "time": "2026-11-17T11:30:00+11:00",
+      "relative_to_nikkei_close": "before_close",
+      "causal_inference": "none"
+    },
+    {
+      "event": "uk_labor",
+      "time": "2026-11-17T07:00:00+00:00",
+      "relative_to_nikkei_close": "after_close",
+      "causal_inference": "cannot influence Nov17 Tokyo cash close through public information"
+    },
+    {
+      "event": "us_import_export",
+      "time": "2026-11-17T08:30:00-05:00",
+      "relative_to_nikkei_close": "after_close_and_after_run_asof",
+      "causal_inference": "not yet published"
+    }
+  ],
+  "source_method": "Manual public source verification in this run: current official publisher pages and previously dated first-release pages; original provider HTML/text not copied in full. No authenticated raw historical download, intraday causal model, or global close data beyond Nikkei claimed."
+}
