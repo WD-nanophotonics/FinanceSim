@@ -125,3 +125,32 @@ jobs:
               assert abs(x['conditional_prob_week_positive_bayes']-y['conditional_prob_week_positive_bayes'])<1e-12
           assert a['observed_macro_features']==b['observed_macro_features']
           PY
+      - name: Reproduce Nov17 two-session conditional study using Nov14 frozen parameters
+        run: |
+          PYTHONPATH=. python research/scripts/audit_2026_11_17_two_session_conditional.py > /tmp/nov17_diagnostic.json
+          python - <<'PY'
+          import json
+          result=json.load(open('/tmp/nov17_diagnostic.json', encoding='utf-8'))
+          report=json.load(open('research/experiments/2026-11-17-two-session-asof-conditional.json', encoding='utf-8'))
+          checks=report['output_checkpoint']
+          s=result['scenarios']
+          got={
+              'original_monday_replay_p_week_le_minus1_5':s[1]['monday_only_probability_week_le_minus1_5'],
+              'tuesday_sigma1_p_week_le_minus1_5':s[1]['tuesday_probability_week_le_minus1_5'],
+              'tuesday_sigma1_no_scenario_reweight_p':s[1]['tuesday_probability_no_reweight'],
+              'difference_due_to_latent_state_reweight_percentage_points':s[1]['reweight_difference_pp'],
+              'tuesday_sigma1_p_week_positive':s[1]['tuesday_probability_week_positive'],
+              'tuesday_sigma1_p_below_frozen_hybrid_90_interval_lower':s[1]['tuesday_probability_below_frozen_hybrid_90_lower'],
+              'next_three_days_return_required_for_week_le_minus1_5_boundary_pct':s[1]['needed_return_remaining_three_days_for_week_minus1_5_pct'],
+              'tuesday_sigma075_p':s[0]['tuesday_probability_week_le_minus1_5'],
+              'tuesday_sigma150_p':s[2]['tuesday_probability_week_le_minus1_5'],
+              'tuesday_sigma200_p':s[3]['tuesday_probability_week_le_minus1_5'],
+          }
+          for k,v in checks.items():
+              assert abs(got[k]-v)<1e-7,(k,got[k],v)
+          assert result['scenario_state_count']==32 and result['new_monte_carlo_draws']==0
+          assert result['frozen_seed']==20261114
+          assert result['official_release_exposure_today'][1]['relative_to_nikkei_close']=='after_close'
+          assert result['information_as_of']=='2026-11-17T19:16:21+09:00'
+          print('Nov17 post-observation model replay matches independently archived numeric checkpoints')
+          PY
