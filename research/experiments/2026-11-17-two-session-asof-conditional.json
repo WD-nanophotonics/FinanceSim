@@ -1,0 +1,71 @@
+{
+  "record_type": "post_observation_conditional_sensitivity_study",
+  "date": "2026-11-17",
+  "information_as_of": "2026-11-17T19:16:21+09:00",
+  "code_path": "research/scripts/audit_2026_11_17_two_session_conditional.py",
+  "code_commit": "7ab6425afe717f4706f0926415a65cb5e350b94e",
+  "frozen_forecast_path": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "frozen_model_snapshot": "research/inputs/2026-11-14-1200-snapshot.json",
+  "original_model_source_commit": "34e1ef694",
+  "original_seed": 20261114,
+  "new_random_seed": null,
+  "new_monte_carlo_draws": 0,
+  "states_exact": 32,
+  "data": "research/inputs/2026-11-17-official-asof-snapshot.json",
+  "reproducibility_status": "Source executes deterministic exact five-Bernoulli-state Gaussian integration using observed official Nikkei closes; local parameter-matched fixture test passed pre-commit. CI replay compares output against numeric checkpoints. Source values and checkpoint values are not fitted.",
+  "observations": {
+    "nikkei_frozen_friday": 61142.35,
+    "nikkei_monday": 59662.02,
+    "nikkei_tuesday": 58860.43,
+    "monday_simple_return_pct": -2.42112055,
+    "tuesday_simple_return_pct": -1.34355156,
+    "first_two_sessions_compounded_return_pct": -3.73214311
+  },
+  "output_checkpoint": {
+    "original_monday_replay_p_week_le_minus1_5": 0.63370673,
+    "tuesday_sigma1_p_week_le_minus1_5": 0.79211623,
+    "tuesday_sigma1_no_scenario_reweight_p": 0.77346008,
+    "difference_due_to_latent_state_reweight_percentage_points": 1.86561521,
+    "tuesday_sigma1_p_week_positive": 0.09831569,
+    "tuesday_sigma1_p_below_frozen_hybrid_90_interval_lower": 0.1507218,
+    "next_three_days_return_required_for_week_le_minus1_5_boundary_pct": 2.31867954,
+    "tuesday_sigma075_p": 0.86969039,
+    "tuesday_sigma150_p": 0.70099085,
+    "tuesday_sigma200_p": 0.65220595
+  },
+  "quantified_macro": {
+    "uk_regular_wage_yoy_change_vs_previous_first_pp": -0.2,
+    "uk_total_wage_yoy_change_vs_previous_first_pp": -0.1,
+    "uk_total_wage_yoy_change_vs_revised_previous_pp": -0.2,
+    "uk_october_payroll_change_thousands": -34,
+    "uk_september_payroll_change_latest_revision_thousands": 20,
+    "uk_payroll_increment_difference_thousands": -54,
+    "uk_september_revision_from_prior_flash_thousands": 7,
+    "uk_aug_oct_vacancies_thousands": 690,
+    "uk_3month_vacancy_decline_thousands": -22,
+    "rba_rate_hike_bp": 25,
+    "rba_6of9_hike_votes": 6,
+    "rba_3of9_hold_votes": 3
+  },
+  "study_protocol": "Use originally frozen five scenario Bernoulli probabilities and market Nikkei sigma 4.1% weekly, spread scenario mean over five independent Gaussian trading days, condition Monday and Tuesday simple returns, compute exact mixture normal-CDF tail over remaining three trading days. Separately keep prior scenario weights for a no-reweight benchmark and multiply volatility by 0.75/1/1.5/2. No new simulation paths and no model parameters fitted. Compare source date to cash-close time to avoid future-event leakage.",
+  "release_time_findings": "RBA minutes released 09:30 JST before Tokyo close 15:30; UK ONS November labour release is 16:00 JST, after Tokyo close; US BLS Oct import/export 22:30 JST is after close and not yet available at study as-of. None supports causal attribution of today's Nikkei decline.",
+  "comparison_prior_hypotheses": [
+    {
+      "id": "Q003",
+      "outcome": "Two-day conditioning changes model probabilities markedly, but latent Bernoulli state reweighting adds only 1.87 percentage points vs no-reweight after Tuesday; observed market return drives most shift. Model-conditional, not empirical winner evidence."
+    },
+    {
+      "id": "H20261115-release-time-exposure",
+      "outcome": "One of three named release clocks precedes Nov17 Nikkei cash close; no actual shock-response coefficient estimated. Explicit after-close sources excluded from same-day Tokyo attribution."
+    }
+  ],
+  "limitations": [
+    "Local test uses identical parameters in isolated fixtures; repository CI full-path execution must pass to claim complete production replay.",
+    "The conditional result is computed AFTER Monday and Tuesday observed closes, not an original Saturday forecast, and cannot be counted as out-of-sample predictive skill.",
+    "Normal independent daily returns, equal 1/5 shock timing and Bernoulli latent shock interpretation are synthetic assumptions never empirically calibrated.",
+    "Returns compound across the two observed sessions and an approximate Gaussian sum covers remaining sessions; this is not a true fitted stochastic process.",
+    "UK unemployment LFS sample rotation, wage first-release/revision mismatch and October flash payroll uncertainty require provenance handling.",
+    "The UK labour release occurs after Tokyo close; RBA minutes are a delayed publication of November 3 monetary decision.",
+    "U.S. import/export October prices are NOT yet published at 19:16 JST, and no Nov20 weekly realized price or WTI fixed futures settlement is inserted."
+  ]
+}
