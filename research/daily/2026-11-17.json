@@ -1,0 +1,177 @@
+{
+  "record_type": "FinanceSim_daily_research",
+  "date": "2026-11-17",
+  "timezone": "Asia/Tokyo",
+  "observation_cutoff": "2026-11-17T19:16:21+09:00",
+  "observation_cutoff_policy": "Conservative run-start as-of bound, before the US Oct import/export first publication at 22:30 JST. New Git commit times provide later verifiable archival timestamps. The data provider does not expose individual web-access seconds.",
+  "original_repo_head": "1474ff7bba1d16139ce3ae332516d892601c4a05",
+  "frozen_forecast": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "frozen_prospective_reference": "research/inputs/2026-11-14-1200-snapshot.json",
+  "frozen_seed": 20261114,
+  "original_model_source_commit": "34e1ef694",
+  "consulted": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-16.json",
+    "research/daily/2026-11-15.json",
+    "research/daily/2026-11-14.json",
+    "research/weekly/2026-11-14-forecast.json",
+    "research/weekly/2026-11-14-forecast-corrected-b01.json",
+    "research/inputs/2026-11-14-1200-snapshot.json",
+    "research/experiments/2026-11-16-asia-monday-conditional.json",
+    "research/scripts/audit_2026_11_16_asia_conditional.js",
+    ".github/workflows/tests.yml",
+    "GitHub Actions run 43847626559 (previous all-green)"
+  ],
+  "official_snapshot": "research/inputs/2026-11-17-official-asof-snapshot.json",
+  "sources": [
+    {
+      "origin": "Nikkei Indexes",
+      "kind": "official publisher final close",
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "reference_date": "2026-11-17",
+      "released_after": "2026-11-17T15:30:00+09:00",
+      "values": {
+        "nov13": 61142.35,
+        "nov16": 59662.02,
+        "nov17": 58860.43
+      },
+      "status": "observed",
+      "vintage": "index compiler end-of-session close"
+    },
+    {
+      "origin": "ONS UK labour market",
+      "kind": "new release",
+      "source": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/november2026",
+      "date": "2026-11-17",
+      "reference_windows": "July–September LFS/AWE and October PAYE flash; August–October vacancies",
+      "status": "observed",
+      "fields": {
+        "unemployment_rate_percent": 4.6,
+        "payroll_oct_flash_change_thousands": -34,
+        "sep_payroll_change_revised_thousands": 20,
+        "vacancies_thousands": 690,
+        "vacancies_change_three_month_thousands": -22
+      }
+    },
+    {
+      "origin": "ONS UK weekly earnings",
+      "kind": "new release",
+      "source": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/november2026",
+      "date": "2026-11-17",
+      "status": "observed",
+      "fields": {
+        "regular_pay_yoy_percent": 3.5,
+        "total_pay_yoy_percent": 3.6
+      }
+    },
+    {
+      "origin": "ONS UK weekly earnings",
+      "kind": "prior first publication",
+      "source": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/october2026",
+      "date": "2026-10-20",
+      "status": "historical first-version baseline",
+      "fields": {
+        "regular_pay_yoy_percent": 3.7,
+        "total_pay_yoy_percent": 3.7
+      }
+    },
+    {
+      "origin": "RBA monetary policy minutes",
+      "kind": "first release of Nov3 meeting minutes, NOT new interest rate announcement",
+      "source": "https://www.rba.gov.au/monetary-policy/rba-board-minutes/2026/2026-11-03.html",
+      "scheduled_release": "2026-11-17T11:30:00+11:00",
+      "status": "observed",
+      "fields": {
+        "votes_hike": 6,
+        "votes_hold": 3,
+        "policy_hike_bp": 25,
+        "cash_rate_percent": 4.85
+      }
+    },
+    {
+      "origin": "BLS import/export price index calendar",
+      "kind": "future scheduled release",
+      "source": "https://www.bls.gov/schedule/news_release/ximpim.htm",
+      "scheduled_release": "2026-11-17T08:30:00-05:00",
+      "status": "FUTURE AT AS-OF: no Oct value observed",
+      "historical_september_first_print": {
+        "import_mom_percent": 1.1,
+        "export_mom_percent": 2.2
+      },
+      "historical_source": "https://www.bls.gov/news.release/archives/ximpim_10162026.htm"
+    }
+  ],
+  "quantified_features": {
+    "nikkei_nov16_daily_pct": -2.42112055,
+    "nikkei_nov17_daily_pct": -1.34355156,
+    "nikkei_two_session_cumulative_pct": -3.73214311,
+    "uk_regular_wage_growth_vs_prior_first_pp": -0.2,
+    "uk_total_wage_growth_vs_prior_first_pp": -0.1,
+    "uk_total_wage_growth_vs_prior_revised_pp": -0.2,
+    "uk_payroll_oct_flash_thousands": -34,
+    "uk_september_payroll_revised_thousands": 20,
+    "uk_september_payroll_first_thousands": 13,
+    "uk_september_payroll_revision_thousands": 7,
+    "uk_oct_vs_sep_revised_payroll_increment_change_thousands": -54,
+    "uk_vacancies_aug_oct_level_thousands": 690,
+    "uk_vacancies_three_month_decline_thousands": -22,
+    "uk_unemployment_jul_sep_percent": 4.6,
+    "uk_unemployment_quarter_on_quarter_pp_in_current_release": -0.3,
+    "rba_vote_raise_share": 0.66666667,
+    "rba_vote_hold_share": 0.33333333,
+    "rba_hike_basis_points": 25,
+    "event_exposure_count_before_nikkei_nov17_close": 1,
+    "event_exposure_count_after_nikkei_nov17_close_or_pending": 2
+  },
+  "method_and_execution": {
+    "experiment": "research/experiments/2026-11-17-two-session-asof-conditional.json",
+    "executable": "research/scripts/audit_2026_11_17_two_session_conditional.py",
+    "code_commit": "7ab6425afe717f4706f0926415a65cb5e350b94e",
+    "local_test": "Independent local Python execution with parameter-matched frozen five events, 4.1% Nikkei weekly sigma, Nikkei Friday/Monday/Tuesday official closes. Checkpoints matched. Full repository inputs and three-arm archive were separately fetched and reviewed.",
+    "ci_check": "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/44064432059",
+    "states_enumerated": 32,
+    "new_random_seed": null,
+    "new_MC_draws": 0,
+    "deterministic_calculation": "State-weighted normal-CDF integral and product of Monday+Tuesday Gaussian event-state likelihoods, after a synthetic equal-fifths decomposition of original frozen weekly event impacts.",
+    "monday_replay_risk_week_le_minus1_5": 0.63370673,
+    "updated_tuesday_risk_week_le_minus1_5": 0.79211623,
+    "updated_tuesday_no_scenario_reweight_risk": 0.77346008,
+    "shift_monday_to_tuesday_pp": 15.84095,
+    "tuesday_scenario_posterior_adjustment_vs_fixed_prior_pp": 1.86561521,
+    "risk_volatility_sigma_scale": {
+      "1": 0.79211623,
+      "2": 0.65220595,
+      "0.75": 0.86969039,
+      "1.5": 0.70099085
+    },
+    "today_nikkei_compounded_return_pct": -3.73214311,
+    "remaining_three_session_return_needed_to_finish_week_above_minus1_5_pct": 2.31867954,
+    "exact_model_nuance": "Close-to-date cumulative realized return is compounded; remaining Gaussian arithmetic return sum is an approximation."
+  },
+  "hypothesis_checks": [
+    {
+      "id": "Q003",
+      "note": "After Tuesday the Gaussian model risk level increases from 63.37% after Monday to 79.21%; preserving prior scenario weights gives 77.35%. Thus the daily observed return dominates the incremental conditional signal, with latent scenario reweight only +1.87pp. No evidence that the LLM hybrid beats a numerical baseline."
+    },
+    {
+      "id": "H20261115-release-time-exposure",
+      "note": "RBA minutes released 09:30 JST before Tokyo close, while ONS UK employment 16:00 JST is AFTER Nikkei close and US BLS 22:30 JST is after both close and this audit as-of. No positive causal claim from timing alone; next model should enforce strict eligibility."
+    },
+    {
+      "id": "Q001",
+      "note": "UK October PAYE flash −34k and vacancies −22k (Aug–Oct vs May–Jul) point to softer labour demand; falling LFS unemployment to 4.6% is affected by cohort rotation. Neither UK series was a Nov14 frozen A target; do not manufacture scores or select coefficients post facto."
+    }
+  ],
+  "outstanding": [
+    "Nov17 BLS October import/export release occurs 22:30 JST, 3h14m after this declared information cutoff; first printed values pending and cannot be known here.",
+    "Nov18 ONS CPI, Nov19 US claims/Dallas WEI, Nov20 Japan CPI and Friday global official market closes are in the future as of input.",
+    "WTI fixed-contract matched settlement provenance remains unresolved. No new US/European Friday cash-close claim.",
+    "UK provisional PAYE flash and LFS sample rotational effects; maintain released-at and vintage separation.",
+    "November 17 model diagnostic is AFTER observed market outcomes and cannot be added to November 14 prospective score or used as real model accuracy.",
+    "The 5×independent Gaussian daily innovation and 1/5 scenario impact timing are modelling assumptions never fitted or validated.",
+    "Nikkei market fall may reflect many contemporaneous events; release time alone cannot assign causality."
+  ],
+  "action": "Append-only source input, independent deterministic code, experiment checkpoint, daily log, index and Python 3.10/3.12 CI replay. No past sealed forecasts modified.",
+  "user_notification": "normal daily research: do not send notification"
+}
