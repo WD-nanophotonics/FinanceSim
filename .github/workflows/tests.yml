@@ -154,3 +154,17 @@ jobs:
           assert result['information_as_of']=='2026-11-17T19:16:21+09:00'
           print('Nov17 post-observation model replay matches independently archived numeric checkpoints')
           PY
+
+      - name: Replay Nov18 four realized first-vintage macro targets and issuer close
+        run: |
+          node research/scripts/score_2026_11_18_four_macro.js > /tmp/nov18_four_macro.json
+          cmp research/experiments/2026-11-18-four-macro-first-release-score.json /tmp/nov18_four_macro.json
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/nov18_four_macro.json'))
+          assert len(r['actuals'])==4
+          assert r['summary']['llm']['mean_brier']==0.164525
+          assert r['summary']['statistical']['mae_change_pp']==0.325
+          assert r['summary']['hybrid']['mean_brier']==0.197771
+          assert r['measured_context_features']['frozen_nov13_to_nov18_pct']==-3.464162
+          PY

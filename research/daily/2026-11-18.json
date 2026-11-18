@@ -1,0 +1,111 @@
+{
+  "record_type": "FinanceSim_daily_research",
+  "date": "2026-11-18",
+  "timezone": "Asia/Tokyo",
+  "observation_cutoff": "2026-11-18T19:16:10+09:00",
+  "original_repo_head": "05be548035bf2a2d2088a85d086af148f4bc3e83",
+  "consulted": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-17.json",
+    "research/experiments/2026-11-17-two-session-asof-conditional.json",
+    "research/weekly/2026-11-14-forecast-corrected-b01.json",
+    "research/inputs/2026-11-14-1200-snapshot.json",
+    ".github/workflows/tests.yml",
+    "GitHub Actions prior runs"
+  ],
+  "official_source_snapshot": "research/inputs/2026-11-18-official-first-releases.json",
+  "experiment": "research/experiments/2026-11-18-four-macro-first-release-score.json",
+  "replay_script": "research/scripts/score_2026_11_18_four_macro.js",
+  "frozen_model_source_commit": "34e1ef694",
+  "frozen_forecast_seed": 20261114,
+  "new_random_seed": null,
+  "new_monte_carlo_draws": 0,
+  "computations": "Four realized official first releases vs four exact Nov14 frozen macro targets; numeric point errors, Brier for strictly positive change and 50/80/90 interval inclusion; UK PPI vintage-difference features and Nikkei Wednesday observed return. Executed parameter-matched local Node fixture, and independent numeric preflight before write; CI full repository replay added.",
+  "primary_source_findings": [
+    {
+      "id": "BLS_MXP",
+      "published_at": "2026-11-17T08:30:00-05:00",
+      "observation": "October imports +1.1% MoM; exports +1.1% MoM. September exports +2.2% first, revised +2.4%. Imported fuel +3.6%, nonfuel +0.8%.",
+      "source": "https://www.bls.gov/news.release/archives/ximpim_11172026.htm"
+    },
+    {
+      "id": "ONS_CPI",
+      "published_at": "2026-11-18T07:00:00+00:00",
+      "observation": "October CPI +3.6% YoY and +0.5% MoM, vs September first +3.5% YoY and +0.4% MoM; core +2.8% YoY unchanged.",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2026"
+    },
+    {
+      "id": "ONS_PPI",
+      "published_at": "2026-11-18T07:00:00+00:00",
+      "observation": "October input PPI +10.8% YoY, output +5.1%; previous September input +8.3%, output +4.6% first revised +4.7%. Provisional, not a frozen target.",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/producerpriceinflation/october2026"
+    },
+    {
+      "id": "NIKKEI",
+      "observed_date": "2026-11-18",
+      "observation": "Issuer close 59024.28 vs Tuesday 58860.43 and Nov13 61142.35.",
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data"
+    }
+  ],
+  "quantified_features": {
+    "uk_ppi_input_yoy_change_vs_sep_first_pp": 2.5,
+    "uk_ppi_output_yoy_change_vs_sep_first_pp": 0.5,
+    "uk_ppi_output_yoy_change_vs_sep_revised_pp": 0.4,
+    "uk_ppi_input_minus_output_yoy_oct_pp": 5.7,
+    "uk_ppi_first_vintage_gap_change_pp": 2,
+    "us_sep_export_revision_pp": 0.2,
+    "us_oct_import_minus_export_mom_pp": 0,
+    "us_oct_nonfuel_minus_fuel_import_mom_pp": -2.8,
+    "nov17_to_nov18_pct": 0.27837,
+    "frozen_nov13_to_nov18_pct": -3.464162
+  },
+  "partial_scores": {
+    "llm": {
+      "n": 4,
+      "mae_change_pp": 0.3375,
+      "mean_brier": 0.164525,
+      "coverage_50_count": 3,
+      "coverage_80_count": 4,
+      "coverage_90_count": 4
+    },
+    "statistical": {
+      "n": 4,
+      "mae_change_pp": 0.325,
+      "mean_brier": 0.25,
+      "coverage_50_count": 3,
+      "coverage_80_count": 3,
+      "coverage_90_count": 4
+    },
+    "hybrid": {
+      "n": 4,
+      "mae_change_pp": 0.4375,
+      "mean_brier": 0.197771,
+      "coverage_50_count": 1,
+      "coverage_80_count": 4,
+      "coverage_90_count": 4
+    }
+  },
+  "observed_outcomes_count": 4,
+  "scenario_checks": [
+    {
+      "id": "Q001",
+      "note": "UK headline CPI and factory input inflation accelerated, core CPI held at +2.8% YoY; October PPI input-output inflation spread +5.7pp (2.0pp wider than prior first-vintage gap). This descriptive difference does not measure profit margins or causal pass-through."
+    },
+    {
+      "id": "Q003",
+      "note": "Four ex ante A targets: LLM mean Brier .164525, statistical .25, hybrid .197771; MAE .3375/.325/.4375pp. Pure LLM best Brier, statistical best point MAE on this tiny correlated subset; no selected winner or revised weights."
+    },
+    {
+      "id": "H20261115-release-time-exposure",
+      "note": "ONS CPI/PPI at Nov18 16:00 JST fell 30 min after Tokyo 15:30 close; ineligible as cause of that already-settled cash close. US Nov17 BLS 22:30 JST preceded Nov18 Tokyo session, but timing alone is not causal proof."
+    }
+  ],
+  "vintage_rules": "All four score deltas against first-printed September values already in frozen forecast; UK output PPI +0.5pp vs September first and +0.4pp vs September revised kept distinct. BLS imports/exports October YoY broadly unavailable for series lacking October 2025 survey data; not guessed.",
+  "pending": [
+    "Nov19 first DOL claims and Dallas WEI, Nov20 Japan CPI and six-market Friday closes.",
+    "WTI same-contract settlement remains unverified.",
+    "No forecast intervals or probabilities revised from Nov14."
+  ],
+  "user_notification": "normal daily research: no notification"
+}

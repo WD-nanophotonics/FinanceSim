@@ -1,0 +1,224 @@
+{
+  "record_type": "FinanceSim_2026_11_18_partial_first_release_verification",
+  "information_as_of": "2026-11-18T19:16:10+09:00",
+  "original_head": "05be548035bf2a2d2088a85d086af148f4bc3e83",
+  "forecast_file": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "frozen_model_source_commit": "34e1ef694",
+  "frozen_seed": 20261114,
+  "input_file": "research/inputs/2026-11-18-official-first-releases.json",
+  "score_policy": "Only Nov17/18 first-published four macro targets; value minus prior first release; direction strictly delta>0; per-target Brier and intervals; no joint C/B scoring until Friday.",
+  "actuals": {
+    "us_import_mom_nov17": {
+      "group": "A",
+      "target_id": "us_import_mom_nov17",
+      "unit": "percentage_points_mom",
+      "first_release_value": 1.1,
+      "prior_first_value": 1.1,
+      "observed_change": 0,
+      "realized_positive": 0,
+      "published_at": "2026-11-17T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ximpim_11172026.htm",
+      "arms": {
+        "llm": {
+          "predicted_change": -0.7,
+          "absolute_error": 0.7,
+          "prob_positive": 0.22,
+          "brier": 0.0484,
+          "coverage_50": false,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "predicted_change": 0,
+          "absolute_error": 0,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "predicted_change": -0.75,
+          "absolute_error": 0.75,
+          "prob_positive": 0.1587,
+          "brier": 0.025186,
+          "coverage_50": false,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    },
+    "us_export_mom_nov17": {
+      "group": "A",
+      "target_id": "us_export_mom_nov17",
+      "unit": "percentage_points_mom",
+      "first_release_value": 1.1,
+      "prior_first_value": 2.2,
+      "observed_change": -1.1,
+      "realized_positive": 0,
+      "published_at": "2026-11-17T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ximpim_11172026.htm",
+      "arms": {
+        "llm": {
+          "predicted_change": -1.5,
+          "absolute_error": 0.4,
+          "prob_positive": 0.12,
+          "brier": 0.0144,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "predicted_change": 0,
+          "absolute_error": 1.1,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": false,
+          "coverage_80": false,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "predicted_change": -1.75,
+          "absolute_error": 0.65,
+          "prob_positive": 0.0198,
+          "brier": 0.000392,
+          "coverage_50": false,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    },
+    "uk_cpi_yoy_nov18": {
+      "group": "A",
+      "target_id": "uk_cpi_yoy_nov18",
+      "unit": "percentage_points_yoy",
+      "first_release_value": 3.6,
+      "prior_first_value": 3.5,
+      "observed_change": 0.1,
+      "realized_positive": 1,
+      "published_at": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2026",
+      "arms": {
+        "llm": {
+          "predicted_change": 0,
+          "absolute_error": 0.1,
+          "prob_positive": 0.48,
+          "brier": 0.2704,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "predicted_change": 0,
+          "absolute_error": 0.1,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "predicted_change": -0.05,
+          "absolute_error": 0.15,
+          "prob_positive": 0.414,
+          "brier": 0.343396,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    },
+    "uk_cpi_mom_nov18": {
+      "group": "A",
+      "target_id": "uk_cpi_mom_nov18",
+      "unit": "percentage_points_mom",
+      "first_release_value": 0.5,
+      "prior_first_value": 0.4,
+      "observed_change": 0.1,
+      "realized_positive": 1,
+      "published_at": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2026",
+      "arms": {
+        "llm": {
+          "predicted_change": -0.05,
+          "absolute_error": 0.15,
+          "prob_positive": 0.43,
+          "brier": 0.3249,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "predicted_change": 0,
+          "absolute_error": 0.1,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "predicted_change": -0.1,
+          "absolute_error": 0.2,
+          "prob_positive": 0.3503,
+          "brier": 0.42211,
+          "coverage_50": false,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    }
+  },
+  "summary": {
+    "llm": {
+      "n": 4,
+      "mae_change_pp": 0.3375,
+      "mean_brier": 0.164525,
+      "coverage_50_count": 3,
+      "coverage_80_count": 4,
+      "coverage_90_count": 4
+    },
+    "statistical": {
+      "n": 4,
+      "mae_change_pp": 0.325,
+      "mean_brier": 0.25,
+      "coverage_50_count": 3,
+      "coverage_80_count": 3,
+      "coverage_90_count": 4
+    },
+    "hybrid": {
+      "n": 4,
+      "mae_change_pp": 0.4375,
+      "mean_brier": 0.197771,
+      "coverage_50_count": 1,
+      "coverage_80_count": 4,
+      "coverage_90_count": 4
+    }
+  },
+  "measured_context_features": {
+    "uk_ppi_input_yoy_change_vs_sep_first_pp": 2.5,
+    "uk_ppi_output_yoy_change_vs_sep_first_pp": 0.5,
+    "uk_ppi_output_yoy_change_vs_sep_revised_pp": 0.4,
+    "uk_ppi_input_minus_output_yoy_oct_pp": 5.7,
+    "uk_ppi_first_vintage_gap_change_pp": 2,
+    "us_sep_export_revision_pp": 0.2,
+    "us_oct_import_minus_export_mom_pp": 0,
+    "us_oct_nonfuel_minus_fuel_import_mom_pp": -2.8,
+    "nov17_to_nov18_pct": 0.27837,
+    "frozen_nov13_to_nov18_pct": -3.464162
+  },
+  "execution": "Deterministic Node.js scoring of archived three-arm forecast; NO new model fit, NO stochastic draw, NO market backtest.",
+  "remaining_frozen_macro_targets": [
+    "us_claims_nov19",
+    "dallas_wei_nov19"
+  ],
+  "limitations": [
+    "Only four released correlated price-index targets; not a weekly or lifetime model ranking.",
+    "First-vintage September US export 2.2% and later revised 2.4% are distinct; frozen baseline remains 2.2%.",
+    "US October import change is exactly 0.0pp; positive-direction event is false even while the level is +1.1% MoM.",
+    "UK PPI is context and was not registered as a Nov14 prediction target; ONS PPI is provisional.",
+    "UK CPI issued 16:00 JST after Tokyo Nov18 cash close; Nikkei close cannot incorporate that UK public release.",
+    "Prior weekly market closes and unmatched fixed-contract WTI settlements remain unverified where noted; no future Friday closes used.",
+    "Multiple targets share macro shocks and units; four scores cannot establish calibrated forecasting skill."
+  ]
+}

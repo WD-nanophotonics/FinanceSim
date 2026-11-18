@@ -1,0 +1,128 @@
+{
+  "record_type": "FinanceSim_primary_first_release_snapshot",
+  "as_of": "2026-11-18T19:16:10+09:00",
+  "as_of_policy": "Conservative run-start bound. Bulletins specify exact publication times; individual website fetch times not independently logged. Git commit records subsequent preservation.",
+  "original_head": "05be548035bf2a2d2088a85d086af148f4bc3e83",
+  "frozen_targets_first_release": {
+    "us_import_mom_nov17": {
+      "status": "first_release",
+      "value": 1.1,
+      "prior_first_value": 1.1,
+      "unit": "percent_month_on_month",
+      "reference_month": "2026-10",
+      "prior_reference_month": "2026-09",
+      "published_at": "2026-11-17T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ximpim_11172026.htm",
+      "prior_source": "https://www.bls.gov/news.release/archives/ximpim_10162026.htm"
+    },
+    "us_export_mom_nov17": {
+      "status": "first_release",
+      "value": 1.1,
+      "prior_first_value": 2.2,
+      "prior_current_revised_value": 2.4,
+      "unit": "percent_month_on_month",
+      "reference_month": "2026-10",
+      "prior_reference_month": "2026-09",
+      "published_at": "2026-11-17T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/archives/ximpim_11172026.htm",
+      "prior_source": "https://www.bls.gov/news.release/archives/ximpim_10162026.htm"
+    },
+    "uk_cpi_yoy_nov18": {
+      "status": "first_release",
+      "value": 3.6,
+      "prior_first_value": 3.5,
+      "unit": "percent_year_on_year",
+      "reference_month": "2026-10",
+      "prior_reference_month": "2026-09",
+      "published_at": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2026",
+      "prior_source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026"
+    },
+    "uk_cpi_mom_nov18": {
+      "status": "first_release",
+      "value": 0.5,
+      "prior_first_value": 0.4,
+      "unit": "percent_month_on_month",
+      "reference_month": "2026-10",
+      "prior_reference_month": "2026-09",
+      "published_at": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2026",
+      "prior_source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026"
+    }
+  },
+  "context": {
+    "uk_ppi": {
+      "published_at": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/producerpriceinflation/october2026",
+      "prior_first_source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/producerpriceinflation/september2026includingservicesjulytoseptember2026",
+      "oct_input_yoy": 10.8,
+      "oct_output_yoy": 5.1,
+      "oct_input_mom": 2.2,
+      "oct_output_mom": 0.4,
+      "sep_first_input_yoy": 8.3,
+      "sep_first_output_yoy": 4.6,
+      "sep_current_revised_output_yoy": 4.7,
+      "oct_crude_oil_input_mom": 22.8,
+      "oct_crude_oil_input_yoy": 88.4,
+      "oct_refined_output_yoy": 72.4,
+      "status": "October first publication; September back revision differentiated; both months provisional."
+    },
+    "uk_cpi_core": {
+      "oct_core_yoy": 2.8,
+      "sep_first_core_yoy": 2.8,
+      "oct_services_yoy": 3.7,
+      "oct_goods_yoy": 3.5,
+      "sept_goods_yoy": 3.2,
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2026",
+      "status": "Context only; not a frozen macro target."
+    },
+    "us_mxp": {
+      "source": "https://www.bls.gov/news.release/archives/ximpim_11172026.htm",
+      "oct_import_mom": 1.1,
+      "oct_export_mom": 1.1,
+      "oct_fuel_import_mom": 3.6,
+      "oct_nonfuel_import_mom": 0.8,
+      "sep_export_first_mom": 2.2,
+      "sep_export_revised_mom": 2.4,
+      "oct_import_export_yoy": "official_unavailable_for_major_survey_series_due_to_missing_2025_10_reference",
+      "status": "October first publication, September back revision differentiated."
+    }
+  },
+  "market": {
+    "nikkei225": {
+      "status": "issuer_final_close",
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "issuer_page_updated": "2026-11-18",
+      "closes": {
+        "2026-11-13": 61142.35,
+        "2026-11-16": 59662.02,
+        "2026-11-17": 58860.43,
+        "2026-11-18": 59024.28
+      },
+      "cash_close_time_jst": "15:30"
+    }
+  },
+  "pending_as_of": [
+    {
+      "target_id": "us_claims_nov19",
+      "expected_published_at": "2026-11-19T08:30:00-05:00",
+      "status": "future"
+    },
+    {
+      "target_id": "dallas_wei_nov19",
+      "expected_published_at": "2026-11-19T10:30:00-06:00",
+      "status": "future_provisional_time"
+    },
+    {
+      "target_id": "weekly_friday_settlements_2026_11_20",
+      "status": "future"
+    }
+  ],
+  "market_release_timing": {
+    "uk_cpi_and_ppi_jst": "2026-11-18T16:00:00+09:00",
+    "nikkei_cash_close_jst": "2026-11-18T15:30:00+09:00",
+    "us_import_export_jst": "2026-11-17T22:30:00+09:00",
+    "uk_inflation_eligible_for_nikkei_nov18_cash_close": false
+  },
+  "separation": "Official level observations and first vintages are observed. Surprise versus pre-release consensus and causal shock coefficients are unavailable."
+}
