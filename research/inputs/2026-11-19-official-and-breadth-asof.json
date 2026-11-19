@@ -1,0 +1,82 @@
+{
+  "record_type": "2026-11-19_first_vintage_and_cash_close_input",
+  "as_of": "2026-11-19T19:20:33+09:00",
+  "original_head": "fe2c7ea9c346fb93597857d5cbef697c089a1811",
+  "frozen_model_commit": "34e1ef694",
+  "frozen_seed": 20261114,
+  "japan_trade": {
+    "month": "2026-10",
+    "release_date": "2026-11-18",
+    "release_clock_time": "not verified",
+    "vintage": "first preliminary",
+    "source": "https://www.customs.go.jp/toukei/shinbun/trade-st/gaiyo2026_10.pdf",
+    "exports_nominal_yoy_pct": 20.5,
+    "exports_volume_yoy_pct": 5.8,
+    "imports_nominal_yoy_pct": 21.6,
+    "imports_volume_yoy_pct": -0.2,
+    "trade_balance_unadjusted_100million_jpy": -4765,
+    "trade_balance_seasonally_adjusted_100million_jpy": -7672,
+    "exports_mom_seasonally_adjusted_pct": 3.3,
+    "imports_mom_seasonally_adjusted_pct": 3.5,
+    "crude_oil_import_growth_contribution_pp": 4.8,
+    "semiconductor_component_export_growth_contribution_pp": 3.2,
+    "customs_fx_oct26_jpy_per_dollar": 157.84,
+    "customs_fx_oct25_jpy_per_dollar": 149.51
+  },
+  "nikkei": {
+    "publisher": "Nikkei Inc.",
+    "source": "https://indexes.nikkei.co.jp/en/nkave/statistics",
+    "regular_close": "15:30 JST",
+    "closes": {
+      "2026-11-13": 61142.35,
+      "2026-11-16": 59662.02,
+      "2026-11-17": 58860.43,
+      "2026-11-18": 59024.28,
+      "2026-11-19": 59444.21
+    }
+  },
+  "market_breadth": {
+    "source": "https://s.kabutan.jp/news/n202611190945/",
+    "source_type": "secondary, not directly exchange-verified",
+    "published_at": "2026-11-19T15:32:00+09:00",
+    "nikkei_net_gain_points": 419.93,
+    "topix_close": 3822.47,
+    "topix_change_points": -1.53,
+    "prime_advanced": 599,
+    "prime_declined": 894,
+    "prime_unchanged": 52,
+    "nikkei_index_positive_points": {
+      "softbank_group": 124.59,
+      "tokyo_electron": 121.86,
+      "konami_group": 38.43,
+      "daikin": 30.34,
+      "fast_retailing": 26.7
+    }
+  },
+  "pending": {
+    "us_claims": {
+      "target": "2026-11-19T22:30:00+09:00",
+      "status": "future",
+      "source": "https://www.dol.gov/ui/data.pdf"
+    },
+    "dallas_wei": {
+      "nominal_target": "2026-11-20T01:30:00+09:00",
+      "status": "future, exact minute not verified",
+      "source": "https://www.dallasfed.org/research/wei"
+    },
+    "japan_cpi": {
+      "date": "2026-11-20",
+      "status": "future"
+    },
+    "friday_stock_close": {
+      "date": "2026-11-20",
+      "status": "future"
+    }
+  },
+  "notes": [
+    "As-of is conservative run-start information boundary; exact web access seconds are not provided.",
+    "Nominal/volume price proxies are computed from rounded aggregate growth, not official price indices.",
+    "The trade first release is Nov18, not a new Nov19 release.",
+    "Nikkei closing levels are from the index compiler; breadth and index contributions are from secondary financial journalism."
+  ]
+}
