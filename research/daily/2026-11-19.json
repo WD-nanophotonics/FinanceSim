@@ -1,0 +1,168 @@
+{
+  "record_type": "FinanceSim_daily_research",
+  "date": "2026-11-19",
+  "information_as_of": "2026-11-19T19:20:33+09:00",
+  "original_repo_head": "fe2c7ea9c346fb93597857d5cbef697c089a1811",
+  "consulted": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-17.json",
+    "research/daily/2026-11-18.json",
+    "research/weekly/2026-11-14-forecast-corrected-b01.json",
+    "research/inputs/2026-11-14-1200-snapshot.json",
+    "research/experiments/2026-11-18-four-macro-first-release-score.json",
+    "research/scripts/audit_2026_11_17_two_session_conditional.py",
+    ".github/workflows/tests.yml",
+    "https://github.com/WD-nanophotonics/FinanceSim/actions/runs/44284860608"
+  ],
+  "sources": {
+    "official_trade": "https://www.customs.go.jp/toukei/shinbun/trade-st/gaiyo2026_10.pdf",
+    "official_nikkei": "https://indexes.nikkei.co.jp/en/nkave/statistics",
+    "secondary_market_breadth": "https://s.kabutan.jp/news/n202611190945/",
+    "future_claims_calendar": "https://www.dol.gov/ui/data.pdf",
+    "future_wei": "https://www.dallasfed.org/research/wei"
+  },
+  "input": "research/inputs/2026-11-19-official-and-breadth-asof.json",
+  "code": "research/scripts/audit_2026_11_19_nikkei_trade_breadth.js",
+  "experiment": "research/experiments/2026-11-19-nikkei-trade-breadth-conditional.json",
+  "model_frozen_at": "research/inputs/2026-11-14-1200-snapshot.json",
+  "frozen_source_commit": "34e1ef694",
+  "frozen_seed": 20261114,
+  "new_random_seed": null,
+  "new_monte_carlo_draws": 0,
+  "observations": [
+    {
+      "date": "2026-11-18",
+      "vintage": "first preliminary October Japan goods trade",
+      "nominal_export_yoy_pct": 20.5,
+      "volume_export_yoy_pct": 5.8,
+      "nominal_import_yoy_pct": 21.6,
+      "volume_import_yoy_pct": -0.2,
+      "unadjusted_balance_billion_jpy": -476.5,
+      "release_hour": "unverified"
+    },
+    {
+      "date": "2026-11-19",
+      "publisher": "Nikkei Inc.",
+      "close_jst": "15:30",
+      "nikkei225_index_close": 59444.21,
+      "index_day_gain_pct": 0.71145298,
+      "week_to_date_from_nov13_pct": -2.77735481
+    },
+    {
+      "date": "2026-11-19",
+      "publisher": "Kabutan, secondary",
+      "publication_jst": "15:32",
+      "topix_day_change_pct": -0.04001046,
+      "prime_up": 599,
+      "prime_down": 894,
+      "prime_unchanged": 52,
+      "top_two_contribution_as_share_of_net_nikkei_advance": 0.58688353
+    }
+  ],
+  "numerical_features": {
+    "exports_nominal_yoy_pct": 20.5,
+    "exports_volume_yoy_pct": 5.8,
+    "imports_nominal_yoy_pct": 21.6,
+    "imports_volume_yoy_pct": -0.2,
+    "export_nominal_minus_volume_pp": 14.7,
+    "import_nominal_minus_volume_pp": 21.8,
+    "arithmetic_export_implicit_unit_value_yoy_pct": 13.89413989,
+    "arithmetic_import_implicit_unit_value_yoy_pct": 21.84368737,
+    "customs_fx_yen_depreciation_yoy_pct": 5.57153368,
+    "unadjusted_trade_balance_100million_jpy": -4765,
+    "seasonally_adjusted_trade_balance_100million_jpy": -7672,
+    "crude_oil_import_growth_contribution_pp": 4.8,
+    "semiconductor_export_growth_contribution_pp": 3.2
+  },
+  "breadth_features": {
+    "nikkei_day_change_pct": 0.71145298,
+    "nikkei_day_gain_points": 419.93,
+    "topix_day_change_pct": -0.04001046,
+    "tse_prime_rising": 599,
+    "tse_prime_falling": 894,
+    "tse_prime_unchanged": 52,
+    "advance_fraction_nonflat": 0.40120563,
+    "advance_minus_decline_count": -295,
+    "top_two_contributions_points": 246.45,
+    "top_two_share_of_net_gain": 0.58688353,
+    "top_five_contributions_points": 341.92,
+    "top_five_share_of_net_gain": 0.81423094
+  },
+  "executed_analysis": {
+    "method": "Exact 32 Bernoulli-state summation, Gaussian conditional density and CDF approximation; independently assumed 5 daily Gaussian innovations/equal weekly shock split; no fitted parameters; all probability updates are after observed closes.",
+    "states": 32,
+    "regression_replay": 0.79211625,
+    "post_thursday_conditional_probabilities": {
+      "1": {
+        "p_week_le_minus1_5": 0.7761446,
+        "p_no_reweight": 0.76838688,
+        "latent_reweight_effect_pp": 0.77577118,
+        "p_week_positive": 0.0555621,
+        "required_friday_pct_for_week_minus1_5": 1.31384495
+      },
+      "2": {
+        "p_week_le_minus1_5": 0.64532107,
+        "p_no_reweight": 0.64408093,
+        "latent_reweight_effect_pp": 0.12401463,
+        "p_week_positive": 0.21404871,
+        "required_friday_pct_for_week_minus1_5": 1.31384495
+      },
+      "0.75": {
+        "p_week_le_minus1_5": 0.8483993,
+        "p_no_reweight": 0.83421982,
+        "latent_reweight_effect_pp": 1.41794844,
+        "p_week_positive": 0.01639557,
+        "required_friday_pct_for_week_minus1_5": 1.31384495
+      },
+      "1.5": {
+        "p_week_le_minus1_5": 0.6912609,
+        "p_no_reweight": 0.68850142,
+        "latent_reweight_effect_pp": 0.27594759,
+        "p_week_positive": 0.14501051,
+        "required_friday_pct_for_week_minus1_5": 1.31384495
+      }
+    }
+  },
+  "judgments": [
+    "The Thursday Nikkei increase (+0.71145%) coexists with a negative TOPIX (-0.04001%) and minority (40.12%) advancing Prime names; concentrated headline advance could misrepresent stock-level breadth. It is one as-of observation and has no validated predictive coefficient.",
+    "The October Japan goods import value growth (+21.6% YoY) coexists with import volume shrinkage (-0.2%); an arithmetic residual proxy of +21.84% combines currency, composition and goods price effects. No true causal or model calibration inference from this alone.",
+    "The 32-state post-Thursday conditional model risk at original sigma is ~77.61% for Nov13–20 Nikkei return <= -1.5%, compared with ~76.84% when latent weights not updated; reweight accounts for only ~0.78pp. This diagnostic uses realized market data and is excluded from Nov14 frozen forecast scoring."
+  ],
+  "hypotheses": [
+    {
+      "id": "Q001",
+      "next_test": "Predeclare level and physical-quantity signals separately; evaluate against the same frozen no-change baseline over >=26 weeks, not on a retroactively chosen shock."
+    },
+    {
+      "id": "Q002",
+      "next_test": "Predeclare breadth disagreement features and test 26-week forward realized volatility and tail risks against index-only proxy; no one-day winner selection."
+    },
+    {
+      "id": "Q003",
+      "next_test": "Keep original Saturday three-arm predictions sealed, score only at publication and matched Friday close; conditional post-observation diagnostics remain separate."
+    }
+  ],
+  "pending": [
+    "DOL claims first publication Nov19 08:30 EST / 22:30 JST is after as-of, not scored.",
+    "Dallas Fed WEI nominal Nov19 10:30 CST / Nov20 01:30 JST is after as-of; timestamp and initial vintage unverified.",
+    "Japan October CPI and Friday global cash closes expected Nov20 and cannot be observed now.",
+    "WTI fixed-contract settlement identity remains unverified; do not force score."
+  ],
+  "test_log": {
+    "prewrite": "Read existing freeze inputs, previous Nov17 and Nov18 studies and prior successful Python3.10/3.12 CI. Executed deterministic 32-state regression against existing 0.79211623 checkpoint before GitHub writes; deviation <1e-5. Independent Python isolated fixture replay also passed using original five model event params; no full repo clone possible in isolated local runtime.",
+    "postwrite": "CI pending / to verify for current GitHub commit.",
+    "write_policy": "Append only new dated files and update INDEX and CI. No frozen forecasts, historical scores or other science/model files modified."
+  },
+  "limitations": [
+    "October Japan trade was first released November 18; exact clock time not verified.",
+    "Arithmetic nominal/volume implicit values are not official deflators; commodity weights, composition and yen exchange rates matter.",
+    "Stock-breadth and top-contribution figures are secondary Kabutan reports; shares are of NET Nikkei gain and not gross total positive stock contributions.",
+    "Nikkei is price-weighted, TOPIX capitalization-weighted, Prime-wide issue breadth broader than Nikkei constituents.",
+    "Conditional probabilities use already-observed Monday-Thursday Nikkei closes, cannot count as Saturday-Nov14 prospective scores or evidence of model skill.",
+    "Independent Gaussian daily innovations and equal distributed event impacts are assumed, not calibrated; sigma choice materially changes outcomes.",
+    "US jobless claims and WEI and Friday endpoints were in the future as of cutoff; no scoring of them.",
+    "WTI same-contract price/vendor provenance unresolved."
+  ],
+  "user_notification": "normal daily research - no notification"
+}
