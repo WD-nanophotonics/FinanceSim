@@ -1,0 +1,119 @@
+{
+  "record_type": "nov19_frozen_model_asof_post_thursday_conditional_trade_breadth_audit",
+  "information_as_of": "2026-11-19T19:20:33+09:00",
+  "original_repository_head": "fe2c7ea9c346fb93597857d5cbef697c089a1811",
+  "frozen_model_commit": "34e1ef694",
+  "frozen_model_seed": 20261114,
+  "new_random_seed": null,
+  "new_monte_carlo_draws": 0,
+  "scenario_states": 32,
+  "frozen_forecast": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "frozen_snapshot": "research/inputs/2026-11-14-1200-snapshot.json",
+  "source_input": "research/inputs/2026-11-19-official-and-breadth-asof.json",
+  "actual_execution": "Exact 32 Bernoulli-state summation, Gaussian conditional density and CDF approximation; independently assumed 5 daily Gaussian innovations/equal weekly shock split; no fitted parameters; all probability updates are after observed closes.",
+  "nikkei_closes": {
+    "2026-11-13": 61142.35,
+    "2026-11-16": 59662.02,
+    "2026-11-17": 58860.43,
+    "2026-11-18": 59024.28,
+    "2026-11-19": 59444.21
+  },
+  "daily_index_returns_pct": {
+    "2026-11-16": -2.42112055,
+    "2026-11-17": -1.34355156,
+    "2026-11-18": 0.27837038,
+    "2026-11-19": 0.71145298
+  },
+  "nov13_to_nov19_pct": -2.77735481,
+  "nov17_regression_replay": 0.79211625,
+  "conditional_risks": {
+    "1": {
+      "p_week_le_minus1_5": 0.7761446,
+      "p_no_reweight": 0.76838688,
+      "latent_reweight_effect_pp": 0.77577118,
+      "p_week_positive": 0.0555621,
+      "required_friday_pct_for_week_minus1_5": 1.31384495
+    },
+    "2": {
+      "p_week_le_minus1_5": 0.64532107,
+      "p_no_reweight": 0.64408093,
+      "latent_reweight_effect_pp": 0.12401463,
+      "p_week_positive": 0.21404871,
+      "required_friday_pct_for_week_minus1_5": 1.31384495
+    },
+    "0.75": {
+      "p_week_le_minus1_5": 0.8483993,
+      "p_no_reweight": 0.83421982,
+      "latent_reweight_effect_pp": 1.41794844,
+      "p_week_positive": 0.01639557,
+      "required_friday_pct_for_week_minus1_5": 1.31384495
+    },
+    "1.5": {
+      "p_week_le_minus1_5": 0.6912609,
+      "p_no_reweight": 0.68850142,
+      "latent_reweight_effect_pp": 0.27594759,
+      "p_week_positive": 0.14501051,
+      "required_friday_pct_for_week_minus1_5": 1.31384495
+    }
+  },
+  "trade_first_release_date": "2026-11-18",
+  "trade_features": {
+    "exports_nominal_yoy_pct": 20.5,
+    "exports_volume_yoy_pct": 5.8,
+    "imports_nominal_yoy_pct": 21.6,
+    "imports_volume_yoy_pct": -0.2,
+    "export_nominal_minus_volume_pp": 14.7,
+    "import_nominal_minus_volume_pp": 21.8,
+    "arithmetic_export_implicit_unit_value_yoy_pct": 13.89413989,
+    "arithmetic_import_implicit_unit_value_yoy_pct": 21.84368737,
+    "customs_fx_yen_depreciation_yoy_pct": 5.57153368,
+    "unadjusted_trade_balance_100million_jpy": -4765,
+    "seasonally_adjusted_trade_balance_100million_jpy": -7672,
+    "crude_oil_import_growth_contribution_pp": 4.8,
+    "semiconductor_export_growth_contribution_pp": 3.2
+  },
+  "breadth_features": {
+    "nikkei_day_change_pct": 0.71145298,
+    "nikkei_day_gain_points": 419.93,
+    "topix_day_change_pct": -0.04001046,
+    "tse_prime_rising": 599,
+    "tse_prime_falling": 894,
+    "tse_prime_unchanged": 52,
+    "advance_fraction_nonflat": 0.40120563,
+    "advance_minus_decline_count": -295,
+    "top_two_contributions_points": 246.45,
+    "top_two_share_of_net_gain": 0.58688353,
+    "top_five_contributions_points": 341.92,
+    "top_five_share_of_net_gain": 0.81423094
+  },
+  "pending_at_asof": {
+    "us_claims": {
+      "target": "2026-11-19T22:30:00+09:00",
+      "status": "future",
+      "source": "https://www.dol.gov/ui/data.pdf"
+    },
+    "dallas_wei": {
+      "nominal_target": "2026-11-20T01:30:00+09:00",
+      "status": "future, exact minute not verified",
+      "source": "https://www.dallasfed.org/research/wei"
+    },
+    "japan_cpi": {
+      "date": "2026-11-20",
+      "status": "future"
+    },
+    "friday_stock_close": {
+      "date": "2026-11-20",
+      "status": "future"
+    }
+  },
+  "limitations": [
+    "October Japan trade was first released November 18; exact clock time not verified.",
+    "Arithmetic nominal/volume implicit values are not official deflators; commodity weights, composition and yen exchange rates matter.",
+    "Stock-breadth and top-contribution figures are secondary Kabutan reports; shares are of NET Nikkei gain and not gross total positive stock contributions.",
+    "Nikkei is price-weighted, TOPIX capitalization-weighted, Prime-wide issue breadth broader than Nikkei constituents.",
+    "Conditional probabilities use already-observed Monday-Thursday Nikkei closes, cannot count as Saturday-Nov14 prospective scores or evidence of model skill.",
+    "Independent Gaussian daily innovations and equal distributed event impacts are assumed, not calibrated; sigma choice materially changes outcomes.",
+    "US jobless claims and WEI and Friday endpoints were in the future as of cutoff; no scoring of them.",
+    "WTI same-contract price/vendor provenance unresolved."
+  ]
+}
