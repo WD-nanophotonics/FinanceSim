@@ -168,3 +168,17 @@ jobs:
           assert r['summary']['hybrid']['mean_brier']==0.197771
           assert r['measured_context_features']['frozen_nov13_to_nov18_pct']==-3.464162
           PY
+      - name: Replay Nov19 Japan trade / Nikkei breadth / post-Thursday frozen model diagnostic
+        run: |
+          node research/scripts/audit_2026_11_19_nikkei_trade_breadth.js > /tmp/nov19_audit.json
+          cmp research/experiments/2026-11-19-nikkei-trade-breadth-conditional.json /tmp/nov19_audit.json
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/nov19_audit.json'))
+          assert r['scenario_states']==32 and r['frozen_model_seed']==20261114
+          assert abs(r['nov17_regression_replay']-0.79211623)<1e-5
+          assert r['trade_features']['import_nominal_minus_volume_pp']==21.8
+          assert r['breadth_features']['advance_minus_decline_count']==-295
+          assert abs(r['breadth_features']['nikkei_day_change_pct']-0.71145298)<1e-7
+          assert r['information_as_of']=='2026-11-19T19:20:33+09:00'
+          PY
