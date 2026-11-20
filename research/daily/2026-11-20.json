@@ -1,0 +1,92 @@
+{
+  "record_type": "FinanceSim_daily_research_v02",
+  "date": "2026-11-20",
+  "as_of": "2026-11-20T18:50:15+09:00",
+  "read_head": "c975e02a4f2c563a0fbd4e9d3f118e3a1fa8ec8f",
+  "read": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-19.json",
+    "research/experiments/2026-11-19-nikkei-trade-breadth-conditional.json",
+    "research/weekly/2026-11-14-forecast-corrected-b01.json",
+    "research/inputs/2026-11-18-official-first-releases.json",
+    "research/experiments/2026-11-18-four-macro-first-release-score.json",
+    ".github/workflows/tests.yml",
+    "GitHub Actions 2026-11-19 run 44507308836 success (Python 3.10 and 3.12)"
+  ],
+  "source_input": "research/inputs/2026-11-20-official-asof.json",
+  "experiment": "research/experiments/2026-11-20-first-vintage-six-macro-nikkei.json",
+  "replay_script": "research/scripts/score_2026_11_20_first_vintage_nikkei.js",
+  "observed": {
+    "us_initial_claims_week_ended_nov14_first_thousand": 203,
+    "claims_delta_vs_prior_first_thousand": 3,
+    "claims_delta_vs_prior_revised_thousand": 1,
+    "dallas_wei_week_ended_nov14_first": 3.18,
+    "wei_delta_vs_prior_first": -0.11,
+    "wei_delta_vs_prior_revised": 0.26,
+    "japan_cpi_oct_headline_yoy_pct": 2.3,
+    "japan_cpi_oct_core_ex_fresh_yoy_pct": 2.2,
+    "japan_cpi_oct_ex_fresh_energy_yoy_pct": 2.2,
+    "nikkei_week_return_pct": -7.696302,
+    "nikkei_nov20_daily_return_pct": -5.059467,
+    "nikkei_stock_decliners": 214
+  },
+  "evaluation": {
+    "macro_6_target_mean_direction_brier": {
+      "llm": 0.1789,
+      "statistical": 0.25,
+      "hybrid": 0.205542
+    },
+    "nikkei_50pct_coverage_by_arm": {
+      "llm": false,
+      "statistical": false,
+      "hybrid": false
+    },
+    "nikkei_90pct_coverage_by_arm": {
+      "llm": true,
+      "statistical": false,
+      "hybrid": false
+    }
+  },
+  "findings": [
+    "Dallas WEI first-vintage Nov7 3.29 revised to 2.92 while new Nov14 first=3.18; the frozen delta is -0.11 but a latest-revised comparison gives +0.26. This flips the direction target; keep as-of first-vintage score.",
+    "DOL Nov14 new claims 203k vs Nov7 first 200k (+3k) and revised 202k (+1k). An unqualified 'weekly increase of 1k' mismatches the frozen target definition.",
+    "Nikkei official Nov20 close 56,436.65, Nov13 baseline 61,142.35, weekly -7.696302%, daily -5.059467%. All arms' 80% intervals miss; statistical and hybrid 90% intervals miss; LLM 90% interval includes actual.",
+    "Nikkei 214 of 225 constituents declined, technology + information/communications contribute ~70.31% of the INDEX net point loss. Market event was broad; cannot infer any single causal news trigger.",
+    "Japan October headline/core ex fresh/ex fresh energy YoY 2.3%/2.2%/2.2% versus September first 2.1%/2.1%/2.4%; these are contemporaneous context and not Nov14 frozen targets.",
+    "Nov20 U.S. and European cash closes are still in future at 18:50 JST; no multi-market breadth, 10Y, gold or WTI Friday settlement filled."
+  ],
+  "hypotheses": [
+    {
+      "id": "H20261115-release-time-exposure",
+      "status": "untested",
+      "comment": "Event-time eligibility is established for Japan CPI and American claims, but no causal shock coefficient or 26-week validation; do not attribute large fall to Japan CPI."
+    },
+    {
+      "id": "Q002",
+      "status": "open",
+      "comment": "Nikkei tail outside frozen statistical/hybrid 90% ranges supplies an adverse calibration observation; preserve it alongside prior weeks, do not refit one-week shock."
+    }
+  ],
+  "executed": "V8 deterministic computation on fetched frozen model and Nov18 first-vintage checkpoint, with assertions on archival baselines, six-target Brier, 3 market interval checks, prior-score regression. Reproducible Node.js script saved to repository; full GitHub Actions outcome must be checked after commit.",
+  "prewrite_test": "PASS: actual execution of compute function before GitHub mutation; previously archived Nov18 four targets and scores identical; frozen Nikkei reference, observed point arithmetic and WEI sign-flip checks passed.",
+  "postwrite_ci": "pending until GitHub Actions confirms new commit",
+  "seed": null,
+  "new_monte_carlo_draws": 0,
+  "model_commit": "34e1ef694",
+  "frozen_seed": 20261114,
+  "pending": [
+    "Saturday 2026-11-21 before-noon evaluation: verify final Nov20 US/Europe/Asia original matched-source endpoints and score B/C without inventing closes",
+    "Do not overwrite old forecast or existing verification files; use new append-only weekly verification path",
+    "Verify fixed NYMEX WTI contract identity before scoring; preserve no-result status if unavailable",
+    "Do not select an arm winner from six correlated economic targets"
+  ],
+  "limitations": [
+    "Brier is dimensionless but six first-released macro outcomes are correlated and too few for meaningful winner selection.",
+    "Price-change, claim-count and WEI-point MAE use different units and MUST NOT be pooled.",
+    "Dallas Fed exact November 19 release clock and Japanese CPI exact November 20 release clock were not independently verified.",
+    "Nikkei Friday market is complete; U.S./Europe Friday markets have not closed. No synthetic placeholder prices, no cross-market breadth score.",
+    "Original Nov14 probability and intervals remain unchanged. Earlier four macro outcomes and scores are regression-checked.",
+    "Nikkei 95% constituent declines and large tech-sector net contribution are descriptives, not proof of causal attribution."
+  ]
+}

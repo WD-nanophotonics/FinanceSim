@@ -1,0 +1,333 @@
+{
+  "record_type": "FinanceSim_2026_11_20_deterministic_partial_week_seal_and_vintage_audit",
+  "information_as_of": "2026-11-20T18:50:15+09:00",
+  "original_repo_head": "c975e02a4f2c563a0fbd4e9d3f118e3a1fa8ec8f",
+  "forecast_source": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "source_input": "research/inputs/2026-11-20-official-asof.json",
+  "model_source_commit": "34e1ef694",
+  "original_seed": 20261114,
+  "new_seed": null,
+  "new_monte_carlo_draws": 0,
+  "execution": "ACTUALLY EXECUTED deterministic frozen-record scoring; 6 first-vintage A releases and issuer-confirmed Nikkei C close; no new Monte Carlo, no live rerun of simulation, no fit.",
+  "macro_first_vintage_actuals": {
+    "us_import_mom_nov17": {
+      "first_release_value": 1.1,
+      "prior_first_release_value": 1.1,
+      "delta": 0,
+      "positive_event": 0,
+      "unit": "percentage_points_mom",
+      "arms": {
+        "llm": {
+          "point_change": -0.7,
+          "absolute_error": 0.7,
+          "prob_positive": 0.22,
+          "brier": 0.0484,
+          "coverage_50": false,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "point_change": 0,
+          "absolute_error": 0,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "point_change": -0.75,
+          "absolute_error": 0.75,
+          "prob_positive": 0.1587,
+          "brier": 0.025186,
+          "coverage_50": false,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    },
+    "us_export_mom_nov17": {
+      "first_release_value": 1.1,
+      "prior_first_release_value": 2.2,
+      "delta": -1.1,
+      "positive_event": 0,
+      "unit": "percentage_points_mom",
+      "arms": {
+        "llm": {
+          "point_change": -1.5,
+          "absolute_error": 0.4,
+          "prob_positive": 0.12,
+          "brier": 0.0144,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "point_change": 0,
+          "absolute_error": 1.1,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": false,
+          "coverage_80": false,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "point_change": -1.75,
+          "absolute_error": 0.65,
+          "prob_positive": 0.0198,
+          "brier": 0.000392,
+          "coverage_50": false,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    },
+    "uk_cpi_yoy_nov18": {
+      "first_release_value": 3.6,
+      "prior_first_release_value": 3.5,
+      "delta": 0.1,
+      "positive_event": 1,
+      "unit": "percentage_points_yoy",
+      "arms": {
+        "llm": {
+          "point_change": 0,
+          "absolute_error": 0.1,
+          "prob_positive": 0.48,
+          "brier": 0.2704,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "point_change": 0,
+          "absolute_error": 0.1,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "point_change": -0.05,
+          "absolute_error": 0.15,
+          "prob_positive": 0.414,
+          "brier": 0.343396,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    },
+    "uk_cpi_mom_nov18": {
+      "first_release_value": 0.5,
+      "prior_first_release_value": 0.4,
+      "delta": 0.1,
+      "positive_event": 1,
+      "unit": "percentage_points_mom",
+      "arms": {
+        "llm": {
+          "point_change": -0.05,
+          "absolute_error": 0.15,
+          "prob_positive": 0.43,
+          "brier": 0.3249,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "point_change": 0,
+          "absolute_error": 0.1,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "point_change": -0.1,
+          "absolute_error": 0.2,
+          "prob_positive": 0.3503,
+          "brier": 0.42211,
+          "coverage_50": false,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    },
+    "us_claims_nov19": {
+      "first_release_value": 203,
+      "prior_first_release_value": 200,
+      "delta": 3,
+      "positive_event": 1,
+      "unit": "thousands_persons",
+      "arms": {
+        "llm": {
+          "point_change": 5,
+          "absolute_error": 2,
+          "prob_positive": 0.57,
+          "brier": 0.1849,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "point_change": 0,
+          "absolute_error": 3,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "point_change": 2,
+          "absolute_error": 1,
+          "prob_positive": 0.553,
+          "brier": 0.199809,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    },
+    "dallas_wei_nov19": {
+      "first_release_value": 3.18,
+      "prior_first_release_value": 3.29,
+      "delta": -0.11,
+      "positive_event": 0,
+      "unit": "index_points",
+      "arms": {
+        "llm": {
+          "point_change": -0.04,
+          "absolute_error": 0.07,
+          "prob_positive": 0.48,
+          "brier": 0.2304,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "statistical": {
+          "point_change": 0,
+          "absolute_error": 0.11,
+          "prob_positive": 0.5,
+          "brier": 0.25,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        },
+        "hybrid": {
+          "point_change": -0.01,
+          "absolute_error": 0.1,
+          "prob_positive": 0.4923,
+          "brier": 0.242359,
+          "coverage_50": true,
+          "coverage_80": true,
+          "coverage_90": true
+        }
+      }
+    }
+  },
+  "macro_summary": {
+    "llm": {
+      "target_count": 6,
+      "mean_direction_brier": 0.1789,
+      "coverage_50_count": 5,
+      "coverage_80_count": 6,
+      "coverage_90_count": 6,
+      "mae_first_four_price_change_pp": 0.3375,
+      "us_claims_absolute_error_thousands": 2,
+      "wei_absolute_error_index_points": 0.07
+    },
+    "statistical": {
+      "target_count": 6,
+      "mean_direction_brier": 0.25,
+      "coverage_50_count": 5,
+      "coverage_80_count": 5,
+      "coverage_90_count": 6,
+      "mae_first_four_price_change_pp": 0.325,
+      "us_claims_absolute_error_thousands": 3,
+      "wei_absolute_error_index_points": 0.11
+    },
+    "hybrid": {
+      "target_count": 6,
+      "mean_direction_brier": 0.205542,
+      "coverage_50_count": 3,
+      "coverage_80_count": 6,
+      "coverage_90_count": 6,
+      "mae_first_four_price_change_pp": 0.4375,
+      "us_claims_absolute_error_thousands": 1,
+      "wei_absolute_error_index_points": 0.1
+    }
+  },
+  "nikkei_realized": {
+    "friday_reference": 61142.35,
+    "friday_close": 56436.65,
+    "one_day_return_pct": -5.059467,
+    "weekly_return_pct": -7.696302,
+    "arms": {
+      "llm": {
+        "frozen_point_return_pct": -0.3,
+        "absolute_error_pct_points": 7.396302,
+        "prob_positive": 0.47,
+        "direction_brier": 0.2209,
+        "coverage_50": false,
+        "coverage_80": false,
+        "coverage_90": true
+      },
+      "statistical": {
+        "frozen_point_return_pct": 0,
+        "absolute_error_pct_points": 7.696302,
+        "prob_positive": 0.5,
+        "direction_brier": 0.25,
+        "coverage_50": false,
+        "coverage_80": false,
+        "coverage_90": false
+      },
+      "hybrid": {
+        "frozen_point_return_pct": -0.1735,
+        "absolute_error_pct_points": 7.522802,
+        "prob_positive": 0.4854,
+        "direction_brier": 0.235613,
+        "coverage_50": false,
+        "coverage_80": false,
+        "coverage_90": false
+      }
+    },
+    "issuer_constituents_declining_fraction": 0.951111,
+    "tech_sector_share_of_net_fall": 0.526397,
+    "tech_plus_info_share_of_net_fall": 0.703125
+  },
+  "vintage_disagreement": {
+    "claims_change_first_to_first_thousands": 3,
+    "claims_current_release_change_vs_revised_thousands": 1,
+    "claims_prior_revision_thousands": 2,
+    "wei_change_first_to_first_index_points": -0.11,
+    "wei_current_release_change_vs_revised_index_points": 0.26,
+    "wei_prior_revision_index_points": -0.37,
+    "wei_direction_flips_if_revised_baseline_used": true
+  },
+  "japan_cpi_yoy_first_vintage_context": {
+    "oct_headline": 2.3,
+    "oct_ex_fresh": 2.2,
+    "oct_ex_fresh_energy": 2.2,
+    "change_vs_sep_first_headline_pp": 0.2,
+    "change_vs_sep_first_ex_fresh_pp": 0.1,
+    "change_vs_sep_first_ex_fresh_energy_pp": -0.2,
+    "not_scored": true
+  },
+  "unsettled": [
+    "S&P500/Nasdaq100 Friday Nov20 16:00 EST close (future)",
+    "STOXX600 Friday 17:30 CET close (future)",
+    "other Asian indexes: exact matched Nov13/Nov20 vendor pairs not authenticated",
+    "six-equity joint risk state: incomplete Friday endpoints",
+    "WTI matched fixed-contract source: still unverified"
+  ],
+  "limitations": [
+    "Brier is dimensionless but six first-released macro outcomes are correlated and too few for meaningful winner selection.",
+    "Price-change, claim-count and WEI-point MAE use different units and MUST NOT be pooled.",
+    "Dallas Fed exact November 19 release clock and Japanese CPI exact November 20 release clock were not independently verified.",
+    "Nikkei Friday market is complete; U.S./Europe Friday markets have not closed. No synthetic placeholder prices, no cross-market breadth score.",
+    "Original Nov14 probability and intervals remain unchanged. Earlier four macro outcomes and scores are regression-checked.",
+    "Nikkei 95% constituent declines and large tech-sector net contribution are descriptives, not proof of causal attribution."
+  ]
+}

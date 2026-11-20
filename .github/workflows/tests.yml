@@ -182,3 +182,20 @@ jobs:
           assert abs(r['breadth_features']['nikkei_day_change_pct']-0.71145298)<1e-7
           assert r['information_as_of']=='2026-11-19T19:20:33+09:00'
           PY
+
+      - name: Reproduce Nov20 DOL/Dallas first-vintage scoring and Nikkei issuer final cash close
+        run: |
+          node research/scripts/score_2026_11_20_first_vintage_nikkei.js > /tmp/nov20_vintage_score.json
+          cmp research/experiments/2026-11-20-first-vintage-six-macro-nikkei.json /tmp/nov20_vintage_score.json
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/nov20_vintage_score.json',encoding='utf-8'))
+          assert r['macro_summary']['llm']['mean_direction_brier']==0.1789
+          assert r['macro_summary']['hybrid']['mean_direction_brier']==0.205542
+          assert r['vintage_disagreement']['wei_direction_flips_if_revised_baseline_used']
+          assert r['vintage_disagreement']['claims_change_first_to_first_thousands']==3
+          assert abs(r['nikkei_realized']['weekly_return_pct']+7.696302)<1e-8
+          assert not r['nikkei_realized']['arms']['hybrid']['coverage_90']
+          assert r['nikkei_realized']['arms']['llm']['coverage_90']
+          assert r['new_monte_carlo_draws']==0
+          PY

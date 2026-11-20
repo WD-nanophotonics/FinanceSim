@@ -1,0 +1,84 @@
+{
+  "record_type": "FinanceSim_2026_11_20_official_first_vintage_and_nikkei_close",
+  "information_as_of": "2026-11-20T18:50:15+09:00",
+  "access_time": "During the Nov20 scheduled run after the conservative 18:50:15 JST boundary; second-resolved web access timestamps not exposed",
+  "original_repo_head": "c975e02a4f2c563a0fbd4e9d3f118e3a1fa8ec8f",
+  "frozen_forecast": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "prior_verified_first_release": "research/experiments/2026-11-18-four-macro-first-release-score.json",
+  "frozen_model_source_commit": "34e1ef694",
+  "frozen_seed": 20261114,
+  "new_monte_carlo_draws": 0,
+  "official_new_releases": {
+    "us_claims_nov19": {
+      "first_release_value": 203,
+      "prior_first_release_value": 200,
+      "prior_latest_revised_value": 202,
+      "unit": "thousands_persons",
+      "week_ending": "2026-11-14",
+      "published_at": "2026-11-19T08:30:00-05:00",
+      "source": "https://www.dol.gov/index.php/newsroom/releases?agency=39&lang=zh-hans&state=All&topic=All&year=all",
+      "source_kind": "publisher news release"
+    },
+    "dallas_wei_nov19": {
+      "first_release_value": 3.18,
+      "prior_first_release_value": 3.29,
+      "prior_latest_revised_value": 2.92,
+      "unit": "WEI index points",
+      "week_ending": "2026-11-14",
+      "published_date": "2026-11-19",
+      "published_at_exact": null,
+      "official_scheduled_at": "2026-11-19T10:30:00-06:00",
+      "source": "https://www.dallasfed.org/research/wei?d=1&s=tw",
+      "prior_source": "https://www.dallasfed.org/research/wei",
+      "prior_first_vintage_evidence": "Nov12 first release 3.29 retained in Nov14 sealed forecast; current Nov19 release revises prior to 2.92"
+    }
+  },
+  "new_context": {
+    "japan_oct_cpi": {
+      "publisher": "Statistics Bureau of Japan",
+      "month": "2026-10",
+      "first_published_date": "2026-11-20",
+      "exact_clock_unverified": true,
+      "base_year": 2025,
+      "headline_yoy_pct": 2.3,
+      "ex_fresh_yoy_pct": 2.2,
+      "ex_fresh_and_energy_yoy_pct": 2.2,
+      "prior_sep_first_headline_yoy_pct": 2.1,
+      "prior_sep_first_ex_fresh_yoy_pct": 2.1,
+      "prior_sep_first_ex_fresh_and_energy_yoy_pct": 2.4,
+      "source": "https://www.stat.go.jp/data/cpi/sokuhou/tsuki/index-z.html",
+      "prior_source": "https://www.stat.go.jp/data/cpi/sokuhou/tsuki/index-z.htm",
+      "frozen_target": false
+    },
+    "nikkei": {
+      "publisher": "Nikkei Inc.",
+      "source": "https://indexes.nikkei.co.jp/nkave/archives/summary?dt=20261120&idx=nk225",
+      "session_date": "2026-11-20",
+      "cash_close": "2026-11-20T15:30:00+09:00",
+      "prior_friday": "2026-11-13",
+      "prior_friday_close": 61142.35,
+      "prior_day_close": 59444.21,
+      "final_close": 56436.65,
+      "reported_day_fall_points": 3007.56,
+      "issuer_constituents_advancing": 11,
+      "issuer_constituents_declining": 214,
+      "issuer_constituents_flat": 0,
+      "tech_sector_contribution_points": -1583.17,
+      "info_comm_sector_contribution_points": -531.52,
+      "tech_sector_weight_pct": 37.01,
+      "info_comm_weight_pct": 10.74
+    }
+  },
+  "unavailable_at_cutoff": [
+    "S&P500/Nasdaq100 Friday Nov20 16:00 EST close (future)",
+    "STOXX600 Friday 17:30 CET close (future)",
+    "other Asian indexes: exact matched Nov13/Nov20 vendor pairs not authenticated",
+    "six-equity joint risk state: incomplete Friday endpoints",
+    "WTI matched fixed-contract source: still unverified"
+  ],
+  "limitations": [
+    "Dallas WEI prior Nov7 3.29 first vintage versus Nov19 revised Nov7 2.92: same underlying historical period but different publication vintages.",
+    "Japan CPI and Nikkei issuer sector data are new context, not newly created retrospective forecast targets.",
+    "Nikkei 225 cash close is complete by this cutoff; US and European Friday closes have not occurred."
+  ]
+}
