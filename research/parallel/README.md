@@ -142,6 +142,11 @@ cohorts.json是数组，每项含forecast、verification、receipt文件路径�
 [真实历史暂存](data/2026-11-21-history-staging.json)：标普和纳指各2514个日收盘，
 财政部10Y为2024至2026年的722条；2016至2023年页面未返回可解析日收益率，逐源失败均保留。
 这仍不足以满足联合模型的完整历史要求，**不可降低门槛或用盘中10Y/合成数据替代**。
+后续FRED文本网址实际返回HTML数据页，须解析完整内嵌导出，而不是仅预览行。
+[追加取数与核对](data/2026-11-21-history-staging-correction03.json)取得2499条DGS10历史，
+与财政部重叠721日逐值一致（0处差异），两个序列仍分开保留、不自动拼接。
+这是当前应优先读取的历史暂存版本；前两次FRED取数超时的追加记录也保留。
+因此长期收益率已有可选来源，但尚未批准跨分发渠道的历史桥接或变更首期来源锁。
 日历未从缺报价推断；Yahoo与原纳指供应商不同，须先为未来全部对照统一来源并审核。
 可在允许联网的环境重新预取，始终使用新的日期/修订路径：
 
@@ -149,7 +154,7 @@ cohorts.json是数组，每项含forecast、verification、receipt文件路径�
 python research/scripts/prepare_parallel_history.py --start 2016-11-21 --end 2026-11-20 -o research/parallel/data/2026-11-21-history-staging-correction01.json
 ```
 
-脚本只产生STAGING记录，保存来源URL、响应hash、逐源错误和两位小数价格，不产生预测、不推断休市。
+脚本只产生STAGING记录，保存来源URL、响应hash、逐源错误、收益率渠道重叠核对和两位小数价格，不产生预测、不推断休市。
 封存前无法解决则明确登记未启动，不追补。本改动不新增定时任务，现有周度执行者读INDEX后按本手册执行。
 
 ```text

@@ -19,6 +19,10 @@ class SourceParserTests(unittest.TestCase):
         result = sources.yahoo_values(raw)
         self.assertEqual(list(result.values()), [100])
 
+    def test_fred_html_is_parsed_as_declared_table_not_download_csv(self):
+        raw = b'DGS10 DATE VALUE <table><tr><th>2016-11-21</th><td>2.33</td></tr><tr><th>2016-11-24</th><td>.</td></tr></table>#2016-11-22| 2.31 #2016-11-24| .'
+        self.assertEqual(sources.fred_values(raw), {"2016-11-21": 2.33, "2016-11-22": 2.31})
+
 
 if __name__ == "__main__":
     unittest.main()

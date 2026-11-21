@@ -342,9 +342,13 @@ def generate(snapshot, policy, *, now=None, demo=False):
                 data[version][k].append(vector[k])
             for k, value in events(vector).items():
                 event_draws[version][k].append(value)
+    completed = datetime.now(timezone.utc) if now is None else fit["now"]
+    if completed >= timestamp(snapshot["target_start_at"]):
+        raise TailRiskError("simulation completed after observation window started")
     record = {"schema": "parallel-tail-risk-v1", "record_type": "parallel_forecast",
               "dataset_kind": snapshot["dataset_kind"], "demo": demo,
-              "information_cutoff": snapshot["information_cutoff"], "generated_at": fit["now"].isoformat(),
+              "information_cutoff": snapshot["information_cutoff"], "execution_started_at": fit["now"].isoformat(),
+              "generated_at": completed.isoformat(),
               "target_start_at": snapshot["target_start_at"], "target_calendar": snapshot["target_calendar"],
               "targets": snapshot["targets"], "sources": snapshot["sources"], "reference": fit["reference"],
               "snapshot_sha256": digest(snapshot), "policy_sha256": digest(policy), "policy": policy,
@@ -472,9 +476,10 @@ def admission(record, receipt, lock):
     _sha(receipt["commit"])
     _url(receipt["commit_url"])
     published = timestamp(receipt["committed_at"])
-    if not timestamp(record["generated_at"]) <= published < timestamp(record["target_start_at"]):
+    # Git timestamps have second precision; preserve exact generation time too.
+    if not timestamp(record["generated_at"]).replace(microsecond=0) <= published < timestamp(record["target_start_at"]):
         raise TailRiskError("publication must follow generation and precede target observation window")
-    return {"prospective": True, "on_time": published <= timestamp(record["information_cutoff"]),
+    return {"prospective": True, "on_time": max(published, timestamp(record["generated_at"])) <= timestamp(record["information_cutoff"]),
             "timestamp_limit": "Git metadata + remotely matched content; not an independent trusted timestamp service"}
 
 

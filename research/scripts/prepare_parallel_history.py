@@ -8,6 +8,7 @@ from datetime import date, datetime, timezone
 from hashlib import sha256
 from html.parser import HTMLParser
 import json
+import re
 from pathlib import Path
 import sys
 from urllib.request import Request, urlopen
@@ -83,19 +84,46 @@ def yahoo_values(raw):
     return values
 
 
+def fred_values(raw):
+    """FRED's legacy .txt URL currently returns an HTML data page, not CSV."""
+    text = raw.decode("utf-8")
+    if "DGS10" not in text or "VALUE" not in text or "DATE" not in text:
+        raise TailRiskError("unrecognized FRED DGS10 data page")
+    values = {}
+    parser = TreasuryRows()
+    parser.feed(text)
+    for row in parser.rows:
+        if len(row) == 2 and re.fullmatch(r"\d{4}-\d{2}-\d{2}", row[0]):
+            if row[1] not in (".", ""):
+                values[row[0]] = float(row[1])
+    # The visible table can be only a small preview; also read the embedded
+    # DATE|VALUE export. Any disagreement between representations must fail.
+    for day, value in re.findall(r"(\d{4}-\d{2}-\d{2})\|\s*(\d+(?:\.\d+)?|\.)", text):
+        if value != ".":
+            number = float(value)
+            if day in values and values[day] != number:
+                raise TailRiskError("FRED preview and embedded export disagree")
+            values[day] = number
+    if not values:
+        raise TailRiskError("no FRED DGS10 observations")
+    return values
+
+
 def acquire(*, start, end):
     if date.fromisoformat(end) >= datetime.now(timezone.utc).date():
         raise TailRiskError("request only completed historical dates")
     urls = {"sp500": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=10y&interval=1d",
-            "nasdaq100": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=10y&interval=1d"}
+            "nasdaq100": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=10y&interval=1d",
+            "fred_dgs10": "https://fred.stlouisfed.org/data/DGS10.txt"}
     urls.update({str(y): f"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value={y}" for y in range(date.fromisoformat(start).year, date.fromisoformat(end).year+1)})
     def fetch(item):
         name, url = item
         raw = None
         try:
-            with urlopen(Request(url, headers={"User-Agent": "FinanceSim/0.1 research"}), timeout=12) as response:
+            with urlopen(Request(url, headers={"User-Agent": "FinanceSim/0.1 research"}), timeout=30) as response:
                 raw = response.read()
-            observations = yahoo_values(raw) if name in ("sp500", "nasdaq100") else treasury_values(raw)
+            observations = (yahoo_values(raw) if name in ("sp500", "nasdaq100") else
+                            fred_values(raw) if name == "fred_dgs10" else treasury_values(raw))
         except (OSError, ValueError, KeyError) as exc:
             return name, {"url": url, "raw_sha256": sha256(raw).hexdigest() if raw is not None else None,
                           "observations": {}, "error": f"{type(exc).__name__}: {exc}"}
@@ -104,17 +132,22 @@ def acquire(*, start, end):
         sources = dict(pool.map(fetch, urls.items()))
     treasury = {}
     for name, source in sources.items():
-        if name not in ("sp500", "nasdaq100"):
+        if name not in ("sp500", "nasdaq100", "fred_dgs10"):
             if set(treasury) & set(source["observations"]):
                 raise TailRiskError("Treasury response overlaps years; server may have ignored year filter")
             treasury.update(source["observations"])
     series = {k: sources[k]["observations"] for k in ("sp500", "nasdaq100")}
     series["us10y"] = treasury
+    series["us10y_fred"] = sources["fred_dgs10"]["observations"]
+    common = sorted(set(treasury) & set(series["us10y_fred"]))
+    mismatches = {d: [treasury[d], series["us10y_fred"][d]] for d in common if abs(treasury[d]-series["us10y_fred"][d]) > 1e-9}
     return sealed({"record_type": "parallel_history_staging", "dataset_kind": "real", "acquired_at": datetime.now(timezone.utc).isoformat(),
                    "requested_range": [start, end], "source_responses": sources,
                    "series": series, "counts": {k: len(v) for k, v in series.items()},
                    "unavailable_sources": {k: v["error"] for k, v in sources.items() if "error" in v},
                    "price_precision": "Yahoo unadjusted price-index close rounded to two decimals; Treasury quoted yield unchanged.",
+                   "treasury_fred_overlap_audit": {"n": len(common), "mismatches": mismatches,
+                                                   "treatment": "Separate series retained, no automatic source splice or source-lock approval."},
                    "status": "STAGING_ONLY: no inferred session calendar, no live forecast, no claim of vintage backtest",
                    "pending": ["Audit historical calendar independently; absent quotes do not prove closure", "Freeze identical provider/close for future original three arms and candidates", "Refresh through Nov27 before Nov28 cutoff"]})
 

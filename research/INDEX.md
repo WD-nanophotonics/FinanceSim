@@ -17,6 +17,10 @@ Real staging data: `parallel/data/2026-11-21-history-staging.json` has 2514 clos
 for each equity index, but only 722 Treasury observations (2024-2026); older
 Treasury pages did not return usable tables. Still insufficient for live launch.
 Do not infer holidays from missing quotes or substitute intraday 10Y yields.
+Latest append-only staging: `parallel/data/2026-11-21-history-staging-correction03.json`
+adds 2499 FRED DGS10 observations. All 721 overlapping Treasury days match exactly;
+channels remain separate, no automatic source splice approved. Read this latest
+record, then audit calendars and register same-origin source identities before launch.
 
 Current stage: **v0.2 research memory and scenario exploration**.
 

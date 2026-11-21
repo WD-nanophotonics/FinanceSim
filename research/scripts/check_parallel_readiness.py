@@ -26,7 +26,7 @@ def main():
                       "historical_files_unchanged": len(manifest["sha256"]),
                       "live_forecast_generated": False,
                       "staged_sources": staged,
-                      "live_inputs": "pending audited long history and Nov27 closing snapshot"}))
+                      "live_inputs": "pending source/calendar approval and Nov27 closing snapshot"}))
 
 
 if __name__ == "__main__":
