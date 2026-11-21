@@ -130,7 +130,8 @@ def prepare(snapshot, policy, *, now=None, demo=False):
 
     Prices use log returns *100, yields use differences *100 bp. Closed sessions
     have null input, zero change and no variance update; missing open quotes fail.
-    Historical blocks must exactly match the future session-mask sequence.
+    Historical blocks must contain every future open session. Future closed
+    sessions are masked out explicitly, never interpreted as missing quotes.
     """
     validate_policy(policy)
     now = datetime.now(timezone.utc) if now is None else timestamp(now)
@@ -186,8 +187,9 @@ def prepare(snapshot, policy, *, now=None, demo=False):
             changes.append([100*(values[j]-last[j]) if k == "us10y" else 100*log(values[j]/last[j]) for j, k in enumerate(IDS)])
             masks.append(mask)
         last = values
-    if not all(_mask(history[-1])):
-        raise TailRiskError("v1 requires an actual reference-Friday quote for all core assets")
+    reference_dates = {k: next(r["date"] for r in reversed(history) if r["sessions"][k]) for k in IDS}
+    if any(date.fromisoformat(d) < origin-timedelta(days=5) for d in reference_dates.values()):
+        raise TailRiskError("reference must be the last audited open session of the preceding week")
     calendar = snapshot.get("target_calendar", [])
     monday = origin+timedelta(days=2)
     if [r["date"] for r in calendar] != _weekdays(monday, monday+timedelta(days=4)):
@@ -198,11 +200,11 @@ def prepare(snapshot, policy, *, now=None, demo=False):
         raise TailRiskError("three exact target closing timestamps required")
     for j, k in enumerate(IDS):
         sessions = [r["date"] for r in calendar if r["sessions"][k]]
-        if not sessions or sessions[-1] != calendar[-1]["date"]:
-            raise TailRiskError("v1 needs Friday settlement; register a new version for Friday holidays")
+        if not sessions:
+            raise TailRiskError("target week has no open session")
         end = timestamp(targets[k]["observed_at"])
         if end.date().isoformat() != sessions[-1] or end <= now:
-            raise TailRiskError("target close already passed or inconsistent with calendar")
+            raise TailRiskError("target must be the exact last open session, after execution")
     start = timestamp(snapshot["target_start_at"])
     if start != datetime.combine(monday, datetime.min.time(), timezone.utc) or not cutoff < start or now >= start:
         raise TailRiskError("target start must be next Monday 00:00 UTC, after cutoff and execution")
@@ -226,14 +228,15 @@ def prepare(snapshot, policy, *, now=None, demo=False):
     # Remove estimated historical drift, while preserving closed-day zeros.
     centers = [mean(r[j] for r, m in zip(residuals, residual_masks) if m[j]) for j in range(3)]
     residuals = [[r[j]-centers[j] if m[j] else 0 for j in range(3)] for r, m in zip(residuals, residual_masks)]
-    blocks = [residuals[i:i+5] for i in range(len(residuals)-4) if residual_masks[i:i+5] == future_masks]
+    blocks = [residuals[i:i+5] for i in range(len(residuals)-4)
+              if all(not future_masks[d][j] or residual_masks[i+d][j] for d in range(5) for j in range(3))]
     if len(blocks) < policy["min_blocks"]:
         raise TailRiskError("insufficient joint blocks matching the target holiday calendar")
     scales = snapshot.get("normalization_scales", {})
     if set(scales) != set(IDS) or any(number(x) <= 0 for x in scales.values()):
         raise TailRiskError("positive launch-locked normalization scales required")
     return {"variances": variances, "blocks": blocks, "masks": future_masks,
-            "reference": dict(zip(IDS, last)), "now": now, "cutoff": cutoff}
+            "reference": dict(zip(IDS, last)), "reference_dates": reference_dates, "now": now, "cutoff": cutoff}
 
 
 def _quantile(xs, p):
@@ -283,6 +286,9 @@ def legacy_sidecar(original, snapshot):
             raise TailRiskError("legacy target unit differs from parallel experiment")
         if "target_at" in old and timestamp(old["target_at"]) != timestamp(snapshot["targets"][k]["observed_at"]):
             raise TailRiskError("legacy target closing timestamp differs")
+        actual_reference_date = next(r["date"] for r in reversed(snapshot["history"]) if r["sessions"][k])
+        if "reference_date" in old and old["reference_date"] != actual_reference_date:
+            raise TailRiskError("legacy reference session differs")
         if old.get("source", old.get("source_url")) != snapshot["sources"][k]["source_url"]:
             raise TailRiskError("legacy source URL mismatch; reconcile before sealing")
         values = {}
@@ -291,7 +297,7 @@ def legacy_sidecar(original, snapshot):
             values[arm] = {"point_change": a["point_change"], "prob_positive": a["prob_positive"],
                            "intervals": {str(c): a[f"interval_{c}"] for c in (50, 80, 90)}}
         markets[k] = {"reference_level": old.get("reference_level", old.get("baseline_level")),
-                      "target_date": old["target_date"], "target_at": snapshot["targets"][k]["observed_at"],
+                      "reference_date": actual_reference_date, "target_date": old["target_date"], "target_at": snapshot["targets"][k]["observed_at"],
                       "source_identity": snapshot["sources"][k], "arms": values}
     return {"information_cutoff": cutoff, "original_record_sha256": digest(original), "market_forecasts": markets}
 
@@ -306,7 +312,7 @@ def generate(snapshot, policy, *, now=None, demo=False):
         raise TailRiskError("same-origin immutable legacy sidecar required")
     for k in IDS:
         target = legacy.get("market_forecasts", {}).get(k, {})
-        if target.get("reference_level") != fit["reference"][k] or target.get("target_date") != snapshot["target_calendar"][-1]["date"]:
+        if target.get("reference_level") != fit["reference"][k] or target.get("target_date") != timestamp(snapshot["targets"][k]["observed_at"]).date().isoformat():
             raise TailRiskError("legacy and experiments must have identical reference/target")
         if target.get("source_identity") != snapshot["sources"][k] or target.get("target_at") != snapshot["targets"][k]["observed_at"]:
             raise TailRiskError("legacy must use identical source, instrument and closing time")
@@ -350,7 +356,7 @@ def generate(snapshot, policy, *, now=None, demo=False):
               "information_cutoff": snapshot["information_cutoff"], "execution_started_at": fit["now"].isoformat(),
               "generated_at": completed.isoformat(),
               "target_start_at": snapshot["target_start_at"], "target_calendar": snapshot["target_calendar"],
-              "targets": snapshot["targets"], "sources": snapshot["sources"], "reference": fit["reference"],
+              "targets": snapshot["targets"], "sources": snapshot["sources"], "reference": fit["reference"], "reference_dates": fit["reference_dates"],
               "snapshot_sha256": digest(snapshot), "policy_sha256": digest(policy), "policy": policy,
               "input_provenance": {"acquired_at": snapshot["acquired_at"], "raw_sha256": snapshot.get("raw_sha256", {}),
                                    "history_start": snapshot["history"][0]["date"], "history_end": snapshot["history"][-1]["date"],

@@ -132,12 +132,29 @@ class ParallelRiskTests(unittest.TestCase):
 
     def test_calendar_not_inferred_from_null_or_future_holiday(self):
         self.s["target_calendar"][1]["sessions"]["us10y"] = False
-        with self.assertRaisesRegex(TailRiskError, "matching"):
-            self.generate()
+        self.assertGreater(self.generate()["fit"]["eligible_blocks"], 0)
         self.s, self.p = fixture()
         self.s["target_calendar"][-1]["sessions"]["sp500"] = False
-        with self.assertRaisesRegex(TailRiskError, "Friday"):
+        with self.assertRaisesRegex(TailRiskError, "last open"):
             self.generate()
+
+    def test_explicit_friday_holiday_uses_actual_thursday_target(self):
+        self.s["target_calendar"][-1]["sessions"]["sp500"] = False
+        self.s["targets"]["sp500"]["observed_at"] = "2026-12-03T22:00:00+00:00"
+        self.s["legacy_original"]["market_forecasts"]["sp500"]["target_date"] = "2026-12-03"
+        self.s["legacy_forecast"] = legacy_sidecar(self.s["legacy_original"], self.s)
+        f = self.generate()
+        self.assertEqual(f["targets"]["sp500"]["observed_at"][:10], "2026-12-03")
+        self.assertGreater(f["fit"]["eligible_blocks"], 0)
+
+    def test_reference_holiday_keeps_actual_last_open_date(self):
+        self.s["history"][-1]["sessions"]["us10y"] = False
+        self.s["history"][-1]["values"]["us10y"] = None
+        self.s["legacy_original"]["market_forecasts"]["us10y"]["reference_level"] = self.s["history"][-2]["values"]["us10y"]
+        self.s["legacy_forecast"] = legacy_sidecar(self.s["legacy_original"], self.s)
+        f = self.generate()
+        self.assertEqual(f["reference_dates"]["us10y"], "2026-11-26")
+        self.assertEqual(f["reference_dates"]["sp500"], "2026-11-27")
 
     def test_closed_historical_day_is_explicit_and_has_no_imputed_quote(self):
         r = self.s["history"][-10]
