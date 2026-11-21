@@ -217,3 +217,18 @@ jobs:
           for group in ('macro_forecasts','risk_forecasts','market_forecasts'):
               assert all(set(z['arms'])=={'llm','statistical','hybrid'} for z in r[group].values())
           PY
+
+      - name: Independently replay Nov21 append-only source-mask / as-of-calendar triage
+        run: |
+          node research/scripts/audit_2026_11_21_parallel_source_masks.js > /tmp/parallel_source_masks_nov21.json
+          cmp research/experiments/2026-11-21-1915-parallel-source-masks.json /tmp/parallel_source_masks_nov21.json
+          python - <<'PY'
+          import json
+          j=json.load(open('/tmp/parallel_source_masks_nov21.json'))
+          assert j['weekdays_in_interval']==2610
+          assert j['observed_mask_counts']=={'0000':92,'0001':2,'0011':2,'1100':18,'1101':1776,'1110':1,'1111':719}
+          assert j['checked_numerical_overlap']['dates']==721
+          assert j['checked_numerical_overlap']['disagreements']==0
+          assert j['concrete_late_reference_risk']['different_date_gap_basis_points']==-12
+          assert j['source_specific_date_examples']['2026-11-20']=='1110'
+          PY

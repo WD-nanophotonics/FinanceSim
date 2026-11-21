@@ -1,0 +1,43 @@
+{
+  "record_type": "FinanceSim_2026-11-21_evening_append_only",
+  "information_as_of_utc": "2026-11-21T10:14:09.306Z",
+  "base_commit": "9f97f5e78b06dc20eac242f7ae83e13cc6c3a6d5",
+  "earlier_same_day_daily_record": "research/daily/2026-11-21.json",
+  "earlier_weekly_verification": "research/weekly/2026-11-21-verification-correction01.json",
+  "earlier_sealed_next_week_forecast": "research/weekly/2026-11-21-forecast.json",
+  "read": "PROTOCOL, INDEX, Nov21 daily/weekly/experiments, parallel README/policy/history, scripts, tests and latest successful CI; append-only recheck of historical availability",
+  "factual_outputs": {
+    "audited_weekdays": 2610,
+    "mask_counts": {
+      "1100": 18,
+      "1101": 1776,
+      "1110": 1,
+      "1111": 719,
+      "0000": 92,
+      "0001": 2,
+      "0011": 2
+    },
+    "FRED_issuer_overlap_same_date_count": 721,
+    "FRED_issuer_overlap_disagreements": 0,
+    "latest_issuer_Nov20_10Y_percent": 4.92,
+    "latest_FRED_Nov19_10Y_percent": 5.04,
+    "apparent_stale_reference_bias_bp": -12,
+    "provider_difference_same_date": false,
+    "future_2026_Nov26_equity_holiday": true,
+    "future_2026_Nov27_equity_early_close_EST": "13:00"
+  },
+  "experiment_path": "research/experiments/2026-11-21-1915-parallel-source-masks.json",
+  "executable_script": "research/scripts/audit_2026_11_21_parallel_source_masks.js",
+  "new_real_market_forecasts": 0,
+  "tests_performed": "Executed exact deterministic source-mask and overlap assertions on the repo real staging blob in JS tooling before modification. GitHub Actions exact replay step added; successful CI must be checked after push.",
+  "model_execution": "Executed real-history deterministic availability/calendar triage; DID NOT run legacy three-arm forecast model or new Monte Carlo, DID NOT train or recalibrate anything.",
+  "interpretation": "Observation masks are not session calendars: 92 all-absent weekdays cannot automatically be labeled exchange holidays. 18 equity-quote days lack both yield distribution channels; 2026-11-20 Treasury has a 4.92% observation, while FRED DGS10 snapshot ends 2026-11-19 at 5.04%. Using a stale baseline would produce a 12-bp timing error. FRED/H15 and Treasury par should retain separate source identities despite exact 721-day overlap.",
+  "pending": "Independent official market/bond calendars and prospective source locking; preserve delayed or absent FRED values as missing. All Nov21 registered forecasts remain untouched.",
+  "sources": [
+    "https://github.com/WD-nanophotonics/FinanceSim/blob/main/research/parallel/data/2026-11-21-history-staging-correction03.json",
+    "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+    "https://fred.stlouisfed.org/series/DGS10",
+    "https://www.nasdaq.com/market-activity/stock-market-holiday-schedule",
+    "https://www.bea.gov/news/schedule/"
+  ]
+}

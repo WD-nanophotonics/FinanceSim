@@ -1,0 +1,233 @@
+{
+  "record_type": "FinanceSim_append_only_parallel_source_mask_audit",
+  "kind": "real_staging_source_availability_and_calendar_triage_NOT_LIVE_FORECAST",
+  "audited_at_utc": "2026-11-21T10:14:09.306Z",
+  "staging_path": "research/parallel/data/2026-11-21-history-staging-correction03.json",
+  "staging_blob_sha": "c704801f76c99eada73f1ee787de4803afdae503",
+  "staging_source_acquired_at_utc": "2026-11-21T05:53:18.302427+00:00",
+  "underlying_model_head_at_audit": "9f97f5e78b06dc20eac242f7ae83e13cc6c3a6d5",
+  "date_range": [
+    "2016-11-21",
+    "2026-11-20"
+  ],
+  "series_order": [
+    "sp500",
+    "nasdaq100",
+    "us10y",
+    "us10y_fred"
+  ],
+  "mask_semantics": "1=source snapshot contains a dated finite observation, 0=source snapshot does not; these are NOT exchange-session flags",
+  "weekdays_in_interval": 2610,
+  "observed_counts": {
+    "sp500": 2514,
+    "nasdaq100": 2514,
+    "us10y": 722,
+    "us10y_fred": 2499
+  },
+  "observed_mask_counts": {
+    "1100": 18,
+    "1101": 1776,
+    "1110": 1,
+    "1111": 719,
+    "0000": 92,
+    "0001": 2,
+    "0011": 2
+  },
+  "annual_availability": {
+    "2016": {
+      "weekday_count": 30,
+      "mask_counts": {
+        "1101": 28,
+        "0000": 2
+      }
+    },
+    "2017": {
+      "weekday_count": 260,
+      "mask_counts": {
+        "1100": 1,
+        "1101": 250,
+        "0000": 9
+      }
+    },
+    "2018": {
+      "weekday_count": 261,
+      "mask_counts": {
+        "1100": 2,
+        "1101": 249,
+        "0000": 10
+      }
+    },
+    "2019": {
+      "weekday_count": 261,
+      "mask_counts": {
+        "1100": 2,
+        "1101": 250,
+        "0000": 9
+      }
+    },
+    "2020": {
+      "weekday_count": 262,
+      "mask_counts": {
+        "1100": 2,
+        "1101": 251,
+        "0000": 9
+      }
+    },
+    "2021": {
+      "weekday_count": 261,
+      "mask_counts": {
+        "1100": 2,
+        "1101": 250,
+        "0000": 8,
+        "0001": 1
+      }
+    },
+    "2022": {
+      "weekday_count": 260,
+      "mask_counts": {
+        "1100": 2,
+        "1101": 249,
+        "0000": 9
+      }
+    },
+    "2023": {
+      "weekday_count": 260,
+      "mask_counts": {
+        "1100": 1,
+        "1101": 249,
+        "0000": 9,
+        "0001": 1
+      }
+    },
+    "2024": {
+      "weekday_count": 262,
+      "mask_counts": {
+        "1100": 2,
+        "1111": 250,
+        "0000": 10
+      }
+    },
+    "2025": {
+      "weekday_count": 261,
+      "mask_counts": {
+        "1100": 2,
+        "1111": 248,
+        "0000": 10,
+        "0011": 1
+      }
+    },
+    "2026": {
+      "weekday_count": 232,
+      "mask_counts": {
+        "1100": 2,
+        "1110": 1,
+        "1111": 221,
+        "0000": 7,
+        "0011": 1
+      }
+    }
+  },
+  "equity_open_both_but_neither_10y_channel": [
+    "2017-10-09",
+    "2018-10-08",
+    "2018-11-12",
+    "2019-10-14",
+    "2019-11-11",
+    "2020-10-12",
+    "2020-11-11",
+    "2021-10-11",
+    "2021-11-11",
+    "2022-10-10",
+    "2022-11-11",
+    "2023-10-09",
+    "2024-10-14",
+    "2024-11-11",
+    "2025-10-13",
+    "2025-11-11",
+    "2026-10-12",
+    "2026-11-11"
+  ],
+  "source_specific_date_examples": {
+    "2021-04-02": "0001",
+    "2023-04-07": "0001",
+    "2025-01-09": "0011",
+    "2026-04-03": "0011",
+    "2026-10-12": "1100",
+    "2026-11-11": "1100",
+    "2026-11-19": "1111",
+    "2026-11-20": "1110"
+  },
+  "days_none_of_four_have_a_quote": 92,
+  "checked_numerical_overlap": {
+    "dates": 721,
+    "disagreements": 0,
+    "does_not_establish_source_identity": true
+  },
+  "concrete_late_reference_risk": {
+    "date_treasury": "2026-11-20",
+    "treasury_10y_par_yield_percent": 4.92,
+    "last_fred_date": "2026-11-19",
+    "last_fred_dgs10_percent": 5.04,
+    "different_date_gap_basis_points": -12,
+    "meaning": "12-bp mismatch in time if November19 FRED is mistaken for November20 reference. This is a missing latest FRED observation, NOT a same-date quote contradiction."
+  },
+  "calendar_examples": {
+    "equity_closed_with_rates_present": [
+      "2021-04-02",
+      "2023-04-07",
+      "2025-01-09",
+      "2026-04-03"
+    ],
+    "equity_quote_present_without_rates": [
+      "2026-11-11",
+      "2026-10-12"
+    ],
+    "needs_independent_historical_calendar_audit": true,
+    "next_thanksgiving_2026": {
+      "closed": "2026-11-26",
+      "early_equity_close": "2026-11-27T13:00:00-05:00",
+      "source": "https://www.nasdaq.com/market-activity/stock-market-holiday-schedule"
+    }
+  },
+  "sources": [
+    {
+      "kind": "source_staging",
+      "url": "https://github.com/WD-nanophotonics/FinanceSim/blob/main/research/parallel/data/2026-11-21-history-staging-correction03.json",
+      "source_response_hashes": {
+        "2024": "326a4ad517ebbb9949bd662ba50fd02a4552bf3a1d86ffbbbebdef262ca0c8b8",
+        "2025": "097c6ffcab6674f68112fc47e917667cf04d0fd554c675e6c1b7961d36f458d5",
+        "2026": "3e86ccb4c377c393e8ad7f9cd02e8f62be03063f46f3905996f8d710f0286227",
+        "sp500": "b4dc124487c209ffb555eb82a33eea94810bdcc2c41e82e9a1cc8b0ccce11aaa",
+        "nasdaq100": "5b629db82ac6711d1c85cd30b2057cb8ae522d43f6ed783713986f697366c8a8",
+        "fred_dgs10": "971539128c1d8b61aa8371a2a765edb3a7eecdba686dd47f65f9819778094114"
+      }
+    },
+    {
+      "kind": "us_issuer_10year",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "date": "2026-11-20"
+    },
+    {
+      "kind": "fred_federal_reserve_h15_distribution",
+      "url": "https://fred.stlouisfed.org/series/DGS10",
+      "latest_observation_as_checked": "2026-11-19",
+      "web_page_says_updated": "2026-11-20 15:17 CST"
+    },
+    {
+      "kind": "stock_market_2026_calendar",
+      "url": "https://www.nasdaq.com/market-activity/stock-market-holiday-schedule"
+    },
+    {
+      "kind": "BEA_2026_calendar",
+      "url": "https://www.bea.gov/news/schedule/",
+      "scheduled": "2026-11-25 08:30 EST both GDP second estimate and October personal income/outlays"
+    }
+  ],
+  "status": "Partial audited source availability only; no source merge, calendar inference, future predictions, hindsight retuning, model promotion, or claims of on-time launch.",
+  "outstanding": [
+    "Audit all equity and Treasury/H15 opening calendars independently for 2016-2026.",
+    "Approve a prospective common source identity for all model arms (Treasury par vs FRED/H15 differ in provenance).",
+    "Reacquire Nov27 actual last-close and verify same-day availability before Nov28 12:00 JST.",
+    "Build verified dated session grid; avoid forward filling issuer/FRED gaps."
+  ]
+}
