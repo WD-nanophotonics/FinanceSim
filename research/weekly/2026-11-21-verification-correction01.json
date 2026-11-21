@@ -1,0 +1,2008 @@
+{
+  "record_type": "FinanceSim_append_only_verified_Nov14_forecast_Nov20_realizations_CORRECTION01",
+  "checked_at": "2026-11-21 after 12:00 JST",
+  "frozen_record": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "frozen_forecast_blob_sha": "32a55b09fc0a744a90c0c5a0ea59ada90a122391",
+  "source_input": "research/inputs/2026-11-21-settlement-sources.json",
+  "source_input_blob_sha": "05391ff73fda94bb0453951fe53802e30e32bf14",
+  "cutoff": "2026-11-21T12:00:00+09:00",
+  "sizing": {
+    "A_total": 6,
+    "B_total": 5,
+    "C_total": 12
+  },
+  "model_original_seed": 20261114,
+  "model_original_commit": "34e1ef694",
+  "macro": [
+    {
+      "id": "uk_cpi_yoy_nov18",
+      "unit": "percentage_points_yoy",
+      "actual_level": 3.6,
+      "reference_first": 3.5,
+      "actual_delta": 0.1,
+      "released_at": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices",
+      "quality": "first-release",
+      "arms": {
+        "llm": {
+          "point": 0,
+          "event_probability": 0.48,
+          "brier": 0.2704,
+          "abs_error": 0.1,
+          "error": 0.1,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3878
+            },
+            "80": {
+              "covered": true,
+              "score": 0.7368
+            },
+            "90": {
+              "covered": true,
+              "score": 0.9458
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 0.1,
+          "error": 0.1,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3102
+            },
+            "80": {
+              "covered": true,
+              "score": 0.5896
+            },
+            "90": {
+              "covered": true,
+              "score": 0.7566
+            }
+          }
+        },
+        "hybrid": {
+          "point": -0.05,
+          "event_probability": 0.414,
+          "brier": 0.343396,
+          "abs_error": 0.15,
+          "error": 0.15,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3102
+            },
+            "80": {
+              "covered": true,
+              "score": 0.5896
+            },
+            "90": {
+              "covered": true,
+              "score": 0.7566
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    {
+      "id": "uk_cpi_mom_nov18",
+      "unit": "percentage_points_mom",
+      "actual_level": 0.5,
+      "reference_first": 0.4,
+      "actual_delta": 0.1,
+      "released_at": "2026-11-18T07:00:00+00:00",
+      "source": "https://www.ons.gov.uk/economy/inflationandpriceindices",
+      "quality": "first-release",
+      "arms": {
+        "llm": {
+          "point": -0.05,
+          "event_probability": 0.43,
+          "brier": 0.3249,
+          "abs_error": 0.15,
+          "error": 0.15,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.4384
+            },
+            "80": {
+              "covered": true,
+              "score": 0.833
+            },
+            "90": {
+              "covered": true,
+              "score": 1.0692
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 0.1,
+          "error": 0.1,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3508
+            },
+            "80": {
+              "covered": true,
+              "score": 0.6664
+            },
+            "90": {
+              "covered": true,
+              "score": 0.8554
+            }
+          }
+        },
+        "hybrid": {
+          "point": -0.1,
+          "event_probability": 0.3503,
+          "brier": 0.42211,
+          "abs_error": 0.2,
+          "error": 0.2,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 0.4492
+            },
+            "80": {
+              "covered": true,
+              "score": 0.6664
+            },
+            "90": {
+              "covered": true,
+              "score": 0.8554
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    {
+      "id": "us_import_mom_nov17",
+      "unit": "percentage_points_mom",
+      "actual_level": 1.1,
+      "reference_first": 1.1,
+      "actual_delta": 0,
+      "released_at": "2026-11-17T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/ximpim.htm",
+      "quality": "first-release",
+      "arms": {
+        "llm": {
+          "point": -0.7,
+          "event_probability": 0.22,
+          "brier": 0.0484,
+          "abs_error": 0.7,
+          "error": 0.7,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 1.5354
+            },
+            "80": {
+              "covered": true,
+              "score": 2.403
+            },
+            "90": {
+              "covered": true,
+              "score": 3.0842
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 0,
+          "error": 0,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 1.0118
+            },
+            "80": {
+              "covered": true,
+              "score": 1.9224
+            },
+            "90": {
+              "covered": true,
+              "score": 2.4672
+            }
+          }
+        },
+        "hybrid": {
+          "point": -0.75,
+          "event_probability": 0.1587,
+          "brier": 0.025186,
+          "abs_error": 0.75,
+          "error": 0.75,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 1.9882
+            },
+            "80": {
+              "covered": true,
+              "score": 1.9224
+            },
+            "90": {
+              "covered": true,
+              "score": 2.4672
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    {
+      "id": "us_export_mom_nov17",
+      "unit": "percentage_points_mom",
+      "actual_level": 1.1,
+      "reference_first": 2.2,
+      "actual_delta": -1.1,
+      "released_at": "2026-11-17T08:30:00-05:00",
+      "source": "https://www.bls.gov/news.release/ximpim.htm",
+      "quality": "first-release; prior later revised",
+      "arms": {
+        "llm": {
+          "point": -1.5,
+          "event_probability": 0.12,
+          "brier": 0.0144,
+          "abs_error": 0.4,
+          "error": 0.4,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 1.4332
+            },
+            "80": {
+              "covered": true,
+              "score": 2.7232
+            },
+            "90": {
+              "covered": true,
+              "score": 3.4954
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 1.1,
+          "error": -1.1,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 3.2534
+            },
+            "80": {
+              "covered": false,
+              "score": 2.2856
+            },
+            "90": {
+              "covered": true,
+              "score": 2.7962
+            }
+          }
+        },
+        "hybrid": {
+          "point": -1.75,
+          "event_probability": 0.0198,
+          "brier": 0.000392,
+          "abs_error": 0.65,
+          "error": 0.65,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 1.4534
+            },
+            "80": {
+              "covered": true,
+              "score": 2.1786
+            },
+            "90": {
+              "covered": true,
+              "score": 2.7962
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    {
+      "id": "us_claims_nov19",
+      "unit": "thousands_persons",
+      "actual_level": 203,
+      "reference_first": 200,
+      "actual_delta": 3,
+      "released_at": "2026-11-19T08:30:00-05:00",
+      "source": "https://www.dol.gov/ui/data.pdf",
+      "quality": "first-release; prior revised to 202 not rescored",
+      "arms": {
+        "llm": {
+          "point": 5,
+          "event_probability": 0.57,
+          "brier": 0.1849,
+          "abs_error": 2,
+          "error": -2,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 25.2934
+            },
+            "80": {
+              "covered": true,
+              "score": 48.0582
+            },
+            "90": {
+              "covered": true,
+              "score": 61.682
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 3,
+          "error": 3,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 20.2346
+            },
+            "80": {
+              "covered": true,
+              "score": 38.4466
+            },
+            "90": {
+              "covered": true,
+              "score": 49.3456
+            }
+          }
+        },
+        "hybrid": {
+          "point": 2,
+          "event_probability": 0.553,
+          "brier": 0.199809,
+          "abs_error": 1,
+          "error": 1,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 20.2346
+            },
+            "80": {
+              "covered": true,
+              "score": 38.4466
+            },
+            "90": {
+              "covered": true,
+              "score": 49.3456
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    {
+      "id": "dallas_wei_nov19",
+      "unit": "index_points",
+      "actual_level": 3.18,
+      "reference_first": 3.29,
+      "actual_delta": -0.11,
+      "released_at": "2026-11-19 publication time not verified",
+      "source": "https://www.dallasfed.org/research/wei",
+      "quality": "first-release; prior revised to 2.92, changes direction under revised baseline",
+      "arms": {
+        "llm": {
+          "point": -0.04,
+          "event_probability": 0.48,
+          "brier": 0.2304,
+          "abs_error": 0.07,
+          "error": -0.07,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.8768
+            },
+            "80": {
+              "covered": true,
+              "score": 1.666
+            },
+            "90": {
+              "covered": true,
+              "score": 2.1384
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 0.11,
+          "error": -0.11,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.7014
+            },
+            "80": {
+              "covered": true,
+              "score": 1.3328
+            },
+            "90": {
+              "covered": true,
+              "score": 1.7106
+            }
+          }
+        },
+        "hybrid": {
+          "point": -0.01,
+          "event_probability": 0.4923,
+          "brier": 0.242359,
+          "abs_error": 0.1,
+          "error": -0.1,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.7014
+            },
+            "80": {
+              "covered": true,
+              "score": 1.3328
+            },
+            "90": {
+              "covered": true,
+              "score": 1.7106
+            }
+          }
+        }
+      },
+      "strict": true
+    }
+  ],
+  "market": [
+    {
+      "id": "sp500",
+      "unit": "percentage_points_return",
+      "reference": 7561.67,
+      "current": 6910.39,
+      "actual_change": -8.612912,
+      "source": "https://apnews.com/article/c10b797a17c2acf37924d834efebe135",
+      "quality": "strict; Nov13 reference confirmed by AP Nov20 reported weekly -651.28 pts; vendor crosscheck",
+      "strict": true,
+      "arms": {
+        "llm": {
+          "point": 0.15,
+          "event_probability": 0.52,
+          "brier": 0.2704,
+          "abs_error": 8.762912,
+          "error": -8.762912,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 31.371648
+            },
+            "80": {
+              "covered": false,
+              "score": 59.66032
+            },
+            "90": {
+              "covered": false,
+              "score": 94.48864
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 8.612912,
+          "error": -8.612912,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 31.483848
+            },
+            "80": {
+              "covered": false,
+              "score": 63.57392
+            },
+            "90": {
+              "covered": false,
+              "score": 107.12164
+            }
+          }
+        },
+        "hybrid": {
+          "point": -0.0905,
+          "event_probability": 0.4859,
+          "brier": 0.236099,
+          "abs_error": 8.522412,
+          "error": -8.522412,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 30.771048
+            },
+            "80": {
+              "covered": false,
+              "score": 60.09552
+            },
+            "90": {
+              "covered": false,
+              "score": 97.91484
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "nasdaq100",
+      "unit": "percentage_points_return",
+      "reference": 27943.74,
+      "current": 25028.98,
+      "actual_change": -10.430816,
+      "source": "https://ycharts.com/indices/%5ENDX/level",
+      "quality": "strict; matched Nov13 and Nov20 index levels",
+      "strict": true,
+      "arms": {
+        "llm": {
+          "point": 0.35,
+          "event_probability": 0.53,
+          "brier": 0.2809,
+          "abs_error": 10.780816,
+          "error": -10.780816,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 36.766864
+            },
+            "80": {
+              "covered": false,
+              "score": 59.49856
+            },
+            "90": {
+              "covered": false,
+              "score": 76.10552
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 10.430816,
+          "error": -10.430816,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 36.597064
+            },
+            "80": {
+              "covered": false,
+              "score": 65.34896
+            },
+            "90": {
+              "covered": false,
+              "score": 96.10912
+            }
+          }
+        },
+        "hybrid": {
+          "point": -0.3759,
+          "event_probability": 0.4631,
+          "brier": 0.214462,
+          "abs_error": 10.054916,
+          "error": -10.054916,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 34.458764
+            },
+            "80": {
+              "covered": false,
+              "score": 57.46016
+            },
+            "90": {
+              "covered": false,
+              "score": 76.72802
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "stoxx600",
+      "unit": "percentage_points_return",
+      "reference": 664.14,
+      "current": 625.66,
+      "actual_change": -5.793959,
+      "source": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "quality": "strict; same historical provider",
+      "strict": true,
+      "arms": {
+        "llm": {
+          "point": 0.25,
+          "event_probability": 0.53,
+          "brier": 0.2809,
+          "abs_error": 6.043959,
+          "error": -6.043959,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 21.081236
+            },
+            "80": {
+              "covered": false,
+              "score": 36.92039
+            },
+            "90": {
+              "covered": false,
+              "score": 52.95978
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 5.793959,
+          "error": -5.793959,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 20.680236
+            },
+            "80": {
+              "covered": false,
+              "score": 38.97239
+            },
+            "90": {
+              "covered": false,
+              "score": 61.10518
+            }
+          }
+        },
+        "hybrid": {
+          "point": 0.033,
+          "event_probability": 0.5073,
+          "brier": 0.257353,
+          "abs_error": 5.826959,
+          "error": -5.826959,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 20.570536
+            },
+            "80": {
+              "covered": false,
+              "score": 37.15139
+            },
+            "90": {
+              "covered": false,
+              "score": 55.54698
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "nikkei225",
+      "unit": "percentage_points_return",
+      "reference": 61142.35,
+      "current": 56436.65,
+      "actual_change": -7.696302,
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "quality": "strict; original issuer closing data",
+      "strict": true,
+      "arms": {
+        "llm": {
+          "point": -0.3,
+          "event_probability": 0.47,
+          "brier": 0.2209,
+          "abs_error": 7.396302,
+          "error": -7.396302,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 22.727008
+            },
+            "80": {
+              "covered": false,
+              "score": 21.83982
+            },
+            "90": {
+              "covered": true,
+              "score": 16.7248
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 7.696302,
+          "error": -7.696302,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 25.254408
+            },
+            "80": {
+              "covered": false,
+              "score": 34.92782
+            },
+            "90": {
+              "covered": false,
+              "score": 32.53584
+            }
+          }
+        },
+        "hybrid": {
+          "point": -0.1735,
+          "event_probability": 0.4854,
+          "brier": 0.235613,
+          "abs_error": 7.522802,
+          "error": -7.522802,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 24.231808
+            },
+            "80": {
+              "covered": false,
+              "score": 30.57132
+            },
+            "90": {
+              "covered": false,
+              "score": 22.13734
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "kospi",
+      "unit": "percentage_points_return",
+      "reference": 5290.53,
+      "current": 4869.96,
+      "actual_change": -7.949487,
+      "source": "https://ph.investing.com/indices/kospi-historical-data",
+      "quality": "strict; matched historical provider",
+      "strict": true,
+      "arms": {
+        "llm": {
+          "point": -0.3,
+          "event_probability": 0.47,
+          "brier": 0.2209,
+          "abs_error": 7.649487,
+          "error": -7.649487,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 20.561548
+            },
+            "80": {
+              "covered": true,
+              "score": 19.0694
+            },
+            "90": {
+              "covered": true,
+              "score": 24.4754
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 7.949487,
+          "error": -7.949487,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 23.704148
+            },
+            "80": {
+              "covered": false,
+              "score": 17.98047
+            },
+            "90": {
+              "covered": true,
+              "score": 19.7382
+            }
+          }
+        },
+        "hybrid": {
+          "point": -0.4345,
+          "event_probability": 0.4674,
+          "brier": 0.218463,
+          "abs_error": 7.514987,
+          "error": -7.514987,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 21.691348
+            },
+            "80": {
+              "covered": true,
+              "score": 15.9035
+            },
+            "90": {
+              "covered": true,
+              "score": 20.3853
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "csi300",
+      "unit": "percentage_points_return",
+      "reference": 4016.29,
+      "current": 3954.56,
+      "actual_change": -1.536991,
+      "source": "https://ph.investing.com/indices/csi300-historical-data",
+      "quality": "strict; matched historical provider with 0.01 cross-quote discrepancy",
+      "strict": true,
+      "arms": {
+        "llm": {
+          "point": 0.2,
+          "event_probability": 0.52,
+          "brier": 0.2704,
+          "abs_error": 1.736991,
+          "error": -1.736991,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 4.2654
+            },
+            "80": {
+              "covered": true,
+              "score": 8.1046
+            },
+            "90": {
+              "covered": true,
+              "score": 10.402
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 1.536991,
+          "error": -1.536991,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 3.4398
+            },
+            "80": {
+              "covered": true,
+              "score": 6.536
+            },
+            "90": {
+              "covered": true,
+              "score": 8.3888
+            }
+          }
+        },
+        "hybrid": {
+          "point": 0.1206,
+          "event_probability": 0.5182,
+          "brier": 0.268531,
+          "abs_error": 1.657591,
+          "error": -1.657591,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 3.4856
+            },
+            "80": {
+              "covered": true,
+              "score": 6.5774
+            },
+            "90": {
+              "covered": true,
+              "score": 8.5215
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gold",
+      "unit": "percentage_points_return",
+      "reference": 3880.7,
+      "current": 3532.87,
+      "actual_change": -8.963074,
+      "source": "https://www.investing.com/currencies/xau-usd-historical-data",
+      "quality": "conditional; frozen reference differs from matched vendor reference by USD1.57; no strict official score",
+      "strict": false,
+      "arms": {
+        "llm": {
+          "point": 0.7,
+          "event_probability": 0.56,
+          "brier": 0.3136,
+          "abs_error": 9.663074,
+          "error": -9.663074,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 31.877696
+            },
+            "80": {
+              "covered": false,
+              "score": 45.14274
+            },
+            "90": {
+              "covered": false,
+              "score": 44.57248
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 8.963074,
+          "error": -8.963074,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 30.388896
+            },
+            "80": {
+              "covered": false,
+              "score": 48.10834
+            },
+            "90": {
+              "covered": false,
+              "score": 59.35088
+            }
+          }
+        },
+        "hybrid": {
+          "point": 0.4872,
+          "event_probability": 0.5452,
+          "brier": 0.297243,
+          "abs_error": 9.450274,
+          "error": -9.450274,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 32.220396
+            },
+            "80": {
+              "covered": false,
+              "score": 50.99114
+            },
+            "90": {
+              "covered": false,
+              "score": 64.57298
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "wti",
+      "unit": "percentage_points_return",
+      "reference": 87.29,
+      "current": 82.4,
+      "actual_change": -5.602016,
+      "source": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "quality": "unscorable official fixed contract: continuous rolled quote and contract identity unverified, conditional-only descriptive change",
+      "strict": false,
+      "arms": {
+        "llm": {
+          "point": 0.9,
+          "event_probability": 0.54,
+          "brier": 0.2916,
+          "abs_error": 6.502016,
+          "error": -6.502016,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 14.633464
+            },
+            "80": {
+              "covered": true,
+              "score": 21.612
+            },
+            "90": {
+              "covered": true,
+              "score": 27.7388
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 5.602016,
+          "error": -5.602016,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 13.235064
+            },
+            "80": {
+              "covered": true,
+              "score": 17.4292
+            },
+            "90": {
+              "covered": true,
+              "score": 22.37
+            }
+          }
+        },
+        "hybrid": {
+          "point": 0.1589,
+          "event_probability": 0.5054,
+          "brier": 0.255429,
+          "abs_error": 5.760916,
+          "error": -5.760916,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 12.593564
+            },
+            "80": {
+              "covered": true,
+              "score": 19.5018
+            },
+            "90": {
+              "covered": true,
+              "score": 25.1022
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "usdjpy",
+      "unit": "percentage_points_return",
+      "reference": 159.69,
+      "current": 159.31,
+      "actual_change": -0.237961,
+      "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "quality": "conditional; frozen vendor reference 159.91 differs Nov13 matched close159.69",
+      "strict": false,
+      "arms": {
+        "llm": {
+          "point": -0.25,
+          "event_probability": 0.47,
+          "brier": 0.2209,
+          "abs_error": 0.012039,
+          "error": 0.012039,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 2.4254
+            },
+            "80": {
+              "covered": true,
+              "score": 4.6084
+            },
+            "90": {
+              "covered": true,
+              "score": 5.9148
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 0.237961,
+          "error": -0.237961,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 1.956
+            },
+            "80": {
+              "covered": true,
+              "score": 3.7164
+            },
+            "90": {
+              "covered": true,
+              "score": 4.77
+            }
+          }
+        },
+        "hybrid": {
+          "point": -0.1886,
+          "event_probability": 0.4527,
+          "brier": 0.204937,
+          "abs_error": 0.049361,
+          "error": -0.049361,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 2.0939
+            },
+            "80": {
+              "covered": true,
+              "score": 3.982
+            },
+            "90": {
+              "covered": true,
+              "score": 5.1202
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "us2y",
+      "unit": "basis_points",
+      "reference": 4.88,
+      "current": 4.63,
+      "actual_change": -25,
+      "source": "https://home.treasury.gov/",
+      "quality": "strict; US Treasury published Friday par yields",
+      "strict": true,
+      "arms": {
+        "llm": {
+          "point": 1,
+          "event_probability": 0.52,
+          "brier": 0.2704,
+          "abs_error": 26,
+          "error": -26,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 73.8908
+            },
+            "80": {
+              "covered": true,
+              "score": 57.2084
+            },
+            "90": {
+              "covered": true,
+              "score": 73.4262
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 25,
+          "error": -25,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 75.7184
+            },
+            "80": {
+              "covered": false,
+              "score": 65.4568
+            },
+            "90": {
+              "covered": true,
+              "score": 59.2148
+            }
+          }
+        },
+        "hybrid": {
+          "point": -1.1389,
+          "event_probability": 0.4767,
+          "brier": 0.227243,
+          "abs_error": 23.8611,
+          "error": -23.8611,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 68.1653
+            },
+            "80": {
+              "covered": true,
+              "score": 51.5489
+            },
+            "90": {
+              "covered": true,
+              "score": 66.513
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "us10y",
+      "unit": "basis_points",
+      "reference": 5.15,
+      "current": 4.92,
+      "actual_change": -23,
+      "source": "https://home.treasury.gov/",
+      "quality": "strict; US Treasury published Friday par yields",
+      "strict": true,
+      "arms": {
+        "llm": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 23,
+          "error": -23,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 65.2362
+            },
+            "80": {
+              "covered": true,
+              "score": 50.852
+            },
+            "90": {
+              "covered": true,
+              "score": 65.2678
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 23,
+          "error": -23,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 70.4164
+            },
+            "80": {
+              "covered": false,
+              "score": 65.9616
+            },
+            "90": {
+              "covered": true,
+              "score": 52.6354
+            }
+          }
+        },
+        "hybrid": {
+          "point": -2.0508,
+          "event_probability": 0.4554,
+          "brier": 0.207389,
+          "abs_error": 20.9492,
+          "error": -20.9492,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 59.716
+            },
+            "80": {
+              "covered": true,
+              "score": 45.4076
+            },
+            "90": {
+              "covered": true,
+              "score": 57.7098
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "us30y",
+      "unit": "basis_points",
+      "reference": 5.47,
+      "current": 5.31,
+      "actual_change": -16,
+      "source": "https://home.treasury.gov/",
+      "quality": "strict; US Treasury published Friday par yields",
+      "strict": true,
+      "arms": {
+        "llm": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 16,
+          "error": -16,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 42.2544
+            },
+            "80": {
+              "covered": true,
+              "score": 41.3172
+            },
+            "90": {
+              "covered": true,
+              "score": 53.03
+            }
+          }
+        },
+        "statistical": {
+          "point": 0,
+          "event_probability": 0.5,
+          "brier": 0.25,
+          "abs_error": 16,
+          "error": -16,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 46.4632
+            },
+            "80": {
+              "covered": true,
+              "score": 33.3204
+            },
+            "90": {
+              "covered": true,
+              "score": 42.7662
+            }
+          }
+        },
+        "hybrid": {
+          "point": -1.992,
+          "event_probability": 0.4434,
+          "brier": 0.196604,
+          "abs_error": 14.008,
+          "error": -14.008,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 37.0195
+            },
+            "80": {
+              "covered": true,
+              "score": 36.3148
+            },
+            "90": {
+              "covered": true,
+              "score": 46.4853
+            }
+          }
+        }
+      }
+    }
+  ],
+  "risk": [
+    {
+      "id": "sp_abs",
+      "unit": "percent",
+      "actual_state": 8.612912,
+      "event_occurred": true,
+      "strict": true,
+      "quality": "observed and strict matched underlying components",
+      "arms": {
+        "llm": {
+          "point": 1.9,
+          "event_probability": 0.47,
+          "brier": 0.2809,
+          "abs_error": 6.712912,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 25.751648
+            },
+            "80": {
+              "covered": false,
+              "score": 42.72912
+            },
+            "90": {
+              "covered": false,
+              "score": 52.45824
+            }
+          }
+        },
+        "statistical": {
+          "point": 1.746,
+          "event_probability": 0.3597,
+          "brier": 0.409984,
+          "abs_error": 6.866912,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 26.227448
+            },
+            "80": {
+              "covered": false,
+              "score": 53.36362
+            },
+            "90": {
+              "covered": false,
+              "score": 91.00324
+            }
+          }
+        },
+        "hybrid": {
+          "point": 1.9642,
+          "event_probability": 0.4155,
+          "brier": 0.34164,
+          "abs_error": 6.648712,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 25.175448
+            },
+            "80": {
+              "covered": false,
+              "score": 49.45592
+            },
+            "90": {
+              "covered": false,
+              "score": 80.43864
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "wti_abs",
+      "unit": "percent",
+      "actual_state": 5.602016,
+      "event_occurred": true,
+      "strict": false,
+      "quality": "WTI instrument mismatch: conditional state only, do not count in strict",
+      "arms": {
+        "llm": {
+          "point": 5.8,
+          "event_probability": 0.52,
+          "brier": 0.2304,
+          "abs_error": 0.197984,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 6
+            },
+            "80": {
+              "covered": true,
+              "score": 11.9
+            },
+            "90": {
+              "covered": true,
+              "score": 15.8
+            }
+          }
+        },
+        "statistical": {
+          "point": 5.411,
+          "event_probability": 0.46,
+          "brier": 0.2916,
+          "abs_error": 0.191016,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 5.6834
+            },
+            "80": {
+              "covered": true,
+              "score": 10.4065
+            },
+            "90": {
+              "covered": true,
+              "score": 12.9696
+            }
+          }
+        },
+        "hybrid": {
+          "point": 6.0869,
+          "event_probability": 0.5127,
+          "brier": 0.237461,
+          "abs_error": 0.484884,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 6.3515
+            },
+            "80": {
+              "covered": true,
+              "score": 11.597
+            },
+            "90": {
+              "covered": true,
+              "score": 14.4842
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "yield_abs",
+      "unit": "basis_points",
+      "actual_state": 23,
+      "event_occurred": true,
+      "strict": true,
+      "quality": "observed and strict matched underlying components",
+      "arms": {
+        "llm": {
+          "point": 14,
+          "event_probability": 0.44,
+          "brier": 0.3136,
+          "abs_error": 9,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 24
+            },
+            "80": {
+              "covered": true,
+              "score": 32
+            },
+            "90": {
+              "covered": true,
+              "score": 39.7
+            }
+          }
+        },
+        "statistical": {
+          "point": 12.7585,
+          "event_probability": 0.3472,
+          "brier": 0.426148,
+          "abs_error": 10.2415,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 31.5585
+            },
+            "80": {
+              "covered": true,
+              "score": 24.0482
+            },
+            "90": {
+              "covered": true,
+              "score": 30.2629
+            }
+          }
+        },
+        "hybrid": {
+          "point": 14.1667,
+          "event_probability": 0.4014,
+          "brier": 0.358322,
+          "abs_error": 8.8333,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 24.7855
+            },
+            "80": {
+              "covered": true,
+              "score": 27.0074
+            },
+            "90": {
+              "covered": true,
+              "score": 33.7805
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "breadth",
+      "unit": "index_count",
+      "actual_state": 6,
+      "event_occurred": true,
+      "strict": true,
+      "quality": "observed and strict matched underlying components",
+      "arms": {
+        "llm": {
+          "point": 2,
+          "event_probability": 0.37,
+          "brier": 0.3969,
+          "abs_error": 4,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 14
+            },
+            "80": {
+              "covered": false,
+              "score": 15
+            },
+            "90": {
+              "covered": true,
+              "score": 6
+            }
+          }
+        },
+        "statistical": {
+          "point": 1.8352,
+          "event_probability": 0.2631,
+          "brier": 0.543022,
+          "abs_error": 4.1648,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 14
+            },
+            "80": {
+              "covered": false,
+              "score": 33
+            },
+            "90": {
+              "covered": false,
+              "score": 44
+            }
+          }
+        },
+        "hybrid": {
+          "point": 1.9856,
+          "event_probability": 0.3295,
+          "brier": 0.44957,
+          "abs_error": 4.0144,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 14
+            },
+            "80": {
+              "covered": false,
+              "score": 24
+            },
+            "90": {
+              "covered": false,
+              "score": 44
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "joint",
+      "unit": "binary_0or1",
+      "actual_state": 0,
+      "event_occurred": false,
+      "strict": false,
+      "quality": "WTI instrument mismatch: conditional state only, do not count in strict",
+      "arms": {
+        "llm": {
+          "point": 0.05,
+          "event_probability": 0.05,
+          "brier": 0.0025,
+          "abs_error": 0.05,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0
+            },
+            "80": {
+              "covered": true,
+              "score": 0
+            },
+            "90": {
+              "covered": true,
+              "score": 1
+            }
+          }
+        },
+        "statistical": {
+          "point": 0.0438,
+          "event_probability": 0.0438,
+          "brier": 0.001918,
+          "abs_error": 0.0438,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0
+            },
+            "80": {
+              "covered": true,
+              "score": 0
+            },
+            "90": {
+              "covered": true,
+              "score": 0
+            }
+          }
+        },
+        "hybrid": {
+          "point": 0.062,
+          "event_probability": 0.062,
+          "brier": 0.003844,
+          "abs_error": 0.062,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0
+            },
+            "80": {
+              "covered": true,
+              "score": 0
+            },
+            "90": {
+              "covered": true,
+              "score": 1
+            }
+          }
+        }
+      }
+    }
+  ],
+  "group_summary": {
+    "A": {
+      "llm": {
+        "n": 6,
+        "mean_brier": 0.1789,
+        "coverage_80": 1,
+        "coverage_50": 0.833333,
+        "coverage_90": 1,
+        "per_unit": {
+          "percentage_points_yoy": {
+            "n": 1,
+            "mae": 0.1,
+            "rmse": 0.1,
+            "mean_interval_score_80": 0.7368
+          },
+          "percentage_points_mom": {
+            "n": 3,
+            "mae": 0.416667,
+            "rmse": 0.473462,
+            "mean_interval_score_80": 1.9864
+          },
+          "thousands_persons": {
+            "n": 1,
+            "mae": 2,
+            "rmse": 2,
+            "mean_interval_score_80": 48.0582
+          },
+          "index_points": {
+            "n": 1,
+            "mae": 0.07,
+            "rmse": 0.07,
+            "mean_interval_score_80": 1.666
+          }
+        },
+        "brier_skill_vs_statistical": 0.2844
+      },
+      "statistical": {
+        "n": 6,
+        "mean_brier": 0.25,
+        "coverage_80": 0.833333,
+        "coverage_50": 0.833333,
+        "coverage_90": 1,
+        "per_unit": {
+          "percentage_points_yoy": {
+            "n": 1,
+            "mae": 0.1,
+            "rmse": 0.1,
+            "mean_interval_score_80": 0.5896
+          },
+          "percentage_points_mom": {
+            "n": 3,
+            "mae": 0.4,
+            "rmse": 0.637704,
+            "mean_interval_score_80": 1.6248
+          },
+          "thousands_persons": {
+            "n": 1,
+            "mae": 3,
+            "rmse": 3,
+            "mean_interval_score_80": 38.4466
+          },
+          "index_points": {
+            "n": 1,
+            "mae": 0.11,
+            "rmse": 0.11,
+            "mean_interval_score_80": 1.3328
+          }
+        },
+        "brier_skill_vs_statistical": 0
+      },
+      "hybrid": {
+        "n": 6,
+        "mean_brier": 0.205542,
+        "coverage_80": 1,
+        "coverage_50": 0.5,
+        "coverage_90": 1,
+        "per_unit": {
+          "percentage_points_yoy": {
+            "n": 1,
+            "mae": 0.15,
+            "rmse": 0.15,
+            "mean_interval_score_80": 0.5896
+          },
+          "percentage_points_mom": {
+            "n": 3,
+            "mae": 0.533333,
+            "rmse": 0.584523,
+            "mean_interval_score_80": 1.589133
+          },
+          "thousands_persons": {
+            "n": 1,
+            "mae": 1,
+            "rmse": 1,
+            "mean_interval_score_80": 38.4466
+          },
+          "index_points": {
+            "n": 1,
+            "mae": 0.1,
+            "rmse": 0.1,
+            "mean_interval_score_80": 1.3328
+          }
+        },
+        "brier_skill_vs_statistical": 0.177832
+      }
+    },
+    "B": {
+      "llm": {
+        "n": 3,
+        "mean_brier": 0.330467,
+        "coverage_80": 0.333333,
+        "coverage_50": 0,
+        "coverage_90": 0.666667,
+        "per_unit": {
+          "percent": {
+            "n": 1,
+            "mae": 6.712912,
+            "rmse": 6.712912,
+            "mean_interval_score_80": 42.72912
+          },
+          "basis_points": {
+            "n": 1,
+            "mae": 9,
+            "rmse": 9,
+            "mean_interval_score_80": 32
+          },
+          "index_count": {
+            "n": 1,
+            "mae": 4,
+            "rmse": 4,
+            "mean_interval_score_80": 15
+          }
+        },
+        "brier_skill_vs_statistical": 0.281153
+      },
+      "statistical": {
+        "n": 3,
+        "mean_brier": 0.459718,
+        "coverage_80": 0.333333,
+        "coverage_50": 0,
+        "coverage_90": 0.333333,
+        "per_unit": {
+          "percent": {
+            "n": 1,
+            "mae": 6.866912,
+            "rmse": 6.866912,
+            "mean_interval_score_80": 53.36362
+          },
+          "basis_points": {
+            "n": 1,
+            "mae": 10.2415,
+            "rmse": 10.2415,
+            "mean_interval_score_80": 24.0482
+          },
+          "index_count": {
+            "n": 1,
+            "mae": 4.1648,
+            "rmse": 4.1648,
+            "mean_interval_score_80": 33
+          }
+        },
+        "brier_skill_vs_statistical": 0
+      },
+      "hybrid": {
+        "n": 3,
+        "mean_brier": 0.383177,
+        "coverage_80": 0.333333,
+        "coverage_50": 0,
+        "coverage_90": 0.333333,
+        "per_unit": {
+          "percent": {
+            "n": 1,
+            "mae": 6.648712,
+            "rmse": 6.648712,
+            "mean_interval_score_80": 49.45592
+          },
+          "basis_points": {
+            "n": 1,
+            "mae": 8.8333,
+            "rmse": 8.8333,
+            "mean_interval_score_80": 27.0074
+          },
+          "index_count": {
+            "n": 1,
+            "mae": 4.0144,
+            "rmse": 4.0144,
+            "mean_interval_score_80": 24
+          }
+        },
+        "brier_skill_vs_statistical": 0.166496
+      }
+    },
+    "C": {
+      "llm": {
+        "n": 9,
+        "mean_brier": 0.2572,
+        "coverage_80": 0.555556,
+        "coverage_50": 0.111111,
+        "coverage_90": 0.666667,
+        "per_unit": {
+          "percentage_points_return": {
+            "n": 6,
+            "mae": 7.061745,
+            "rmse": 7.591455,
+            "mean_interval_score_80": 34.182182
+          },
+          "basis_points": {
+            "n": 3,
+            "mae": 21.666667,
+            "rmse": 22.068076,
+            "mean_interval_score_80": 49.792533
+          }
+        },
+        "brier_skill_vs_statistical": -0.0288
+      },
+      "statistical": {
+        "n": 9,
+        "mean_brier": 0.25,
+        "coverage_80": 0.222222,
+        "coverage_50": 0.111111,
+        "coverage_90": 0.555556,
+        "per_unit": {
+          "percentage_points_return": {
+            "n": 6,
+            "mae": 7.003411,
+            "rmse": 7.542589,
+            "mean_interval_score_80": 37.889927
+          },
+          "basis_points": {
+            "n": 3,
+            "mae": 21.333333,
+            "rmse": 21.679483,
+            "mean_interval_score_80": 54.912933
+          }
+        },
+        "brier_skill_vs_statistical": 0
+      },
+      "hybrid": {
+        "n": 9,
+        "mean_brier": 0.229084,
+        "coverage_80": 0.555556,
+        "coverage_50": 0.111111,
+        "coverage_90": 0.555556,
+        "per_unit": {
+          "percentage_points_return": {
+            "n": 6,
+            "mae": 6.849944,
+            "rmse": 7.342814,
+            "mean_interval_score_80": 34.626548
+          },
+          "basis_points": {
+            "n": 3,
+            "mae": 19.6061,
+            "rmse": 20.037009,
+            "mean_interval_score_80": 44.423767
+          }
+        },
+        "brier_skill_vs_statistical": 0.083664
+      }
+    }
+  },
+  "risk_definition": "Group B 3 strict events use underlying strict C sources; two WTI-derived states conditionally assessed, not counted strict. Risk and C outcomes are dependent, not additional independent trials",
+  "provider_mismatches": [
+    "gold USD1.57 difference from frozen Nov13 reference",
+    "USDJPY 0.22 difference from frozen Nov13 reference",
+    "WTI fixed contract unknown; continuous quote cannot be used as fixed contract",
+    "SP500 AP and Reuters agree 6910.39 Nov20, initial snapshot source Yahoo, same Nov13 baseline as AP weekly point change"
+  ],
+  "limitations": [
+    "Scoring is retrospective after original Nov14 archived commit: no parameter or forecast changes",
+    "Intervals 50/80/90 are uncalibrated; Winkler interval score per unit",
+    "Brier across within-week outcomes strongly dependent",
+    "US Treasury Friday par yields rather than intraday traded 10Y benchmark",
+    "Market settlement of all 12 shown, but only 9 strict, 2 conditional and WTI excluded as official target",
+    "C macro first vintages authentic; Dallas WEI release exact clock not independently verified",
+    "No claim of calibrated predictive skill after four weeks",
+    "Superseded initial verification.json had a USDJPY unit bug; only correction01 should be used. Strict sample metrics unchanged."
+  ],
+  "supersedes": "research/weekly/2026-11-21-verification.json",
+  "correction_reason": "Initial settlement script treated id usdjpy as Treasury yield because it starts with 'us' and ends with 'y'; impossible -38 bp was erroneously displayed for USDJPY. Corrected to simple percent return -0.238%. Conditional asset only; strict aggregate scores and B groups unchanged.",
+  "correction_time": "after initial 2026-11-21 settlement commit"
+}
