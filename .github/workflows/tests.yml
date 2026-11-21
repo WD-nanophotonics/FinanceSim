@@ -199,3 +199,17 @@ jobs:
           assert r['nikkei_realized']['arms']['llm']['coverage_90']
           assert r['new_monte_carlo_draws']==0
           PY
+      - name: Replay November 21 matched as-of macro, market and joint-tail verification
+        run: node research/scripts/score_2026_11_21.js
+      - name: Reproduce November 21 three-arm 26-target 20000-draw forecast
+        run: |
+          node research/scripts/generate_2026_11_21.js research/inputs/2026-11-21-1200-snapshot.json > /tmp/nov21_forecast_replayed.json
+          cmp research/weekly/2026-11-21-forecast.json /tmp/nov21_forecast_replayed.json
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/nov21_forecast_replayed.json'))
+          assert len(r['macro_forecasts'])==9 and len(r['risk_forecasts'])==5 and len(r['market_forecasts'])==12
+          assert r['seed']==20261121 and r['draws']==20000
+          for group in ('macro_forecasts','risk_forecasts','market_forecasts'):
+              assert all(set(z['arms'])=={'llm','statistical','hybrid'} for z in r[group].values())
+          PY
