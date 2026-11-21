@@ -1,0 +1,155 @@
+{
+  "record_type": "FinanceSim_2026_11_21_matched_weekly_settlement_sources",
+  "information_cutoff": "2026-11-21T12:00:00+09:00",
+  "checked_at": "2026-11-21 after 12:00 JST",
+  "frozen_forecast": "research/weekly/2026-11-14-forecast-corrected-b01.json",
+  "market_window": "2026-11-13 Friday to 2026-11-20 Friday, same market/local official end-of-session where available",
+  "official_macro_first_vintages": {
+    "uk_cpi_yoy_nov18": {
+      "value": 3.6,
+      "reference_first": 3.5,
+      "released_at": "2026-11-18T07:00:00+00:00",
+      "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices",
+      "quality": "first-release"
+    },
+    "uk_cpi_mom_nov18": {
+      "value": 0.5,
+      "reference_first": 0.4,
+      "released_at": "2026-11-18T07:00:00+00:00",
+      "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices",
+      "quality": "first-release"
+    },
+    "us_import_mom_nov17": {
+      "value": 1.1,
+      "reference_first": 1.1,
+      "released_at": "2026-11-17T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/news.release/ximpim.htm",
+      "quality": "first-release"
+    },
+    "us_export_mom_nov17": {
+      "value": 1.1,
+      "reference_first": 2.2,
+      "released_at": "2026-11-17T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/news.release/ximpim.htm",
+      "quality": "first-release; prior later revised"
+    },
+    "us_claims_nov19": {
+      "value": 203,
+      "reference_first": 200,
+      "released_at": "2026-11-19T08:30:00-05:00",
+      "source_url": "https://www.dol.gov/ui/data.pdf",
+      "quality": "first-release; prior revised to 202 not rescored"
+    },
+    "dallas_wei_nov19": {
+      "value": 3.18,
+      "reference_first": 3.29,
+      "released_at": "2026-11-19 publication time not verified",
+      "source_url": "https://www.dallasfed.org/research/wei",
+      "quality": "first-release; prior revised to 2.92, changes direction under revised baseline"
+    }
+  },
+  "prices": {
+    "sp500": {
+      "reference": 7561.67,
+      "current": 6910.39,
+      "unit": "index",
+      "source_url": "https://apnews.com/article/c10b797a17c2acf37924d834efebe135",
+      "reference_source": "https://finance.yahoo.com/quote/%5EGSPC/history/",
+      "quality": "strict; Nov13 reference confirmed by AP Nov20 reported weekly -651.28 pts; vendor crosscheck"
+    },
+    "nasdaq100": {
+      "reference": 27943.74,
+      "current": 25028.98,
+      "unit": "index",
+      "source_url": "https://ycharts.com/indices/%5ENDX/level",
+      "quality": "strict; matched Nov13 and Nov20 index levels"
+    },
+    "stoxx600": {
+      "reference": 664.14,
+      "current": 625.66,
+      "unit": "index",
+      "source_url": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "quality": "strict; same historical provider"
+    },
+    "nikkei225": {
+      "reference": 61142.35,
+      "current": 56436.65,
+      "unit": "index",
+      "source_url": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "quality": "strict; original issuer closing data"
+    },
+    "kospi": {
+      "reference": 5290.53,
+      "current": 4869.96,
+      "unit": "index",
+      "source_url": "https://ph.investing.com/indices/kospi-historical-data",
+      "quality": "strict; matched historical provider"
+    },
+    "csi300": {
+      "reference": 4016.29,
+      "current": 3954.56,
+      "unit": "index",
+      "source_url": "https://ph.investing.com/indices/csi300-historical-data",
+      "quality": "strict; matched historical provider with 0.01 cross-quote discrepancy"
+    },
+    "gold": {
+      "reference": 3880.7,
+      "current": 3532.87,
+      "original_frozen_reference": 3882.27,
+      "unit": "USD/oz",
+      "source_url": "https://www.investing.com/currencies/xau-usd-historical-data",
+      "quality": "conditional; frozen reference differs from matched vendor reference by USD1.57; no strict official score"
+    },
+    "wti": {
+      "reference": 87.29,
+      "current": 82.4,
+      "original_frozen_reference": 88.75,
+      "unit": "USD/bbl",
+      "source_url": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "quality": "unscorable official fixed contract: continuous rolled quote and contract identity unverified, conditional-only descriptive change"
+    },
+    "usdjpy": {
+      "reference": 159.69,
+      "current": 159.31,
+      "original_frozen_reference": 159.91,
+      "unit": "JPY/USD",
+      "source_url": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "quality": "conditional; frozen vendor reference 159.91 differs Nov13 matched close159.69"
+    },
+    "us2y": {
+      "reference": 4.88,
+      "current": 4.63,
+      "unit": "percent par yield",
+      "source_url": "https://home.treasury.gov/",
+      "quality": "strict; US Treasury published Friday par yields"
+    },
+    "us10y": {
+      "reference": 5.15,
+      "current": 4.92,
+      "unit": "percent par yield",
+      "source_url": "https://home.treasury.gov/",
+      "quality": "strict; US Treasury published Friday par yields"
+    },
+    "us30y": {
+      "reference": 5.47,
+      "current": 5.31,
+      "unit": "percent par yield",
+      "source_url": "https://home.treasury.gov/",
+      "quality": "strict; US Treasury published Friday par yields"
+    }
+  },
+  "suspected_mismatches": [
+    "AP Nov20 SP500 6910.39 whereas another less-authoritative site quotes 6918.45; AP and Reuters support 6910.39",
+    "Investing gold Nov13 3880.70 vs frozen3882.27",
+    "Investing USDJPY Nov13 159.69 vs frozen159.91",
+    "NYMEX WTI fixed forward maturity not authenticated; do not use continuous CL quote as fixed-contract settlement"
+  ],
+  "source_rules": "All observations are dated <= Nov20 local close and available before 2026-11-21 noon JST. Financial market data first-vintage concept does not apply; use matched market closes.",
+  "bibliography": [
+    "https://www.bea.gov/news/schedule",
+    "https://www.reuters.com/legal/transactional/wall-st-futures-slip-anthropic-debut-fails-reassure-ai-investors-2026-11-20/",
+    "https://apnews.com/article/c10b797a17c2acf37924d834efebe135",
+    "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+    "https://home.treasury.gov/"
+  ]
+}
