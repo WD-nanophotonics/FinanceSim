@@ -13,6 +13,10 @@ independent LLM overlay, launch-locked scales and remote on-time publication.
 No actual November28 prediction has been generated in advance. Missing data
 must prevent launch, never be replaced with synthetic tests. Historical records
 are protected by `parallel/historical-integrity.json`; no past forecasts rewritten.
+Real staging data: `parallel/data/2026-11-21-history-staging.json` has 2514 closes
+for each equity index, but only 722 Treasury observations (2024-2026); older
+Treasury pages did not return usable tables. Still insufficient for live launch.
+Do not infer holidays from missing quotes or substitute intraday 10Y yields.
 
 Current stage: **v0.2 research memory and scenario exploration**.
 

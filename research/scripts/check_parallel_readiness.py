@@ -6,7 +6,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from financesim.tail_risk import validate_policy
+from financesim.tail_risk import validate_policy, verify
 
 
 def main():
@@ -17,9 +17,15 @@ def main():
         data = (ROOT/path).read_bytes().replace(b"\r\n", b"\n")
         if hashlib.sha256(data).hexdigest() != checksum:
             raise ValueError(f"archived history or original generator changed: {path}")
+    staged = []
+    for path in sorted((ROOT/"research/parallel/data").glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        verify(data)
+        staged.append({"path": path.name, "counts": data["counts"], "status": data["status"]})
     print(json.dumps({"policy_valid": True, "first_origin": policy["first_origin"],
                       "historical_files_unchanged": len(manifest["sha256"]),
                       "live_forecast_generated": False,
+                      "staged_sources": staged,
                       "live_inputs": "pending audited long history and Nov27 closing snapshot"}))
 
 
