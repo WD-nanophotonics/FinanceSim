@@ -1,5 +1,10 @@
 # FinanceSim v0.1.0 — incremental forecasting experiment
 
+**November 28 parallel tail-risk launch:** see the additive
+[runbook](research/parallel/README.md) and [locked exploratory policy](research/parallel/policies/tail-risk-v1.json).
+Existing three-arm forecasts and historical generators remain intact.
+`python -m financesim.tail_experiment preflight` lists pending real launch inputs.
+
 An intentionally small, reproducible **statistical baseline**, not a trained world-economy model. Financial market forecasts and economic releases should be treated as separate series, with properly aligned release-time and as-of data.
 
 ## Single prediction API

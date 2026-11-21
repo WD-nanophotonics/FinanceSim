@@ -1,0 +1,32 @@
+{
+  "schema": "parallel-tail-risk-v1",
+  "first_origin": "2026-11-28",
+  "assets": ["sp500", "nasdaq100", "us10y"],
+  "decay": 0.97,
+  "warmup_changes": 60,
+  "residual_window": 1250,
+  "block_length": 5,
+  "min_blocks": 20,
+  "draws": 20000,
+  "seed": 20261128,
+  "intervals": [50, 80, 90],
+  "checkpoints": [8, 13, 26],
+  "wis_improvement": 0.10,
+  "max_asset_wis_regression": 0.10,
+  "max_center_mae_regression": 0.10,
+  "max_scenario_probability": 0.20,
+  "scenario_dictionary": {
+    "none": {"sp500": 0, "nasdaq100": 0, "us10y": 0},
+    "growth_risk_off": {"sp500": -2, "nasdaq100": -3, "us10y": -10},
+    "inflation_risk_off": {"sp500": -2, "nasdaq100": -3, "us10y": 10},
+    "rebound": {"sp500": 2, "nasdaq100": 3, "us10y": 0}
+  },
+  "parameter_status": "Exploratory pre-registration; decay and scenario impacts not historically fitted or calibrated. No parameter selection based on the four live weeks.",
+  "update_rule": "Fixed decay; EWMA updates only after observed open sessions. Residual window rolls automatically; recursive daily variance also updates within simulated paths. No weekly manual sigma override.",
+  "direction_rule": "Zero conditional log-return drift for equities and zero yield-change drift. Output arithmetic mean/median of simple-return draws; neither is manually forced to zero.",
+  "overlay_rule": "Categorical mutually exclusive weekly overlays; each non-none weight <=20%, sum all weights=1. Fixed additive percentage-point/bp impacts. These weights are subjective, not calibrated event probabilities.",
+  "primary_score": "weighted_interval_score=sum(alpha/2*IS_alpha)/sum(alpha/2), alpha in [0.5,0.2,0.1]. Interval-only proper weighted score for fair legacy comparison; never substitute legacy mean for missing median.",
+  "full_wis": "New versions additionally record (0.5*absolute_median_error+sum(alpha/2*IS_alpha))/3.5; not compared with legacy absent a frozen median.",
+  "calendar_rule": "Core three US series only. Complete weekday grid with explicit audited open flags. Null required on closed days, no variance update. Joint historical five-day blocks must exactly match all target session masks; minimum20 blocks. Friday holiday unsupported and explicitly pending until a separately registered calendar extension.",
+  "promotion_rule": "At 26 admitted consecutive complete on-time real weekly cohorts only: >=10% normalized primary-score improvement, >=2/3 assets improve, no asset WIS or center MAE >10% worse, aggregate tail pinball improves, approximate paired 4-week moving-block bootstrap 95% upper bound <0. Must pass against legacy hybrid and dynamic Gaussian; LLM version must additionally beat no-LLM FHS. Review only, never auto-promote. If inconclusive, no repeated weekly testing; register a later checkpoint separately."
+}

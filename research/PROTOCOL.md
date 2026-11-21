@@ -1,5 +1,20 @@
 # FinanceSim living research memory — protocol v0.2
 
+**2026-11-21 parallel tail-risk amendment, effective first origin 2026-11-28:**
+follow [parallel/README.md](parallel/README.md) alongside the existing weekly cycle.
+Keep all original three arms and historical records unchanged. New experiments,
+inputs, launch locks, remote publication receipts and scores use exclusive-create
+paths under `research/parallel/`. No retrospective parameter retuning.
+Only complete, real, same-source, on-time prospective weekly cohorts enter the
+registered 8/13/26-week review. Missing/late records remain visible separately.
+Primary legacy comparison uses proper weighted 50/80/90 interval terms because
+legacy JSON lacks frozen medians; new models also record median and full WIS.
+Never substitute a mean for a missing median or count derived risk events as
+independent evidence. Promotion gates and paired-week uncertainty are locked in
+the policy; no automatic promotion. Fail explicitly if audited long history or
+calendar matching is unavailable. A hash/test is not proof of timely publication
+or forecasting skill; remote Git metadata also has timestamp limitations.
+
 **Purpose:** Make the model a falsifiable world-model under continual revision, not a collection of persuasive post-hoc narratives. The repository is the durable memory, and each scheduled run must read the previous artifacts rather than relying on chat memory.
 
 ## Daily cycle (Asia/Tokyo; user receives no routine daily report)

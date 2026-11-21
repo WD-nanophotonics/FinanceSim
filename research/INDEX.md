@@ -1,5 +1,19 @@
 # FinanceSim research index
 
+## Upcoming: November 28 parallel tail-risk experiment
+
+Read [parallel/README.md](parallel/README.md) and [policy](parallel/policies/tail-risk-v1.json)
+before the November 28 weekly run. Continue existing llm/statistical/hybrid;
+add ewma_gaussian, joint_fhs and joint_fhs_llm under `research/parallel/`.
+Offline preparation: `python -m financesim.tail_experiment preflight` and
+`python research/scripts/check_parallel_readiness.py`.
+Real launch still needs >=1311 audited weekday rows through November 27,
+explicit historical/target calendars, matched same-origin legacy forecasts,
+independent LLM overlay, launch-locked scales and remote on-time publication.
+No actual November28 prediction has been generated in advance. Missing data
+must prevent launch, never be replaced with synthetic tests. Historical records
+are protected by `parallel/historical-integrity.json`; no past forecasts rewritten.
+
 Current stage: **v0.2 research memory and scenario exploration**.
 
 ## What exists

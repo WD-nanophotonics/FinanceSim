@@ -1,0 +1,31 @@
+{
+  "dataset_kind": "real",
+  "information_cutoff": "2026-11-28T12:00:00+09:00",
+  "acquired_at": "REPLACE_WITH_ACTUAL_TIMESTAMP",
+  "code_commit": "REPLACE_WITH_CURRENT_FULL_CLEAN_GIT_SHA",
+  "sources": {
+    "sp500": {"source_url": "https://finance.yahoo.com/quote/%5EGSPC/history/", "instrument": "S&P 500", "vendor": "Yahoo", "unit": "index", "quote_type": "close", "close_rule": "NYSE standard or announced early close"},
+    "nasdaq100": {"source_url": "https://ph.investing.com/indices/nq-100-historical-data", "instrument": "NASDAQ 100", "vendor": "Investing", "unit": "index", "quote_type": "close", "close_rule": "Nasdaq standard or announced early close"},
+    "us10y": {"source_url": "https://home.treasury.gov/", "instrument": "US Treasury 10Y par yield", "vendor": "US Treasury", "unit": "percent_yield", "quote_type": "official_par_yield", "close_rule": "Official daily par yield observation"}
+  },
+  "history": [],
+  "target_start_at": "2026-11-30T00:00:00+00:00",
+  "target_calendar": [
+    {"date": "2026-11-30", "sessions": {"sp500": true, "nasdaq100": true, "us10y": true}, "source_url": "REPLACE_WITH_AUDITED_CALENDAR_URL"},
+    {"date": "2026-12-01", "sessions": {"sp500": true, "nasdaq100": true, "us10y": true}, "source_url": "REPLACE_WITH_AUDITED_CALENDAR_URL"},
+    {"date": "2026-12-02", "sessions": {"sp500": true, "nasdaq100": true, "us10y": true}, "source_url": "REPLACE_WITH_AUDITED_CALENDAR_URL"},
+    {"date": "2026-12-03", "sessions": {"sp500": true, "nasdaq100": true, "us10y": true}, "source_url": "REPLACE_WITH_AUDITED_CALENDAR_URL"},
+    {"date": "2026-12-04", "sessions": {"sp500": true, "nasdaq100": true, "us10y": true}, "source_url": "REPLACE_WITH_AUDITED_CALENDAR_URL"}
+  ],
+  "targets": {
+    "sp500": {"observed_at": "2026-12-04T16:00:00-05:00"},
+    "nasdaq100": {"observed_at": "2026-12-04T16:00:00-05:00"},
+    "us10y": {"observed_at": "REPLACE_WITH_AUDITED_TREASURY_OBSERVATION_TIME"}
+  },
+  "normalization_scales": {"sp500": null, "nasdaq100": null, "us10y": null},
+  "llm_overlay": {
+    "authored_at": "REPLACE_WITH_ACTUAL_TIMESTAMP",
+    "rationale": "REPLACE_WITH_INDEPENDENT_PRE_FORECAST_JUDGEMENT",
+    "probabilities": {"none": 1, "growth_risk_off": 0, "inflation_risk_off": 0, "rebound": 0}
+  }
+}
