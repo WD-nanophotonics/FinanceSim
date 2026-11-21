@@ -1,0 +1,112 @@
+{
+  "record_type": "FinanceSim_2026-11-21_Saturday_research_review",
+  "date": "2026-11-21",
+  "information_cutoff": "2026-11-21T12:00:00+09:00",
+  "publication": "after 12:00 JST; see Git commit timestamps",
+  "read_scope": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-14.json through 2026-11-20.json",
+    "research/hypotheses/*",
+    "research/experiments/2026-11-15..2026-11-20",
+    "research/weekly/2026-11-14-forecast-corrected-b01.json",
+    "financesim/engine.py",
+    "financesim/scenarios.py",
+    "financesim/research.py",
+    "GitHub Actions"
+  ],
+  "observations": {
+    "macro_first_vintage": "Six archived US and UK Nov17-19 outcomes, including Dallas first-to-first WEI sign preservation; 6/6 released.",
+    "global_6_equity_breadth": "Nov13-Nov20 returns all below -1.5% (SP500 -8.61%, NASDAQ100 -10.43%, STOXX600 -5.79%, Nikkei -7.70%, KOSPI -7.95%, CSI300 -1.54%).",
+    "treasuries": "US Treasury par 2Y 4.63%, 10Y 4.92%, 30Y 5.31%, vs Nov13 4.88%, 5.15%, 5.47%, changes -25,-23,-16bp.",
+    "market_quality": "WTI continuous-futures reference differs from previously frozen; gold and USDJPY provider Nov13 baseline disagreements. Strict C excludes these three; strict B excludes WTI-derived two events.",
+    "information_used": [
+      "AP Nov20 S&P close 6910.39",
+      "Nasdaq100 historical 25028.98",
+      "Investing STOXX625.66, KOSPI4869.96, CSI3003954.56",
+      "Nikkei issuer56436.65",
+      "US Treasury issuer par yields",
+      "BEA Nov25 GDP second and Oct PCE scheduled",
+      "Nasdaq Nov26/27 holiday schedule",
+      "JPX Nov23 exchange holiday"
+    ]
+  },
+  "analysis": {
+    "scores": "See research/weekly/2026-11-21-verification-correction01.json; strict A n6 B n3 C n9.",
+    "brier_mean": {
+      "A": {
+        "llm": 0.1789,
+        "statistical": 0.25,
+        "hybrid": 0.205542
+      },
+      "B": {
+        "llm": 0.330467,
+        "statistical": 0.459718,
+        "hybrid": 0.383177
+      },
+      "C": {
+        "llm": 0.2572,
+        "statistical": 0.25,
+        "hybrid": 0.229084
+      }
+    },
+    "coverage_80": {
+      "A": {
+        "llm": 1,
+        "statistical": 0.833333,
+        "hybrid": 1
+      },
+      "B": {
+        "llm": 0.333333,
+        "statistical": 0.333333,
+        "hybrid": 0.333333
+      },
+      "C": {
+        "llm": 0.555556,
+        "statistical": 0.222222,
+        "hybrid": 0.555556
+      }
+    },
+    "major_failure": "Extreme linked equity losses exceeded most frozen forecasts. Market covariance and tails remain misspecified; inflation and macro directions far easier, but observations correlated. No post-outcome strategy rotation.",
+    "comparability": "No mixed-unit MAE. B measures derived from C and cannot count as independent. C strict nine counts six equity indexes plus three Treasury tenors.",
+    "retained_failure": "Initial Nov21 verification had a USDJPY classification bug (id starts with 'us' and ends with 'y'). Correction01 appended and automated regression check added; original error retained."
+  },
+  "forecast": {
+    "path": "research/weekly/2026-11-21-forecast.json",
+    "input": "research/inputs/2026-11-21-1200-snapshot.json",
+    "generator": "research/scripts/generate_2026_11_21.js",
+    "original_seed": 20261121,
+    "draws": 20000,
+    "model_version": "v0.6-event-coupled-exploratory",
+    "targets": {
+      "A": 9,
+      "B": 5,
+      "C": 12
+    },
+    "information_cutoff": "2026-11-21T12:00:00+09:00",
+    "public_commit_later": "yes; no source observations after cutoff used",
+    "model_caveat": "Shared Bernoulli shocks plus conditional normals only; event probabilities and sigmas subjective, not fit"
+  },
+  "next_week": "2026-11-23..2026-11-27",
+  "holidays": "Japan Nov23 closed, USA equity Nov26 closed, Nov27 1 PM EST early close. US claims and Dallas WEI Thanksgiving release dates provisional; score when actual published.",
+  "cumulative": "research/experiments/2026-11-21-cumulative-26wk-ledger.json",
+  "research_hypotheses": [
+    {
+      "id": "Q002",
+      "finding": "Observed severe weekly equity co-drawdown outside frozen statistical and hybrid 80% ranges in multiple markets; meaningful calibration stress not proof of parameter identifiability",
+      "next_test": "Pre-register wider-vol baselines and paired 26-week skill."
+    },
+    {
+      "id": "H20261115-release-time-exposure",
+      "finding": "Nov20 crash spans different regions and a 10:00 EST US release occurs after Asia closes. Event-time mask is a testable implementation idea, not yet proven causally beneficial.",
+      "next_test": "Compare future paired time-gated and uniform shock forecasts."
+    }
+  ],
+  "pending": [
+    "Verify strict fixed WTI contract before official inclusion",
+    "Audit gold/FX vendor baseline discrepancies",
+    "Next-week DOL claims and Dallas WEI exact release dates remain tentative",
+    "Daily research and future weekday data must not be used retroactively in Nov21 forecast"
+  ],
+  "execution": "Actual 20k seeded V8 Monte Carlo in current run and exact Node/GitHub Actions replay at commit, independent scoring Node test in CI; no predictive skill inference from fixtures."
+}
