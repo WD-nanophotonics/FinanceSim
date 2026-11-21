@@ -1,0 +1,285 @@
+{
+  "record_type": "cumulative_live_forecast_performance_four_week_snapshot",
+  "as_of": "2026-11-21T12:00:00+09:00",
+  "actual_publication_time": "after 12:00 JST; see Git commit time",
+  "sources": [
+    "research/weekly/2026-10-31-verification-correction01.json",
+    "research/weekly/2026-11-07-verification.json",
+    "research/weekly/2026-11-14-verification-correction01.json",
+    "research/weekly/2026-11-21-verification-correction01.json"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "n": 26,
+      "arm_summary": {
+        "llm": {
+          "mean_brier": 0.171266,
+          "coverage80": 1
+        },
+        "statistical": {
+          "mean_brier": 0.217516,
+          "coverage80": 0.923077
+        },
+        "hybrid": {
+          "mean_brier": 0.178067,
+          "coverage80": 1
+        }
+      },
+      "hybrid_skill_vs_statistical": 0.181361,
+      "source_weeks": [
+        {
+          "week": "2026-10-24/10-30",
+          "n": 7,
+          "arms": {
+            "llm": {
+              "brier": 0.12193,
+              "coverage80": 1
+            },
+            "statistical": {
+              "brier": 0.19356,
+              "coverage80": 1
+            },
+            "hybrid": {
+              "brier": 0.12736,
+              "coverage80": 1
+            }
+          }
+        },
+        {
+          "week": "2026-10-31/11-06",
+          "n": 8,
+          "arms": {
+            "llm": {
+              "brier": 0.2004,
+              "coverage80": 1
+            },
+            "statistical": {
+              "brier": 0.193813,
+              "coverage80": 1
+            },
+            "hybrid": {
+              "brier": 0.192013,
+              "coverage80": 1
+            }
+          }
+        },
+        {
+          "week": "2026-11-07/11-13",
+          "n": 5,
+          "arms": {
+            "llm": {
+              "brier": 0.18456,
+              "coverage80": 1
+            },
+            "statistical": {
+              "brier": 0.25,
+              "coverage80": 0.8
+            },
+            "hybrid": {
+              "brier": 0.193777,
+              "coverage80": 1
+            }
+          }
+        },
+        {
+          "week": "2026-11-14/11-20",
+          "n": 6,
+          "arms": {
+            "llm": {
+              "brier": 0.1789,
+              "coverage80": 1
+            },
+            "statistical": {
+              "brier": 0.25,
+              "coverage80": 0.833333
+            },
+            "hybrid": {
+              "brier": 0.205542,
+              "coverage80": 1
+            }
+          }
+        }
+      ],
+      "limitations": "2026-11-14 two structural missing CPI YoY targets excluded from Brier/coverage, still reported 7 forecasted A targets."
+    },
+    {
+      "group": "B",
+      "n": 11,
+      "arm_summary": {
+        "llm": {
+          "mean_brier": 0.271245,
+          "coverage80": 0.727273
+        },
+        "statistical": {
+          "mean_brier": 0.343539,
+          "coverage80": 0.545454
+        },
+        "hybrid": {
+          "mean_brier": 0.287578,
+          "coverage80": 0.727273
+        }
+      },
+      "hybrid_skill_vs_statistical": 0.162896,
+      "source_weeks": [
+        {
+          "week": "2026-10-31/11-06",
+          "n": 5,
+          "arms": {
+            "llm": {
+              "brier": 0.23298,
+              "coverage80": 0.8
+            },
+            "statistical": {
+              "brier": 0.300525,
+              "coverage80": 0.6
+            },
+            "hybrid": {
+              "brier": 0.245773,
+              "coverage80": 0.8
+            }
+          }
+        },
+        {
+          "week": "2026-11-07/11-13",
+          "n": 3,
+          "arms": {
+            "llm": {
+              "brier": 0.2758,
+              "coverage80": 1
+            },
+            "statistical": {
+              "brier": 0.29905,
+              "coverage80": 0.666667
+            },
+            "hybrid": {
+              "brier": 0.261657,
+              "coverage80": 1
+            }
+          }
+        },
+        {
+          "week": "2026-11-14/11-20",
+          "n": 3,
+          "arms": {
+            "llm": {
+              "brier": 0.330467,
+              "coverage80": 0.333333
+            },
+            "statistical": {
+              "brier": 0.459718,
+              "coverage80": 0.333333
+            },
+            "hybrid": {
+              "brier": 0.383177,
+              "coverage80": 0.333333
+            }
+          }
+        }
+      ],
+      "limitations": "Original Oct24 5-group risk SUPPLEMENT omitted: it was after-noon and single-arm only, so cannot enter three-arm fair comparison. Nov14 WTI-derived B probabilities provisional and excluded."
+    },
+    {
+      "group": "C",
+      "n": 38,
+      "arm_summary": {
+        "llm": {
+          "mean_brier": 0.243871,
+          "coverage80": 0.763158
+        },
+        "statistical": {
+          "mean_brier": 0.250048,
+          "coverage80": 0.631579
+        },
+        "hybrid": {
+          "mean_brier": 0.248593,
+          "coverage80": 0.736843
+        }
+      },
+      "hybrid_skill_vs_statistical": 0.005819,
+      "source_weeks": [
+        {
+          "week": "2026-10-24/10-30",
+          "n": 10,
+          "arms": {
+            "llm": {
+              "brier": 0.25997,
+              "coverage80": 0.9
+            },
+            "statistical": {
+              "brier": 0.25,
+              "coverage80": 1
+            },
+            "hybrid": {
+              "brier": 0.25542,
+              "coverage80": 1
+            }
+          }
+        },
+        {
+          "week": "2026-10-31/11-06",
+          "n": 10,
+          "arms": {
+            "llm": {
+              "brier": 0.24517,
+              "coverage80": 0.7
+            },
+            "statistical": {
+              "brier": 0.250183,
+              "coverage80": 0.6
+            },
+            "hybrid": {
+              "brier": 0.243091,
+              "coverage80": 0.7
+            }
+          }
+        },
+        {
+          "week": "2026-11-07/11-13",
+          "n": 9,
+          "arms": {
+            "llm": {
+              "brier": 0.211211,
+              "coverage80": 0.888889
+            },
+            "statistical": {
+              "brier": 0.25,
+              "coverage80": 0.666667
+            },
+            "hybrid": {
+              "brier": 0.266627,
+              "coverage80": 0.666667
+            }
+          }
+        },
+        {
+          "week": "2026-11-14/11-20",
+          "n": 9,
+          "arms": {
+            "llm": {
+              "brier": 0.2572,
+              "coverage80": 0.555556
+            },
+            "statistical": {
+              "brier": 0.25,
+              "coverage80": 0.222222
+            },
+            "hybrid": {
+              "brier": 0.229084,
+              "coverage80": 0.555556
+            }
+          }
+        }
+      ],
+      "limitations": "Nov14 WTI continuous-futures entry excluded; earlier weeks vendor-dependent and provisional. Mixed-unit point errors never pooled."
+    }
+  ],
+  "notes": [
+    "Samples within group not independent and have quote-provider disagreements",
+    "Original first-week B risk supplement excluded because it lacked comparable 3 arms",
+    "November21 C strict n9 excludes conditional USDJPY and gold, unscoreable WTI",
+    "A first-vintage compares original first published baselines, even when later revised and direction flips",
+    "No statistically significant model ranking; results tracked prospectively for 26 weeks and one year"
+  ],
+  "next_checkpoint": "26 scoreable weekly cohorts and 52-week follow-up"
+}
