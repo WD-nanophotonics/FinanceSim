@@ -1,0 +1,110 @@
+{
+  "record_type": "FinanceSim_2026-11-22_append_only_research",
+  "information_as_of_utc": "2026-11-22T10:07:30Z",
+  "base_commit": "54287c9cb13b1b36040fe8790b25ad1b7e31acd5",
+  "read": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/parallel/README.md",
+    "research/parallel/policies/tail-risk-v1.json",
+    "research/parallel/data/2026-11-21-history-staging-correction03.json",
+    "research/daily/2026-11-21.json",
+    "research/daily/2026-11-21-1915-parallel-source-calendar-audit.json",
+    "research/weekly/2026-11-21-forecast.json",
+    "research/weekly/2026-11-21-verification-correction01.json",
+    "research/experiments/2026-11-21-1915-parallel-source-masks.json",
+    "research/scripts/check_parallel_readiness.py",
+    ".github/workflows/tests.yml",
+    "last main-branch GitHub Actions"
+  ],
+  "research_question": "Can independent equity session calendar resolve historical joint-data quote masks without treating all missing yield quotes as the same kind of missingness?",
+  "new_independent_calendar": "exchange_calendars Python v4.13.1 XNYS; historical library output, verified 2026 schedule against NYSE, not issuer bond calendar",
+  "observed_numeric_features": {
+    "weekdays": 2610,
+    "independent_xnys_closed_days": 96,
+    "xnys_sessions": 2514,
+    "sp500_quotes": 2514,
+    "nasdaq100_quotes": 2514,
+    "fred_dgs10_quotes": 2499,
+    "equity_and_fred_joint_dates": 2495
+  },
+  "disjoint_cases": {
+    "equity_quote_without_fred_dgs10": 19,
+    "of_which_holiday_pattern_dates": [
+      "2017-10-09",
+      "2018-10-08",
+      "2018-11-12",
+      "2019-10-14",
+      "2019-11-11",
+      "2020-10-12",
+      "2020-11-11",
+      "2021-10-11",
+      "2021-11-11",
+      "2022-10-10",
+      "2022-11-11",
+      "2023-10-09",
+      "2024-10-14",
+      "2024-11-11",
+      "2025-10-13",
+      "2025-11-11",
+      "2026-10-12",
+      "2026-11-11"
+    ],
+    "holiday_pattern_count": 18,
+    "of_which_latest_FRED_source_lag": [
+      "2026-11-20"
+    ],
+    "fred_quote_when_equities_closed": [
+      "2021-04-02",
+      "2023-04-07",
+      "2025-01-09",
+      "2026-04-03"
+    ]
+  },
+  "source_vintage_defect": {
+    "treasury_issuer_date": "2026-11-20",
+    "treasury_par_yield_percent": 4.92,
+    "FRED_last_available_date": "2026-11-19",
+    "FRED_last_percent": 5.04,
+    "stale_substitution_error_bp": -12,
+    "quality": "Different dates, not a same-date vendor disagreement"
+  },
+  "prospective_event_time": {
+    "Thursday_Nov26": "Both equity and SIFMA USD fixed income closed",
+    "Friday_equity_early_close": "2026-11-27T13:00:00-05:00",
+    "Friday_SIFMA_bond_recommended_early_close": "2026-11-27T14:00:00-05:00",
+    "observed_close_gap_hours": 1,
+    "actual_data_publication_time": "UNVERIFIED",
+    "next_forecast_cutoff": "2026-11-28T12:00:00+09:00"
+  },
+  "sources": [
+    "https://www.nyse.com/trade/hours-calendars",
+    "https://www.sifma.org/resources/general/holiday-schedule",
+    "https://www.sifma.org/news/press-releases/sifma-fixed-income-market-close-recommendations-in-the-u-s-the-u-k-and-japan-for-thanksgiving-day-2026",
+    "https://www.sifma.org/news/press-releases/sifma-recommends-early-market-close-on-january-9-2025-for-the-national-day-of-mourning-in-honor-of-former-president-carter",
+    "https://www.bea.gov/news/schedule/",
+    "https://www.bls.gov/schedule/2026/11_sched_list.htm",
+    "https://fred.stlouisfed.org/series/DGS10",
+    "https://github.com/WD-nanophotonics/FinanceSim/blob/main/research/parallel/data/2026-11-21-history-staging-correction03.json"
+  ],
+  "upcoming": "BEA Nov25 08:30 EST Q3 GDP second estimate and October PCE (not yet released). Thanksgiving week DOL claims expected Nov25 per secondary calendar; exact DOL release schedule not independently confirmed, so not scored or entered as a verified timestamp. Dallas WEI Thanksgiving date unverified.",
+  "experimental_result": "research/experiments/2026-11-22-xnys-treasury-calendar-audit.json",
+  "executable_script": "research/scripts/audit_2026_11_22_xnys_treasury.js",
+  "calendar_snapshot": "research/inputs/2026-11-22-xnys-calendar-snapshot.json",
+  "execution": "Verified independent XNYS calendar locally with Python exchange_calendars 4.13.1; actually computed and asserted 2610-date overlap of original real staging quotes in JavaScript; published exact replay in CI. No seeded Monte Carlo, model fit, new official weekly forecast, or revision of archived predictions. All data pre-Nov21 acquired; subsequent publication times not back-dated.",
+  "conclusions": "Equity availability masks now independently corroborated for 2016-2026 as provisional calendar check. Historical 10Y bond open/closed labels remain to audit. The 18 patterned cross-market misses are distinguishable from Nov20 FRED source lag; 2025 Jan09 equities closed but yield quote exists (SIFMA offered early close).",
+  "caveats": [
+    "Exchange calendar library is not a signed historical issuer calendar; exact equity quote match does not certify vendor identity or historical as-of availability.",
+    "SIFMA fixed-income holiday/early close rules are recommendations, not a guaranteed issuer publication timestamp.",
+    "Current historical quote snapshot could reflect later data revisions; not a vintage backtest.",
+    "Nov27 cash Treasury reference must be issuer verified and correctly timestamped, with 1-hour early-close difference from equity."
+  ],
+  "original_forecasts_modified": false,
+  "model_promoted": false,
+  "pending": [
+    "Independent multi-year Treasury/issuer bond session calendar audit",
+    "Registered prospective common quote-provider/source identity for every arm",
+    "November27 actual early closes and publication times",
+    "Same-origin three-arm reference forecasts and on-time remote receipts"
+  ]
+}
