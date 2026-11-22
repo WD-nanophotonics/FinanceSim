@@ -232,3 +232,7 @@ jobs:
           assert j['concrete_late_reference_risk']['different_date_gap_basis_points']==-12
           assert j['source_specific_date_examples']['2026-11-20']=='1110'
           PY
+      - name: Reproduce Nov22 independent XNYS equity and bond-source calendar crosscheck
+        run: |
+          node research/scripts/audit_2026_11_22_xnys_treasury.js > /tmp/nov22_xnys_audit.json
+          cmp research/experiments/2026-11-22-xnys-treasury-calendar-audit.json /tmp/nov22_xnys_audit.json
