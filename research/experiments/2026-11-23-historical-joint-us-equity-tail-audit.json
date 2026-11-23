@@ -1,0 +1,199 @@
+{
+  "record_type": "FinanceSim_real_historical_joint_equity_tail_audit_not_prospective_forecast",
+  "analysis_at_utc": "2026-11-23T09:52:01.226Z",
+  "code_before_this_audit": "3aebd84e619951fab55c74c0a69d100f9fc3379f",
+  "source_path": "research/parallel/data/2026-11-21-history-staging-correction03.json",
+  "source_blob_sha": "c704801f76c99eada73f1ee787de4803afdae503",
+  "source_record_sha256": "588aa58939be4de34664a0f8207cc12d775f71fec2e8e85f29a69db80729374e",
+  "original_history_acquired_at": "2026-11-21T05:53:18.302427+00:00",
+  "source_channels": {
+    "sp500": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=10y&interval=1d",
+    "nasdaq100": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=10y&interval=1d",
+    "us10y": "https://fred.stlouisfed.org/data/DGS10.txt"
+  },
+  "research_hypothesis": "The independence benchmark P(S&P <= -5%)*P(NDX <= -5%) understates historical simultaneous weekly left tails; pre-specified 5% event corresponds to registered parallel risk experiment. This diagnostic is not a newly frozen weekly forecast.",
+  "cohort": {
+    "first_week_start": "2016-11-28",
+    "last_week_start": "2026-11-09",
+    "weekly_changes": 520,
+    "week_start_rule": "UTC Monday of calendar week, per-asset last observed day in each Monday-Friday week; returns to preceding week's own last observed date",
+    "excluded_weeks": [
+      {
+        "week_start": "2026-11-16",
+        "reason": "FRED DGS10 source snapshot only through 2026-11-19, while equity closes include Nov20; no silent same-Friday substitute."
+      }
+    ],
+    "source_quote_date_mismatch_weeks": [
+      {
+        "week_start": "2021-03-29",
+        "sp500": "2021-04-01",
+        "nasdaq100": "2021-04-01",
+        "us10y_fred": "2021-04-02"
+      },
+      {
+        "week_start": "2022-11-07",
+        "sp500": "2022-11-11",
+        "nasdaq100": "2022-11-11",
+        "us10y_fred": "2022-11-10"
+      },
+      {
+        "week_start": "2023-04-03",
+        "sp500": "2023-04-06",
+        "nasdaq100": "2023-04-06",
+        "us10y_fred": "2023-04-07"
+      },
+      {
+        "week_start": "2026-03-30",
+        "sp500": "2026-04-02",
+        "nasdaq100": "2026-04-02",
+        "us10y_fred": "2026-04-03"
+      }
+    ]
+  },
+  "threshold_negative_simple_return_percent": -5,
+  "main_result": {
+    "weeks": 520,
+    "sp500_tail_weeks": 11,
+    "nasdaq100_tail_weeks": 15,
+    "joint_tail_weeks": 10,
+    "sp500_rate": 0.021153846153846155,
+    "nasdaq100_rate": 0.028846153846153848,
+    "observed_joint_rate": 0.019230769230769232,
+    "independent_marginal_product": 0.000610207100591716,
+    "joint_minus_independent": 0.018620562130177515,
+    "joint_over_independent": 31.515151515151516
+  },
+  "historical_joint_event_week_starts": [
+    "2018-02-05",
+    "2018-03-19",
+    "2018-12-17",
+    "2020-02-24",
+    "2020-03-09",
+    "2020-03-16",
+    "2020-10-26",
+    "2022-01-17",
+    "2022-06-06",
+    "2025-03-31"
+  ],
+  "US10Y_in_historical_joint_equity_tails": {
+    "units": "basis_points of weekly yield level change",
+    "count": 10,
+    "mean_change_bp": -3.6000000000000014,
+    "median_change_bp": -2.4999999999999964,
+    "up_25bp_or_more": 0,
+    "down_25bp_or_more": 2
+  },
+  "approximate_uncertainty": {
+    "method": "Circular moving block bootstrap over observed historical weekly rows, block length 4, 3000 replicates, RNG xorshift32, fixed seed 20261123; 2.5% and 97.5% empirical quantiles. Descriptive only, not proof of forecasting calibration.",
+    "seed": 20261123,
+    "block_length_weeks": 4,
+    "replicates": 3000,
+    "joint_rate_95_interval": [
+      0.007692307692307693,
+      0.032692307692307694
+    ],
+    "joint_excess_over_independence_95_interval": [
+      0.0075591715976331365,
+      0.03143491124260355
+    ],
+    "ratio_95_interval": [
+      20,
+      61.904761904761905
+    ],
+    "zero_marginal_replicates": 0
+  },
+  "exploratory_sensitivity": [
+    {
+      "threshold_negative_return_percent": -3,
+      "weeks": 520,
+      "sp500_tail_weeks": 31,
+      "nasdaq100_tail_weeks": 61,
+      "joint_tail_weeks": 30,
+      "sp500_rate": 0.05961538461538462,
+      "nasdaq100_rate": 0.11730769230769231,
+      "observed_joint_rate": 0.057692307692307696,
+      "independent_marginal_product": 0.006993343195266273,
+      "joint_minus_independent": 0.05069896449704142,
+      "joint_over_independent": 8.249603384452671
+    },
+    {
+      "threshold_negative_return_percent": -4,
+      "weeks": 520,
+      "sp500_tail_weeks": 19,
+      "nasdaq100_tail_weeks": 31,
+      "joint_tail_weeks": 16,
+      "sp500_rate": 0.03653846153846154,
+      "nasdaq100_rate": 0.05961538461538462,
+      "observed_joint_rate": 0.03076923076923077,
+      "independent_marginal_product": 0.0021782544378698226,
+      "joint_minus_independent": 0.02859097633136095,
+      "joint_over_independent": 14.125636672325976
+    },
+    {
+      "threshold_negative_return_percent": -5,
+      "weeks": 520,
+      "sp500_tail_weeks": 11,
+      "nasdaq100_tail_weeks": 15,
+      "joint_tail_weeks": 10,
+      "sp500_rate": 0.021153846153846155,
+      "nasdaq100_rate": 0.028846153846153848,
+      "observed_joint_rate": 0.019230769230769232,
+      "independent_marginal_product": 0.000610207100591716,
+      "joint_minus_independent": 0.018620562130177515,
+      "joint_over_independent": 31.515151515151516
+    },
+    {
+      "threshold_negative_return_percent": -6,
+      "weeks": 520,
+      "sp500_tail_weeks": 5,
+      "nasdaq100_tail_weeks": 7,
+      "joint_tail_weeks": 5,
+      "sp500_rate": 0.009615384615384616,
+      "nasdaq100_rate": 0.013461538461538462,
+      "observed_joint_rate": 0.009615384615384616,
+      "independent_marginal_product": 0.0001294378698224852,
+      "joint_minus_independent": 0.009485946745562131,
+      "joint_over_independent": 74.28571428571429
+    }
+  ],
+  "exploratory_time_split": [
+    {
+      "window": "2016-2021",
+      "weeks": 266,
+      "sp500_tail_weeks": 7,
+      "nasdaq100_tail_weeks": 7,
+      "joint_tail_weeks": 7,
+      "sp500_rate": 0.02631578947368421,
+      "nasdaq100_rate": 0.02631578947368421,
+      "observed_joint_rate": 0.02631578947368421,
+      "independent_marginal_product": 0.0006925207756232686,
+      "joint_minus_independent": 0.02562326869806094,
+      "joint_over_independent": 38.00000000000001
+    },
+    {
+      "window": "2022-2026",
+      "weeks": 254,
+      "sp500_tail_weeks": 4,
+      "nasdaq100_tail_weeks": 8,
+      "joint_tail_weeks": 3,
+      "sp500_rate": 0.015748031496062992,
+      "nasdaq100_rate": 0.031496062992125984,
+      "observed_joint_rate": 0.011811023622047244,
+      "independent_marginal_product": 0.0004960009920019839,
+      "joint_minus_independent": 0.01131502263004526,
+      "joint_over_independent": 23.812500000000004
+    }
+  ],
+  "quality_and_interpretation": [
+    "Observed frequencies are from a history snapshot acquired on 2026-11-21; no proof of historical first-availability or matched vendor for live forecasts.",
+    "Independence rate is the product of pooled historical marginals, not a separate calibrated probability model. Its ratio is descriptive, not evidence of any candidate model's skill.",
+    "S&P and NDX represent highly overlapping US equity exposures; their tail co-occurrence must not be treated as 10 independent outcomes.",
+    "US10Y channel is FRED DGS10, not a licensed Treasury+FRED splice; FRED H.15 historical definitions and original issuer provenance remain to be audited for future live launch.",
+    "The 2026-11-16 week is omitted because at original acquisition FRED lacked Nov20, while stock series included Nov20; no backfill or future quote was inserted.",
+    "Four historical weekly closes for stocks and FRED bond quote date differ. Assets use their own actual dates; a risk event is defined weekly, not an identical-minute market reaction.",
+    "This is numerical exploratory historical analysis on previously acquired real observations, with deterministic bootstrap. It is neither an out-of-sample test nor a Monte Carlo forecast of Nov27/Dec4.",
+    "Historic extreme-tail frequency reflects changing regimes; do not directly substitute pooled 2016–2026 unconditional rates for next week's forecasts."
+  ],
+  "frozen_forecasts_rewritten": false,
+  "promotion_eligible": false
+}
