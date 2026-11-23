@@ -236,3 +236,17 @@ jobs:
         run: |
           node research/scripts/audit_2026_11_22_xnys_treasury.js > /tmp/nov22_xnys_audit.json
           cmp research/experiments/2026-11-22-xnys-treasury-calendar-audit.json /tmp/nov22_xnys_audit.json
+
+      - name: Reproduce Nov23 retrospective joint-equity tail audit from immutable real staging
+        run: |
+          node research/scripts/audit_2026_11_23_historical_joint_us_tail.js > /tmp/financesim_nov23_historical_joint_tail.json
+          cmp research/experiments/2026-11-23-historical-joint-us-equity-tail-audit.json /tmp/financesim_nov23_historical_joint_tail.json
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/financesim_nov23_historical_joint_tail.json'))
+          a=x['main_result']
+          assert a['weeks']==520 and a['sp500_tail_weeks']==11
+          assert a['nasdaq100_tail_weeks']==15 and a['joint_tail_weeks']==10
+          assert x['frozen_forecasts_rewritten'] is False
+          assert x['promotion_eligible'] is False
+          PY
