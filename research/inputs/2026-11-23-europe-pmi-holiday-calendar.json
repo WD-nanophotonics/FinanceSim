@@ -1,0 +1,107 @@
+{
+  "record_type": "FinanceSim_source_observations_asof_Nov23",
+  "retrieved_at_utc": "2026-11-23T09:53:58.766Z",
+  "asof_notices": "All numerical releases in this record were publicly described before retrieval time; date and first-publication time are retained separately. Not an as-of primary-release archive.",
+  "current_november_flash_pmi": [
+    {
+      "metric": "Germany composite flash PMI",
+      "reference_period": "2026-11",
+      "current": 55,
+      "prior_reported": 53.4,
+      "change_index_points": 1.6,
+      "source": "https://www.reuters.com/world/europe/german-business-activity-growth-accelerates-november-pmi-shows-2026-11-23/",
+      "source_tier": "Reuters report of S&P Global flash survey; issuer press-release PDF NOT fetched",
+      "release_date": "2026-11-23",
+      "reported_clock": "2026-11-23 08:30 UTC flash schedule; source article at 03:32 EST (08:32 UTC)"
+    },
+    {
+      "metric": "France composite flash PMI",
+      "reference_period": "2026-11",
+      "current": 46.2,
+      "prior_reported": 46.6,
+      "change_index_points": -0.4,
+      "source": "https://www.reuters.com/world/europe/euro-zone-growth-holds-steady-frances-deepening-downturn-clouds-outlook-pmi-2026-11-23/",
+      "secondary": "https://www.wsj.com/economy/global/germany-and-france-on-diverging-economic-paths-fe961a0d",
+      "source_tier": "Reuters report and WSJ; original survey release NOT independently retrieved",
+      "release_date": "2026-11-23"
+    },
+    {
+      "metric": "Eurozone composite flash PMI",
+      "reference_period": "2026-11",
+      "current": 51.7,
+      "prior_reported": 51.7,
+      "change_index_points": 0,
+      "source": "https://www.reuters.com/world/europe/euro-zone-growth-holds-steady-frances-deepening-downturn-clouds-outlook-pmi-2026-11-23/",
+      "source_tier": "Reuters report of S&P Global/HCOB; original issuer PDF not fetched",
+      "release_date": "2026-11-23"
+    }
+  ],
+  "derived_european_features": {
+    "german_minus_french_composite_level_points": 8.8,
+    "reference_gap_points": 6.8,
+    "gap_change_points": 2,
+    "interpretation": "Survey divergence. Germany's acceleration +1.6 and France's deceleration -0.4 yield a widening 2.0-point gap; not growth-rate or GDP units."
+  },
+  "official_calendar_2026": [
+    {
+      "event": "JPX cash holiday Labor Thanksgiving Day",
+      "date": "2026-11-23",
+      "status": "no Tokyo cash equity session",
+      "source": "https://www.jpx.co.jp/english/equities/trading/domestic/01.html",
+      "source_quality": "Trading schedule primary; general session availability supported by official holiday calendar"
+    },
+    {
+      "event": "JPX derivatives holiday trading cancelled because BCP testing",
+      "date": "2026-11-23",
+      "status": "no holiday trading",
+      "source": "https://www.jpx.co.jp/english/news/2040/20261120-01.html",
+      "published": "2026-11-20"
+    },
+    {
+      "event": "US BEA Q3 GDP second estimate",
+      "date": "2026-11-25",
+      "time_Est": "08:30",
+      "time_JST": "22:30",
+      "status": "scheduled, result not yet released",
+      "source": "https://www.bea.gov/index.php/news/schedule/"
+    },
+    {
+      "event": "US BEA Personal Income and Outlays October 2026",
+      "date": "2026-11-25",
+      "time_Est": "08:30",
+      "time_JST": "22:30",
+      "status": "scheduled, result not yet released",
+      "source": "https://www.bea.gov/index.php/news/schedule/"
+    },
+    {
+      "event": "NYSE market full closure Thanksgiving",
+      "date": "2026-11-26",
+      "source": "https://www.nyse.com/trade/hours-calendars",
+      "status": "scheduled closure"
+    },
+    {
+      "event": "NYSE market early close",
+      "date": "2026-11-27",
+      "time_Est": "13:00",
+      "time_JST": "2026-11-28 03:00 JST",
+      "status": "scheduled, no actual closing value available",
+      "source": "https://www.nyse.com/trade/hours-calendars"
+    },
+    {
+      "event": "SIFMA USD bonds early close recommendation",
+      "date": "2026-11-27",
+      "time_Est": "14:00",
+      "time_JST": "2026-11-28 04:00 JST",
+      "source": "https://www.sifma.org/resources/general/holiday-schedule",
+      "status": "recommendation only; NOT issuer rate publication time"
+    }
+  ],
+  "unverified_future_event": {
+    "event": "US initial unemployment claims Thanksgiving reschedule",
+    "possible_date": "2026-11-25",
+    "status": "reported by secondary calendar, still missing independent DOL release schedule verification",
+    "secondary_url": "https://www.financecalendar.com/weekly-jobless-claims/"
+  },
+  "current_session_warning": "There is no Nikkei 225 Monday 2026-11-23 regular cash close. Latest already archived Nov20 official 56436.65 remains the Friday baseline. US Monday cash-market close has not occurred as of this record; no interim intraday quote used for scoring.",
+  "historical_source_vintage_warning": "Unrevised historical first-print as-of dates are NOT authenticated by a November 21 snapshot; historical tail frequencies are retrospective only."
+}
