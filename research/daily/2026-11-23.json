@@ -1,0 +1,85 @@
+{
+  "record_type": "FinanceSim_daily_2026-11-23_append_only",
+  "information_as_of_utc": "2026-11-23T09:53:58.766Z",
+  "model_base_commit": "3aebd84e619951fab55c74c0a69d100f9fc3379f",
+  "read": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-22.json",
+    "research/weekly/2026-11-21-forecast.json",
+    "research/weekly/2026-11-21-verification-correction01.json",
+    "research/parallel/README.md",
+    "research/parallel/policies/tail-risk-v1.json",
+    "research/parallel/data/2026-11-21-history-staging-correction03.json",
+    "research/scripts/check_parallel_readiness.py",
+    "financesim/tail_experiment.py",
+    "research/experiments/2026-11-22-xnys-treasury-calendar-audit.json",
+    ".github/workflows/tests.yml",
+    "GitHub Actions 45011079948 (success Python3.10/3.12)"
+  ],
+  "research_question": "How much do the existing 10-year actual staging rows imply dependence between weekly US equity crash events, compared with same-sample independence, before the November 28 parallel model launch?",
+  "calculations": {
+    "history_period_first_week": "2016-11-28",
+    "history_period_last_week": "2026-11-09 (ends 2026-11-13)",
+    "valid_historical_weekly_changes": 520,
+    "crash_event": "Same Monday–Friday calendar week, S&P500 and Nasdaq100 each have a last-session-to-last-session simple weekly return <=-5%.",
+    "sp500_only_marginal_count": 11,
+    "nasdaq100_only_marginal_count": 15,
+    "joint_count": 10,
+    "historical_joint_frequency": 0.019230769230769232,
+    "independence_product_same_marginals": 0.000610207100591716,
+    "historical_dependence_ratio": 31.515151515151516,
+    "approximate_block_bootstrap_joint_probability_95": [
+      0.007692307692307693,
+      0.032692307692307694
+    ],
+    "approximate_block_bootstrap_excess_95": [
+      0.0075591715976331365,
+      0.03143491124260355
+    ],
+    "bootstrap_seed": 20261123,
+    "bootstrap_replicates": 3000,
+    "block_length_weeks": 4,
+    "joint_week_10Y_change_mean_bp": -3.6,
+    "joint_week_10Y_falls_ge25bp_count": 2,
+    "same_week_equity_and_bond_price_date_mismatches": 4
+  },
+  "experimental_artifact": "research/experiments/2026-11-23-historical-joint-us-equity-tail-audit.json",
+  "executable_code": "research/scripts/audit_2026_11_23_historical_joint_us_tail.js",
+  "input_staging": "research/parallel/data/2026-11-21-history-staging-correction03.json",
+  "input_new_calendar": "research/inputs/2026-11-23-europe-pmi-holiday-calendar.json",
+  "source_staging_blob_sha": "c704801f76c99eada73f1ee787de4803afdae503",
+  "real_staging_acquired_at": "2026-11-21T05:53:18.302427+00:00",
+  "current_observed_macro": {
+    "germany_nov_flash_composite_55_vs_oct_53_4_change_index_points": 1.6,
+    "france_nov_flash_composite_46_2_vs_oct_46_6_change_index_points": -0.4,
+    "eurozone_nov_flash_composite_51_7_vs_oct_51_7_change_index_points": 0,
+    "germany_minus_france_spread_change_index_points": 2,
+    "source_quality": "secondary Reuters reports of HCOB/S&P flash PMI, no issuer PDF independently verified",
+    "non_scoreable_reason": "Not included as target in 2026-11-21 forecast"
+  },
+  "event_calendar": {
+    "today_japan_equity_session": "closed 2026-11-23; JPX confirms no derivatives holiday trading either",
+    "BEA_nov25_0830_EST": "GDP second estimate and October Personal Income & Outlays; outcomes not yet released",
+    "Thanksgiving_nov26": "US equity/bond recommended closure",
+    "Nov27_early_close": "US stocks 13:00 EST, SIFMA bonds 14:00 EST recommendation, differs one hour; rate data issuer publication timestamp still unverified",
+    "DOL_claims_nov25": "not primary verified; no numeric observation and no frozen target added"
+  },
+  "scientific_interpretation": "Historical 10/520 equity co-crash frequency exceeds independent-marginal product (11/520)*(15/520) by about 1.862 percentage points. The two equity indices overlap economically and share market shocks; do not count those ten events as independent model wins. This is a descriptive historical dependence check useful for model architecture, NOT a retrospective score or a new 2026-11-27 forecast. Weekly 4-block bootstrapped error bars approximate, regime shifts and extreme rarity remain.",
+  "real_execution": "Used GitHub-stored real 2016-2026 daily asset price series acquired Nov21, built calendar-week last-quote pairs, computed 520 non-overlapping weekly changes and 3000 deterministic 4-week circular block bootstrap resamples with xorshift32; connector-side JavaScript executed; standalone replay source committed. No parameter refit, no forward Monte Carlo scenario run, no live day close scored.",
+  "known_limitations": [
+    "Yahoo history snapshots for equities and FRED DGS10 are retrospective, not certified original vintages; original prospectively sealed forecasts used different source combinations.",
+    "Bond quote date differs from equity quote date for four weeks; those remain visible, not silently merged.",
+    "Exclude Nov16–20 weekly change from the 520 joint complete weeks because FRED staging stops Nov19, unlike equity quotes Nov20.",
+    "Historical 10Y source and live Treasury par-yield series need a registered prospective consistency/source audit; existing overlap equality does not make sources interchangeable.",
+    "PMI first prints came through secondary reporting and issuer PDF was not independently retrieved; never score today's PMI as a Nov21 target."
+  ],
+  "followups": [
+    "Run CI exact replay and update index",
+    "Independently verify issuer bond historical market calendar and future same-source price lock",
+    "Collect Nov27 early closes and timestamps before Nov28 noon; abstain if data quality fails"
+  ],
+  "original_archives_modified": false,
+  "model_promoted": false,
+  "user_daily_notification": false
+}
