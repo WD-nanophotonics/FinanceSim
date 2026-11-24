@@ -1,0 +1,226 @@
+{
+  "record_type": "FinanceSim_daily_append_only",
+  "information_as_of_utc": "2026-11-24T09:52:27.947Z",
+  "model_base_commit": "16bd71c4db906c3a9624367087a940cc5e1d1fd2",
+  "read": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-23.json",
+    "research/weekly/2026-11-21-forecast.json",
+    "research/weekly/2026-11-21-verification-correction01.json",
+    "research/parallel/README.md",
+    "research/parallel/policies/tail-risk-v1.json",
+    "research/scripts/check_parallel_readiness.py",
+    "financesim/tail_experiment.py",
+    ".github/workflows/tests.yml",
+    "research/experiments/2026-11-23-historical-joint-us-equity-tail-audit.json",
+    "research/scripts/audit_2026_11_23_historical_joint_us_tail.js",
+    "research/parallel/data/2026-11-21-history-staging-correction03.json"
+  ],
+  "previous_ci": {
+    "run": 45151238474,
+    "python_3_10": "success",
+    "python_3_12": "success"
+  },
+  "input": {
+    "path": "research/parallel/data/2026-11-21-history-staging-correction03.json",
+    "blob_sha": "c704801f76c99eada73f1ee787de4803afdae503",
+    "record_sha256": "588aa58939be4de34664a0f8207cc12d775f71fec2e8e85f29a69db80729374e",
+    "original_acquired_at": "2026-11-21T05:53:18.302427+00:00"
+  },
+  "fred_append_observation": {
+    "date": "2026-11-20",
+    "value": 4.92,
+    "source": "https://fred.stlouisfed.org/series/DGS10",
+    "page_updated_at": "2026-11-23T15:34:00-06:00",
+    "first_availability": "not established; page update timestamp, not certified initial publication",
+    "issuer_crosscheck": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+  },
+  "observations": [
+    {
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "date": "2026-11-24",
+      "observed_at": "2026-11-24T15:30:00+09:00",
+      "open": 57009.99,
+      "high": 59262.57,
+      "low": 57009.99,
+      "close": 58644.63,
+      "prior_date": "2026-11-20",
+      "prior_close": 56436.65,
+      "quality": "issuer OHLC, interim weekly observation; not Nov27 settlement"
+    },
+    {
+      "source": "https://www.ifo.de/en/survey/ifo-business-climate-index-germany",
+      "release_calendar": "https://www.ifo.de/en/ifo-business-climate-index-germany-november-2026",
+      "released_at": "2026-11-24T10:30:00+01:00",
+      "november_first": 90.6,
+      "october_first": 90.2,
+      "october_revised": 90.1,
+      "quality": "issuer survey summary and publication calendar; not frozen target"
+    },
+    {
+      "source": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Board-Reinstates-Jensen-Huang-as-President-CEO-and-Board-Director/default.aspx",
+      "published_date": "2026-11-23",
+      "exact_time": null,
+      "feature_event_indicator": 1,
+      "event": "Board reinstated Jensen Huang as CEO; event known by today's retrieval; precise release clock and causal market contribution not established"
+    },
+    {
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "date": "2026-11-23",
+      "us10y": 4.92,
+      "previous_2026_11_20": 4.92,
+      "change_bp": 0,
+      "quality": "Treasury issuer page current as retrieved; FRED Nov23 observation not available on retrieved page"
+    },
+    {
+      "source": "https://www.destatis.de/EN/Press/2026/10/PE26_381_811.html",
+      "prior_q3_first_release": 0.2,
+      "unit": "real GDP qoq percent",
+      "first_release_date": "2026-10-30",
+      "next_detail_release": "2026-11-25",
+      "actual_next": null
+    },
+    {
+      "source": "https://www.federalreserve.gov/releases//h15/",
+      "release_date": "2026-11-23",
+      "last_observation_date": "2026-11-20",
+      "us10y": 4.92
+    },
+    {
+      "source": "https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics/treasury-yield-curve-methodology",
+      "note": "Ordinary Treasury indicative bid input near 15:30 ET, not trade close; Nov27 holiday-specific observed_at and available_at still require evidence."
+    },
+    {
+      "source": "https://fred.stlouisfed.org/series/SP500",
+      "latest_observation": "2026-11-20",
+      "level": 6910.39
+    },
+    {
+      "source": "https://fred.stlouisfed.org/series/NASDAQ100",
+      "latest_observation": "2026-11-19",
+      "level": 26517.05
+    }
+  ],
+  "experiment": {
+    "prior": {
+      "n": 520,
+      "sp": 11,
+      "nd": 15,
+      "joint": 10,
+      "joint_rate": 0.019230769230769232,
+      "independence": 0.0006102071005917159,
+      "ratio": 31.515151515151516,
+      "bond_down25": 2,
+      "bond_up25": 0,
+      "joint_up5": 10,
+      "mean_bp": -3.6
+    },
+    "updated": {
+      "n": 521,
+      "sp": 12,
+      "nd": 16,
+      "joint": 11,
+      "joint_rate": 0.02111324376199616,
+      "independence": 0.0007073360325079852,
+      "ratio": 29.848958333333332,
+      "bond_down25": 2,
+      "bond_up25": 0,
+      "joint_up5": 10,
+      "mean_bp": -5.363636363636368
+    },
+    "last_week": {
+      "week": "2026-11-16",
+      "sp": -8.612912227060953,
+      "nd": -10.430815631694257,
+      "bp": -23.000000000000043,
+      "dates": [
+        "2026-11-20",
+        "2026-11-20",
+        "2026-11-20"
+      ]
+    },
+    "historical_next_week_after_joint_crash": {
+      "n": 10,
+      "both_positive": 8,
+      "both_up5": 3,
+      "rows": [
+        {
+          "after": "2018-02-05",
+          "next": "2018-02-12",
+          "sp": 4.301120421446414,
+          "nd": 5.582377414747031
+        },
+        {
+          "after": "2018-03-19",
+          "next": "2018-03-26",
+          "sp": 2.0326396884393194,
+          "nd": 1.1222954814699815
+        },
+        {
+          "after": "2018-12-17",
+          "next": "2018-12-24",
+          "sp": 2.8601931623507104,
+          "nd": 3.9478645709295934
+        },
+        {
+          "after": "2020-02-24",
+          "next": "2020-03-02",
+          "sp": 0.6143753681174813,
+          "nd": 0.8096357407322063
+        },
+        {
+          "after": "2020-03-09",
+          "next": "2020-03-16",
+          "sp": -14.979601773502216,
+          "nd": -12.519542829126262
+        },
+        {
+          "after": "2020-03-16",
+          "next": "2020-03-23",
+          "sp": 10.262829078666492,
+          "nd": 8.493785645147689
+        },
+        {
+          "after": "2020-10-26",
+          "next": "2020-11-02",
+          "sp": 7.3236369863851625,
+          "nd": 9.39477695999711
+        },
+        {
+          "after": "2022-01-17",
+          "next": "2022-01-24",
+          "sp": 0.7710428064048314,
+          "nd": 0.11227005762413089
+        },
+        {
+          "after": "2022-06-06",
+          "next": "2022-06-13",
+          "sp": -5.7941069405208045,
+          "nd": -4.790320481508214
+        },
+        {
+          "after": "2025-03-31",
+          "next": "2025-04-07",
+          "sp": 5.701132027874989,
+          "nd": 7.428280749754279
+        }
+      ]
+    },
+    "new_crash_next_week": "not yet completed; excluded",
+    "nikkei_return_pct": 3.9123158444025252,
+    "ifo_first_to_first": 0.4,
+    "ifo_vs_revised": 0.5
+  },
+  "execution": "Actual connector JavaScript calculation of retrospective weekly cohort; deterministic, no RNG, no candidate forecast/parameter fit; pre-write assertions reproduce prior 520-week counts; no local Python model or full CI run in this step.",
+  "replay_script": "research/scripts/audit_2026_11_24_fred_late_observation.js",
+  "interpretation": [
+    "New same-channel FRED Nov20 observation removes this particular historical distribution gap at current as-of; never claim available Nov21 or alter old staging.",
+    "This appends one completed historical week; frequency change is descriptive, not out-of-sample prediction skill or permission to splice Treasury/FRED.",
+    "Prior co-crash hypothesis survives addition of one week; subsequent rebound count descriptive small cohort; latest crash subsequent week unfinished and excluded; no new forecasts or winners.",
+    "Future parallel launch requires same-source lock, independent bond-calendar flags, Nov27 exact holiday quote/publication time and receipts; no launch-ready declaration.",
+    "Nov25 US BEA and other frozen targets pending; no premature scoring. US Nov23 index closes not independently verified in matching channels; no figures from intraday stories."
+  ],
+  "historical_archives_modified": false,
+  "model_promoted": false
+}
