@@ -1,0 +1,206 @@
+{
+  "record_type": "retrospective_source_latency_and_quote_mask_audit",
+  "information_as_of_utc": "2026-11-25T10:16:01.752Z",
+  "model_base_commit": "aa13f8e55b8783643b0758270d4e41e8f505f046",
+  "seed": null,
+  "source_inputs": {
+    "history": {
+      "path": "research/parallel/data/2026-11-21-history-staging-correction03.json",
+      "blob_sha": "c704801f76c99eada73f1ee787de4803afdae503"
+    },
+    "frozen_forecast": {
+      "path": "research/weekly/2026-11-21-forecast.json",
+      "blob_sha": "7188dad888faf4a92ca1909706357ac0ae9eaf3b"
+    },
+    "late_observation": {
+      "path": "research/daily/2026-11-24.json",
+      "blob_sha": "e34414bb6e9fc291fcd61cffdd4b9e09e1bbd317"
+    }
+  },
+  "observations": {
+    "nikkei": {
+      "url": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "date": "2026-11-25",
+      "observed_at": "2026-11-25T15:30:00+09:00",
+      "ohlc": [
+        58383.49,
+        58472.56,
+        56502.97,
+        57011.62
+      ],
+      "previous_date": "2026-11-24",
+      "previous_close": 58644.63,
+      "frozen_date": "2026-11-20",
+      "frozen_close": 56436.65
+    },
+    "german_gdp": {
+      "first_url": "https://www.destatis.de/EN/Press/2026/10/PE26_381_811.html",
+      "detailed_url": "https://www.destatis.de/EN/Press/2026/11/PE26_409_811.html",
+      "first_date": "2026-10-30",
+      "detail_date": "2026-11-25",
+      "exact_release_time": null,
+      "period": "2026 Q3",
+      "first": {
+        "qoq": 0.2,
+        "yoy_unadjusted": 1.3,
+        "yoy_calendar_adjusted": 1.2
+      },
+      "detail": {
+        "qoq": 0.1,
+        "yoy_unadjusted": 1.2,
+        "yoy_calendar_adjusted": 1.1
+      },
+      "unit": "real growth percent",
+      "quality": "issuer first and detailed estimates; not a Nov21 target"
+    },
+    "treasury": {
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "quote_type": "official daily par yield, exact observation and publication minute not authenticated",
+      "values": {
+        "2026-11-20": 4.92,
+        "2026-11-23": 4.92,
+        "2026-11-24": 4.91
+      }
+    },
+    "fred": {
+      "sp500": {
+        "url": "https://fred.stlouisfed.org/series/SP500",
+        "updated_at": "2026-11-24T11:05:00-06:00",
+        "last_date": "2026-11-23",
+        "values": {
+          "2026-11-17": 7340.53,
+          "2026-11-18": 7323.63,
+          "2026-11-19": 7175.83,
+          "2026-11-20": 6910.39,
+          "2026-11-23": 7237.17
+        },
+        "latest_close_at": "2026-11-23T16:00:00-05:00"
+      },
+      "nasdaq100": {
+        "url": "https://fred.stlouisfed.org/series/NASDAQ100",
+        "updated_at": "2026-11-24T22:37:00-06:00",
+        "last_date": "2026-11-24",
+        "values": {
+          "2026-11-18": 27116.26,
+          "2026-11-19": 26517.05,
+          "2026-11-20": 25028.98,
+          "2026-11-23": 26746.1,
+          "2026-11-24": 26214.17
+        },
+        "latest_close_at": "2026-11-24T16:00:00-05:00"
+      },
+      "us10y": {
+        "url": "https://fred.stlouisfed.org/series/DGS10",
+        "updated_at": "2026-11-24T15:16:00-06:00",
+        "last_date": "2026-11-23",
+        "values": {
+          "2026-11-23": 4.92
+        }
+      }
+    },
+    "calendar": {
+      "bea_url": "https://www.bea.gov/news/schedule",
+      "census_url": "https://www.census.gov/economic-indicators/calendar-listview-2026.html",
+      "bea_and_durables_scheduled_at": "2026-11-25T08:30:00-05:00",
+      "claims_url": "https://www.dol.gov/index.php/newsroom/releases/eta",
+      "claims_last_release_date": "2026-11-19",
+      "wei_url": "https://www.dallasfed.org/recentadditions",
+      "wei_last_release_date": "2026-11-19",
+      "claims_and_wei_next_time_verified": false,
+      "sifma_url": "https://www.sifma.org/news/press-releases/sifma-fixed-income-market-close-recommendations-in-the-u-s-the-u-k-and-japan-for-thanksgiving-day-2026",
+      "sifma_published": "2026-11-12",
+      "equity_early_close": "2026-11-27T13:00:00-05:00",
+      "bond_recommended_early_close": "2026-11-27T14:00:00-05:00",
+      "parallel_cutoff": "2026-11-28T12:00:00+09:00"
+    },
+    "historical_treasury_retry": {
+      "urls": [
+        "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2023",
+        "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2022"
+      ],
+      "result": "Returned pages, but searches for 12/29/2023 and 12/30/2022 found no matching dated rows; no numeric history imported. Not proof issuer has no historical data."
+    }
+  },
+  "output": {
+    "historical_availability_block_proxy": {
+      "window_first": "2022-02-07",
+      "window_last": "2026-11-20",
+      "weekdays": 1250,
+      "possible_overlapping_five_day_blocks": 1246,
+      "all_open_old": 965,
+      "all_open_late_quote_appended": 966,
+      "thursday_closed_old": 1021,
+      "thursday_closed_late_quote_appended": 1022,
+      "registered_minimum": 20,
+      "interpretation": "Quote presence proxy only, not audited open flags; retrospective overlapping blocks are not independent, cannot authorize launch."
+    },
+    "comparisons": {
+      "sp500": {
+        "n": 4,
+        "max_abs_difference": 0,
+        "latest_date": "2026-11-23",
+        "calendar_days_behind_latest_completed_us_session": 1,
+        "prior_frozen_level": 6910.39,
+        "prior_frozen_source": "https://apnews.com/article/c10b797a17c2acf37924d834efebe135",
+        "page_update_hours_after_close": 20.083333333333332
+      },
+      "nasdaq100": {
+        "n": 3,
+        "max_abs_difference": 0,
+        "latest_date": "2026-11-24",
+        "calendar_days_behind_latest_completed_us_session": 0,
+        "prior_frozen_level": 25028.98,
+        "prior_frozen_source": "https://ycharts.com/indices/%5ENDX/level",
+        "page_update_hours_after_close": 7.616666666666666
+      },
+      "us10y": {
+        "n": 0,
+        "max_abs_difference": null,
+        "latest_date": "2026-11-23",
+        "calendar_days_behind_latest_completed_us_session": 1,
+        "prior_frozen_level": 4.92,
+        "prior_frozen_source": "https://home.treasury.gov/"
+      }
+    },
+    "same_date_issuer_fred_10y_nov23_diff_bp": 0,
+    "hypothetical_stale_10y_nov24_error_bp": 1,
+    "nov23_aligned_interim": {
+      "date": "2026-11-23",
+      "sp500_return_pct": 4.72882138345303,
+      "nasdaq100_return_pct": 6.860527276780748,
+      "us10y_delta_bp": 0,
+      "quality": "interim cross-distributor level comparison; not settlement or source lock"
+    },
+    "nov24_nasdaq100_interim": {
+      "daily_return_pct": -1.988813322316152,
+      "week_to_date_pct": 4.73527087400285
+    },
+    "nikkei": {
+      "daily_return_pct": -2.784585732743128,
+      "week_to_date_pct": 1.018788322836306,
+      "previous_week_to_date_pct": 3.9123158444025252,
+      "fraction_of_tuesday_point_gain_reversed": 0.7395945615449405,
+      "friday_close_needed_for_weekly_minus_5": 53614.8175,
+      "friday_close_needed_for_weekly_plus_5": 59258.482500000006
+    },
+    "german_gdp_revision_pp": {
+      "qoq": -0.1,
+      "yoy_unadjusted": -0.1,
+      "yoy_calendar_adjusted": -0.1
+    },
+    "early_close_to_cutoff_hours": {
+      "equities": 9,
+      "bond_recommendation": 8
+    },
+    "scheduled_us_release_utc": "2026-11-25T13:30:00.000Z",
+    "complete_nov24_three_channel_panel": false
+  },
+  "execution": "Actual deterministic V8 calculation of quote availability blocks, source overlap, source update time and interim market features. No Python candidate run, RNG, parameter fit or formal forecast. No new observed data after as-of.",
+  "replay_script": "research/scripts/audit_2026_11_25_source_latency.js",
+  "limitations": [
+    "Quote-mask block eligibility is an availability proxy, not approved calendar; no forward fill, no inference of closures.",
+    "FRED displayed page update is not proven first availability. Do not extrapolate this week's delays as certain Thanksgiving release times.",
+    "November 21 source URLs differ from historical staging and FRED. Same values on a few days do not establish source equivalence. No retrospective source change.",
+    "No Nov27 settlement observed; source lock, exact bond observation time, audited calendars, legacy match and on-time receipts remain pending."
+  ]
+}
