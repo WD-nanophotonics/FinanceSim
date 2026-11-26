@@ -1,0 +1,913 @@
+{
+  "record_type": "FinanceSim_daily_append_only_partial_macro_score_and_source_latency",
+  "information_as_of_utc": "2026-11-26T09:48:19.628Z",
+  "access_timestamp_note": "Actual run clock after retrieving sources, not original first availability. Source values and dated bulletins manually transcribed; no future observations.",
+  "repository_head_before_run": "8a354032916d4e837ac1e30979b43e0d5d3a5ca0",
+  "frozen_forecast": "research/weekly/2026-11-21-forecast.json",
+  "frozen_forecast_blob_sha": "7188dad888faf4a92ca1909706357ac0ae9eaf3b",
+  "frozen_model_commit": "11708b0a13c1a70bb95a848e0756f54605fd125f",
+  "frozen_seed": 20261121,
+  "new_rng_seed": null,
+  "read": [
+    "research/PROTOCOL.md",
+    "research/INDEX.md",
+    "research/daily/2026-11-25.json",
+    "research/experiments/2026-11-25-source-latency-block-availability.json",
+    "research/scripts/audit_2026_11_25_source_latency.js",
+    "research/weekly/2026-11-21-forecast.json",
+    "research/weekly/2026-11-21-verification-correction01.json",
+    "research/scripts/generate_2026_11_21.js",
+    "research/parallel/README.md",
+    "research/parallel/policies/tail-risk-v1.json",
+    "financesim/tail_experiment.py",
+    ".github/workflows/tests.yml",
+    "research/scripts/score_2026_11_18_four_macro.js"
+  ],
+  "prior_ci": {
+    "commit": "8a354032916d4e837ac1e30979b43e0d5d3a5ca0",
+    "combined_status_count": 0,
+    "pr_run_count": 0,
+    "full_push_ci": "unverified; empty status does not indicate success or failure"
+  },
+  "observations": {
+    "macro": {
+      "us_pce_headline_mom_oct": {
+        "reference": 0.5,
+        "value": 0.3,
+        "prior_revised": 0.5,
+        "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+        "prior_source": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026",
+        "published_at": "2026-11-25T08:30:00-05:00",
+        "status": "first_release",
+        "prior_quality": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+      },
+      "us_pce_core_mom_oct": {
+        "reference": 0.3,
+        "value": 0.3,
+        "prior_revised": 0.3,
+        "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+        "prior_source": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026",
+        "published_at": "2026-11-25T08:30:00-05:00",
+        "status": "first_release",
+        "prior_quality": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+      },
+      "us_personal_income_mom_oct": {
+        "reference": 0.2,
+        "value": 0.7,
+        "prior_revised": 0.3,
+        "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+        "prior_source": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026",
+        "published_at": "2026-11-25T08:30:00-05:00",
+        "status": "first_release",
+        "prior_quality": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+      },
+      "us_nominal_pce_mom_oct": {
+        "reference": 0.5,
+        "value": 0.3,
+        "prior_revised": 0.6,
+        "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+        "prior_source": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026",
+        "published_at": "2026-11-25T08:30:00-05:00",
+        "status": "first_release",
+        "prior_quality": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+      },
+      "us_real_pce_mom_oct": {
+        "reference": 0,
+        "value": 0,
+        "prior_revised": 0.1,
+        "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+        "prior_source": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026",
+        "published_at": "2026-11-25T08:30:00-05:00",
+        "status": "first_release",
+        "prior_quality": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+      },
+      "us_gdp_q3_second": {
+        "reference": 3.4,
+        "value": 4.3,
+        "prior_revised": null,
+        "source": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-3rd-quarter-2026",
+        "prior_source": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026",
+        "published_at": "2026-11-25T08:30:00-05:00",
+        "status": "second_estimate_as_registered",
+        "prior_quality": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+      },
+      "us_durable_mom_oct": {
+        "reference": 1.8,
+        "value": 0.2,
+        "prior_revised": 2,
+        "source": "https://www.census.gov/manufacturing/m3/adv/pdf/durgd.pdf?ts=20261027",
+        "prior_source": null,
+        "published_at": "2026-11-25T08:30:00-05:00",
+        "status": "first_release",
+        "prior_quality": "Frozen 1.8% baseline, original September PDF not independently retrieved today"
+      },
+      "us_claims_week_nov21": {
+        "reference": 203,
+        "value": 189,
+        "prior_revised": 202,
+        "source": "https://www.dol.gov/sites/dolgov/files/OPA/newsreleases/ui-claims/20261732.pdf",
+        "prior_source": "https://www.dol.gov/sites/dolgov/files/OPA/newsreleases/ui-claims/20261732.pdf",
+        "published_at": "2026-11-25T08:30:00-05:00",
+        "status": "first_release",
+        "prior_quality": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+      }
+    },
+    "context": {
+      "gdp_real_final_sales_private_domestic": {
+        "advance": 4.9,
+        "second": 5.8,
+        "unit": "SAAR percent",
+        "source": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-3rd-quarter-2026"
+      },
+      "gdp_domestic_purchases_price": {
+        "advance": 3,
+        "second": 2.7,
+        "unit": "SAAR percent",
+        "source": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-3rd-quarter-2026"
+      },
+      "pce_real_dpi": {
+        "oct": 0.5,
+        "sep_revised": -0.2,
+        "sep_first": -0.3,
+        "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026"
+      },
+      "durable_ex_transport": 0.5,
+      "durable_ex_defense": 0.4,
+      "claims_nsa": {
+        "current": 212945,
+        "weekly_change": 15894,
+        "expected_seasonal_increase": 30549,
+        "source": "https://www.dol.gov/sites/dolgov/files/OPA/newsreleases/ui-claims/20261732.pdf"
+      },
+      "claims_continuing": {
+        "value": 1697000,
+        "prior_first": 1763000,
+        "prior_revised": 1792000,
+        "source": "https://www.dol.gov/sites/dolgov/files/OPA/newsreleases/ui-claims/20261732.pdf"
+      }
+    },
+    "market": {
+      "nikkei": {
+        "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+        "date": "2026-11-26",
+        "observed_at": "2026-11-26T15:30:00+09:00",
+        "previous": 57011.62,
+        "ohlc": [
+          57429.54,
+          58251.93,
+          57288.1,
+          57499.16
+        ]
+      },
+      "sp500": {
+        "source": "https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-wednesday-11252026-138453529",
+        "quality": "AP via ABC, interim; FRED Nov25 not yet displayed",
+        "date": "2026-11-25",
+        "value": 7182.78,
+        "previous": 7201.09
+      },
+      "nasdaq100": {
+        "source": "https://fred.stlouisfed.org/series/NASDAQ100",
+        "date": "2026-11-25",
+        "value": 26046.9,
+        "previous": 26214.17
+      },
+      "us10y": {
+        "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+        "date": "2026-11-25",
+        "value": 4.85,
+        "previous": 4.91,
+        "observation_time_note": "Issuer says ordinary indicative bids at or near 15:30 ET; exact early-close observation/publication unverified"
+      },
+      "fred": {
+        "sp500": {
+          "source": "https://fred.stlouisfed.org/series/SP500",
+          "date": "2026-11-24",
+          "value": 7201.09,
+          "updated_at": "2026-11-25T09:26:00-06:00",
+          "session_close": "2026-11-24T16:00:00-05:00"
+        },
+        "nasdaq100": {
+          "source": "https://fred.stlouisfed.org/series/NASDAQ100",
+          "date": "2026-11-25",
+          "value": 26046.9,
+          "updated_at": "2026-11-25T22:37:00-06:00",
+          "session_close": "2026-11-25T16:00:00-05:00"
+        },
+        "us10y": {
+          "source": "https://fred.stlouisfed.org/series/DGS10",
+          "date": "2026-11-24",
+          "value": 4.91,
+          "updated_at": "2026-11-25T15:16:00-06:00"
+        }
+      }
+    },
+    "pending": {
+      "dallas_wei_week_nov21": {
+        "source": "https://www.dallasfed.org/research/wei",
+        "last_public_release": "2026-11-19",
+        "reason": "New release not yet verified; scheduled time provisional, after as-of if regular schedule."
+      },
+      "weekly_market": "Friday Nov27 closes not observed; no weekly risk/market score; fixed WTI contract remains unresolved."
+    }
+  },
+  "output": {
+    "targets": {
+      "us_pce_headline_mom_oct": {
+        "unit": "percentage_points_mom",
+        "actual_delta": -0.2,
+        "revised_reference_delta": -0.2,
+        "prior_revision": 0,
+        "event_positive": 0,
+        "revision_changes_event": false,
+        "scores": {
+          "llm": {
+            "point_change": -0.18,
+            "prob_positive": 0.33,
+            "absolute_error": 0.02,
+            "brier": 0.1089,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.3568
+              },
+              "80": {
+                "covered": true,
+                "score": 0.678
+              },
+              "90": {
+                "covered": true,
+                "score": 0.8702
+              }
+            },
+            "weighted_interval_only": 0.501275
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "absolute_error": 0.2,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 0.4898
+              },
+              "80": {
+                "covered": true,
+                "score": 0.5896
+              },
+              "90": {
+                "covered": true,
+                "score": 0.7566
+              }
+            },
+            "weighted_interval_only": 0.5481
+          },
+          "hybrid": {
+            "point_change": -0.17,
+            "prob_positive": 0.2299,
+            "absolute_error": 0.03,
+            "brier": 0.05285401,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.3102
+              },
+              "80": {
+                "covered": true,
+                "score": 0.5896
+              },
+              "90": {
+                "covered": true,
+                "score": 0.7566
+              }
+            },
+            "weighted_interval_only": 0.43585
+          }
+        }
+      },
+      "us_pce_core_mom_oct": {
+        "unit": "percentage_points_mom",
+        "actual_delta": 0,
+        "revised_reference_delta": 0,
+        "prior_revision": 0,
+        "event_positive": 0,
+        "revision_changes_event": false,
+        "scores": {
+          "llm": {
+            "point_change": 0.05,
+            "prob_positive": 0.57,
+            "absolute_error": 0.05,
+            "brier": 0.3249,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.3102
+              },
+              "80": {
+                "covered": true,
+                "score": 0.5896
+              },
+              "90": {
+                "covered": true,
+                "score": 0.7566
+              }
+            },
+            "weighted_interval_only": 0.43585
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "absolute_error": 0,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.2698
+              },
+              "80": {
+                "covered": true,
+                "score": 0.5126
+              },
+              "90": {
+                "covered": true,
+                "score": 0.658
+              }
+            },
+            "weighted_interval_only": 0.379025
+          },
+          "hybrid": {
+            "point_change": 0.04,
+            "prob_positive": 0.5793,
+            "absolute_error": 0.04,
+            "brier": 0.33558849,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.2698
+              },
+              "80": {
+                "covered": true,
+                "score": 0.5126
+              },
+              "90": {
+                "covered": true,
+                "score": 0.658
+              }
+            },
+            "weighted_interval_only": 0.379025
+          }
+        }
+      },
+      "us_personal_income_mom_oct": {
+        "unit": "percentage_points_mom",
+        "actual_delta": 0.5,
+        "revised_reference_delta": 0.4,
+        "prior_revision": 0.1,
+        "event_positive": 1,
+        "revision_changes_event": false,
+        "scores": {
+          "llm": {
+            "point_change": 0.07,
+            "prob_positive": 0.57,
+            "absolute_error": 0.43,
+            "brier": 0.1849,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 1.177
+              },
+              "80": {
+                "covered": true,
+                "score": 1.0316
+              },
+              "90": {
+                "covered": true,
+                "score": 1.3242
+              }
+            },
+            "weighted_interval_only": 1.15905
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "absolute_error": 0.5,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 1.5278
+              },
+              "80": {
+                "covered": false,
+                "score": 1.412
+              },
+              "90": {
+                "covered": true,
+                "score": 1.1514
+              }
+            },
+            "weighted_interval_only": 1.4518
+          },
+          "hybrid": {
+            "point_change": 0.04,
+            "prob_positive": 0.5455,
+            "absolute_error": 0.46,
+            "brier": 0.20657025,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 1.3678
+              },
+              "80": {
+                "covered": false,
+                "score": 1.012
+              },
+              "90": {
+                "covered": true,
+                "score": 1.1514
+              }
+            },
+            "weighted_interval_only": 1.2518
+          }
+        }
+      },
+      "us_nominal_pce_mom_oct": {
+        "unit": "percentage_points_mom",
+        "actual_delta": -0.2,
+        "revised_reference_delta": -0.3,
+        "prior_revision": 0.1,
+        "event_positive": 0,
+        "revision_changes_event": false,
+        "scores": {
+          "llm": {
+            "point_change": -0.08,
+            "prob_positive": 0.42,
+            "absolute_error": 0.12,
+            "brier": 0.1764,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.6206
+              },
+              "80": {
+                "covered": true,
+                "score": 1.179
+              },
+              "90": {
+                "covered": true,
+                "score": 1.5132
+              }
+            },
+            "weighted_interval_only": 0.871775
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "absolute_error": 0.2,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.5396
+              },
+              "80": {
+                "covered": true,
+                "score": 1.0252
+              },
+              "90": {
+                "covered": true,
+                "score": 1.3158
+              }
+            },
+            "weighted_interval_only": 0.758025
+          },
+          "hybrid": {
+            "point_change": -0.11,
+            "prob_positive": 0.3917,
+            "absolute_error": 0.09,
+            "brier": 0.15342889,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.5396
+              },
+              "80": {
+                "covered": true,
+                "score": 1.0252
+              },
+              "90": {
+                "covered": true,
+                "score": 1.3158
+              }
+            },
+            "weighted_interval_only": 0.758025
+          }
+        }
+      },
+      "us_real_pce_mom_oct": {
+        "unit": "percentage_points_mom",
+        "actual_delta": 0,
+        "revised_reference_delta": -0.1,
+        "prior_revision": 0.1,
+        "event_positive": 0,
+        "revision_changes_event": false,
+        "scores": {
+          "llm": {
+            "point_change": 0.06,
+            "prob_positive": 0.56,
+            "absolute_error": 0.06,
+            "brier": 0.3136,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.3568
+              },
+              "80": {
+                "covered": true,
+                "score": 0.678
+              },
+              "90": {
+                "covered": true,
+                "score": 0.8702
+              }
+            },
+            "weighted_interval_only": 0.501275
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "absolute_error": 0,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.3102
+              },
+              "80": {
+                "covered": true,
+                "score": 0.5896
+              },
+              "90": {
+                "covered": true,
+                "score": 0.7566
+              }
+            },
+            "weighted_interval_only": 0.43585
+          },
+          "hybrid": {
+            "point_change": 0.03,
+            "prob_positive": 0.5519,
+            "absolute_error": 0.03,
+            "brier": 0.30459361,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 0.3102
+              },
+              "80": {
+                "covered": true,
+                "score": 0.5896
+              },
+              "90": {
+                "covered": true,
+                "score": 0.7566
+              }
+            },
+            "weighted_interval_only": 0.43585
+          }
+        }
+      },
+      "us_gdp_q3_second": {
+        "unit": "percentage_points_saar_revision",
+        "actual_delta": 0.9,
+        "revised_reference_delta": null,
+        "prior_revision": null,
+        "event_positive": 1,
+        "revision_changes_event": null,
+        "scores": {
+          "llm": {
+            "point_change": -0.05,
+            "prob_positive": 0.42,
+            "absolute_error": 0.95,
+            "brier": 0.3364,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 3.3346
+              },
+              "80": {
+                "covered": false,
+                "score": 5.9632
+              },
+              "90": {
+                "covered": false,
+                "score": 8.785
+              }
+            },
+            "weighted_interval_only": 4.67305
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "absolute_error": 0.9,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 3.1954
+              },
+              "80": {
+                "covered": false,
+                "score": 5.924
+              },
+              "90": {
+                "covered": false,
+                "score": 9.117
+              }
+            },
+            "weighted_interval_only": 4.61775
+          },
+          "hybrid": {
+            "point_change": -0.08,
+            "prob_positive": 0.3949,
+            "absolute_error": 0.98,
+            "brier": 0.36614601,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 3.5154
+              },
+              "80": {
+                "covered": false,
+                "score": 6.724
+              },
+              "90": {
+                "covered": false,
+                "score": 10.717
+              }
+            },
+            "weighted_interval_only": 5.21775
+          }
+        }
+      },
+      "us_durable_mom_oct": {
+        "unit": "percentage_points_mom",
+        "actual_delta": -1.6,
+        "revised_reference_delta": -1.8,
+        "prior_revision": 0.2,
+        "event_positive": 0,
+        "revision_changes_event": false,
+        "scores": {
+          "llm": {
+            "point_change": -1.1,
+            "prob_positive": 0.23,
+            "absolute_error": 0.5,
+            "brier": 0.0529,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 2.327
+              },
+              "80": {
+                "covered": true,
+                "score": 4.4214
+              },
+              "90": {
+                "covered": true,
+                "score": 5.6748
+              }
+            },
+            "weighted_interval_only": 3.269075
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "absolute_error": 1.6,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 4.3766
+              },
+              "80": {
+                "covered": true,
+                "score": 3.8446
+              },
+              "90": {
+                "covered": true,
+                "score": 4.9346
+              }
+            },
+            "weighted_interval_only": 4.31335
+          },
+          "hybrid": {
+            "point_change": -0.9,
+            "prob_positive": 0.2743,
+            "absolute_error": 0.7,
+            "brier": 0.07524049,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 2.0234
+              },
+              "80": {
+                "covered": true,
+                "score": 3.8446
+              },
+              "90": {
+                "covered": true,
+                "score": 4.9346
+              }
+            },
+            "weighted_interval_only": 2.8426
+          }
+        }
+      },
+      "us_claims_week_nov21": {
+        "unit": "thousands_persons",
+        "actual_delta": -14,
+        "revised_reference_delta": -13,
+        "prior_revision": -1,
+        "event_positive": 0,
+        "revision_changes_event": false,
+        "scores": {
+          "llm": {
+            "point_change": 8,
+            "prob_positive": 0.63,
+            "absolute_error": 22,
+            "brier": 0.3969,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 61.6274
+              },
+              "80": {
+                "covered": true,
+                "score": 50.1086
+              },
+              "90": {
+                "covered": true,
+                "score": 64.3138
+              }
+            },
+            "weighted_interval_only": 59.0835
+          },
+          "statistical": {
+            "point_change": 0,
+            "prob_positive": 0.5,
+            "absolute_error": 14,
+            "brier": 0.25,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 33.0674
+              },
+              "80": {
+                "covered": true,
+                "score": 43.5728
+              },
+              "90": {
+                "covered": true,
+                "score": 55.925
+              }
+            },
+            "weighted_interval_only": 38.55095
+          },
+          "hybrid": {
+            "point_change": 4,
+            "prob_positive": 0.593,
+            "absolute_error": 18,
+            "brier": 0.351649,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 49.0674
+              },
+              "80": {
+                "covered": true,
+                "score": 43.5728
+              },
+              "90": {
+                "covered": true,
+                "score": 55.925
+              }
+            },
+            "weighted_interval_only": 48.55095
+          }
+        }
+      }
+    },
+    "summary": {
+      "llm": {
+        "n": 8,
+        "mean_direction_brier": 0.2368625,
+        "coverage_counts": {
+          "50": 5,
+          "80": 7,
+          "90": 7
+        },
+        "by_unit": {
+          "percentage_points_mom": {
+            "n": 6,
+            "mae": 0.19666667,
+            "mean_weighted_interval_only": 1.12305
+          },
+          "percentage_points_saar_revision": {
+            "n": 1,
+            "mae": 0.95,
+            "mean_weighted_interval_only": 4.67305
+          },
+          "thousands_persons": {
+            "n": 1,
+            "mae": 22,
+            "mean_weighted_interval_only": 59.0835
+          }
+        }
+      },
+      "statistical": {
+        "n": 8,
+        "mean_direction_brier": 0.25,
+        "coverage_counts": {
+          "50": 3,
+          "80": 6,
+          "90": 7
+        },
+        "by_unit": {
+          "percentage_points_mom": {
+            "n": 6,
+            "mae": 0.41666667,
+            "mean_weighted_interval_only": 1.31435833
+          },
+          "percentage_points_saar_revision": {
+            "n": 1,
+            "mae": 0.9,
+            "mean_weighted_interval_only": 4.61775
+          },
+          "thousands_persons": {
+            "n": 1,
+            "mae": 14,
+            "mean_weighted_interval_only": 38.55095
+          }
+        }
+      },
+      "hybrid": {
+        "n": 8,
+        "mean_direction_brier": 0.23075884,
+        "coverage_counts": {
+          "50": 5,
+          "80": 6,
+          "90": 7
+        },
+        "by_unit": {
+          "percentage_points_mom": {
+            "n": 6,
+            "mae": 0.225,
+            "mean_weighted_interval_only": 1.01719167
+          },
+          "percentage_points_saar_revision": {
+            "n": 1,
+            "mae": 0.98,
+            "mean_weighted_interval_only": 5.21775
+          },
+          "thousands_persons": {
+            "n": 1,
+            "mae": 18,
+            "mean_weighted_interval_only": 48.55095
+          }
+        }
+      }
+    },
+    "market": {
+      "nikkei_daily_pct": 0.855159,
+      "nikkei_interim_week_pct": 1.88265958,
+      "sp500_interim_pct": 3.94174569,
+      "nasdaq100_interim_pct": 4.06696557,
+      "us10y_interim_bp": -7,
+      "us10y_daily_bp": -6,
+      "sp500_stale_fred_error_in_weekly_return_pp": 0.26496334,
+      "us10y_stale_fred_error_bp": 6,
+      "sp500_fred_update_lag_hours": 18.43333333,
+      "nasdaq_fred_update_lag_hours": 7.61666667,
+      "complete_same_date_fred_panel": false
+    },
+    "features": {
+      "gdp_private_demand_revision_pp": 0.9,
+      "gdp_purchase_price_revision_pp": -0.3,
+      "real_dpi_change_vs_first_pp": 0.8,
+      "claims_nsa_change_minus_expected_seasonal": -14655,
+      "continuing_claims_change_vs_first": -66000,
+      "continuing_claims_change_vs_revised": -95000
+    }
+  },
+  "replay_script": "research/scripts/score_2026_11_26_macro.js",
+  "execution": "Actually executed deterministic scoring and serialization replay in V8 using repository frozen forecast. Numeric assertions passed. No new MC, no fit, no candidate launch, no Python suite execution. New script is standalone Node replay; no CI modifications.",
+  "interpretation": [
+    "GDP +0.9pp SAAR revision outside all frozen 90% intervals, opposite subjective point revisions; compare revision to advance, not previous quarter. Private demand revised upward even as domestic purchase price estimate revised down. One release is not grounds for parameter selection.",
+    "Headline monthly PCE decelerates, core unchanged, nominal PCE decelerates, real PCE flat, income accelerates. Claims fell 14k vs frozen first level, 13k vs revised. NSA claims increased less than the seasonal expectation; not evidence that employment rose. Vintage choice changes magnitude but not strict positive labels for these eight targets.",
+    "Partial direction Brier is descriptive across correlated targets. MAE and interval-only scores grouped by unit; no mixed-unit aggregate or winner. September durable first baseline reused from frozen file; original PDF unverified today, so mark that one target provisional pending archived baseline corroboration.",
+    "Wednesday interim matched-date AP/FRED/Treasury levels show both indices still above Nov20 baseline, but Friday outcome unobserved. FRED S&P and DGS10 are a session stale, and latest FRED equity series update lag differs substantially. Never forward-fill or splice sources to make parallel experiment launch; exact early bond observation time still unknown; November 27 quotes and audited calendars pending."
+  ],
+  "historical_archives_modified": false,
+  "model_promoted": false
+}
