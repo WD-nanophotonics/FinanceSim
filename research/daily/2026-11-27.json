@@ -1,0 +1,507 @@
+{
+  "record_type": "daily_asof_partial_settlement_and_launch_gate",
+  "information_as_of": "2026-11-27T19:20:14+09:00",
+  "acquisition_note": "Actual local clock read after public retrieval; exact individual web fetch seconds not retained. All observations explicitly dated prior to cutoff; source page timestamps not assumed first availability.",
+  "model_base_commit": "16a8ca52aa99bd0a8e47469e967506b7eeeaffb3",
+  "frozen_model_source_commit": "11708b0a13c1a70bb95a848e0756f54605fd125f",
+  "seed": null,
+  "prior_forecast_seed": 20261121,
+  "frozen_forecast": "research/weekly/2026-11-21-forecast.json",
+  "frozen_forecast_blob": "7188dad888faf4a92ca1909706357ac0ae9eaf3b",
+  "previous_daily": "research/daily/2026-11-26.json",
+  "previous_daily_blob": "b9f8860e37ce1b7c36272d5614d7766fead7b74a",
+  "previous_ci": {
+    "run_id": 45795392793,
+    "commit": "16a8ca52aa99bd0a8e47469e967506b7eeeaffb3",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "unit-tests (3.10)",
+        "conclusion": "success"
+      },
+      {
+        "name": "unit-tests (3.12)",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "observations": {
+    "wei": {
+      "url": "https://www.dallasfed.org/research/wei",
+      "date": "2026-11-25",
+      "exact_time": null,
+      "period": "2026-11-21",
+      "value": 3.36,
+      "previous_first": 3.18,
+      "previous_revised": 3.23,
+      "average13": 3.13,
+      "quality": "Issuer dated update; early holiday release relative to frozen provisional Nov26, exact time unknown; previous first from frozen file and Nov20 daily."
+    },
+    "markets": {
+      "nikkei225": {
+        "url": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+        "date": "2026-11-27",
+        "observed_at": "2026-11-27T15:30:00+09:00",
+        "value": 58711.11,
+        "prior": 57499.16,
+        "reference": 56436.65,
+        "status": "verified",
+        "ohlc": [
+          57669.79,
+          58738.02,
+          57447.16,
+          58711.11
+        ]
+      },
+      "kospi": {
+        "url": "https://ph.investing.com/indices/kospi-historical-data",
+        "corroboration": "https://view.asiae.co.kr/en/article/2026112715510948428",
+        "date": "2026-11-27",
+        "observed_at": "2026-11-27T15:30:00+09:00",
+        "value": 4915.68,
+        "prior": 4711.21,
+        "reference": 4869.96,
+        "status": "verified_matched_secondary"
+      },
+      "csi300": {
+        "url": "https://ph.investing.com/indices/csi300-historical-data",
+        "corroboration": "https://ca.investing.com/indices/csi300-historical-data",
+        "rounded_news": "https://www.reuters.com/markets/europe/china-stocks-shoot-up-after-beijing-vows-support-2026-11-27/",
+        "date": "2026-11-27",
+        "observed_at": "2026-11-27T15:00:00+08:00",
+        "value": 4063.06,
+        "prior": 3900.55,
+        "reference": 3954.56,
+        "status": "provisional_matched_secondary",
+        "conflicting_snapshot": {
+          "value": 4052.94,
+          "display": "Real-time Data 14:31:00",
+          "source": "same PH URL opened separately; not a final close"
+        },
+        "quality": "Matched PH search snapshot explicitly Closed and historical row, CA agrees, Reuters rounds to 4.2%; direct PH open returned stale intraday; recheck final source tomorrow before strict score."
+      }
+    },
+    "cpi": {
+      "url": "https://www.stat.go.jp/data/cpi/sokuhou/tsuki/pdf/kubu.pdf",
+      "release_date": "2026-11-27",
+      "exact_time": null,
+      "period": "Tokyo wards November preliminary",
+      "base": 2025,
+      "headline_core_exenergy_yoy": [
+        2.8,
+        2.9,
+        2.5
+      ],
+      "previous_current_vintage_yoy": [
+        2.7,
+        2.6,
+        2.6
+      ],
+      "mom_sa": [
+        0.3,
+        0.5,
+        0.1
+      ],
+      "previous_first_headline_secondary": 2.8,
+      "previous_first_source": "https://www.fxstreet.com/news/breaking-japans-tokyo-cpi-inflation-climbs-28-in-november-202611262331",
+      "consensus_core_secondary": 3,
+      "consensus_url": "https://za.investing.com/news/economic-indicators/tokyo-cpi-firms-in-nov-core-inflation-slightly-misses-expectations-4598550",
+      "quality": "Page 1 (zero-index 0) screenshot matches parsed current 2025-base table. Page 2 screenshot shows stale 2020-base table inconsistent with text; exclude that page entirely, do not compute sector contributions. October original primary release not recovered; October values are current-report vintage."
+    },
+    "fred": {
+      "sp500": {
+        "url": "https://fred.stlouisfed.org/series/SP500",
+        "last_date": "2026-11-24",
+        "value": 7201.09,
+        "updated_at": "2026-11-25T09:26:00-06:00"
+      },
+      "nasdaq100": {
+        "url": "https://fred.stlouisfed.org/series/NASDAQ100",
+        "last_date": "2026-11-25",
+        "value": 26046.9,
+        "updated_at": "2026-11-25T22:37:00-06:00"
+      },
+      "us10y": {
+        "url": "https://fred.stlouisfed.org/series/DGS10",
+        "last_date": "2026-11-24",
+        "value": 4.91,
+        "updated_at": "2026-11-25T15:16:00-06:00"
+      }
+    },
+    "treasury": {
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "last_date": "2026-11-25",
+      "value": 4.85,
+      "exact_observed_at": null
+    },
+    "calendar": {
+      "equity_close": "2026-11-27T13:00:00-05:00",
+      "equity_url": "https://www.nasdaq.com/market-activity/stock-market-holiday-schedule",
+      "bond_recommended_close": "2026-11-27T14:00:00-05:00",
+      "sifma_url": "https://www.sifma.org/news/press-releases/sifma-fixed-income-market-close-recommendations-in-the-u-s-the-u-k-and-japan-for-thanksgiving-day-2026",
+      "treasury_typical_observation": "2026-11-27T15:30:00-05:00",
+      "treasury_typical_available": "2026-11-27T18:00:00-05:00",
+      "method_url": "https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics/treasury-yield-curve-methodology",
+      "note": "Treasury typical observation/publication clock is not authenticated for this early-close Friday. SIFMA recommendation does not establish Treasury measurement timestamp.",
+      "cutoff": "2026-11-28T12:00:00+09:00"
+    },
+    "policy": {
+      "china": {
+        "source": "https://www.reuters.com/markets/europe/china-stocks-shoot-up-after-beijing-vows-support-2026-11-27/",
+        "date": "2026-11-27",
+        "reported_support_signal": 1,
+        "quality": "secondary reporting of State Council support, official text and exact timestamp not retrieved; no causal attribution"
+      },
+      "boj": {
+        "source": "https://www.boj.or.jp/en/about/press/index.htm",
+        "tamura_speech": "2026-11-26",
+        "ueda_scheduled": "2026-11-30",
+        "quality": "official listing; speech content not evaluated; no future decision inferred"
+      }
+    }
+  },
+  "output": {
+    "macro": {
+      "actual_delta": 0.18,
+      "revised_delta": 0.13,
+      "prior_revision": 0.05,
+      "early_release_calendar_days": 1,
+      "exact_time_verified": false,
+      "scores": {
+        "llm": {
+          "absolute_error": 0.34,
+          "brier": 0.3844,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.8066
+            },
+            "80": {
+              "covered": true,
+              "score": 1.5328
+            },
+            "90": {
+              "covered": true,
+              "score": 1.9672
+            }
+          },
+          "weighted_interval_only": 1.133225
+        },
+        "statistical": {
+          "absolute_error": 0.18,
+          "brier": 0.25,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.7014
+            },
+            "80": {
+              "covered": true,
+              "score": 1.3328
+            },
+            "90": {
+              "covered": true,
+              "score": 1.7106
+            }
+          },
+          "weighted_interval_only": 0.9854
+        },
+        "hybrid": {
+          "absolute_error": 0.36,
+          "brier": 0.40373316,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 0.7386
+            },
+            "80": {
+              "covered": true,
+              "score": 1.3328
+            },
+            "90": {
+              "covered": true,
+              "score": 1.7106
+            }
+          },
+          "weighted_interval_only": 1.00865
+        }
+      },
+      "summary_nine": {
+        "llm": {
+          "n": 9,
+          "brier": 0.25325556,
+          "coverage": {
+            "50": 6,
+            "80": 8,
+            "90": 8
+          }
+        },
+        "statistical": {
+          "n": 9,
+          "brier": 0.25,
+          "coverage": {
+            "50": 4,
+            "80": 7,
+            "90": 8
+          }
+        },
+        "hybrid": {
+          "n": 9,
+          "brier": 0.24997821,
+          "coverage": {
+            "50": 5,
+            "80": 7,
+            "90": 8
+          }
+        }
+      }
+    },
+    "markets": {
+      "nikkei225": {
+        "weekly_return": 4.03011164,
+        "daily_return": 2.10776992,
+        "status": "verified",
+        "scores": {
+          "llm": {
+            "absolute_error": 2.83011164,
+            "brier": 0.2025,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 9.6182
+              },
+              "80": {
+                "covered": true,
+                "score": 18.275
+              },
+              "90": {
+                "covered": true,
+                "score": 23.4556
+              }
+            },
+            "weighted_interval_only": 13.512075
+          },
+          "statistical": {
+            "absolute_error": 4.02461164,
+            "brier": 0.24820324,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 8.297
+              },
+              "80": {
+                "covered": true,
+                "score": 15.7799
+              },
+              "90": {
+                "covered": true,
+                "score": 20.3251
+              }
+            },
+            "weighted_interval_only": 11.6712375
+          },
+          "hybrid": {
+            "absolute_error": 5.22941164,
+            "brier": 0.32421636,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 11.65454656
+              },
+              "80": {
+                "covered": true,
+                "score": 17.2023
+              },
+              "90": {
+                "covered": true,
+                "score": 22.1788
+              }
+            },
+            "weighted_interval_only": 14.3570166
+          }
+        }
+      },
+      "kospi": {
+        "weekly_return": 0.93881675,
+        "daily_return": 4.34007399,
+        "status": "verified_matched_secondary",
+        "scores": {
+          "llm": {
+            "absolute_error": 0.86118325,
+            "brier": 0.1936,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 12.4106
+              },
+              "80": {
+                "covered": true,
+                "score": 23.5806
+              },
+              "90": {
+                "covered": true,
+                "score": 30.2654
+              }
+            },
+            "weighted_interval_only": 17.43495
+          },
+          "statistical": {
+            "absolute_error": 0.93851675,
+            "brier": 0.25160256,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 10.7228
+              },
+              "80": {
+                "covered": true,
+                "score": 20.5704
+              },
+              "90": {
+                "covered": true,
+                "score": 26.6017
+              }
+            },
+            "weighted_interval_only": 15.1695625
+          },
+          "hybrid": {
+            "absolute_error": 2.96771675,
+            "brier": 0.35247969,
+            "intervals": {
+              "50": {
+                "covered": true,
+                "score": 11.8836
+              },
+              "80": {
+                "covered": true,
+                "score": 22.6886
+              },
+              "90": {
+                "covered": true,
+                "score": 29.0722
+              }
+            },
+            "weighted_interval_only": 16.733425
+          }
+        }
+      },
+      "csi300": {
+        "weekly_return": 2.74366807,
+        "daily_return": 4.16633552,
+        "status": "provisional_matched_secondary",
+        "scores": {
+          "llm": {
+            "absolute_error": 2.39366807,
+            "brier": 0.2209,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 4.92067228
+              },
+              "80": {
+                "covered": true,
+                "score": 8.8428
+              },
+              "90": {
+                "covered": true,
+                "score": 11.3494
+              }
+            },
+            "weighted_interval_only": 6.70479517
+          },
+          "statistical": {
+            "absolute_error": 2.69996807,
+            "brier": 0.243049,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 6.64057228
+              },
+              "80": {
+                "covered": true,
+                "score": 7.7254
+              },
+              "90": {
+                "covered": true,
+                "score": 9.9429
+              }
+            },
+            "weighted_interval_only": 7.32457017
+          },
+          "hybrid": {
+            "absolute_error": 3.23486807,
+            "brier": 0.310249,
+            "intervals": {
+              "50": {
+                "covered": false,
+                "score": 8.61227228
+              },
+              "80": {
+                "covered": true,
+                "score": 8.0816
+              },
+              "90": {
+                "covered": true,
+                "score": 10.4204
+              }
+            },
+            "weighted_interval_only": 8.70562017
+          }
+        }
+      }
+    },
+    "breadth": {
+      "verified_count": 2,
+      "verified_down": 0,
+      "strict_final_count_range": [
+        0,
+        4
+      ],
+      "conditional_if_csi_final_confirmed_count_range": [
+        0,
+        3
+      ],
+      "conditional_event_requires_all_remaining_three": true,
+      "remaining_weekly_minus_1_5_close_thresholds": {
+        "sp500": 6806.73415,
+        "nasdaq100": 24653.5453,
+        "stoxx600": 616.2751
+      },
+      "event_status": "pending"
+    },
+    "cpi": {
+      "yoy_change_vs_current_vintage": [
+        0.1,
+        0.3,
+        -0.1
+      ],
+      "headline_change_vs_secondary_first": 0,
+      "core_consensus_surprise_secondary": -0.1,
+      "core_minus_exenergy_gap": 0.4
+    },
+    "source_readiness": {
+      "fred_same_date_complete": false,
+      "fred_latest_dates": {
+        "sp500": "2026-11-24",
+        "nasdaq100": "2026-11-25",
+        "us10y": "2026-11-24"
+      },
+      "dgs10_stale_difference_bp": 6,
+      "equity_close_to_cutoff_h": 9,
+      "bond_recommendation_to_cutoff_h": 8,
+      "treasury_typical_observation_to_cutoff_h": 6.5,
+      "treasury_typical_publication_to_cutoff_h": 4,
+      "all_friday_us_closes_in_future": true,
+      "launch_ready": false
+    }
+  },
+  "replay_script": "research/scripts/audit_2026_11_27_wei_asia.js",
+  "execution": "Actually executed deterministic V8 scoring against frozen JSON, prior 8-target score aggregation, market thresholds, source-latency checks and exact repeated serialization. No new MC, no model fit, no Python live candidate, no new forecast. CSI provisional. Prior durable baseline provisional; prior eight included as descriptive same cohort, not independent samples. Current CI not yet known.",
+  "interpretation": [
+    "WEI official dated Nov25 vs frozen provisional Nov26; preserve target definition and document early release without guessing hour. Direction contradicts subjective negative point forecast; do not select a winner.",
+    "Tokyo core accelerates while ex-energy core slows; core expectation secondary; first-vintage prior primary unavailable. Exclude inconsistent screenshot page 2 and any sector contributions.",
+    "Breadth is unresolved; if CSI confirmed, all remaining three indices must decline at least 1.5%. No claim about US or European closes before their sessions end.",
+    "For tomorrow, Treasury typical publication 18:00 ET = 08:00 JST, only four hours before cutoff; actual special-session measurement time not established. FRED still stale for two channels. No source-lock or launch authorization; fail closed if gates cannot be proved.",
+    "WTI contract remains unverified. Keep gold/FX and other market settlement pending. No frozen forecasts or scores changed."
+  ]
+}
