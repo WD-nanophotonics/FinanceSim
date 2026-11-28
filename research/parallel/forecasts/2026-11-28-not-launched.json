@@ -1,0 +1,10 @@
+{
+  "record_type": "parallel_v1_launch_failure",
+  "origin": "2026-11-28T12:00:00+09:00",
+  "recorded_at": "2026-11-28T02:57:45.178Z",
+  "policy": "research/parallel/policies/tail-risk-v1.json",
+  "reason": "Parallel tail risk v1 NOT launched: same-source 1311-row history, Treasury/H15 source identity, complete independent Treasury calendar, launch lock and timely receipt not satisfied; no fabricated candidate outputs.",
+  "observations": "Official Nov27 Treasury par yield now retrieved, but historical common source and audited calendar unresolved. No candidate generated, no launch lock, no prospective cohort entry.",
+  "source_commit": "bb1d988103f44d43f9e6aa5cc8084362c55b8e44",
+  "legacy_forecast": "research/weekly/2026-11-28-forecast.json"
+}
