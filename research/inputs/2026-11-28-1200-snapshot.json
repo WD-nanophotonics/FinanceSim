@@ -1,0 +1,495 @@
+{
+  "record_type": "FinanceSim_2026_11_28_three_arm_frozen_snapshot",
+  "data_cutoff": "2026-11-28T12:00:00+09:00",
+  "compiled_after_cutoff": false,
+  "market_asof": "Friday Nov27 regional closes and Treasury official dated daily par yield",
+  "source_references": [
+    "research/inputs/2026-11-28-settlement-sources.json",
+    "research/daily/2026-11-26.json",
+    "research/daily/2026-11-27.json",
+    "research/experiments/2026-11-23-historical-joint-us-equity-tail-audit.json",
+    "research/experiments/2026-11-25-source-latency-block-availability.json",
+    "https://www.bls.gov/schedule/2026/12_sched.htm",
+    "https://www.boj.or.jp/en/about/calendar/",
+    "https://www.reuters.com/business/wall-st-week-ahead-sliding-stock-market-confronts-jobs-data-rate-view-next-tests-2026-11-27/",
+    "https://www.wsj.com/business/energy-oil/oil-prices-rise-ahead-of-opec-meeting-as-middle-east-supply-risks-persist-63fbb550"
+  ],
+  "source_commit": "bb1d988103f44d43f9e6aa5cc8084362c55b8e44",
+  "seed": 20261128,
+  "n": 20000,
+  "model_version": "v0.6-event-coupled-exploratory-Nov28",
+  "arm_ids": [
+    "llm",
+    "statistical",
+    "hybrid"
+  ],
+  "market": {
+    "sp500": {
+      "name": "S&P 500",
+      "reference": 7297.49,
+      "sigma_week": 4.2,
+      "llm_point_change": -0.35,
+      "llm_prob_positive": 0.47,
+      "hybrid_residual_center": -0.05,
+      "reference_unit": "index",
+      "source_url": "https://apnews.com/article/04dab6079cf7f3dfe7285a3cc1f240a2",
+      "target_date": "2026-12-04",
+      "target_close_rule": "NYSE/Nasdaq Dec4 regular cash close 16:00 EST",
+      "quality": "matched vendor or official dated yield; exact future settlement checked"
+    },
+    "nasdaq100": {
+      "name": "NASDAQ 100",
+      "reference": 26726.39,
+      "sigma_week": 6.2,
+      "llm_point_change": -0.65,
+      "llm_prob_positive": 0.46,
+      "hybrid_residual_center": -0.2,
+      "reference_unit": "index",
+      "source_url": "https://ycharts.com/indices/%5ENDX/level",
+      "target_date": "2026-12-04",
+      "target_close_rule": "NYSE/Nasdaq Dec4 regular cash close 16:00 EST",
+      "quality": "matched vendor or official dated yield; exact future settlement checked"
+    },
+    "stoxx600": {
+      "name": "STOXX 600",
+      "reference": 643.84,
+      "sigma_week": 3.5,
+      "llm_point_change": 0.05,
+      "llm_prob_positive": 0.51,
+      "hybrid_residual_center": 0,
+      "reference_unit": "index",
+      "source_url": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "target_date": "2026-12-04",
+      "target_close_rule": "Europe Dec4 regular cash close",
+      "quality": "same Investing.com STOXX600 daily price; frozen reference 643.84 exact; independent rounded Reuters 643.85"
+    },
+    "nikkei225": {
+      "name": "Nikkei 225",
+      "reference": 58711.11,
+      "sigma_week": 6.2,
+      "llm_point_change": -0.1,
+      "llm_prob_positive": 0.49,
+      "hybrid_residual_center": -0.1,
+      "reference_unit": "index",
+      "source_url": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "target_date": "2026-12-04",
+      "target_close_rule": "Tokyo Dec4 15:30 JST",
+      "quality": "matched vendor or official dated yield; exact future settlement checked"
+    },
+    "kospi": {
+      "name": "KOSPI",
+      "reference": 4915.68,
+      "sigma_week": 8,
+      "llm_point_change": 0.2,
+      "llm_prob_positive": 0.51,
+      "hybrid_residual_center": 0,
+      "reference_unit": "index",
+      "source_url": "https://ph.investing.com/indices/kospi-historical-data",
+      "target_date": "2026-12-04",
+      "target_close_rule": "KRX Dec4 15:30 KST",
+      "quality": "matched vendor or official dated yield; exact future settlement checked"
+    },
+    "csi300": {
+      "name": "CSI 300",
+      "reference": 4063.06,
+      "sigma_week": 3,
+      "llm_point_change": 0.3,
+      "llm_prob_positive": 0.54,
+      "hybrid_residual_center": 0.1,
+      "reference_unit": "index",
+      "source_url": "https://ph.investing.com/indices/csi300-historical-data",
+      "target_date": "2026-12-04",
+      "target_close_rule": "Shanghai/Shenzhen Dec4 15:00 CST",
+      "quality": "matched vendor or official dated yield; exact future settlement checked"
+    },
+    "gold": {
+      "name": "Gold XAU/USD spot",
+      "reference": 3654.58,
+      "sigma_week": 6.3,
+      "llm_point_change": 0.1,
+      "llm_prob_positive": 0.51,
+      "hybrid_residual_center": 0.15,
+      "reference_unit": "USD/oz",
+      "source_url": "https://www.investing.com/currencies/xau-usd-historical-data",
+      "target_date": "2026-12-04",
+      "target_close_rule": "same vendor Dec4 daily close, require matching frozen reference; provider timezone not independently certified",
+      "quality": "same Investing.com XAU/USD provider daily close; exact frozen reference required; not official fixing"
+    },
+    "wti": {
+      "name": "NYMEX January 2027 WTI fixed contract",
+      "reference": 83.08,
+      "sigma_week": 7,
+      "llm_point_change": 0.55,
+      "llm_prob_positive": 0.53,
+      "hybrid_residual_center": 0.1,
+      "reference_unit": "USD/bbl",
+      "source_url": "https://www.wsj.com/business/energy-oil/oil-prices-rise-ahead-of-opec-meeting-as-middle-east-supply-risks-persist-63fbb550",
+      "target_date": "2026-12-04",
+      "target_close_rule": "Same NYMEX January 2027 contract official Friday settlement; no front-month continuous splice; WSJ report identifies January WTI; source matching required",
+      "quality": "conditional on independent verification of matching Jan 2027 NYMEX official settlement; prior week remains excluded"
+    },
+    "usdjpy": {
+      "name": "USD/JPY",
+      "reference": 159.56,
+      "sigma_week": 1.9,
+      "llm_point_change": -0.2,
+      "llm_prob_positive": 0.46,
+      "hybrid_residual_center": -0.1,
+      "reference_unit": "JPY/USD",
+      "source_url": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "target_date": "2026-12-04",
+      "target_close_rule": "Investing.com USD/JPY historical Price daily Dec4 matched Nov27 daily close; not Treasury",
+      "quality": "new forward reference locked; historical mismatch does not retroactively change prior forecast"
+    },
+    "us2y": {
+      "name": "US Treasury 2Y par yield",
+      "reference": 4.69,
+      "sigma_week": 26,
+      "llm_point_change": 3,
+      "llm_prob_positive": 0.55,
+      "hybrid_residual_center": 0,
+      "reference_unit": "percent_yield",
+      "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "target_date": "2026-12-04",
+      "target_close_rule": "Treasury official daily par yield Dec4, not market intraday",
+      "quality": "matched vendor or official dated yield; exact future settlement checked"
+    },
+    "us10y": {
+      "name": "US Treasury 10Y par yield",
+      "reference": 4.94,
+      "sigma_week": 23,
+      "llm_point_change": 3,
+      "llm_prob_positive": 0.55,
+      "hybrid_residual_center": 0,
+      "reference_unit": "percent_yield",
+      "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "target_date": "2026-12-04",
+      "target_close_rule": "Treasury official daily par yield Dec4, not market intraday",
+      "quality": "matched vendor or official dated yield; exact future settlement checked"
+    },
+    "us30y": {
+      "name": "US Treasury 30Y par yield",
+      "reference": 5.33,
+      "sigma_week": 20,
+      "llm_point_change": 2,
+      "llm_prob_positive": 0.53,
+      "hybrid_residual_center": 0,
+      "reference_unit": "percent_yield",
+      "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "target_date": "2026-12-04",
+      "target_close_rule": "Treasury official daily par yield Dec4, not market intraday",
+      "quality": "matched vendor or official dated yield; exact future settlement checked"
+    }
+  },
+  "macro": {
+    "ism_mfg_dec01": {
+      "name": "US November ISM manufacturing PMI",
+      "reference": 55.5,
+      "llm_center_level": 55,
+      "llm_prob_positive": 0.4,
+      "hybrid_center_level": 55.1,
+      "sigma_change": 1.6,
+      "unit": "index_points",
+      "target_at": "2026-12-01T10:00:00-05:00",
+      "source_url": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/october/",
+      "release_status": "first release; weekly dates provisional where issuer calendar not confirmed",
+      "definition": "new reference-period first release minus frozen previous original first release",
+      "rationale": "October strength in production/orders may mean revert; GDP second estimate stronger, uncertainty two-sided."
+    },
+    "ism_services_dec03": {
+      "name": "US November ISM services PMI",
+      "reference": 54.5,
+      "llm_center_level": 54.2,
+      "llm_prob_positive": 0.44,
+      "hybrid_center_level": 54.3,
+      "sigma_change": 1.6,
+      "unit": "index_points",
+      "target_at": "2026-12-03T10:00:00-05:00",
+      "source_url": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/october/",
+      "release_status": "first release; weekly dates provisional where issuer calendar not confirmed",
+      "definition": "new reference-period first release minus frozen previous original first release",
+      "rationale": "October orders slowed, flat real PCE; income stronger offsets."
+    },
+    "jolts_oct_dec01": {
+      "name": "US October JOLTS total job openings SA, thousands",
+      "reference": 7523,
+      "llm_center_level": 7450,
+      "llm_prob_positive": 0.44,
+      "hybrid_center_level": 7480,
+      "sigma_change": 350,
+      "unit": "thousands_openings",
+      "target_at": "2026-12-01T10:00:00-05:00",
+      "source_url": "https://www.bls.gov/news.Release/jolts.htm",
+      "release_status": "first release; weekly dates provisional where issuer calendar not confirmed",
+      "definition": "new reference-period first release minus frozen previous original first release",
+      "rationale": "Sep 7523k, low-hire low-fire and resilient claims; slow hiring tempers upside."
+    },
+    "payroll_nov_dec04": {
+      "name": "US November nonfarm payroll employment change, thousands",
+      "reference": 165,
+      "llm_center_level": 100,
+      "llm_prob_positive": 0.29,
+      "hybrid_center_level": 110,
+      "sigma_change": 110,
+      "unit": "thousands_persons",
+      "target_at": "2026-12-04T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/news.release/archives/empsit_11062026.htm",
+      "release_status": "first release; weekly dates provisional where issuer calendar not confirmed",
+      "definition": "new reference-period first release minus frozen previous original first release",
+      "rationale": "Reuters Nov27 consensus 90k; October 165k surprise, claims 189k suggest not extreme weakness."
+    },
+    "unemployment_nov_dec04": {
+      "name": "US November unemployment rate",
+      "reference": 4.1,
+      "llm_center_level": 4.2,
+      "llm_prob_positive": 0.6,
+      "hybrid_center_level": 4.17,
+      "sigma_change": 0.2,
+      "unit": "percentage_points",
+      "target_at": "2026-12-04T08:30:00-05:00",
+      "source_url": "https://www.bls.gov/news.release/archives/empsit_11062026.htm",
+      "release_status": "first release; weekly dates provisional where issuer calendar not confirmed",
+      "definition": "new reference-period first release minus frozen previous original first release",
+      "rationale": "Low hiring and survey uncertainty; Chicago Fed estimate 4.2 per Reuters Nov25."
+    },
+    "claims_dec03": {
+      "name": "US initial claims week ended Nov28, thousands",
+      "reference": 189,
+      "llm_center_level": 200,
+      "llm_prob_positive": 0.64,
+      "hybrid_center_level": 197,
+      "sigma_change": 17,
+      "unit": "thousands_persons",
+      "target_at": "2026-12-03T08:30:00-05:00",
+      "source_url": "https://www.dol.gov/sites/dolgov/files/OPA/newsreleases/ui-claims/20261732.pdf",
+      "release_status": "first release; weekly dates provisional where issuer calendar not confirmed",
+      "definition": "new reference-period first release minus frozen previous original first release",
+      "rationale": "Holiday seasonal adjustment and low initial value support partial normalization, but claims remain low."
+    },
+    "wei_dec03": {
+      "name": "Dallas Fed WEI week ended Nov28",
+      "reference": 3.36,
+      "llm_center_level": 3.28,
+      "llm_prob_positive": 0.44,
+      "hybrid_center_level": 3.3,
+      "sigma_change": 0.52,
+      "unit": "index_points",
+      "target_at": "2026-12-03T10:30:00-06:00",
+      "source_url": "https://www.dallasfed.org/research/wei",
+      "release_status": "first release; weekly dates provisional where issuer calendar not confirmed",
+      "definition": "new reference-period first release minus frozen previous original first release",
+      "rationale": "Holiday noise and first/revised vintage discrepancies; Nov21 WEI 3.36, GDP strong. Timing provisional."
+    }
+  },
+  "scenarios": [
+    {
+      "id": "technology_capex_deleveraging",
+      "p": 0.32,
+      "description": "Renewed AI funding/valuation de-risking after rebound; Reuters Nov27",
+      "impacts": {
+        "sp500": -2.9,
+        "nasdaq100": -4.8,
+        "stoxx600": -1.8,
+        "nikkei225": -3.5,
+        "kospi": -5.2,
+        "csi300": -0.9,
+        "gold": -1.4,
+        "wti": -1.2,
+        "usdjpy": -0.6,
+        "us2y": -9,
+        "us10y": -8,
+        "us30y": -5
+      }
+    },
+    {
+      "id": "oversold_equity_rebound",
+      "p": 0.3,
+      "description": "Continuation of relief rebound after Nov27 rally, reduced because rally already occurred",
+      "impacts": {
+        "sp500": 2.8,
+        "nasdaq100": 4.8,
+        "stoxx600": 1.9,
+        "nikkei225": 3.5,
+        "kospi": 4.3,
+        "csi300": 1,
+        "gold": 0,
+        "wti": 0.6,
+        "usdjpy": 0.3,
+        "us2y": 4,
+        "us10y": 5,
+        "us30y": 3
+      }
+    },
+    {
+      "id": "hot_us_jobs_rate_repricing",
+      "p": 0.3,
+      "description": "US December4 labor report upside reprices Fed; no direct same-Friday Asia cash exposure",
+      "impacts": {
+        "sp500": -1.6,
+        "nasdaq100": -2.2,
+        "stoxx600": -0.65,
+        "nikkei225": 0,
+        "kospi": 0,
+        "csi300": 0,
+        "gold": -1.2,
+        "wti": 1,
+        "usdjpy": 0.6,
+        "us2y": 11,
+        "us10y": 9,
+        "us30y": 6
+      }
+    },
+    {
+      "id": "growth_scare",
+      "p": 0.3,
+      "description": "Weak ISM/JOLTS or growth scare earlier in week; no causal calibration",
+      "impacts": {
+        "sp500": -1.9,
+        "nasdaq100": -2.4,
+        "stoxx600": -1.3,
+        "nikkei225": -1.7,
+        "kospi": -2.2,
+        "csi300": -1.2,
+        "gold": 1.9,
+        "wti": -3,
+        "usdjpy": -0.8,
+        "us2y": -13,
+        "us10y": -11,
+        "us30y": -7
+      }
+    },
+    {
+      "id": "middle_east_oil_supply",
+      "p": 0.3,
+      "description": "Oil supply premium and Nov29 OPEC+ uncertainty; outcome not yet known",
+      "impacts": {
+        "sp500": -0.6,
+        "nasdaq100": -0.7,
+        "stoxx600": -1,
+        "nikkei225": -1,
+        "kospi": -1,
+        "csi300": -0.25,
+        "gold": 1.5,
+        "wti": 6.5,
+        "usdjpy": -0.2,
+        "us2y": 2,
+        "us10y": 3,
+        "us30y": 3
+      }
+    }
+  ],
+  "quality": {
+    "all_scenario_probabilities": "subjective independent Bernoulli events; shared market impacts; not historically fitted",
+    "sigma": "Retain Nov21 assumed weekly sigma, no fitted recalibration or post-outcome candidate tuning",
+    "statistical": "zero-change Gaussian baseline, sigma heuristic",
+    "llm": "manually authored centers and subjective direction probs",
+    "hybrid": "joint Monte Carlo scenario mixture with shared Bernoulli shocks and Gaussian noises",
+    "source_mismatch": "Prior mismatches recorded separately; WTI prospectively changed from ambiguous continuous series to explicit January 2027 contract at 83.08; no backfill.",
+    "no_forward_data": "Only dated source evidence acquired before noon Nov28 or explicitly recorded as cutoff-safe; no Nov29 or later events observed",
+    "holiday": "Nov30-Dec4 anticipated regular equity sessions; issuer daily Treasury series; next FOMC Dec8-9 outside horizon",
+    "unscheduled_weekly_macro": "Claims and WEI dates provisional; preserve period and await first release."
+  },
+  "risk_definitions": {
+    "sp_abs": "abs SP500 Friday return >2%",
+    "wti_abs": "abs NYMEX January 2027 WTI same-contract Friday settlement return >5%",
+    "yield_abs": "abs US10Y Friday par yield change >15bp",
+    "breadth": "at least 3 of SP500 NASDAQ100 STOXX600 Nikkei225 KOSPI CSI300 decline >=1.5%",
+    "joint": "SP500 <=-2% AND January 2027 WTI >=5% (strict if matching contract confirmed)"
+  },
+  "confidence": "low, subjective/model conditional not empirically calibrated",
+  "accessed_at": "2026-11-28T02:57:43.493Z",
+  "llm_risk": {
+    "sp_abs": [
+      3.3,
+      0.6,
+      [
+        1,
+        5
+      ],
+      [
+        0.3,
+        7.3
+      ],
+      [
+        0.15,
+        9
+      ]
+    ],
+    "wti_abs": [
+      5.5,
+      0.5,
+      [
+        1.4,
+        7
+      ],
+      [
+        0.4,
+        12
+      ],
+      [
+        0.2,
+        15
+      ]
+    ],
+    "yield_abs": [
+      18,
+      0.5,
+      [
+        5,
+        28
+      ],
+      [
+        1,
+        42
+      ],
+      [
+        0.5,
+        50
+      ]
+    ],
+    "breadth": [
+      2.5,
+      0.45,
+      [
+        1,
+        4
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    "joint": [
+      0.1,
+      0.1,
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "forecast_rationale": {
+    "equities": "Nov27 AP weekly rally +5.6%, strong rebound after Nov20 crash, Reuters AI financing/valuation uncertainty; after rebound no mechanical extrapolation",
+    "bonds": "Q3 GDP second estimate 4.3%, PCE core MoM 0.3%, claims 189k; payroll Dec4 90k consensus and December FOMC risk; rate changes uncertain",
+    "gold_fx": "Mixed risk appetite vs yields; BOJ Ueda Nov30 speech, Tokyo inflation first report, no future statements assumed",
+    "wti": "WSJ Jan WTI 83.08; Nov29 OPEC+ scheduled, supply risk versus inventory pressure",
+    "risk": "Historical joint equity tail 10/520 in Nov23 retrospective audit not predictive calibration; retain common shocks, don't claim independent marginal risk estimates reliable."
+  },
+  "omissions": [
+    "Parallel tail risk v1 NOT launched: same-source 1311-row history, Treasury/H15 source identity, complete independent Treasury calendar, launch lock and timely receipt not satisfied; no fabricated candidate outputs.",
+    "No major Fed rate decision this week; BoJ Nov30 Ueda speech monitored (no binary speech target with defensible pre-registered wording).",
+    "No verified first baseline for other global macro releases within cutoff; register omitted, not zero."
+  ]
+}
