@@ -1,0 +1,335 @@
+{
+  "record_type": "FinanceSim daily append-only post-weekly audit",
+  "information_as_of_utc": "2026-11-28T09:34:37.485Z",
+  "repository_head_before": "5f21b6c6baaad34d42baacac1ebfea71ae5181c4",
+  "frozen_forecast_source_commit": "bb1d988103f44d43f9e6aa5cc8084362c55b8e44",
+  "seed": 20261128,
+  "replayed_draws": 20000,
+  "new_forecast_draws": 0,
+  "observations": {
+    "fred": {
+      "sp500": {
+        "url": "https://fred.stlouisfed.org/series/SP500",
+        "observation_date": "2026-11-25",
+        "value": 7182.78,
+        "previous_friday": 6910.39,
+        "page_updated_at": "2026-11-27T10:12:00-06:00",
+        "next_release": "2026-11-30",
+        "friday_observation_in_page": false
+      },
+      "nasdaq100": {
+        "url": "https://fred.stlouisfed.org/series/NASDAQ100",
+        "observation_date": "2026-11-27",
+        "value": 26726.39,
+        "previous_friday": 25028.98,
+        "page_updated_at": "2026-11-27T22:38:00-06:00",
+        "next_release": "2026-11-30",
+        "friday_observation_in_page": true
+      },
+      "us10y": {
+        "url": "https://fred.stlouisfed.org/series/DGS10",
+        "observation_date": "2026-11-25",
+        "value": 4.85,
+        "previous_friday": 4.92,
+        "page_updated_at": "2026-11-27T15:16:00-06:00",
+        "next_release": "2026-11-30",
+        "friday_observation_in_page": false
+      }
+    },
+    "treasury": {
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "nov25": {
+        "us2y": 4.61,
+        "us10y": 4.85,
+        "us30y": 5.24
+      },
+      "nov27": {
+        "us2y": 4.69,
+        "us10y": 4.94,
+        "us30y": 5.33
+      },
+      "exact_publication_time": null,
+      "exact_quote_time": null
+    },
+    "france": {
+      "nov_flash_url": "https://www.insee.fr/en/statistiques/9162928",
+      "nov_release_date": "2026-11-27",
+      "oct_flash_url": "https://www.insee.fr/en/statistiques/9107975",
+      "oct_flash_date": "2026-10-30",
+      "oct_final_url": "https://www.insee.fr/en/statistiques/9131375",
+      "oct_final_date": "2026-11-13",
+      "first": {
+        "cpi_yoy": 2.9,
+        "hicp_yoy": 3.2,
+        "cpi_mom": -0.7,
+        "energy_yoy": 19.2,
+        "services_yoy": 2.3
+      },
+      "oct_first": {
+        "cpi_yoy": 3.4,
+        "hicp_yoy": 3.8,
+        "cpi_mom": 0.4,
+        "energy_yoy": 24.1,
+        "services_yoy": 2.7
+      },
+      "oct_final": {
+        "cpi_yoy": 3.4,
+        "hicp_yoy": 3.7,
+        "cpi_mom": 0.4,
+        "energy_yoy": 24.1,
+        "services_yoy": 2.6
+      },
+      "nov_final_due": "2026-12-11",
+      "exact_release_time": null
+    },
+    "spain": {
+      "nov_flash_url": "https://www.ine.es/dyngs/Prensa/en/adIPC1126.htm",
+      "nov_release_date": "2026-11-27",
+      "oct_flash_url": "https://www.ine.es/dyngs/Prensa/en/adIPC1026.htm",
+      "oct_flash_date": "2026-10-30",
+      "oct_final_url": "https://www.ine.es/dyngs/Prensa/en/IPC1026.htm",
+      "oct_final_date": "2026-11-13",
+      "first": {
+        "cpi_yoy": 4.1,
+        "hicp_yoy": 4.1,
+        "cpi_mom": -0.6,
+        "core_cpi_yoy": 2.6
+      },
+      "oct_first": {
+        "cpi_yoy": 4.9,
+        "hicp_yoy": 4.9,
+        "cpi_mom": 0.6,
+        "core_cpi_yoy": 3.1
+      },
+      "oct_final": {
+        "cpi_yoy": 4.9,
+        "hicp_yoy": 4.9,
+        "cpi_mom": 0.6,
+        "core_cpi_yoy": 3.1
+      },
+      "exact_release_time": null
+    },
+    "calendars": {
+      "bls": {
+        "url": "https://www.bls.gov/schedule/2026/12_sched.htm",
+        "calendar_last_modified": "2026-11-09",
+        "jolts_oct": "2026-12-01T10:00:00-05:00",
+        "employment_nov": "2026-12-04T08:30:00-05:00"
+      },
+      "boj": {
+        "url": "https://www.boj.or.jp/en/about/press/index.htm",
+        "governor_speech_date": "2026-11-30",
+        "location": "Nagoya",
+        "actual_statement": null
+      }
+    },
+    "forecast_seal": {
+      "commit": "cfbb8819d8d5d1959b718cfb2d10efe7bd4cdcbb",
+      "git_created_at": "2026-11-28T02:57:51Z",
+      "deadline": "2026-11-28T12:00:00+09:00",
+      "url": "https://github.com/WD-nanophotonics/FinanceSim/commit/cfbb8819d8d5d1959b718cfb2d10efe7bd4cdcbb"
+    }
+  },
+  "diagnostics": {
+    "strict_equity": {
+      "n": 5,
+      "rows": [
+        {
+          "id": "sp500",
+          "actual": 5.60170989,
+          "points": {
+            "llm": 0.7,
+            "statistical": 0.0047,
+            "hybrid": -1.5083
+          },
+          "hybrid_minus_stat_abs_error": 1.513
+        },
+        {
+          "id": "nasdaq100",
+          "actual": 6.78177856,
+          "points": {
+            "llm": 1.2,
+            "statistical": 0.0321,
+            "hybrid": -2.1465
+          },
+          "hybrid_minus_stat_abs_error": 2.1786
+        },
+        {
+          "id": "nikkei225",
+          "actual": 4.03011164,
+          "points": {
+            "llm": 1.2,
+            "statistical": 0.0055,
+            "hybrid": -1.1993
+          },
+          "hybrid_minus_stat_abs_error": 1.2048
+        },
+        {
+          "id": "kospi",
+          "actual": 0.93881675,
+          "points": {
+            "llm": 1.8,
+            "statistical": 0.0003,
+            "hybrid": -2.0289
+          },
+          "hybrid_minus_stat_abs_error": 2.0292
+        },
+        {
+          "id": "csi300",
+          "actual": 2.74366807,
+          "points": {
+            "llm": 0.35,
+            "statistical": 0.0437,
+            "hybrid": -0.4912
+          },
+          "hybrid_minus_stat_abs_error": 0.5349
+        }
+      ],
+      "arm_metrics": {
+        "llm": {
+          "mae": 3.31369028,
+          "signed_actual_minus_point": 2.96921698,
+          "brier": 0.20444
+        },
+        "statistical": {
+          "mae": 4.00195698,
+          "signed_actual_minus_point": 4.00195698,
+          "brier": 0.24797186
+        },
+        "hybrid": {
+          "mae": 5.49405698,
+          "signed_actual_minus_point": 5.49405698,
+          "brier": 0.3508803
+        }
+      },
+      "mean_hybrid_minus_stat_abs_error": 1.4921,
+      "warning": "Five correlated markets in one week; no model selection."
+    },
+    "fred_stale_reference": {
+      "sp500": {
+        "page_observation_date": "2026-11-25",
+        "frozen_matched_vendor_weekly_change": 5.60170989,
+        "fred_page_implied_weekly_change": 3.94174569,
+        "stale_minus_matched": -1.6599642,
+        "sign_reversal": false
+      },
+      "nasdaq100": {
+        "page_observation_date": "2026-11-27",
+        "frozen_matched_vendor_weekly_change": 6.78177856,
+        "fred_page_implied_weekly_change": 6.78177856,
+        "stale_minus_matched": 0,
+        "sign_reversal": false
+      },
+      "us10y": {
+        "page_observation_date": "2026-11-25",
+        "frozen_matched_vendor_weekly_change": 2,
+        "fred_page_implied_weekly_change": -7,
+        "stale_minus_matched": -9,
+        "sign_reversal": true
+      }
+    },
+    "nasdaq_fred_page_update_minutes_after_deadline": 98,
+    "legacy_git_metadata_lead_seconds": 129,
+    "rebound": {
+      "prior_n": 10,
+      "prior_both_positive": 8,
+      "prior_both_up5": 3,
+      "latest_week_sp": 5.60170989,
+      "latest_week_ndx": 6.78177856,
+      "provisional_mixed_vendor_n": 11,
+      "provisional_both_positive": 9,
+      "provisional_both_up5": 4,
+      "note": "Cross-vendor descriptive extension only; do not alter same-source historical cohort or count as independent predictive evidence."
+    },
+    "macro": {
+      "france": {
+        "cpi_yoy": {
+          "first_to_first_pp": -0.5,
+          "vs_oct_final_pp": -0.5,
+          "oct_revision_pp": 0
+        },
+        "hicp_yoy": {
+          "first_to_first_pp": -0.6,
+          "vs_oct_final_pp": -0.5,
+          "oct_revision_pp": -0.1
+        },
+        "cpi_mom": {
+          "first_to_first_pp": -1.1,
+          "vs_oct_final_pp": -1.1,
+          "oct_revision_pp": 0
+        },
+        "energy_yoy": {
+          "first_to_first_pp": -4.9,
+          "vs_oct_final_pp": -4.9,
+          "oct_revision_pp": 0
+        },
+        "services_yoy": {
+          "first_to_first_pp": -0.4,
+          "vs_oct_final_pp": -0.3,
+          "oct_revision_pp": -0.1
+        }
+      },
+      "spain": {
+        "cpi_yoy": {
+          "first_to_first_pp": -0.8,
+          "vs_oct_final_pp": -0.8,
+          "oct_revision_pp": 0
+        },
+        "hicp_yoy": {
+          "first_to_first_pp": -0.8,
+          "vs_oct_final_pp": -0.8,
+          "oct_revision_pp": 0
+        },
+        "cpi_mom": {
+          "first_to_first_pp": -1.2,
+          "vs_oct_final_pp": -1.2,
+          "oct_revision_pp": 0
+        },
+        "core_cpi_yoy": {
+          "first_to_first_pp": -0.5,
+          "vs_oct_final_pp": -0.5,
+          "oct_revision_pp": 0
+        }
+      }
+    },
+    "treasury_nov27_minus_nov25_bp": {
+      "us2y": 8,
+      "us10y": 9,
+      "us30y": 9
+    }
+  },
+  "inputs": {
+    "verification": {
+      "path": "research/weekly/2026-11-28-verification.json",
+      "sha": "0c561713404f34ab5c12158bafe7f84743df12e9"
+    },
+    "forecast": {
+      "path": "research/weekly/2026-11-28-forecast.json",
+      "sha": "a6595d9c7b05285a70690b8de854815a3f87db70"
+    },
+    "previous_diagnostic": {
+      "path": "research/daily/2026-11-24.json",
+      "sha": "e34414bb6e9fc291fcd61cffdd4b9e09e1bbd317"
+    },
+    "settlement": {
+      "path": "research/inputs/2026-11-28-settlement-sources.json",
+      "sha": "8b20843f83f24569de53b1368283de28bfc9d831"
+    }
+  },
+  "execution": {
+    "legacy_generation": "Actual V8 execution of archived Nov28 JS generator using immutable input blob 2898dcae55fc4c76b72ad0a0a4533e1ed0fb9c65; exact forecast JSON bytes matched; seed 20261128, 20000 replay draws, not a new prediction",
+    "legacy_verification": "Actual V8 execution of archived scoring source 42cadab732ef05ed4350f071db4b6d6a3cf384f3; exact verification JSON bytes matched using frozen Nov21 forecast, settlement and cumulative ledger",
+    "new_diagnostic": "Actual V8 deterministic execution twice with assertions; new script saved separately. No new prospective run, refit or parameter selection.",
+    "ci": "Read .github/workflows/tests.yml, which includes Nov28 replay. HEAD combined status and PR-triggered run lookup both returned empty. Full push CI not independently verified; last verified Nov26 run 45795392793 as documented in Nov27 daily."
+  },
+  "interpretation": [
+    "FRED page update timestamp is not first availability. Even at this evening's retrieval, SP500 and DGS10 last observations are Nov25, whereas NDX has Nov27; using stale FRED would reverse weekly yield direction. Do not substitute for locked settlement. NDX page update 98 minutes after deadline does not prove earliest availability.",
+    "Legacy first Git commit metadata indicates 129 seconds before cutoff; this does not constitute independently timestamped remote publication. Parallel v1 still not launched; no backfill or cohort entry. Future origin needs a separately prospective calendar/source lock and explicit missed-first-origin handling under policy.",
+    "French and Spanish national CPI and HICP flash estimates declined, and France's October HICP first 3.8 was revised to 3.7. This is new non-target macro information, not an added score. France energy inflation and services both decelerated; no causal price attribution or eurozone aggregate inferred.",
+    "Five strict equities all rose while hybrid centers were negative. Diagnostic documents common directional error; correlated observations and one rebound week do not justify changing weights after seeing outcomes.",
+    "The prior rebound study gets one provisional completed transition from matched weekly settlement vendor records, not an approved splice into historical Yahoo/FRED staging. No new model chosen."
+  ],
+  "replay_script": "research/scripts/audit_2026_11_28_post_weekly.js",
+  "historical_archives_modified": false,
+  "model_promoted": false
+}
