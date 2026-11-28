@@ -1,0 +1,223 @@
+{
+  "record_type": "FinanceSim Nov28 source-audited settlement",
+  "forecast_path": "research/weekly/2026-11-21-forecast.json",
+  "forecast_blob_sha": "7188dad888faf4a92ca1909706357ac0ae9eaf3b",
+  "accessed_at": "2026-11-28T02:57:43.493Z",
+  "information_cutoff": "2026-11-28T12:00:00+09:00",
+  "source_commit": "bb1d988103f44d43f9e6aa5cc8084362c55b8e44",
+  "market": {
+    "sp500": {
+      "value": 7297.49,
+      "matched_reference": 6910.39,
+      "frozen_reference": 6910.39,
+      "status": "verified",
+      "source": "https://apnews.com/article/04dab6079cf7f3dfe7285a3cc1f240a2",
+      "note": "AP final close 13:00 ET; both Fridays AP",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "nasdaq100": {
+      "value": 26726.39,
+      "matched_reference": 25028.98,
+      "frozen_reference": 25028.98,
+      "status": "verified",
+      "source": "https://ycharts.com/indices/%5ENDX/level",
+      "note": "YCharts dated level corroborated Yahoo historical closing row; display update 14:16 ET not exchange close",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "stoxx600": {
+      "value": 643.84,
+      "matched_reference": 625.65,
+      "frozen_reference": 625.66,
+      "status": "conditional",
+      "source": "https://www.investing.com/indices/stoxx-600-historical-data",
+      "note": "Frozen reference 625.66 vs same provider now 625.65; Reuters 643.85. Tiny discrepancy, no historical rewrite",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "nikkei225": {
+      "value": 58711.11,
+      "matched_reference": 56436.65,
+      "frozen_reference": 56436.65,
+      "status": "verified",
+      "source": "https://indexes.nikkei.co.jp/en/nkave/archives/data",
+      "note": "issuer close, confirmed daily Nov27",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "kospi": {
+      "value": 4915.68,
+      "matched_reference": 4869.96,
+      "frozen_reference": 4869.96,
+      "status": "verified",
+      "source": "https://ph.investing.com/indices/kospi-historical-data",
+      "note": "matched vendor close, corroborated Nov27 daily",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "csi300": {
+      "value": 4063.06,
+      "matched_reference": 3954.56,
+      "frozen_reference": 3954.56,
+      "status": "verified",
+      "source": "https://ph.investing.com/indices/csi300-historical-data",
+      "note": "final closed Nov27 and matching Nov20 historical row; Nov27 stale intraday quote excluded",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "gold": {
+      "value": 3654.58,
+      "matched_reference": 3532.85,
+      "frozen_reference": 3532.87,
+      "status": "conditional",
+      "source": "https://www.investing.com/currencies/xau-usd-historical-data",
+      "note": "same vendor historical reference 3532.85 vs frozen 3532.87; provider spot close not independent official fixing",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "wti": {
+      "value": 83.33,
+      "matched_reference": 83.41,
+      "frozen_reference": 82.4,
+      "status": "conditional",
+      "source": "https://www.investing.com/commodities/crude-oil-historical-data",
+      "note": "continuous series frozen 82.40 vs current Nov20 83.41; WSJ Jan WTI settlement 83.08, do not splice",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "usdjpy": {
+      "value": 159.56,
+      "matched_reference": 158.54,
+      "frozen_reference": 159.31,
+      "status": "conditional",
+      "source": "https://www.investing.com/currencies/usd-jpy-historical-data",
+      "note": "frozen 159.31 vs same provider 158.54; prior target close erroneously says Treasury; not strict",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "us2y": {
+      "value": 4.69,
+      "matched_reference": 4.63,
+      "frozen_reference": 4.63,
+      "status": "verified",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "note": "official dated par yield not intraday market quote",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "us10y": {
+      "value": 4.94,
+      "matched_reference": 4.92,
+      "frozen_reference": 4.92,
+      "status": "verified",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "note": "official dated par yield not intraday market quote",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    },
+    "us30y": {
+      "value": 5.33,
+      "matched_reference": 5.31,
+      "frozen_reference": 5.31,
+      "status": "verified",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "note": "official dated par yield not intraday market quote",
+      "observation_date": "2026-11-27",
+      "reference_date": "2026-11-20"
+    }
+  },
+  "macro": {
+    "us_pce_headline_mom_oct": {
+      "value": 0.3,
+      "reference": 0.5,
+      "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+      "published_at": "2026-11-25T08:30:00-05:00",
+      "prior_revised": 0.5,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+    },
+    "us_pce_core_mom_oct": {
+      "value": 0.3,
+      "reference": 0.3,
+      "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+      "published_at": "2026-11-25T08:30:00-05:00",
+      "prior_revised": 0.3,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+    },
+    "us_personal_income_mom_oct": {
+      "value": 0.7,
+      "reference": 0.2,
+      "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+      "published_at": "2026-11-25T08:30:00-05:00",
+      "prior_revised": 0.3,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+    },
+    "us_nominal_pce_mom_oct": {
+      "value": 0.3,
+      "reference": 0.5,
+      "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+      "published_at": "2026-11-25T08:30:00-05:00",
+      "prior_revised": 0.6,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+    },
+    "us_real_pce_mom_oct": {
+      "value": 0,
+      "reference": 0,
+      "source": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+      "published_at": "2026-11-25T08:30:00-05:00",
+      "prior_revised": 0.1,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+    },
+    "us_gdp_q3_second": {
+      "value": 4.3,
+      "reference": 3.4,
+      "source": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-3rd-quarter-2026",
+      "published_at": "2026-11-25T08:30:00-05:00",
+      "prior_revised": null,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+    },
+    "us_durable_mom_oct": {
+      "value": 0.2,
+      "reference": 1.8,
+      "source": "https://www.census.gov/manufacturing/m3/adv/pdf/durgd.pdf?ts=20261027",
+      "published_at": "2026-11-25T08:30:00-05:00",
+      "prior_revised": 2,
+      "status": "conditional",
+      "note": "Frozen 1.8% baseline, original September PDF not independently retrieved today"
+    },
+    "us_claims_week_nov21": {
+      "value": 189,
+      "reference": 203,
+      "source": "https://www.dol.gov/sites/dolgov/files/OPA/newsreleases/ui-claims/20261732.pdf",
+      "published_at": "2026-11-25T08:30:00-05:00",
+      "prior_revised": 202,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement"
+    },
+    "dallas_wei_week_nov21": {
+      "value": 3.36,
+      "reference": 3.18,
+      "source": "https://www.dallasfed.org/recentadditions",
+      "prior_revised": 3.23,
+      "published_at": null,
+      "release_date_reported": [
+        "2026-11-25",
+        "2026-11-26"
+      ],
+      "status": "conditional",
+      "note": "Daily Nov27 source gave Nov25; Dallas Fed recent additions lists Nov26. Value and reference period confirmed; exact original publication time/vintage unresolved, exclude from strict cohort."
+    }
+  },
+  "limitations": [
+    "DOL/BEA/Census source values read from repository Nov26 daily record; WEI read from Nov27 daily and issuer recent additions.",
+    "Early-close Treasury publication timestamp unverified; issuer row observed in this run before cutoff.",
+    "Provider price timestamp not independent proof of official exchange close; all conditional results excluded from strict primary metrics.",
+    "No retrospective change to frozen forecasts."
+  ]
+}
