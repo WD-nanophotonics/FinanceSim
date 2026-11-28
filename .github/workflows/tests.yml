@@ -250,3 +250,29 @@ jobs:
           assert x['frozen_forecasts_rewritten'] is False
           assert x['promotion_eligible'] is False
           PY
+
+      - name: Replay Nov28 legacy forecast and all-target strict/conditional verification
+        run: |
+          node research/scripts/generate_2026_11_28.js research/inputs/2026-11-28-1200-snapshot.json > /tmp/nov28_forecast.json
+          node research/scripts/score_2026_11_28.js > /tmp/nov28_verification.json
+          python - <<'PY'
+          import json, math
+          def equal(a,b):
+              if isinstance(a,dict):
+                  assert isinstance(b,dict) and a.keys()==b.keys()
+                  for k in a: equal(a[k],b[k])
+              elif isinstance(a,list):
+                  assert isinstance(b,list) and len(a)==len(b)
+                  for x,y in zip(a,b): equal(x,y)
+              elif type(a) in (float,int) and type(b) in (float,int):
+                  assert math.isclose(a,b,rel_tol=1e-12,abs_tol=1e-12), (a,b)
+              else: assert a==b, (a,b)
+          f=json.load(open('/tmp/nov28_forecast.json'))
+          v=json.load(open('/tmp/nov28_verification.json'))
+          equal(f,json.load(open('research/weekly/2026-11-28-forecast.json')))
+          equal(v,json.load(open('research/weekly/2026-11-28-verification.json')))
+          assert f['seed']==20261128 and f['draws']==20000
+          assert len(f['macro_forecasts'])==7 and len(f['market_forecasts'])==12 and len(f['risk_forecasts'])==5
+          assert len(v['rows'])==26 and [v['groups'][k]['strict_n'] for k in 'ABC']==[7,3,8]
+          assert all(set(z['arms'])=={'llm','statistical','hybrid'} for g in ('macro_forecasts','market_forecasts','risk_forecasts') for z in f[g].values())
+          PY
