@@ -1,0 +1,2938 @@
+{
+  "record_type": "FinanceSim Nov28 verification",
+  "forecast_blob_sha": "7188dad888faf4a92ca1909706357ac0ae9eaf3b",
+  "cutoff": "2026-11-28T12:00:00+09:00",
+  "accessed_at": "2026-11-28T02:57:43.493Z",
+  "rows": [
+    {
+      "id": "us_pce_headline_mom_oct",
+      "group": "A",
+      "unit": "percentage_points_mom",
+      "actual": -0.2,
+      "event_positive": 0,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement",
+      "scores": {
+        "llm": {
+          "point": -0.18,
+          "p": 0.33,
+          "brier": 0.1089,
+          "error": -0.02,
+          "abs_error": 0.02,
+          "sq_error": 0.0004,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3568,
+              "width": 0.3568
+            },
+            "80": {
+              "covered": true,
+              "score": 0.678,
+              "width": 0.678
+            },
+            "90": {
+              "covered": true,
+              "score": 0.8702,
+              "width": 0.8702
+            }
+          },
+          "weighted_interval_only": 0.501275
+        },
+        "statistical": {
+          "point": 0,
+          "p": 0.5,
+          "brier": 0.25,
+          "error": -0.2,
+          "abs_error": 0.2,
+          "sq_error": 0.04,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 0.4898,
+              "width": 0.3102
+            },
+            "80": {
+              "covered": true,
+              "score": 0.5896,
+              "width": 0.5896
+            },
+            "90": {
+              "covered": true,
+              "score": 0.7566,
+              "width": 0.7566
+            }
+          },
+          "weighted_interval_only": 0.5481
+        },
+        "hybrid": {
+          "point": -0.17,
+          "p": 0.2299,
+          "brier": 0.05285401,
+          "error": -0.03,
+          "abs_error": 0.03,
+          "sq_error": 0.0009,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3102,
+              "width": 0.3102
+            },
+            "80": {
+              "covered": true,
+              "score": 0.5896,
+              "width": 0.5896
+            },
+            "90": {
+              "covered": true,
+              "score": 0.7566,
+              "width": 0.7566
+            }
+          },
+          "weighted_interval_only": 0.43585
+        }
+      }
+    },
+    {
+      "id": "us_pce_core_mom_oct",
+      "group": "A",
+      "unit": "percentage_points_mom",
+      "actual": 0,
+      "event_positive": 0,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement",
+      "scores": {
+        "llm": {
+          "point": 0.05,
+          "p": 0.57,
+          "brier": 0.3249,
+          "error": -0.05,
+          "abs_error": 0.05,
+          "sq_error": 0.0025,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3102,
+              "width": 0.3102
+            },
+            "80": {
+              "covered": true,
+              "score": 0.5896,
+              "width": 0.5896
+            },
+            "90": {
+              "covered": true,
+              "score": 0.7566,
+              "width": 0.7566
+            }
+          },
+          "weighted_interval_only": 0.43585
+        },
+        "statistical": {
+          "point": 0,
+          "p": 0.5,
+          "brier": 0.25,
+          "error": 0,
+          "abs_error": 0,
+          "sq_error": 0,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.2698,
+              "width": 0.2698
+            },
+            "80": {
+              "covered": true,
+              "score": 0.5126,
+              "width": 0.5126
+            },
+            "90": {
+              "covered": true,
+              "score": 0.658,
+              "width": 0.658
+            }
+          },
+          "weighted_interval_only": 0.379025
+        },
+        "hybrid": {
+          "point": 0.04,
+          "p": 0.5793,
+          "brier": 0.33558849,
+          "error": -0.04,
+          "abs_error": 0.04,
+          "sq_error": 0.0016,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.2698,
+              "width": 0.2698
+            },
+            "80": {
+              "covered": true,
+              "score": 0.5126,
+              "width": 0.5126
+            },
+            "90": {
+              "covered": true,
+              "score": 0.658,
+              "width": 0.658
+            }
+          },
+          "weighted_interval_only": 0.379025
+        }
+      }
+    },
+    {
+      "id": "us_personal_income_mom_oct",
+      "group": "A",
+      "unit": "percentage_points_mom",
+      "actual": 0.5,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement",
+      "scores": {
+        "llm": {
+          "point": 0.07,
+          "p": 0.57,
+          "brier": 0.1849,
+          "error": 0.43,
+          "abs_error": 0.43,
+          "sq_error": 0.1849,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 1.177,
+              "width": 0.543
+            },
+            "80": {
+              "covered": true,
+              "score": 1.0316,
+              "width": 1.0316
+            },
+            "90": {
+              "covered": true,
+              "score": 1.3242,
+              "width": 1.3242
+            }
+          },
+          "weighted_interval_only": 1.15905
+        },
+        "statistical": {
+          "point": 0,
+          "p": 0.5,
+          "brier": 0.25,
+          "error": 0.5,
+          "abs_error": 0.5,
+          "sq_error": 0.25,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 1.5278,
+              "width": 0.4722
+            },
+            "80": {
+              "covered": false,
+              "score": 1.412,
+              "width": 0.897
+            },
+            "90": {
+              "covered": true,
+              "score": 1.1514,
+              "width": 1.1514
+            }
+          },
+          "weighted_interval_only": 1.4518
+        },
+        "hybrid": {
+          "point": 0.04,
+          "p": 0.5455,
+          "brier": 0.20657025,
+          "error": 0.46,
+          "abs_error": 0.46,
+          "sq_error": 0.2116,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 1.3678,
+              "width": 0.4722
+            },
+            "80": {
+              "covered": false,
+              "score": 1.012,
+              "width": 0.897
+            },
+            "90": {
+              "covered": true,
+              "score": 1.1514,
+              "width": 1.1514
+            }
+          },
+          "weighted_interval_only": 1.2518
+        }
+      }
+    },
+    {
+      "id": "us_nominal_pce_mom_oct",
+      "group": "A",
+      "unit": "percentage_points_mom",
+      "actual": -0.2,
+      "event_positive": 0,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement",
+      "scores": {
+        "llm": {
+          "point": -0.08,
+          "p": 0.42,
+          "brier": 0.1764,
+          "error": -0.12,
+          "abs_error": 0.12,
+          "sq_error": 0.0144,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.6206,
+              "width": 0.6206
+            },
+            "80": {
+              "covered": true,
+              "score": 1.179,
+              "width": 1.179
+            },
+            "90": {
+              "covered": true,
+              "score": 1.5132,
+              "width": 1.5132
+            }
+          },
+          "weighted_interval_only": 0.871775
+        },
+        "statistical": {
+          "point": 0,
+          "p": 0.5,
+          "brier": 0.25,
+          "error": -0.2,
+          "abs_error": 0.2,
+          "sq_error": 0.04,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.5396,
+              "width": 0.5396
+            },
+            "80": {
+              "covered": true,
+              "score": 1.0252,
+              "width": 1.0252
+            },
+            "90": {
+              "covered": true,
+              "score": 1.3158,
+              "width": 1.3158
+            }
+          },
+          "weighted_interval_only": 0.758025
+        },
+        "hybrid": {
+          "point": -0.11,
+          "p": 0.3917,
+          "brier": 0.15342889,
+          "error": -0.09,
+          "abs_error": 0.09,
+          "sq_error": 0.0081,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.5396,
+              "width": 0.5396
+            },
+            "80": {
+              "covered": true,
+              "score": 1.0252,
+              "width": 1.0252
+            },
+            "90": {
+              "covered": true,
+              "score": 1.3158,
+              "width": 1.3158
+            }
+          },
+          "weighted_interval_only": 0.758025
+        }
+      }
+    },
+    {
+      "id": "us_real_pce_mom_oct",
+      "group": "A",
+      "unit": "percentage_points_mom",
+      "actual": 0,
+      "event_positive": 0,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement",
+      "scores": {
+        "llm": {
+          "point": 0.06,
+          "p": 0.56,
+          "brier": 0.3136,
+          "error": -0.06,
+          "abs_error": 0.06,
+          "sq_error": 0.0036,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3568,
+              "width": 0.3568
+            },
+            "80": {
+              "covered": true,
+              "score": 0.678,
+              "width": 0.678
+            },
+            "90": {
+              "covered": true,
+              "score": 0.8702,
+              "width": 0.8702
+            }
+          },
+          "weighted_interval_only": 0.501275
+        },
+        "statistical": {
+          "point": 0,
+          "p": 0.5,
+          "brier": 0.25,
+          "error": 0,
+          "abs_error": 0,
+          "sq_error": 0,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3102,
+              "width": 0.3102
+            },
+            "80": {
+              "covered": true,
+              "score": 0.5896,
+              "width": 0.5896
+            },
+            "90": {
+              "covered": true,
+              "score": 0.7566,
+              "width": 0.7566
+            }
+          },
+          "weighted_interval_only": 0.43585
+        },
+        "hybrid": {
+          "point": 0.03,
+          "p": 0.5519,
+          "brier": 0.30459361,
+          "error": -0.03,
+          "abs_error": 0.03,
+          "sq_error": 0.0009,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.3102,
+              "width": 0.3102
+            },
+            "80": {
+              "covered": true,
+              "score": 0.5896,
+              "width": 0.5896
+            },
+            "90": {
+              "covered": true,
+              "score": 0.7566,
+              "width": 0.7566
+            }
+          },
+          "weighted_interval_only": 0.43585
+        }
+      }
+    },
+    {
+      "id": "us_gdp_q3_second",
+      "group": "A",
+      "unit": "percentage_points_saar_revision",
+      "actual": 0.9,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement",
+      "scores": {
+        "llm": {
+          "point": -0.05,
+          "p": 0.42,
+          "brier": 0.3364,
+          "error": 0.95,
+          "abs_error": 0.95,
+          "sq_error": 0.9025,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 3.3346,
+              "width": 0.4654
+            },
+            "80": {
+              "covered": false,
+              "score": 5.9632,
+              "width": 0.8842
+            },
+            "90": {
+              "covered": false,
+              "score": 8.785,
+              "width": 1.135
+            }
+          },
+          "weighted_interval_only": 4.67305
+        },
+        "statistical": {
+          "point": 0,
+          "p": 0.5,
+          "brier": 0.25,
+          "error": 0.9,
+          "abs_error": 0.9,
+          "sq_error": 0.81,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 3.1954,
+              "width": 0.4046
+            },
+            "80": {
+              "covered": false,
+              "score": 5.924,
+              "width": 0.769
+            },
+            "90": {
+              "covered": false,
+              "score": 9.117,
+              "width": 0.987
+            }
+          },
+          "weighted_interval_only": 4.61775
+        },
+        "hybrid": {
+          "point": -0.08,
+          "p": 0.3949,
+          "brier": 0.36614601,
+          "error": 0.98,
+          "abs_error": 0.98,
+          "sq_error": 0.9604,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 3.5154,
+              "width": 0.4046
+            },
+            "80": {
+              "covered": false,
+              "score": 6.724,
+              "width": 0.769
+            },
+            "90": {
+              "covered": false,
+              "score": 10.717,
+              "width": 0.987
+            }
+          },
+          "weighted_interval_only": 5.21775
+        }
+      }
+    },
+    {
+      "id": "us_durable_mom_oct",
+      "group": "A",
+      "unit": "percentage_points_mom",
+      "actual": -1.6,
+      "event_positive": 0,
+      "status": "conditional",
+      "note": "Frozen 1.8% baseline, original September PDF not independently retrieved today",
+      "scores": {
+        "llm": {
+          "point": -1.1,
+          "p": 0.23,
+          "brier": 0.0529,
+          "error": -0.5,
+          "abs_error": 0.5,
+          "sq_error": 0.25,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 2.327,
+              "width": 2.327
+            },
+            "80": {
+              "covered": true,
+              "score": 4.4214,
+              "width": 4.4214
+            },
+            "90": {
+              "covered": true,
+              "score": 5.6748,
+              "width": 5.6748
+            }
+          },
+          "weighted_interval_only": 3.269075
+        },
+        "statistical": {
+          "point": 0,
+          "p": 0.5,
+          "brier": 0.25,
+          "error": -1.6,
+          "abs_error": 1.6,
+          "sq_error": 2.56,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 4.3766,
+              "width": 2.0234
+            },
+            "80": {
+              "covered": true,
+              "score": 3.8446,
+              "width": 3.8446
+            },
+            "90": {
+              "covered": true,
+              "score": 4.9346,
+              "width": 4.9346
+            }
+          },
+          "weighted_interval_only": 4.31335
+        },
+        "hybrid": {
+          "point": -0.9,
+          "p": 0.2743,
+          "brier": 0.07524049,
+          "error": -0.7,
+          "abs_error": 0.7,
+          "sq_error": 0.49,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 2.0234,
+              "width": 2.0234
+            },
+            "80": {
+              "covered": true,
+              "score": 3.8446,
+              "width": 3.8446
+            },
+            "90": {
+              "covered": true,
+              "score": 4.9346,
+              "width": 4.9346
+            }
+          },
+          "weighted_interval_only": 2.8426
+        }
+      }
+    },
+    {
+      "id": "us_claims_week_nov21",
+      "group": "A",
+      "unit": "thousands_persons",
+      "actual": -14,
+      "event_positive": 0,
+      "status": "verified",
+      "note": "Prior first value independently corroborated in original BEA release or DOL revision statement",
+      "scores": {
+        "llm": {
+          "point": 8,
+          "p": 0.63,
+          "brier": 0.3969,
+          "error": -22,
+          "abs_error": 22,
+          "sq_error": 484,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 61.6274,
+              "width": 26.3726
+            },
+            "80": {
+              "covered": true,
+              "score": 50.1086,
+              "width": 50.1086
+            },
+            "90": {
+              "covered": true,
+              "score": 64.3138,
+              "width": 64.3138
+            }
+          },
+          "weighted_interval_only": 59.0835
+        },
+        "statistical": {
+          "point": 0,
+          "p": 0.5,
+          "brier": 0.25,
+          "error": -14,
+          "abs_error": 14,
+          "sq_error": 196,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 33.0674,
+              "width": 22.9326
+            },
+            "80": {
+              "covered": true,
+              "score": 43.5728,
+              "width": 43.5728
+            },
+            "90": {
+              "covered": true,
+              "score": 55.925,
+              "width": 55.925
+            }
+          },
+          "weighted_interval_only": 38.55095
+        },
+        "hybrid": {
+          "point": 4,
+          "p": 0.593,
+          "brier": 0.351649,
+          "error": -18,
+          "abs_error": 18,
+          "sq_error": 324,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 49.0674,
+              "width": 22.9326
+            },
+            "80": {
+              "covered": true,
+              "score": 43.5728,
+              "width": 43.5728
+            },
+            "90": {
+              "covered": true,
+              "score": 55.925,
+              "width": 55.925
+            }
+          },
+          "weighted_interval_only": 48.55095
+        }
+      }
+    },
+    {
+      "id": "dallas_wei_week_nov21",
+      "group": "A",
+      "unit": "index_points",
+      "actual": 0.18,
+      "event_positive": 1,
+      "status": "conditional",
+      "note": "Daily Nov27 source gave Nov25; Dallas Fed recent additions lists Nov26. Value and reference period confirmed; exact original publication time/vintage unresolved, exclude from strict cohort.",
+      "scores": {
+        "llm": {
+          "point": -0.16,
+          "p": 0.38,
+          "brier": 0.3844,
+          "error": 0.34,
+          "abs_error": 0.34,
+          "sq_error": 0.1156,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.8066,
+              "width": 0.8066
+            },
+            "80": {
+              "covered": true,
+              "score": 1.5328,
+              "width": 1.5328
+            },
+            "90": {
+              "covered": true,
+              "score": 1.9672,
+              "width": 1.9672
+            }
+          },
+          "weighted_interval_only": 1.133225
+        },
+        "statistical": {
+          "point": 0,
+          "p": 0.5,
+          "brier": 0.25,
+          "error": 0.18,
+          "abs_error": 0.18,
+          "sq_error": 0.0324,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0.7014,
+              "width": 0.7014
+            },
+            "80": {
+              "covered": true,
+              "score": 1.3328,
+              "width": 1.3328
+            },
+            "90": {
+              "covered": true,
+              "score": 1.7106,
+              "width": 1.7106
+            }
+          },
+          "weighted_interval_only": 0.9854
+        },
+        "hybrid": {
+          "point": -0.18,
+          "p": 0.3646,
+          "brier": 0.40373316,
+          "error": 0.36,
+          "abs_error": 0.36,
+          "sq_error": 0.1296,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 0.7386,
+              "width": 0.7014
+            },
+            "80": {
+              "covered": true,
+              "score": 1.3328,
+              "width": 1.3328
+            },
+            "90": {
+              "covered": true,
+              "score": 1.7106,
+              "width": 1.7106
+            }
+          },
+          "weighted_interval_only": 1.00865
+        }
+      }
+    },
+    {
+      "id": "sp500",
+      "group": "C",
+      "unit": "percent_return",
+      "actual": 5.60170989,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "AP final close 13:00 ET; both Fridays AP",
+      "scores": {
+        "llm": {
+          "point": 0.7,
+          "p": 0.54,
+          "brier": 0.2116,
+          "error": 4.90170989,
+          "abs_error": 4.90170989,
+          "sq_error": 24.02675985,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 13.09123956,
+              "width": 6.5156
+            },
+            "80": {
+              "covered": true,
+              "score": 12.3798,
+              "width": 12.3798
+            },
+            "90": {
+              "covered": true,
+              "score": 15.8892,
+              "width": 15.8892
+            }
+          },
+          "weighted_interval_only": 13.26312473
+        },
+        "statistical": {
+          "point": 0.0047,
+          "p": 0.5016,
+          "brier": 0.24840256,
+          "error": 5.59700989,
+          "abs_error": 5.59700989,
+          "sq_error": 31.32651971,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 16.80543956,
+              "width": 5.5706
+            },
+            "80": {
+              "covered": false,
+              "score": 13.5304989,
+              "width": 10.6744
+            },
+            "90": {
+              "covered": true,
+              "score": 13.7425,
+              "width": 13.7425
+            }
+          },
+          "weighted_interval_only": 15.60383695
+        },
+        "hybrid": {
+          "point": -1.5083,
+          "p": 0.3774,
+          "brier": 0.38763076,
+          "error": 7.11000989,
+          "abs_error": 7.11000989,
+          "sq_error": 50.55224064,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 21.89933956,
+              "width": 6.4745
+            },
+            "80": {
+              "covered": false,
+              "score": 22.0399989,
+              "width": 12.3369
+            },
+            "90": {
+              "covered": true,
+              "score": 15.7472,
+              "width": 15.7472
+            }
+          },
+          "weighted_interval_only": 21.16548695
+        }
+      },
+      "same_provider_sensitivity": 5.60170989
+    },
+    {
+      "id": "nasdaq100",
+      "group": "C",
+      "unit": "percent_return",
+      "actual": 6.78177856,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "YCharts dated level corroborated Yahoo historical closing row; display update 14:16 ET not exchange close",
+      "scores": {
+        "llm": {
+          "point": 1.2,
+          "p": 0.56,
+          "brier": 0.1936,
+          "error": 5.58177856,
+          "abs_error": 5.58177856,
+          "sq_error": 31.15625189,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 12.70891424,
+              "width": 9.6182
+            },
+            "80": {
+              "covered": true,
+              "score": 18.275,
+              "width": 18.275
+            },
+            "90": {
+              "covered": true,
+              "score": 23.4556,
+              "width": 23.4556
+            }
+          },
+          "weighted_interval_only": 15.4437714
+        },
+        "statistical": {
+          "point": 0.0321,
+          "p": 0.5014,
+          "brier": 0.24860196,
+          "error": 6.74967856,
+          "abs_error": 6.74967856,
+          "sq_error": 45.55816066,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 18.54661424,
+              "width": 8.3763
+            },
+            "80": {
+              "covered": true,
+              "score": 15.8133,
+              "width": 15.8133
+            },
+            "90": {
+              "covered": true,
+              "score": 20.3739,
+              "width": 20.3739
+            }
+          },
+          "weighted_interval_only": 18.0916964
+        },
+        "hybrid": {
+          "point": -2.1465,
+          "p": 0.3837,
+          "brier": 0.37982569,
+          "error": 8.92827856,
+          "abs_error": 8.92827856,
+          "sq_error": 79.71415804,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 25.87771424,
+              "width": 9.8134
+            },
+            "80": {
+              "covered": true,
+              "score": 18.6279,
+              "width": 18.6279
+            },
+            "90": {
+              "covered": true,
+              "score": 23.6197,
+              "width": 23.6197
+            }
+          },
+          "weighted_interval_only": 23.7830089
+        }
+      },
+      "same_provider_sensitivity": 6.78177856
+    },
+    {
+      "id": "stoxx600",
+      "group": "C",
+      "unit": "percent_return",
+      "actual": 2.90573155,
+      "event_positive": 1,
+      "status": "conditional",
+      "note": "Frozen reference 625.66 vs same provider now 625.65; Reuters 643.85. Tiny discrepancy, no historical rewrite",
+      "scores": {
+        "llm": {
+          "point": 0.4,
+          "p": 0.53,
+          "brier": 0.2209,
+          "error": 2.50573155,
+          "abs_error": 2.50573155,
+          "sq_error": 6.2786906,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 5.4296,
+              "width": 5.4296
+            },
+            "80": {
+              "covered": true,
+              "score": 10.3164,
+              "width": 10.3164
+            },
+            "90": {
+              "covered": true,
+              "score": 13.241,
+              "width": 13.241
+            }
+          },
+          "weighted_interval_only": 7.627725
+        },
+        "statistical": {
+          "point": -0.0009,
+          "p": 0.4976,
+          "brier": 0.25240576,
+          "error": 2.90663155,
+          "abs_error": 2.90663155,
+          "sq_error": 8.44850697,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 6.9785262,
+              "width": 4.6632
+            },
+            "80": {
+              "covered": true,
+              "score": 8.9114,
+              "width": 8.9114
+            },
+            "90": {
+              "covered": true,
+              "score": 11.4953,
+              "width": 11.4953
+            }
+          },
+          "weighted_interval_only": 8.02634137
+        },
+        "hybrid": {
+          "point": -0.9667,
+          "p": 0.3997,
+          "brier": 0.36036009,
+          "error": 3.87243155,
+          "abs_error": 3.87243155,
+          "sq_error": 14.99572611,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 10.3588262,
+              "width": 5.1643
+            },
+            "80": {
+              "covered": true,
+              "score": 9.7065,
+              "width": 9.7065
+            },
+            "90": {
+              "covered": true,
+              "score": 12.563,
+              "width": 12.563
+            }
+          },
+          "weighted_interval_only": 10.47126637
+        }
+      },
+      "same_provider_sensitivity": 2.90737633
+    },
+    {
+      "id": "nikkei225",
+      "group": "C",
+      "unit": "percent_return",
+      "actual": 4.03011164,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "issuer close, confirmed daily Nov27",
+      "scores": {
+        "llm": {
+          "point": 1.2,
+          "p": 0.55,
+          "brier": 0.2025,
+          "error": 2.83011164,
+          "abs_error": 2.83011164,
+          "sq_error": 8.00953189,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 9.6182,
+              "width": 9.6182
+            },
+            "80": {
+              "covered": true,
+              "score": 18.275,
+              "width": 18.275
+            },
+            "90": {
+              "covered": true,
+              "score": 23.4556,
+              "width": 23.4556
+            }
+          },
+          "weighted_interval_only": 13.512075
+        },
+        "statistical": {
+          "point": 0.0055,
+          "p": 0.5018,
+          "brier": 0.24820324,
+          "error": 4.02461164,
+          "abs_error": 4.02461164,
+          "sq_error": 16.19749885,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 8.297,
+              "width": 8.297
+            },
+            "80": {
+              "covered": true,
+              "score": 15.7799,
+              "width": 15.7799
+            },
+            "90": {
+              "covered": true,
+              "score": 20.3251,
+              "width": 20.3251
+            }
+          },
+          "weighted_interval_only": 11.6712375
+        },
+        "hybrid": {
+          "point": -1.1993,
+          "p": 0.4306,
+          "brier": 0.32421636,
+          "error": 5.22941164,
+          "abs_error": 5.22941164,
+          "sq_error": 27.3467461,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 11.65454656,
+              "width": 9.1681
+            },
+            "80": {
+              "covered": true,
+              "score": 17.2023,
+              "width": 17.2023
+            },
+            "90": {
+              "covered": true,
+              "score": 22.1788,
+              "width": 22.1788
+            }
+          },
+          "weighted_interval_only": 14.3570166
+        }
+      },
+      "same_provider_sensitivity": 4.03011164
+    },
+    {
+      "id": "kospi",
+      "group": "C",
+      "unit": "percent_return",
+      "actual": 0.93881675,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "matched vendor close, corroborated Nov27 daily",
+      "scores": {
+        "llm": {
+          "point": 1.8,
+          "p": 0.56,
+          "brier": 0.1936,
+          "error": -0.86118325,
+          "abs_error": 0.86118325,
+          "sq_error": 0.74163659,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 12.4106,
+              "width": 12.4106
+            },
+            "80": {
+              "covered": true,
+              "score": 23.5806,
+              "width": 23.5806
+            },
+            "90": {
+              "covered": true,
+              "score": 30.2654,
+              "width": 30.2654
+            }
+          },
+          "weighted_interval_only": 17.43495
+        },
+        "statistical": {
+          "point": 0.0003,
+          "p": 0.4984,
+          "brier": 0.25160256,
+          "error": 0.93851675,
+          "abs_error": 0.93851675,
+          "sq_error": 0.88081369,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 10.7228,
+              "width": 10.7228
+            },
+            "80": {
+              "covered": true,
+              "score": 20.5704,
+              "width": 20.5704
+            },
+            "90": {
+              "covered": true,
+              "score": 26.6017,
+              "width": 26.6017
+            }
+          },
+          "weighted_interval_only": 15.1695625
+        },
+        "hybrid": {
+          "point": -2.0289,
+          "p": 0.4063,
+          "brier": 0.35247969,
+          "error": 2.96771675,
+          "abs_error": 2.96771675,
+          "sq_error": 8.80734271,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 11.8836,
+              "width": 11.8836
+            },
+            "80": {
+              "covered": true,
+              "score": 22.6886,
+              "width": 22.6886
+            },
+            "90": {
+              "covered": true,
+              "score": 29.0722,
+              "width": 29.0722
+            }
+          },
+          "weighted_interval_only": 16.733425
+        }
+      },
+      "same_provider_sensitivity": 0.93881675
+    },
+    {
+      "id": "csi300",
+      "group": "C",
+      "unit": "percent_return",
+      "actual": 2.74366807,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "final closed Nov27 and matching Nov20 historical row; Nov27 stale intraday quote excluded",
+      "scores": {
+        "llm": {
+          "point": 0.35,
+          "p": 0.53,
+          "brier": 0.2209,
+          "error": 2.39366807,
+          "abs_error": 2.39366807,
+          "sq_error": 5.72964683,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 4.92067228,
+              "width": 4.654
+            },
+            "80": {
+              "covered": true,
+              "score": 8.8428,
+              "width": 8.8428
+            },
+            "90": {
+              "covered": true,
+              "score": 11.3494,
+              "width": 11.3494
+            }
+          },
+          "weighted_interval_only": 6.70479517
+        },
+        "statistical": {
+          "point": 0.0437,
+          "p": 0.507,
+          "brier": 0.243049,
+          "error": 2.69996807,
+          "abs_error": 2.69996807,
+          "sq_error": 7.28982758,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 6.64057228,
+              "width": 4.1023
+            },
+            "80": {
+              "covered": true,
+              "score": 7.7254,
+              "width": 7.7254
+            },
+            "90": {
+              "covered": true,
+              "score": 9.9429,
+              "width": 9.9429
+            }
+          },
+          "weighted_interval_only": 7.32457017
+        },
+        "hybrid": {
+          "point": -0.4912,
+          "p": 0.443,
+          "brier": 0.310249,
+          "error": 3.23486807,
+          "abs_error": 3.23486807,
+          "sq_error": 10.46437143,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 8.61227228,
+              "width": 4.3048
+            },
+            "80": {
+              "covered": true,
+              "score": 8.0816,
+              "width": 8.0816
+            },
+            "90": {
+              "covered": true,
+              "score": 10.4204,
+              "width": 10.4204
+            }
+          },
+          "weighted_interval_only": 8.70562017
+        }
+      },
+      "same_provider_sensitivity": 2.74366807
+    },
+    {
+      "id": "gold",
+      "group": "C",
+      "unit": "percent_return",
+      "actual": 3.4450744,
+      "event_positive": 1,
+      "status": "conditional",
+      "note": "same vendor historical reference 3532.85 vs frozen 3532.87; provider spot close not independent official fixing",
+      "scores": {
+        "llm": {
+          "point": 0.5,
+          "p": 0.52,
+          "brier": 0.2304,
+          "error": 2.9450744,
+          "abs_error": 2.9450744,
+          "sq_error": 8.67346322,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 9.7734,
+              "width": 9.7734
+            },
+            "80": {
+              "covered": true,
+              "score": 18.5696,
+              "width": 18.5696
+            },
+            "90": {
+              "covered": true,
+              "score": 23.834,
+              "width": 23.834
+            }
+          },
+          "weighted_interval_only": 13.730025
+        },
+        "statistical": {
+          "point": 0.0817,
+          "p": 0.5053,
+          "brier": 0.24472809,
+          "error": 3.3633744,
+          "abs_error": 3.3633744,
+          "sq_error": 11.31228735,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 8.5497,
+              "width": 8.5497
+            },
+            "80": {
+              "covered": true,
+              "score": 16.2827,
+              "width": 16.2827
+            },
+            "90": {
+              "covered": true,
+              "score": 20.7131,
+              "width": 20.7131
+            }
+          },
+          "weighted_interval_only": 12.003375
+        },
+        "hybrid": {
+          "point": 0.5447,
+          "p": 0.5331,
+          "brier": 0.21799561,
+          "error": 2.9003744,
+          "abs_error": 2.9003744,
+          "sq_error": 8.41217166,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 8.783,
+              "width": 8.783
+            },
+            "80": {
+              "covered": true,
+              "score": 16.725,
+              "width": 16.725
+            },
+            "90": {
+              "covered": true,
+              "score": 21.2763,
+              "width": 21.2763
+            }
+          },
+          "weighted_interval_only": 12.3301625
+        }
+      },
+      "same_provider_sensitivity": 3.44566002
+    },
+    {
+      "id": "wti",
+      "group": "C",
+      "unit": "percent_return",
+      "actual": 1.12864078,
+      "event_positive": 1,
+      "status": "conditional",
+      "note": "continuous series frozen 82.40 vs current Nov20 83.41; WSJ Jan WTI settlement 83.08, do not splice",
+      "scores": {
+        "llm": {
+          "point": 0.6,
+          "p": 0.53,
+          "brier": 0.2209,
+          "error": 0.52864078,
+          "abs_error": 0.52864078,
+          "sq_error": 0.27946107,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 10.8592,
+              "width": 10.8592
+            },
+            "80": {
+              "covered": true,
+              "score": 20.633,
+              "width": 20.633
+            },
+            "90": {
+              "covered": true,
+              "score": 26.4822,
+              "width": 26.4822
+            }
+          },
+          "weighted_interval_only": 15.255525
+        },
+        "statistical": {
+          "point": 0.0282,
+          "p": 0.5028,
+          "brier": 0.24720784,
+          "error": 1.10044078,
+          "abs_error": 1.10044078,
+          "sq_error": 1.21096991,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 9.4804,
+              "width": 9.4804
+            },
+            "80": {
+              "covered": true,
+              "score": 17.9747,
+              "width": 17.9747
+            },
+            "90": {
+              "covered": true,
+              "score": 22.9885,
+              "width": 22.9885
+            }
+          },
+          "weighted_interval_only": 13.2924875
+        },
+        "hybrid": {
+          "point": 0.9737,
+          "p": 0.5446,
+          "brier": 0.20738916,
+          "error": 0.15494078,
+          "abs_error": 0.15494078,
+          "sq_error": 0.02400665,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 10.4406,
+              "width": 10.4406
+            },
+            "80": {
+              "covered": true,
+              "score": 19.7502,
+              "width": 19.7502
+            },
+            "90": {
+              "covered": true,
+              "score": 25.5061,
+              "width": 25.5061
+            }
+          },
+          "weighted_interval_only": 14.6511875
+        }
+      },
+      "same_provider_sensitivity": -0.09591176
+    },
+    {
+      "id": "usdjpy",
+      "group": "C",
+      "unit": "percent_return",
+      "actual": 0.15692675,
+      "event_positive": 1,
+      "status": "conditional",
+      "note": "frozen 159.31 vs same provider 158.54; prior target close erroneously says Treasury; not strict",
+      "scores": {
+        "llm": {
+          "point": -0.4,
+          "p": 0.43,
+          "brier": 0.3249,
+          "error": 0.55692675,
+          "abs_error": 0.55692675,
+          "sq_error": 0.3101674,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 2.9476,
+              "width": 2.9476
+            },
+            "80": {
+              "covered": true,
+              "score": 5.6004,
+              "width": 5.6004
+            },
+            "90": {
+              "covered": true,
+              "score": 7.188,
+              "width": 7.188
+            }
+          },
+          "weighted_interval_only": 4.14085
+        },
+        "statistical": {
+          "point": -0.0113,
+          "p": 0.4984,
+          "brier": 0.25160256,
+          "error": 0.16822675,
+          "abs_error": 0.16822675,
+          "sq_error": 0.02830024,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 2.5352,
+              "width": 2.5352
+            },
+            "80": {
+              "covered": true,
+              "score": 4.8374,
+              "width": 4.8374
+            },
+            "90": {
+              "covered": true,
+              "score": 6.2526,
+              "width": 6.2526
+            }
+          },
+          "weighted_interval_only": 3.575425
+        },
+        "hybrid": {
+          "point": -0.4404,
+          "p": 0.4156,
+          "brier": 0.34152336,
+          "error": 0.59732675,
+          "abs_error": 0.59732675,
+          "sq_error": 0.35679925,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 2.6884,
+              "width": 2.6884
+            },
+            "80": {
+              "covered": true,
+              "score": 5.0868,
+              "width": 5.0868
+            },
+            "90": {
+              "covered": true,
+              "score": 6.5224,
+              "width": 6.5224
+            }
+          },
+          "weighted_interval_only": 3.76725
+        }
+      },
+      "same_provider_sensitivity": 0.64337076
+    },
+    {
+      "id": "us2y",
+      "group": "C",
+      "unit": "basis_points",
+      "actual": 6,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "official dated par yield not intraday market quote",
+      "scores": {
+        "llm": {
+          "point": -4,
+          "p": 0.44,
+          "brier": 0.3136,
+          "error": 10,
+          "abs_error": 10,
+          "sq_error": 100,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 40.3344,
+              "width": 40.3344
+            },
+            "80": {
+              "covered": true,
+              "score": 76.6368,
+              "width": 76.6368
+            },
+            "90": {
+              "covered": true,
+              "score": 98.3622,
+              "width": 98.3622
+            }
+          },
+          "weighted_interval_only": 56.663475
+        },
+        "statistical": {
+          "point": 0.2081,
+          "p": 0.5019,
+          "brier": 0.24810361,
+          "error": 5.7919,
+          "abs_error": 5.7919,
+          "sq_error": 33.54610561,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 35.0901,
+              "width": 35.0901
+            },
+            "80": {
+              "covered": true,
+              "score": 67.1822,
+              "width": 67.1822
+            },
+            "90": {
+              "covered": true,
+              "score": 86.5152,
+              "width": 86.5152
+            }
+          },
+          "weighted_interval_only": 49.5412625
+        },
+        "hybrid": {
+          "point": -1.6342,
+          "p": 0.4743,
+          "brier": 0.27636049,
+          "error": 7.6342,
+          "abs_error": 7.6342,
+          "sq_error": 58.28100964,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 37.3363,
+              "width": 37.3363
+            },
+            "80": {
+              "covered": true,
+              "score": 71.671,
+              "width": 71.671
+            },
+            "90": {
+              "covered": true,
+              "score": 91.7124,
+              "width": 91.7124
+            }
+          },
+          "weighted_interval_only": 52.7169875
+        }
+      },
+      "same_provider_sensitivity": 6
+    },
+    {
+      "id": "us10y",
+      "group": "C",
+      "unit": "basis_points",
+      "actual": 2,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "official dated par yield not intraday market quote",
+      "scores": {
+        "llm": {
+          "point": -5,
+          "p": 0.43,
+          "brier": 0.3249,
+          "error": 7,
+          "abs_error": 7,
+          "sq_error": 49,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 35.6806,
+              "width": 35.6806
+            },
+            "80": {
+              "covered": true,
+              "score": 67.794,
+              "width": 67.794
+            },
+            "90": {
+              "covered": true,
+              "score": 87.0128,
+              "width": 87.0128
+            }
+          },
+          "weighted_interval_only": 50.125475
+        },
+        "statistical": {
+          "point": -0.4262,
+          "p": 0.4937,
+          "brier": 0.25633969,
+          "error": 2.4262,
+          "abs_error": 2.4262,
+          "sq_error": 5.88644644,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 31.1322,
+              "width": 31.1322
+            },
+            "80": {
+              "covered": true,
+              "score": 58.619,
+              "width": 58.619
+            },
+            "90": {
+              "covered": true,
+              "score": 75.9468,
+              "width": 75.9468
+            }
+          },
+          "weighted_interval_only": 43.605725
+        },
+        "hybrid": {
+          "point": -1.0407,
+          "p": 0.4841,
+          "brier": 0.26615281,
+          "error": 3.0407,
+          "abs_error": 3.0407,
+          "sq_error": 9.24585649,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 33.2959,
+              "width": 33.2959
+            },
+            "80": {
+              "covered": true,
+              "score": 62.8216,
+              "width": 62.8216
+            },
+            "90": {
+              "covered": true,
+              "score": 80.8939,
+              "width": 80.8939
+            }
+          },
+          "weighted_interval_only": 46.627075
+        }
+      },
+      "same_provider_sensitivity": 2
+    },
+    {
+      "id": "us30y",
+      "group": "C",
+      "unit": "basis_points",
+      "actual": 2,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "official dated par yield not intraday market quote",
+      "scores": {
+        "llm": {
+          "point": -4,
+          "p": 0.44,
+          "brier": 0.3136,
+          "error": 6,
+          "abs_error": 6,
+          "sq_error": 36,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 31.0266,
+              "width": 31.0266
+            },
+            "80": {
+              "covered": true,
+              "score": 58.9514,
+              "width": 58.9514
+            },
+            "90": {
+              "covered": true,
+              "score": 75.6632,
+              "width": 75.6632
+            }
+          },
+          "weighted_interval_only": 43.587375
+        },
+        "statistical": {
+          "point": -0.2448,
+          "p": 0.4948,
+          "brier": 0.25522704,
+          "error": 2.2448,
+          "abs_error": 2.2448,
+          "sq_error": 5.03912704,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 27.157,
+              "width": 27.157
+            },
+            "80": {
+              "covered": true,
+              "score": 51.4943,
+              "width": 51.4943
+            },
+            "90": {
+              "covered": true,
+              "score": 65.8986,
+              "width": 65.8986
+            }
+          },
+          "weighted_interval_only": 38.084025
+        },
+        "hybrid": {
+          "point": -0.2693,
+          "p": 0.4949,
+          "brier": 0.25512601,
+          "error": 2.2693,
+          "abs_error": 2.2693,
+          "sq_error": 5.14972249,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 28.1951,
+              "width": 28.1951
+            },
+            "80": {
+              "covered": true,
+              "score": 53.5677,
+              "width": 53.5677
+            },
+            "90": {
+              "covered": true,
+              "score": 68.67,
+              "width": 68.67
+            }
+          },
+          "weighted_interval_only": 39.5976125
+        }
+      },
+      "same_provider_sensitivity": 2
+    },
+    {
+      "id": "sp_abs",
+      "group": "B",
+      "unit": "percent",
+      "actual": 5.60170989,
+      "event_positive": 1,
+      "status": "verified",
+      "note": "derived SP500",
+      "scores": {
+        "llm": {
+          "point": 3.4,
+          "p": 0.65,
+          "brier": 0.1225,
+          "error": 2.20170989,
+          "abs_error": 2.20170989,
+          "sq_error": 4.84752644,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 6.40683956,
+              "width": 4
+            },
+            "80": {
+              "covered": true,
+              "score": 7,
+              "width": 7
+            },
+            "90": {
+              "covered": true,
+              "score": 8.85,
+              "width": 8.85
+            }
+          },
+          "weighted_interval_only": 6.86052473
+        },
+        "statistical": {
+          "point": 3.3128,
+          "p": 0.6257,
+          "brier": 0.14010049,
+          "error": 2.28890989,
+          "abs_error": 2.28890989,
+          "sq_error": 5.23910848,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 6.71673956,
+              "width": 3.5039
+            },
+            "80": {
+              "covered": true,
+              "score": 6.3642,
+              "width": 6.3642
+            },
+            "90": {
+              "covered": true,
+              "score": 7.9392,
+              "width": 7.9392
+            }
+          },
+          "weighted_interval_only": 6.78141223
+        },
+        "hybrid": {
+          "point": 4.0016,
+          "p": 0.6891,
+          "brier": 0.09665881,
+          "error": 1.60010989,
+          "abs_error": 1.60010989,
+          "sq_error": 2.56035166,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 4.1812,
+              "width": 4.1812
+            },
+            "80": {
+              "covered": true,
+              "score": 7.6229,
+              "width": 7.6229
+            },
+            "90": {
+              "covered": true,
+              "score": 9.5333,
+              "width": 9.5333
+            }
+          },
+          "weighted_interval_only": 5.7106375
+        }
+      }
+    },
+    {
+      "id": "wti_abs",
+      "group": "B",
+      "unit": "percent",
+      "actual": 1.12864078,
+      "event_positive": 0,
+      "status": "conditional",
+      "note": "WTI identity mismatch",
+      "scores": {
+        "llm": {
+          "point": 5,
+          "p": 0.48,
+          "brier": 0.2304,
+          "error": -3.87135922,
+          "abs_error": 3.87135922,
+          "sq_error": 14.98742221,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 6.68543688,
+              "width": 5.6
+            },
+            "80": {
+              "covered": true,
+              "score": 11.6,
+              "width": 11.6
+            },
+            "90": {
+              "covered": true,
+              "score": 14.8,
+              "width": 14.8
+            }
+          },
+          "weighted_interval_only": 8.92839805
+        },
+        "statistical": {
+          "point": 5.5961,
+          "p": 0.4772,
+          "brier": 0.22771984,
+          "error": -4.46745922,
+          "abs_error": 4.46745922,
+          "sq_error": 19.95819188,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 10.24583688,
+              "width": 5.87
+            },
+            "80": {
+              "covered": true,
+              "score": 10.6282,
+              "width": 10.6282
+            },
+            "90": {
+              "covered": true,
+              "score": 13.319,
+              "width": 13.319
+            }
+          },
+          "weighted_interval_only": 10.72557305
+        },
+        "hybrid": {
+          "point": 6.2186,
+          "p": 0.5202,
+          "brier": 0.27060804,
+          "error": -5.08995922,
+          "abs_error": 5.08995922,
+          "sq_error": 25.90768486,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 11.88123688,
+              "width": 6.4474
+            },
+            "80": {
+              "covered": true,
+              "score": 11.8606,
+              "width": 11.8606
+            },
+            "90": {
+              "covered": true,
+              "score": 14.8067,
+              "width": 14.8067
+            }
+          },
+          "weighted_interval_only": 12.24176055
+        }
+      }
+    },
+    {
+      "id": "yield_abs",
+      "group": "B",
+      "unit": "basis_points",
+      "actual": 2,
+      "event_positive": 0,
+      "status": "verified",
+      "note": "derived official 10Y",
+      "scores": {
+        "llm": {
+          "point": 19,
+          "p": 0.53,
+          "brier": 0.2809,
+          "error": -17,
+          "abs_error": 17,
+          "sq_error": 289,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 35,
+              "width": 23
+            },
+            "80": {
+              "covered": true,
+              "score": 41,
+              "width": 41
+            },
+            "90": {
+              "covered": true,
+              "score": 49.5,
+              "width": 49.5
+            }
+          },
+          "weighted_interval_only": 38.3125
+        },
+        "statistical": {
+          "point": 18.4476,
+          "p": 0.5167,
+          "brier": 0.26697889,
+          "error": -16.4476,
+          "abs_error": 16.4476,
+          "sq_error": 270.52354576,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 41.2689,
+              "width": 18.9417
+            },
+            "80": {
+              "covered": false,
+              "score": 44.6036,
+              "width": 34.9026
+            },
+            "90": {
+              "covered": true,
+              "score": 43.9913,
+              "width": 43.9913
+            }
+          },
+          "weighted_interval_only": 42.442875
+        },
+        "hybrid": {
+          "point": 19.714,
+          "p": 0.545,
+          "brier": 0.297025,
+          "error": -17.714,
+          "abs_error": 17.714,
+          "sq_error": 313.785796,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 44.6132,
+              "width": 20.0648
+            },
+            "80": {
+              "covered": false,
+              "score": 49.8012,
+              "width": 37.1262
+            },
+            "90": {
+              "covered": true,
+              "score": 46.4989,
+              "width": 46.4989
+            }
+          },
+          "weighted_interval_only": 46.1459125
+        }
+      }
+    },
+    {
+      "id": "breadth",
+      "group": "B",
+      "unit": "index_count",
+      "actual": 0,
+      "event_positive": 0,
+      "status": "verified",
+      "note": "Five strict equity positives and STOXX conditional positive with 0.01 baseline difference; both possible references imply no decline; threshold and count robust to this discrepancy",
+      "scores": {
+        "llm": {
+          "point": 2.7,
+          "p": 0.42,
+          "brier": 0.1764,
+          "error": -2.7,
+          "abs_error": 2.7,
+          "sq_error": 7.29,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 7,
+              "width": 3
+            },
+            "80": {
+              "covered": true,
+              "score": 6,
+              "width": 6
+            },
+            "90": {
+              "covered": true,
+              "score": 6,
+              "width": 6
+            }
+          },
+          "weighted_interval_only": 6.625
+        },
+        "statistical": {
+          "point": 2.2201,
+          "p": 0.3927,
+          "brier": 0.15421329,
+          "error": -2.2201,
+          "abs_error": 2.2201,
+          "sq_error": 4.92884401,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 6,
+              "width": 2
+            },
+            "80": {
+              "covered": false,
+              "score": 13,
+              "width": 3
+            },
+            "90": {
+              "covered": true,
+              "score": 4,
+              "width": 4
+            }
+          },
+          "weighted_interval_only": 7.5
+        },
+        "hybrid": {
+          "point": 2.8614,
+          "p": 0.5819,
+          "brier": 0.33860761,
+          "error": -2.8614,
+          "abs_error": 2.8614,
+          "sq_error": 8.18760996,
+          "intervals": {
+            "50": {
+              "covered": false,
+              "score": 10,
+              "width": 2
+            },
+            "80": {
+              "covered": false,
+              "score": 14,
+              "width": 4
+            },
+            "90": {
+              "covered": true,
+              "score": 5,
+              "width": 5
+            }
+          },
+          "weighted_interval_only": 10.375
+        }
+      }
+    },
+    {
+      "id": "joint",
+      "group": "B",
+      "unit": "binary_0or1",
+      "actual": 0,
+      "event_positive": 0,
+      "status": "conditional",
+      "note": "false regardless of oil because SP500 rose; excluded consistently with previous WTI-related cohort rule",
+      "scores": {
+        "llm": {
+          "point": 0.09,
+          "p": 0.09,
+          "brier": 0.0081,
+          "error": -0.09,
+          "abs_error": 0.09,
+          "sq_error": 0.0081,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0,
+              "width": 0
+            },
+            "80": {
+              "covered": true,
+              "score": 1,
+              "width": 1
+            },
+            "90": {
+              "covered": true,
+              "score": 1,
+              "width": 1
+            }
+          },
+          "weighted_interval_only": 0.375
+        },
+        "statistical": {
+          "point": 0.0724,
+          "p": 0.0724,
+          "brier": 0.00524176,
+          "error": -0.0724,
+          "abs_error": 0.0724,
+          "sq_error": 0.00524176,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0,
+              "width": 0
+            },
+            "80": {
+              "covered": true,
+              "score": 0,
+              "width": 0
+            },
+            "90": {
+              "covered": true,
+              "score": 1,
+              "width": 1
+            }
+          },
+          "weighted_interval_only": 0.125
+        },
+        "hybrid": {
+          "point": 0.131,
+          "p": 0.131,
+          "brier": 0.017161,
+          "error": -0.131,
+          "abs_error": 0.131,
+          "sq_error": 0.017161,
+          "intervals": {
+            "50": {
+              "covered": true,
+              "score": 0,
+              "width": 0
+            },
+            "80": {
+              "covered": true,
+              "score": 1,
+              "width": 1
+            },
+            "90": {
+              "covered": true,
+              "score": 1,
+              "width": 1
+            }
+          },
+          "weighted_interval_only": 0.375
+        }
+      }
+    }
+  ],
+  "groups": {
+    "A": {
+      "strict_n": 7,
+      "conditional_n": 2,
+      "strict": {
+        "llm": {
+          "n": 7,
+          "brier": 0.2631428571428572,
+          "coverage80": 6,
+          "by_unit": {
+            "percentage_points_mom": {
+              "n": 5,
+              "mae": 0.13599999999999998,
+              "rmse": 0.20287927444665216,
+              "interval80": 0.83124,
+              "weighted_interval_only": 0.6938449999999999
+            },
+            "percentage_points_saar_revision": {
+              "n": 1,
+              "mae": 0.95,
+              "rmse": 0.95,
+              "interval80": 5.9632,
+              "weighted_interval_only": 4.67305
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 22,
+              "rmse": 22,
+              "interval80": 50.1086,
+              "weighted_interval_only": 59.0835
+            }
+          },
+          "skill_vs_statistical": -0.05257142857142871
+        },
+        "statistical": {
+          "n": 7,
+          "brier": 0.25,
+          "coverage80": 5,
+          "by_unit": {
+            "percentage_points_mom": {
+              "n": 5,
+              "mae": 0.18,
+              "rmse": 0.25690465157330256,
+              "interval80": 0.8257999999999999,
+              "weighted_interval_only": 0.7145599999999999
+            },
+            "percentage_points_saar_revision": {
+              "n": 1,
+              "mae": 0.9,
+              "rmse": 0.9,
+              "interval80": 5.924,
+              "weighted_interval_only": 4.61775
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 14,
+              "rmse": 14,
+              "interval80": 43.5728,
+              "weighted_interval_only": 38.55095
+            }
+          },
+          "skill_vs_statistical": 0
+        },
+        "hybrid": {
+          "n": 7,
+          "brier": 0.2529757514285714,
+          "coverage80": 5,
+          "by_unit": {
+            "percentage_points_mom": {
+              "n": 5,
+              "mae": 0.13,
+              "rmse": 0.2112344668845499,
+              "interval80": 0.7457999999999999,
+              "weighted_interval_only": 0.65211
+            },
+            "percentage_points_saar_revision": {
+              "n": 1,
+              "mae": 0.98,
+              "rmse": 0.98,
+              "interval80": 6.724,
+              "weighted_interval_only": 5.21775
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 18,
+              "rmse": 18,
+              "interval80": 43.5728,
+              "weighted_interval_only": 48.55095
+            }
+          },
+          "skill_vs_statistical": -0.011903005714285708
+        }
+      },
+      "all_conditional_inclusive": {
+        "llm": {
+          "n": 9,
+          "brier": 0.25325555555555557,
+          "coverage80": 8,
+          "by_unit": {
+            "percentage_points_mom": {
+              "n": 6,
+              "mae": 0.19666666666666666,
+              "rmse": 0.2756205120571883,
+              "interval80": 1.4296,
+              "weighted_interval_only": 1.1230499999999999
+            },
+            "percentage_points_saar_revision": {
+              "n": 1,
+              "mae": 0.95,
+              "rmse": 0.95,
+              "interval80": 5.9632,
+              "weighted_interval_only": 4.67305
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 22,
+              "rmse": 22,
+              "interval80": 50.1086,
+              "weighted_interval_only": 59.0835
+            },
+            "index_points": {
+              "n": 1,
+              "mae": 0.34,
+              "rmse": 0.33999999999999997,
+              "interval80": 1.5328,
+              "weighted_interval_only": 1.133225
+            }
+          }
+        },
+        "statistical": {
+          "n": 9,
+          "brier": 0.25,
+          "coverage80": 7,
+          "by_unit": {
+            "percentage_points_mom": {
+              "n": 6,
+              "mae": 0.4166666666666667,
+              "rmse": 0.6940220937885672,
+              "interval80": 1.3289333333333333,
+              "weighted_interval_only": 1.314358333333333
+            },
+            "percentage_points_saar_revision": {
+              "n": 1,
+              "mae": 0.9,
+              "rmse": 0.9,
+              "interval80": 5.924,
+              "weighted_interval_only": 4.61775
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 14,
+              "rmse": 14,
+              "interval80": 43.5728,
+              "weighted_interval_only": 38.55095
+            },
+            "index_points": {
+              "n": 1,
+              "mae": 0.18,
+              "rmse": 0.18,
+              "interval80": 1.3328,
+              "weighted_interval_only": 0.9854
+            }
+          }
+        },
+        "hybrid": {
+          "n": 9,
+          "brier": 0.2499782122222222,
+          "coverage80": 7,
+          "by_unit": {
+            "percentage_points_mom": {
+              "n": 6,
+              "mae": 0.225,
+              "rmse": 0.344746283518764,
+              "interval80": 1.2622666666666664,
+              "weighted_interval_only": 1.0171916666666665
+            },
+            "percentage_points_saar_revision": {
+              "n": 1,
+              "mae": 0.98,
+              "rmse": 0.98,
+              "interval80": 6.724,
+              "weighted_interval_only": 5.21775
+            },
+            "thousands_persons": {
+              "n": 1,
+              "mae": 18,
+              "rmse": 18,
+              "interval80": 43.5728,
+              "weighted_interval_only": 48.55095
+            },
+            "index_points": {
+              "n": 1,
+              "mae": 0.36,
+              "rmse": 0.36,
+              "interval80": 1.3328,
+              "weighted_interval_only": 1.00865
+            }
+          }
+        }
+      }
+    },
+    "B": {
+      "strict_n": 3,
+      "conditional_n": 2,
+      "strict": {
+        "llm": {
+          "n": 3,
+          "brier": 0.19326666666666667,
+          "coverage80": 3,
+          "by_unit": {
+            "percent": {
+              "n": 1,
+              "mae": 2.20170989,
+              "rmse": 2.2017098900627214,
+              "interval80": 7,
+              "weighted_interval_only": 6.86052473
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 17,
+              "rmse": 17,
+              "interval80": 41,
+              "weighted_interval_only": 38.3125
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.7,
+              "rmse": 2.7,
+              "interval80": 6,
+              "weighted_interval_only": 6.625
+            }
+          },
+          "skill_vs_statistical": -0.03297269141248527
+        },
+        "statistical": {
+          "n": 3,
+          "brier": 0.1870975566666667,
+          "coverage80": 1,
+          "by_unit": {
+            "percent": {
+              "n": 1,
+              "mae": 2.28890989,
+              "rmse": 2.2889098890083024,
+              "interval80": 6.3642,
+              "weighted_interval_only": 6.78141223
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 16.4476,
+              "rmse": 16.4476,
+              "interval80": 44.6036,
+              "weighted_interval_only": 42.442875
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.2201,
+              "rmse": 2.2201,
+              "interval80": 13,
+              "weighted_interval_only": 7.5
+            }
+          },
+          "skill_vs_statistical": 0
+        },
+        "hybrid": {
+          "n": 3,
+          "brier": 0.24409713999999996,
+          "coverage80": 1,
+          "by_unit": {
+            "percent": {
+              "n": 1,
+              "mae": 1.60010989,
+              "rmse": 1.6001098899763102,
+              "interval80": 7.6229,
+              "weighted_interval_only": 5.7106375
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 17.714,
+              "rmse": 17.714,
+              "interval80": 49.8012,
+              "weighted_interval_only": 46.1459125
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.8614,
+              "rmse": 2.8613999999999997,
+              "interval80": 14,
+              "weighted_interval_only": 10.375
+            }
+          },
+          "skill_vs_statistical": -0.3046516712929812
+        }
+      },
+      "all_conditional_inclusive": {
+        "llm": {
+          "n": 5,
+          "brier": 0.16365999999999997,
+          "coverage80": 5,
+          "by_unit": {
+            "percent": {
+              "n": 2,
+              "mae": 3.0365345550000002,
+              "rmse": 3.1492021727732884,
+              "interval80": 9.3,
+              "weighted_interval_only": 7.89446139
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 17,
+              "rmse": 17,
+              "interval80": 41,
+              "weighted_interval_only": 38.3125
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.7,
+              "rmse": 2.7,
+              "interval80": 6,
+              "weighted_interval_only": 6.625
+            },
+            "binary_0or1": {
+              "n": 1,
+              "mae": 0.09,
+              "rmse": 0.09,
+              "interval80": 1,
+              "weighted_interval_only": 0.375
+            }
+          }
+        },
+        "statistical": {
+          "n": 5,
+          "brier": 0.158850854,
+          "coverage80": 3,
+          "by_unit": {
+            "percent": {
+              "n": 2,
+              "mae": 3.378184555,
+              "rmse": 3.549457730414605,
+              "interval80": 8.4962,
+              "weighted_interval_only": 8.75349264
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 16.4476,
+              "rmse": 16.4476,
+              "interval80": 44.6036,
+              "weighted_interval_only": 42.442875
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.2201,
+              "rmse": 2.2201,
+              "interval80": 13,
+              "weighted_interval_only": 7.5
+            },
+            "binary_0or1": {
+              "n": 1,
+              "mae": 0.0724,
+              "rmse": 0.07239999999999999,
+              "interval80": 0,
+              "weighted_interval_only": 0.125
+            }
+          }
+        },
+        "hybrid": {
+          "n": 5,
+          "brier": 0.20401209199999998,
+          "coverage80": 3,
+          "by_unit": {
+            "percent": {
+              "n": 2,
+              "mae": 3.345034555,
+              "rmse": 3.7727997906064403,
+              "interval80": 9.74175,
+              "weighted_interval_only": 8.976199025
+            },
+            "basis_points": {
+              "n": 1,
+              "mae": 17.714,
+              "rmse": 17.714,
+              "interval80": 49.8012,
+              "weighted_interval_only": 46.1459125
+            },
+            "index_count": {
+              "n": 1,
+              "mae": 2.8614,
+              "rmse": 2.8613999999999997,
+              "interval80": 14,
+              "weighted_interval_only": 10.375
+            },
+            "binary_0or1": {
+              "n": 1,
+              "mae": 0.131,
+              "rmse": 0.131,
+              "interval80": 1,
+              "weighted_interval_only": 0.375
+            }
+          }
+        }
+      }
+    },
+    "C": {
+      "strict_n": 8,
+      "conditional_n": 4,
+      "strict": {
+        "llm": {
+          "n": 8,
+          "brier": 0.2467875,
+          "coverage80": 8,
+          "by_unit": {
+            "percent_return": {
+              "n": 5,
+              "mae": 3.3136902819999996,
+              "rmse": 3.732661973712594,
+              "interval80": 16.27064,
+              "weighted_interval_only": 13.27174326
+            },
+            "basis_points": {
+              "n": 3,
+              "mae": 7.666666666666667,
+              "rmse": 7.852812659593164,
+              "interval80": 67.79406666666667,
+              "weighted_interval_only": 50.12544166666667
+            }
+          },
+          "skill_vs_statistical": 0.01261779732739754
+        },
+        "statistical": {
+          "n": 8,
+          "brier": 0.2499412075,
+          "coverage80": 7,
+          "by_unit": {
+            "percent_return": {
+              "n": 5,
+              "mae": 4.001956982,
+              "rmse": 4.500062677119064,
+              "interval80": 14.683899779999999,
+              "weighted_interval_only": 13.572180703999999
+            },
+            "basis_points": {
+              "n": 3,
+              "mae": 3.487633333333333,
+              "rmse": 3.850180908736627,
+              "interval80": 59.0985,
+              "weighted_interval_only": 43.74367083333333
+            }
+          },
+          "skill_vs_statistical": 0
+        },
+        "hybrid": {
+          "n": 8,
+          "brier": 0.31900510125,
+          "coverage80": 7,
+          "by_unit": {
+            "percent_return": {
+              "n": 5,
+              "mae": 5.494056982,
+              "rmse": 5.947854384902172,
+              "interval80": 17.728079779999998,
+              "weighted_interval_only": 16.948911524000003
+            },
+            "basis_points": {
+              "n": 3,
+              "mae": 4.314733333333334,
+              "rmse": 4.921943675012952,
+              "interval80": 62.68676666666667,
+              "weighted_interval_only": 46.31389166666667
+            }
+          },
+          "skill_vs_statistical": -0.27632055730546146
+        }
+      },
+      "all_conditional_inclusive": {
+        "llm": {
+          "n": 12,
+          "brier": 0.2476166666666667,
+          "coverage80": 12,
+          "by_unit": {
+            "percent_return": {
+              "n": 9,
+              "mae": 2.5672027655555554,
+              "rmse": 3.0768961514270616,
+              "interval80": 15.163622222222223,
+              "weighted_interval_only": 11.901426811111111
+            },
+            "basis_points": {
+              "n": 3,
+              "mae": 7.666666666666667,
+              "rmse": 7.852812659593164,
+              "interval80": 67.79406666666667,
+              "weighted_interval_only": 50.12544166666667
+            }
+          }
+        },
+        "statistical": {
+          "n": 12,
+          "brier": 0.24962282583333328,
+          "coverage80": 11,
+          "by_unit": {
+            "percent_return": {
+              "n": 9,
+              "mae": 3.060939821111111,
+              "rmse": 3.6856008851263917,
+              "interval80": 13.49174432222222,
+              "weighted_interval_only": 11.639836932222222
+            },
+            "basis_points": {
+              "n": 3,
+              "mae": 3.487633333333333,
+              "rmse": 3.850180908736627,
+              "interval80": 59.0985,
+              "weighted_interval_only": 43.74367083333333
+            }
+          }
+        },
+        "hybrid": {
+          "n": 12,
+          "brier": 0.3066090858333333,
+          "coverage80": 11,
+          "by_unit": {
+            "percent_return": {
+              "n": 9,
+              "mae": 3.8883731544444444,
+              "rmse": 4.721976546955735,
+              "interval80": 15.545433211111114,
+              "weighted_interval_only": 13.996047110000001
+            },
+            "basis_points": {
+              "n": 3,
+              "mae": 4.314733333333334,
+              "rmse": 4.921943675012952,
+              "interval80": 62.68676666666667,
+              "weighted_interval_only": 46.31389166666667
+            }
+          }
+        }
+      }
+    }
+  },
+  "cumulative": {
+    "A": {
+      "n": 33,
+      "arms": {
+        "llm": {
+          "brier": 0.19075503,
+          "coverage80": 0.96969697
+        },
+        "statistical": {
+          "brier": 0.22440655,
+          "coverage80": 0.87878794
+        },
+        "hybrid": {
+          "brier": 0.19395674,
+          "coverage80": 0.93939394
+        }
+      },
+      "skill_hybrid": 0.13569038,
+      "warning": "Observational extension to prior heterogeneous ledger; old records include late seals/provisional observations, not on-time admission."
+    },
+    "B": {
+      "n": 14,
+      "arms": {
+        "llm": {
+          "brier": 0.25453536,
+          "coverage80": 0.7857145
+        },
+        "statistical": {
+          "brier": 0.31001583,
+          "coverage80": 0.49999957
+        },
+        "hybrid": {
+          "brier": 0.27826067,
+          "coverage80": 0.64285736
+        }
+      },
+      "skill_hybrid": 0.10243077,
+      "warning": "Observational extension to prior heterogeneous ledger; old records include late seals/provisional observations, not on-time admission."
+    },
+    "C": {
+      "n": 46,
+      "arms": {
+        "llm": {
+          "brier": 0.24437822,
+          "coverage80": 0.80434791
+        },
+        "statistical": {
+          "brier": 0.25002943,
+          "coverage80": 0.67391309
+        },
+        "hybrid": {
+          "brier": 0.26083858,
+          "coverage80": 0.7608703
+        }
+      },
+      "skill_hybrid": -0.04323151,
+      "warning": "Observational extension to prior heterogeneous ledger; old records include late seals/provisional observations, not on-time admission."
+    }
+  },
+  "limitations": [
+    "DOL/BEA/Census source values read from repository Nov26 daily record; WEI read from Nov27 daily and issuer recent additions.",
+    "Early-close Treasury publication timestamp unverified; issuer row observed in this run before cutoff.",
+    "Provider price timestamp not independent proof of official exchange close; all conditional results excluded from strict primary metrics.",
+    "No retrospective change to frozen forecasts."
+  ]
+}
